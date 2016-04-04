@@ -1,0 +1,680 @@
+/*
+*	PODEMOS BALEARES
+*	----------------
+*	Basado en Foundation 6.1.2 | foundation.zurb.com
+* 
+*	Autor: Hector Asencio @MemorySoft
+* Copyright Memory Soft 2016
+* Licencia: MIT
+* Versión: 0.1
+* 
+*/
+
+/*	GENERALES
+		Estilos relativos al elementos HTML
+		que han sidfo reajustados
+***********************************************************************/
+body {
+  font-family: "Istok Web", Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  line-height: 1.4;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: inherit;
+  margin-bottom: 1.5rem;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: #999;
+    line-height: 0;
+}
+li h1, li h2, li h3, li h4, li h5, li h6 {
+	margin-bottom: 0;
+}
+
+a {
+  color: #54075B;
+  text-decoration: none;
+}
+p a { 
+	text-decoration: underline;
+	}
+a:hover {
+  color: #999;
+  opacity: .5;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4;
+}
+
+/*	REAJUSTANDO FOUNDATION
+		Agrupa los elementos del framework 
+		que han sido modificados o extendidos 
+		con nuevas clases
+***********************************************************************/
+
+/* GRID */
+.row {
+  margin-bottom: 4em;
+}
+
+/* NAVEGACIÓN */
+.top-bar {
+  margin-bottom: 2em;
+  padding: 0;
+  box-shadow: 0 0 5px #efefef;
+}
+.top-bar, 
+.top-bar ul {
+    background-color: #fff;
+}
+.top-bar .row {
+  margin-bottom: 0;
+}
+.top-bar .row ul li a {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem;
+}
+.top-bar .row ul li a:hover {
+  color: #999;
+}
+.top-bar .row ul li a.actual {
+	color: #fff;
+	background:  #54075B;
+}
+.top-bar-title {
+  color: #54075B;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  font-size: 1.9375rem;
+  font-weight: bold;
+}
+
+.title-bar {
+  background: transparent;
+  overflow: hidden;
+  height: 2.5rem;
+}
+
+.menu a {
+	text-decoration: none;
+}
+
+.breadcrumbs a {
+    color: #54075B;
+    text-decoration: none
+}
+
+/* BOTONES */
+.button {
+  background-color: #54075B;
+  letter-spacing: .5px;
+  border: 1px solid #54075B;
+  transition: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+}
+.button:hover, 
+.button:focus {
+  background: transparent;
+  color: #54075B;
+}
+.button.hollow {
+    border: 1px solid #54075B;
+    color: #54075B;
+}
+.button.hollow:hover, 
+.button.hollow:focus {
+    border-color: #54075B;
+    color: #54075B;
+}
+.button.success {
+  background-color: #22bb5b;
+  color: #fff;
+  border: 1px solid #22bb5b;
+}
+.button.success:hover, 
+.button.success:focus {
+  background-color: transparent;
+  color: #22bb5b;
+}
+.button.alert {
+  background-color: #ec5840;
+  color: #fff;
+  border: 1px solid #ec5840;
+}
+.button.alert:hover, 
+.button.alert:focus {
+  background-color: transparent;
+  color: #ec5840;
+}
+.button.secondary {
+  background-color: #777;
+  color: #fff;
+  border: 1px solid #777;
+}
+.button.secondary:hover, 
+.button.secondary:focus {
+  background-color: transparent;
+  color: #777;
+}
+
+.button.invertido {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.button.invertido:hover, 
+.button.invertido:focus {
+  background: #333;
+  border: 1px solid #333;
+  color: #fff;
+}
+.button.invertido.small {
+    font-size: 0.75rem;
+}
+
+/* IMÁGENES */
+.thumbnail {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+.thumbnail:hover, 
+.thumbnail:focus {
+    box-shadow: none;
+}
+
+/* CALLOUTS */
+.callout {
+	margin: 0 0 2rem 0;
+}
+.callout:not('fondo-morado') h1,
+.callout:not('fondo-morado') h2,
+.callout:not('fondo-morado') h3,
+.callout:not('fondo-morado') h4,
+.callout:not('fondo-morado') h5,
+.callout:not('fondo-morado') h6 {
+	margin-bottom: 2rem;
+	color: #333;
+}
+
+/* PESTAÑAS */
+.tabs {
+    background: #fff;
+    border: none;
+}
+.tabs-content.vertical {
+    border: none;
+    border-left: 0;
+}
+.tabs-title > a {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  line-height: 1;
+  font-size: 12px;
+  color: #54075B;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.tabs-title > a:focus, 
+.tabs-title > a[aria-selected="true"] {
+    background: #9dddb5;
+}
+.tabs-title > a:hover {
+    background: #efefef;
+}
+
+/* MODALES */
+.reveal.full {
+	padding-top: 6rem;
+}
+
+/* FOOTER */
+.footer {
+	padding-top: 3rem;
+}
+
+/*	COMPONENTES
+		Todos los elementos nuevos
+		que no forman parte del framework
+***********************************************************************/
+
+/* TÍTULOS */
+.titulo {
+	border-bottom: 1px solid rgba(10, 10, 10, 0.25);
+	margin-bottom: 2em;
+}
+
+/*	Lo usamos para estilar los logotipos de Podemos 
+		construidos con texto en el footer, la navegación 
+		y la información de contacto*/
+h2.logo-texto {
+	line-height: 2.5rem;
+}
+h4.logo-texto {
+	line-height: 1.6rem;
+}
+
+/* FRANJAS */
+.franja {
+  padding: 4em 0;
+  margin-bottom: 4em;
+}
+.franja--estrecha {
+  padding: .3em 0;
+  margin-bottom: 4em;
+}
+
+/* MODULOS */
+.modulo {
+	margin-bottom: 4em;
+}
+
+/* CARRUSELES */
+.owl-carousel {
+	margin: 2rem 0;
+}
+.owl-carousel .item {
+	padding: 0 .5rem;
+}
+
+/* ARTICULOS */
+.articulo {
+	margin-bottom: 2rem;
+	display: block; 
+	text-decoration: none;
+}
+.articulo-imagen {
+	max-width: none; 
+}
+.articulo-extracto {
+	color: #333;
+}
+.articulo-seccion {
+  display: table-cell;
+  vertical-align: top; 
+}
+.articulo-seccion--vertical {
+	display: block;
+	text-align: center;
+}
+.articulo-seccion:first-child {
+  padding-right: 1rem; 
+}
+.articulo-seccion:last-child:not(:nth-child(2)) {
+  padding-left: 1rem; 
+}
+.articulo-seccion.middle {
+  vertical-align: middle; 
+}
+.articulo-seccion.bottom {
+  vertical-align: bottom; 
+}
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+	.stack-for-small .articulo-seccion {
+	  display: block;
+	  padding: 0;
+	  padding-bottom: 1rem; 
+	}
+  .stack-for-small .articulo-imagen {
+    width: 100%; 
+  } 
+}
+
+/* MIEMBROS */
+.miembro {
+	margin-bottom: 2rem;
+	display: block; 
+	text-decoration: none;
+}
+.miembro-imagen {
+	max-width: none; 
+}
+.miembro-extracto {
+	color: #333;
+}
+.miembro-seccion {
+  display: table-cell;
+  vertical-align: top; 
+}
+.miembro-seccion--vertical {
+	display: block;
+	text-align: center;
+}
+.miembro-seccion:first-child {
+  padding-right: 1rem; 
+}
+.miembro-seccion:last-child:not(:nth-child(2)) {
+  padding-left: 1rem; 
+}
+.miembro-seccion.middle {
+  vertical-align: middle; 
+}
+.miembro-seccion.bottom {
+  vertical-align: bottom; 
+}
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+	.stack-for-small .miembro-seccion {
+	  display: block;
+	  padding: 0;
+	  padding-bottom: 1rem; 
+	}
+  .stack-for-small .miembro-imagen {
+    width: 100%; 
+  } 
+}
+
+/* AGENDA */
+.evento {
+  padding: 1rem 1rem 1rem 0;
+  display: table; 
+}
+.evento-fecha {
+  width: 6rem;
+  margin: 0 auto 1rem;
+  display: table-cell;
+  width: auto; 
+}
+.evento-mes {
+  margin: 0;
+  background: #333;
+  padding: 0.2rem 2rem;
+  text-align: center; 
+  color: #fff;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+}
+.evento-dia {
+  margin: 0;
+  background: #22bb5b;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  font-size: 1.7rem; 
+  font-weight: bold;
+  color: #fff;
+}
+.evento-descripcion {
+  padding: 0 0 0 1rem;
+  text-align: left;
+  display: table-cell;
+  vertical-align: top; 
+}
+.evento-descripcion-cabecera a {
+  text-decoration: none; 
+}
+.evento-descripcion-cabecera {
+  margin: 0 0 0.5rem 0;
+  padding: 0; 
+}
+.evento-descripcion-detalle {
+  margin: 0 0 0.25rem;
+  padding: 0; 
+}
+.evento-descripcion-hora {
+  font-weight: bold; 
+}
+.evento-descripcion .button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0; 
+}
+
+/* CONTROLES */
+.control-abrir {
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  float: left;
+}
+.control-abrir:after {
+  background-color: #333;
+  width: 32px;
+  height: 2px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+  content: "";
+}
+.control-abrir:before {
+  background-color: #333;
+  width: 2px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 14px;
+  content: "";
+}
+.control-abrir--derecha {
+	float: right;
+}
+
+.control-cerrar {
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  float: left;
+}
+.control-cerrar:after {
+  background-color: #333;
+  width: 32px;
+  height: 2px;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  content: "";
+  transform: rotate(45deg);
+}
+.control-cerrar:before {
+  background-color: #333;
+  width: 2px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  content: "";
+  transform: rotate(45deg);
+}
+.control-cerrar--derecha {
+	float: right;
+}
+
+/* TARJETAS */
+.tarjeta {
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  color: #333;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.tarjeta-titulo {
+	font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  line-height: 1.7rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.tarjeta-contenido {
+  padding: 1.3rem;
+  font-weight: 300;
+  height: 16rem;
+}
+.tarjeta-reverso {
+	background: #22bb5b;
+	display: none;
+	position: absolute;
+	top: 0;
+}
+.tarjeta-accion {
+	overflow: hidden;
+	background: #eee;
+  padding: 1.3rem;
+  border-top: 1px solid #ccc;
+}
+.tarjeta-accion a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.tarjeta-accion a:hover {
+	opacity: .5;			
+}
+.tarjeta-imagen {
+  position: relative;
+}
+.tarjeta-imagen .tarjeta-titulo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.3rem;
+  color: #fff;
+}
+.tarjeta-imagen img {
+  border-radius: 2px 2px 0 0;
+}
+
+.tarjeta-morada {
+	background: #54075B;
+	color: #fff;
+}
+.tarjeta-morada .tarjeta-accion {
+	background: transparent;
+	border-top: none;
+	color: #fff;
+}
+.tarjeta-morada .tarjeta-accion a {
+  color: #54075B;
+}
+.tarjeta-morada .control-abrir:after,
+.tarjeta-morada .control-abrir:before,
+.tarjeta-morada .control-cerrar:after,
+.tarjeta-morada .control-cerrar:before {
+  background-color: #fff;
+}
+
+.tarjeta-verde {
+	background: #22bb5b;
+	color: #fff;
+}
+.tarjeta-verde .tarjeta-accion {
+	background: transparent;
+	border-top: none;
+	color: #fff;
+}
+.tarjeta-verde .tarjeta-accion a {
+  color: #22bb5b;
+}
+.tarjeta-verde .control-abrir:after,
+.tarjeta-verde .control-abrir:before,
+.tarjeta-verde .control-cerrar:after,
+.tarjeta-verde .control-cerrar:before {
+  background-color: #fff;
+}
+
+
+/*	UTILIDADES Versión 0.1
+		Clases intercambiables 
+		que ayudan a la maquetación
+***********************************************************************/
+
+/* FORMAS */
+.circular {
+	border-radius: 50%;
+}
+
+/* FLOTADORES */
+.flota-derecha {
+	float: right;
+}
+
+/* TEXTO */
+.texto-centrado {
+  text-align: center;
+}
+.texto-centrado li {
+	margin: 0 auto;
+}
+
+.texto-mini {
+	font-size: 60%;
+}
+
+/* COLORES */
+.fondo-morado,
+.fondo-morado a {
+	background: #54075B;
+	color: #fff;
+}
+
+.fondo-gris--claro {
+  background: #F2F2F2;
+}
+.fondo-gris--medio,
+.fondo-gris--medio a {
+  background: #333;
+  color: #fff;
+}
+.fondo-gris--oscuro,
+.fondo-gris--oscuro a {
+  background: #111;
+  color: #fff;
+}
+
+/* DECORACIÓN PARA LISTAS */
+.entre-lineas li {
+	width: 80%;
+	border-bottom: 1px solid #ccc;
+	padding: .5rem 0;
+}
+.entre-lineas li:last-child {
+	border-bottom: none;
+}
+
+/* BORDES */
+.tiene-borde--arriba {
+	border: none;
+	border-top: 1px solid rgba(10, 10, 10, 0.25);
+}
+
+/* RESEST DE MÁRGENES */
+.sin-margen {
+	margin: 0;
+}
+.sin-margen--arriba {
+	margin-top: 0;
+}
+.sin-margen--abajo {
+	margin-bottom: 0;
+}
+.sin-margen--izquierdo {
+	margin-left: 0;
+}
+.sin-margen--derecho {
+	margin-right: 0;
+}
+
+/* RESET DE RELLENOS */
+.sin-relleno {
+	padding: 0;
+}
+.sin-relleno--arriba {
+	padding-top: 0;
+}
+.sin-relleno--abajo {
+	padding-bottom: 0;
+}
+.sin-relleno--izquierdo {
+	padding-left: 0;
+}
+.sin-relleno--derecho {
+	padding-right: 0;
+}
