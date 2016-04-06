@@ -18,7 +18,7 @@ function CreaMenuInicio() {
 }
 
 function RegistraOpcionesInicio() {
-  
+
   add_option("home_breadcrumb_visibilidad","","","yes");
   add_option("home_carrusel_visibilidad","","","yes");
   add_option("home_destacado_visibilidad","","","yes");
@@ -92,15 +92,16 @@ function RegistraOpcionesInicio() {
   register_setting("opciones_home", "home_callout_texto_boton");
   register_setting("opciones_home", "home_callout_enlace_boton");
 }
+?>
 
+<?php
 function PaginaInicio() {
   if (!current_user_can('manage_options'))
       wp_die(__("No tienes acceso a esta página."));
-
   ?>
-
   <div class="wrap">
     <h1><span class="dashicons dashicons-admin-home" style="font-size: 2rem; margin-right: 1rem;"></span> Página de Inicio <small>- Opciones de configuración</small></h1>
+    
     <hr>
 
     <form method="post" action="options.php">

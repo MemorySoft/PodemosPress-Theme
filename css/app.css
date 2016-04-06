@@ -63,7 +63,7 @@ p {
   margin-bottom: 4em;
 }
 
-/* NAVEGACIÓN */
+/* TOPBAR */
 .top-bar {
   margin-bottom: 2em;
   padding: 0;
@@ -76,34 +76,63 @@ p {
 .top-bar .row {
   margin-bottom: 0;
 }
-.top-bar .row ul li a {
-  color: #666;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 1rem;
-}
-.top-bar .row ul li a:hover {
-  color: #999;
-}
-.top-bar .row ul li a.actual {
-	color: #fff;
-	background:  #54075B;
-}
+
 .top-bar-title {
   color: #54075B;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
-  font-size: 1.9375rem;
+  font-size: 2.7rem;
   font-weight: bold;
 }
 
-.title-bar {
-  background: transparent;
-  overflow: hidden;
-  height: 2.5rem;
+.menu {
+  display: block;
+}
+.menu-item {
+  position: relative;
+}
+.menu .menu-item a {
+  display: block;
+  padding: 1.5rem 1.5rem;
+  line-height: 1;
+  text-transform: uppercase;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+}
+.sub-menu {
+  display: none;
+  list-style: none;
+  width: 200px;
+  position: absolute;
+  margin-top: 4rem;
+  margin-left: 0;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 1px #ccc;
+}
+.sub-menu .menu-item a {
+  background:  #54075B;
+  color: #fff;
+}
+.menu .menu-item:hover .sub-menu {
+  display: inherit;
+}
+.current_page_item {
+  border-bottom:  3px solid #54075B;
+}
+.current_page_item a {
+  color: #54075B;
 }
 
-.menu a {
-	text-decoration: none;
+ul.menu-horizontal {
+  margin: 0;
+}
+.menu-horizontal li {
+  display: inline;
+  float: left;
+  margin-right: 1rem;
+}
+.menu-horizontal li a {
+  display: block;
+  padding: .7rem 1rem;
 }
 
 .breadcrumbs a {
@@ -630,13 +659,18 @@ h4.logo-texto {
 }
 
 /* DECORACIÓN PARA LISTAS */
-.entre-lineas li {
+.lista--entre-lineas li {
 	width: 80%;
 	border-bottom: 1px solid #ccc;
 	padding: .5rem 0;
 }
-.entre-lineas li:last-child {
+.lista--entre-lineas li:last-child {
 	border-bottom: none;
+}
+.lista--simple,
+.lista--simple ul {
+  list-style: none;  
+  margin-left: 0;
 }
 
 /* BORDES */

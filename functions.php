@@ -38,19 +38,52 @@
 **********************************************************************************************************************/
 function podemospress_setup() {
 	// SOPORTE PARA MENUS
-	// Renderiza tus menús usando la función
-	// wp_nav_menu( array( 'theme_location' => 'menu-nombre' ) );
 	add_theme_support( 'menus' );
 	register_nav_menus(array(
-		'menu-principal'	=> __( 'Navegación principal' ),
-		'menu-secundario' 	=> __( 'Navegación secundaria' ),
-		'menu-extra'	=> __( 'Navegación extra' ),
-		'menu-superior' 	=> __( 'Navegación superior' ),
+		'menu-principal'			=> __( 'Menú principal' ),
+		'menu-secundario' 		=> __( 'Menú secundario' ),
+		'menu-noticias' 			=> __( 'Menú noticias' ),
+		'menu-superior' 			=> __( 'Menú superior' ),
+		'menu-inferior'				=> __( 'Menú inferior' ),
 	));
+
+	function menu_principal() {
+		wp_nav_menu( array(
+			'theme_location' 		=> 'menu-principal',
+			'container'       	=> 'nav',
+			'container_class'		=> 'top-bar-menu',
+			'menu_class' 				=> 'menu',
+			'menu_id'         	=> 'menu-primario',
+			'depth'							=> '0',
+			'fallback_cb' 			=> false
+		));
+	}
+	function menu_secundario() {
+		wp_nav_menu( array(
+			'theme_location' 		=> 'menu-secundario',
+			'menu_class' 				=> 'menu-secundario lista--simple lista--entre-lineas'
+		));
+	}
+	function menu_noticias() {
+		wp_nav_menu( array(
+			'theme_location' 		=> 'menu-noticias',
+			'menu_class' 				=> 'menu-noticias lista--simple lista--entre-lineas'
+		));
+	}
+	function menu_superior() {
+		wp_nav_menu( array(
+			'theme_location' 		=> 'menu-superior',
+			'menu_class' 				=> 'menu-superior menu-horizontal'
+		));
+	}
+	function menu_inferior() {
+		wp_nav_menu( array(
+			'theme_location' 		=> 'menu-inferior',
+			'menu_class' 				=> 'menu-inferior lista--simple menu-horizontal'
+		));
+	}
+	
 	// SOPORTE PARA TRADUCCIONES
-	// No olvides formatear las cadenas de texto según el siguiente esquema:
-	// _e( 'string','podemospress' ); para cadenas de texto simples y
-	// la_funcion_wp( __( 'string','podemospress' ); para las funciones
 	load_theme_textdomain( 'podemospress', get_template_directory() . '/languages' );
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -70,10 +103,8 @@ add_action( 'after_setup_theme', 'podemospress_setup' );
 /**
 * SOPORTE PARA JETPACK
 **********************************************************************************************************************/
-// Controla los modulos disponibles
 function prefix_kill_all_the_jetpacks( $modules ) {
 	$whitelist = array(
-		// Comenta las lineas que no quieras que aparezcan en la configuración de JetPack
 		'after-the-deadline',
 		'carousel',
 		'comments',
@@ -151,23 +182,23 @@ if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar( array(
 		'name' => 'Home lateral',
 		'id' => 'home-lateral',
-		'before_widget' => '<div id="%1$s" class="CLASE-DEL-SIDEBAR %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
 	) );
 	register_sidebar( array(
 		'name' => 'Home Footer Uno',
-		'id' => 'home-footer-uno',
-		'before_widget' => '<div id="%1$s" class="CLASE-DEL-SIDEBAR %2$s">',
+		'id' => 'footer-uno',
+		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
 	) );
 	register_sidebar( array(
 		'name' => 'Home Footer Dos',
-		'id' => 'home-footer-dos',
-		'before_widget' => '<div id="%1$s" class="CLASE-DEL-SIDEBAR %2$s">',
+		'id' => 'footer-dos',
+		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
@@ -178,7 +209,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 * BREADCRUMBS
 * http://wp-snippets.com/breadcrumbs-without-plugin/
 **********************************************************************************************************************/ 
-function the_breadcrumb() {
+function breadcrumb() {
 		echo '<ul class="breadcrumbs">';
 	if ( !is_home() ) {
 		echo '<li><a href="';

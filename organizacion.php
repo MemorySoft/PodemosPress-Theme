@@ -1,53 +1,5 @@
-<?php /* Template Name: Organizacion */
-
-	/**
-	 *  VARIABLES DE OPCIONES DE ORGANIZACIÓN
-	 */
-	
-	// Globales
-	$ambito 													= get_option('delegacion_ambito');
-	$region 													= get_option('delegacion_region');
-	// Intro
-	$intro_ver 												= get_option('organizacion_intro_visibilidad');
-	$intro_texto 											= get_option('organizacion_intro_texto');
-	$intro_media											= get_option('organizacion_intro_media');
-	// Asamblea Ciudadana
-	$boton_politico_texto 						= get_option('organizacion_asamblea_texto_documento_politico');
-	$boton_politico_enlace 						= get_option('organizacion_asamblea_enlace_documento_politico');
-	$boton_organizativo_texto 				= get_option('organizacion_asamblea_texto_documento_organizativo');
-  $boton_organizativo_enlace 				= get_option('organizacion_asamblea_enlace_documento_organizativo');
-  $boton_codigo_etico_texto 				= get_option('organizacion_asamblea_texto_documento_codigo_etico');
-  $boton_codigo_etico_enlace 				= get_option('organizacion_asamblea_enlace_documento_codigo_etico');
-  // Organos Internos
-  $ac_descripcion 									= get_option('organizacion_asamblea_descripcion');
-  $sg_descripcion 									= get_option('organizacion_secretaria_descripcion');
-  $sg_texto_boton 									= get_option('organizacion_secretaria_texto_boton');
-  $sg_enlace_boton 									= get_option('organizacion_secretaria_enlace_boton');
-  $cc_descripcion 									= get_option('organizacion_consejo_descripcion');
-  $cc_texto_boton 									= get_option('organizacion_consejo_texto_boton');
-  $cc_enlace_boton 									= get_option('organizacion_consejo_enlace_boton');
-  $cg_descripcion 									= get_option('organizacion_comision_descripcion');
-  $cg_texto_boton 									= get_option('organizacion_comision_texto_boton');
-  $cg_enlace_boton 									= get_option('organizacion_comision_enlace_boton');
-  // Circulos
-  $circulos_ver 										= get_option('organizacion_circulos_visibilidad');
-  $circulos_texto 									= get_option('organizacion_circulos_texto');
-  $circulos_media 									= get_option('organizacion_circulos_media');
-  $circulos_boton_derecho 					= get_option('organizacion_circulos_texto_boton_derecho');
-	$circulos_enlace_boton_derecho 		= get_option('organizacion_circulos_enlace_boton_derecho');
-	$circulos_boton_izquierdo 				= get_option('organizacion_circulos_texto_boton_izquierdo');
-	$circulos_enlace_boton_izquierdo 	= get_option('organizacion_circulos_enlace_boton_izquierdo');
-	// Areas
-	$areas_ver 												= get_option('organizacion_areas_visibilidad');
-	// Callout
-	$callout_ver 											= get_option('organizacion_callout_visibilidad');
-	$callout_titulo										= get_option('organizacion_callout_titulo');
-	$callout_texto 										= get_option('organizacion_callout_texto');
-	$callout_boton 										= get_option('organizacion_callout_texto_boton');
-	$callout_enlace 									= get_option('organizacion_callout_enlace_boton');
-	
-?>
-
+<?php /* Template Name: Organizacion */ ?>
+<?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 			
 <!-- CONTENIDO | INTRO -->
@@ -389,17 +341,17 @@ if ($circulos_ver == 1) { ?>
 <!-- CONTENIDO | RECORDATORIO -->
 
 <?php 
-if ($callout_ver == 1) { ?>
+if ($callout_organizacion_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
 	    <div class="large callout texto-centrado fondo-gris--claro">
-	      <h4><?php echo $callout_titulo ?></h4>
-				<p><?php echo $callout_texto ?></p>
+	      <h4><?php echo $callout_organizacion_titulo ?></h4>
+				<p><?php echo $callout_organizacion_texto ?></p>
 				
 				<?php 
-			  if ($callout_boton !== '' && $callout_enlace !== '') { ?>
-    			<a href="<?php echo $callout_enlace ?>" class="button">
-    				<?php echo $callout_boton ?>
+			  if ($callout_organizacion_boton !== '' && $callout_organizacion_enlace !== '') { ?>
+    			<a href="<?php echo $callout_organizacion_enlace ?>" class="button">
+    				<?php echo $callout_organizacion_boton ?>
     			</a>
 				<?php	} ?>
 

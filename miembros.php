@@ -1,4 +1,5 @@
 <?php /* Template Name: Miembros */ ?>
+<?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | SECRETARÍA GENERAL -->
@@ -8,18 +9,26 @@
     <div class="miembro stack-for-small">
       <div class="miembro-seccion">
         <div class="thumbnail circular">
-          <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+          <img class="miembro-imagen circular" src="<?php echo $sg_imagen ?>" alt="">
         </div>
       </div>
       <div class="miembro-seccion">
-        <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-        <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-        <a href="" class="small success button"><i class="fa fa-download"></i> Reglamento</a>
+        <h4 class="miembro-titulo">Secretaría General 
+					<?php 
+		    	if ($region !== '') { ?>
+		    		<br>de <?php echo $region ?>
+		    	<?php } ?>
+        </h4>
+        <p class="miembro-extracto"><?php echo $sg_bio ?></p>
+        <a href="<?php echo $sg_enlace_boton ?>" class="small success button">
+        	<i class="fa fa-download"></i> 
+        	<?php echo $sg_texto_boton ?>
+        </a>
         <hr>
         <ul class="menu">
-          <li><a href=""><i class="fa fa-twitter"></i></a></li>
-          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-          <li><a href=""><i class="fa fa-envelope"></i></a></li>
+          <li><a href="<?php echo $sg_twitter ?>"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="<?php echo $sg_facebook ?>"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="mailto:<?php echo $sg_email ?>"><i class="fa fa-envelope"></i></a></li>
         </ul>
       </div>
     </div>
@@ -28,339 +37,377 @@
 
 <!-- CONTENIDO | CONSEJO CIUDADANO -->
 
-<div id="cc" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Consejo Ciudadano de Baleares</h5>
-  </div>
-  <div class="small-12 columns texto-centrado">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique. Esse, pariatur, doloribus! Provident officiis asperiores exercitationem eveniet, deleniti dolorem minus temporibus id aliquam, esse voluptates, quae facere, ducimus! Quis unde quia, similique voluptatem sunt iure totam, maxime inventore facere consectetur non?</p>
-    <p>
-      <a href="" class="small success button"><i class="fa fa-download"></i> Reglamento</a>
-      <a href="" class="small success button"><i class="fa fa-download"></i> Actas</a>
-      <a href="contacto.html" class="small button">Contacto</a>
-    </p>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--navegacion">       
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<?php 
+if ($cc_ver == 1) { ?>
+	<div id="cc" class="row">
+	  <div class="small-12 columns">
+	    <h5 class="titulo texto-centrado">Consejo Ciudadano 
+				<?php 
+	    	if ($region !== '') { ?>
+	    		de <?php echo $region ?>
+	    	<?php } ?>
+	    </h5>
+	  </div>
+	  <div class="small-12 columns texto-centrado">
+	    <p><?php echo $cc_descripcion ?></p>
+	    <p>
+		    <?php 
+				if ($cc_enlace_boton_actas !== '' && $cc_texto_boton_actas !== '') { ?>
+		      <a href="<?php echo $cc_enlace_boton_actas ?>" class="small success button">
+		      	<i class="fa fa-download"></i> 
+		      	<?php echo $cc_texto_boton_actas ?>
+		      </a>
+		    <?php } 
 
-</div>
+				if ($cc_enlace_boton_reglamento !== '' && $cc_texto_boton_reglamento !== '') { ?>
+	      <a href="<?php echo $cc_enlace_boton_reglamento ?>" class="small success button">
+	      	<i class="fa fa-download"></i> 
+	      	<?php echo $cc_texto_boton_reglamento ?>
+	      </a>
+				<?php } ?>
+
+	      <!-- <a href="contacto.html" class="small button">Contacto</a> -->
+	    </p>
+	  </div>
+
+	  <div class="small-12 columns">
+	    <div class="-carrusel-tres-items--navegacion">       
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<?php } ?>
 
 <!-- CONTENIDO | COMISIÓN DE GARANTIAS -->
 
-<div id="cgd" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Comisión de Garantias Democráticas de Baleares</h5>
-  </div>
-  <div class="small-12 columns texto-centrado">
-    <p><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a> Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique. Esse, pariatur, doloribus! Provident officiis asperiores exercitationem eveniet, deleniti dolorem minus temporibus id aliquam, esse voluptates, quae facere, ducimus! Quis unde quia, similique voluptatem sunt iure totam, maxime inventore facere consectetur non?</p>
-    <p>
-      <a href="" class="small success button"><i class="fa fa-download"></i> Reglamento</a>
-      <a href="" class="small success button"><i class="fa fa-download"></i> Actas</a>
-      <a href="contacto.html" class="small button">Contacto</a>
-    </p>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--navegacion">       
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="miembro stack-for-small">
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <div class="thumbnail circular">
-              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
-            </div>
-          </div>
-          <div class="miembro-seccion miembro-seccion--vertical">
-            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-            <hr>
-            <a href=""><i class="fa fa-twitter"></i></a>
-            <a href=""><i class="fa fa-facebook"></i></a>
-            <a href=""><i class="fa fa-envelope"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<?php 
+if ($cg_ver == 1) { ?>
+	<div id="cgd" class="row">
+	  <div class="small-12 columns">
+	    <h5 class="titulo texto-centrado">Comisión de Garantias Democráticas 
+				<?php 
+	    	if ($region !== '') { ?>
+	    		de <?php echo $region ?>
+	    	<?php } ?>
+	    </h5>
+	  </div>
+	  <div class="small-12 columns texto-centrado">
+	    <p><?php echo $cc_descripcion ?></p>
+	    <p>
+		    <?php 
+				if ($cg_enlace_boton_actas !== '' && $cg_texto_boton_actas !== '') { ?>
+		      <a href="<?php echo $cg_enlace_boton_actas ?>" class="small success button">
+		      	<i class="fa fa-download"></i> 
+		      	<?php echo $cg_texto_boton_actas ?>
+		      </a>
+		    <?php } 
+
+				if ($cg_enlace_boton_reglamento !== '' && $cg_texto_boton_reglamento !== '') { ?>
+	      <a href="<?php echo $cg_enlace_boton_reglamento ?>" class="small success button">
+	      	<i class="fa fa-download"></i> 
+	      	<?php echo $cg_texto_boton_reglamento ?>
+	      </a>
+				<?php } ?>
+
+	      <!-- <a href="contacto.html" class="small button">Contacto</a> -->
+	    </p>
+	  </div>
+
+	  <div class="small-12 columns">
+	    <div class="-carrusel-tres-items--navegacion">       
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <div class="miembro stack-for-small">
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <div class="thumbnail circular">
+	              <img class="miembro-imagen circular" src="http://placehold.it/200x200" alt="">
+	            </div>
+	          </div>
+	          <div class="miembro-seccion miembro-seccion--vertical">
+	            <h4 class="miembro-titulo">Lorem ipsum dolor sit amet</h4>
+	            <p class="miembro-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
+	            <hr>
+	            <a href=""><i class="fa fa-twitter"></i></a>
+	            <a href=""><i class="fa fa-facebook"></i></a>
+	            <a href=""><i class="fa fa-envelope"></i></a>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<?php } ?>
 
 <!-- CONTENIDO | RECORDATORIO -->
 
 <?php 
-  $callout_ver = get_option('miembros_callout_visibilidad');
-  if ($callout_ver == 1) {
-  ?>
+if ($callout_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
 	    <div class="large callout texto-centrado fondo-gris--claro">
-	      <h4><?php echo get_option('miembros_callout_titulo'); ?></h4>
-	      <?php $callout_ver = get_option('miembros_callout_texto_visibilidad');
-				  if ($callout_ver == 1) {
-				  	?>
-				  		<p><?php echo get_option('miembros_callout_texto'); ?></p>
+	      <h4><?php echo $callout_titulo ?></h4>
+				<p><?php echo $callout_texto ?></p>
+				
+				<?php 
+			  if ($callout_boton !== '' && $callout_enlace !== '') { ?>
+    			<a href="<?php echo $callout_enlace ?>" class="button">
+    				<?php echo $callout_boton ?>
+    			</a>
 				<?php	} ?>
-				<?php $callout_ver = get_option('miembros_callout_boton_visibilidad');
-				  if ($callout_ver == 1) {
-				  	?>
-	      			<a href="<?php echo get_option('miembros_callout_enlace_boton'); ?>" class="button">
-	      				<?php echo get_option('miembros_callout_texto_boton'); ?>
-	      			</a>
-				<?php	} ?>
+
 	    </div>
 	  </div>
 	</div>

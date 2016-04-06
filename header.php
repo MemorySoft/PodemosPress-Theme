@@ -48,7 +48,6 @@
 
   <!-- Cabeceras insertadas por WordPress -->
   <?php wp_head(); ?>
-  
 </head>
 
 <body <?php body_class(); ?>>
@@ -80,20 +79,16 @@
 				      </a>
 				    </div>
 					<?php else : ?>
-			    		<strong>
-			    			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-			    				<?php bloginfo( 'name' ); ?>
-			    			</a>
-			    		</strong>
+		    		<strong>
+		    			<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+		    				<?php bloginfo( 'name' ); ?>
+		    			</a>
+		    		</strong>
 					<?php endif; ?>
         </div>
-        <div id="responsive-menu">
           <div class="top-bar-right">
-            <ul class="menu">
-              <?php wp_nav_menu( array( 'theme_location' => 'menu-principal' ) ); ?>
-            </ul>
+            <?php menu_principal(); ?> 
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -106,7 +101,7 @@
     <div class="row">
       <div class="hide-for-small medium-12 columns">
         <nav aria-label="Estás aquí:" role="navigation">
-          <?php the_breadcrumb(); ?>
+          <?php breadcrumb(); ?>
         </nav>
       </div>
     </div>

@@ -4,24 +4,16 @@
     <div class="franja fondo-gris--claro sin-margen--abajo">
       <div class="row footer">
         <div class="small-12 large-3 columns">
-          <h5>NAVEGACIÓN</h5>
-          <ul class="no-bullet entre-lineas">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
+          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-uno') ) : ?>
+            <h5><?php echo get_option('delegacion_nombre'); ?></h5>
+            <?php menu_secundario(); ?> 
+          <?php endif; ?>
         </div>
         <div class="small-12 large-3 columns">
-          <h5>NAVEGACIÓN</h5>
-          <ul class="no-bullet entre-lineas">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Lorem ipsum</a></li>
-          </ul>
+          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-dos') ) : ?>
+            <h5>Noticias</h5>
+            <?php menu_noticias(); ?> 
+          <?php endif; ?>
         </div>
         <div class="small-12 large-3 columns">
           <h5>PODEM ILLES</h5>
@@ -44,9 +36,7 @@
     <div class="franja--estrecha fondo-gris--oscuro sin-margen--abajo">
       <div class="row sin-margen--abajo">
         <div class="small-12 large-9 columns">
-          <ul class="menu">
-            <?php wp_nav_menu( array( 'theme_location' => 'menu-secundario' ) ); ?>
-          </ul>
+          <?php menu_inferior(); ?> 
         </div>
         <div class="small-12 large-3 columns">
           <ul class="menu">

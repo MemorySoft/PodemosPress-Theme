@@ -18,113 +18,191 @@ function CreaMenuParticipacion() {
 }
 
 function RegistraOpcionesParticipacion() {
-    // Añadimos las opciones a la base de datos
-    add_option("delegacion_nombre","","","yes");
-	  add_option("delegacion_direccion","","","yes");
-	  add_option("delegacion_telefono","","","yes");
-	  add_option("delegacion_horario_am","","","yes");
-	  add_option("delegacion_horario_pm","","","yes");
-	  add_option("delegacion_mapa","","","yes");
-	  add_option("delegacion_twitter","","","yes");
-	  add_option("delegacion_facebook","","","yes");
-	  add_option("delegacion_youtube","","","yes");
-	  add_option("delegacion_instagram","","","yes");
-		add_option("delegacion_analitica","","","yes");
 
-    // Regististramos las opciones que este formulario puede actualizar
-    register_setting("datos_contacto", "delegacion_nombre");
-	  register_setting("datos_contacto", "delegacion_direccion");
-	  register_setting("datos_contacto", "delegacion_telefono");
-	  register_setting("datos_contacto", "delegacion_horario_am");
-	  register_setting("datos_contacto", "delegacion_horario_pm");
-	  register_setting("datos_contacto", "delegacion_mapa");
-	  register_setting("datos_contacto", "delegacion_twitter");
-	  register_setting("datos_contacto", "delegacion_facebook");
-	  register_setting("datos_contacto", "delegacion_youtube");
-	  register_setting("datos_contacto", "delegacion_instagram");
-	  register_setting("datos_contacto", "delegacion_analitica");
+    add_option("participacion_destacado_visibilidad","","","yes");
+    add_option("participacion_destacado_titulo","","","yes");
+	  add_option("participacion_destacado_logo","","","yes");
+	  add_option("participacion_destacado_texto","","","yes");
+	  add_option("participacion_destacado_media","","","yes");
+	  add_option("participacion_destacado_texto_boton_uno","","","yes");
+	  add_option("participacion_destacado_enlace_boton_uno","","","yes");
+    add_option("participacion_destacado_texto_boton_dos","","","yes");
+    add_option("participacion_destacado_enlace_boton_dos","","","yes");
+
+    add_option("participacion_herramientas_visibilidad","","","yes");
+    add_option("participacion_herramientas_enlace_columna_izquierda","","","yes");
+    add_option("participacion_herramientas_imagen_columna_izquierda","","","yes");
+    add_option("participacion_herramientas_enlace_columna_central","","","yes");
+    add_option("participacion_herramientas_imagen_columna_central","","","yes");
+    add_option("participacion_herramientas_enlace_columna_derecha","","","yes");
+    add_option("participacion_herramientas_imagen_columna_derecha","","","yes");
+
+    add_option("participacion_callout_visibilidad","","","yes");
+    add_option("participacion_callout_titulo","","","yes");
+    add_option("participacion_callout_texto","","","yes");
+    add_option("participacion_callout_texto_boton","","","yes");
+    add_option("participacion_callout_enlace_boton","","","yes");
+
+    register_setting("opciones_participacion", "participacion_destacado_visibilidad");
+    register_setting("opciones_participacion", "participacion_destacado_titulo");
+	  register_setting("opciones_participacion", "participacion_destacado_logo");
+	  register_setting("opciones_participacion", "participacion_destacado_texto");
+	  register_setting("opciones_participacion", "participacion_destacado_media");
+	  register_setting("opciones_participacion", "participacion_destacado_texto_boton_uno");
+	  register_setting("opciones_participacion", "participacion_destacado_enlace_boton_uno");
+	  register_setting("opciones_participacion", "participacion_destacado_texto_boton_dos");
+	  register_setting("opciones_participacion", "participacion_destacado_enlace_boton_dos");
+
+    register_setting("opciones_participacion", "participacion_herramientas_visibilidad");
+    register_setting("opciones_participacion", "participacion_herramientas_enlace_columna_izquierda");
+    register_setting("opciones_participacion", "participacion_herramientas_imagen_columna_izquierda");
+    register_setting("opciones_participacion", "participacion_herramientas_enlace_columna_central");
+    register_setting("opciones_participacion", "participacion_herramientas_imagen_columna_central");
+    register_setting("opciones_participacion", "participacion_herramientas_enlace_columna_derecha");
+    register_setting("opciones_participacion", "participacion_herramientas_imagen_columna_derecha");
+
+    register_setting("opciones_participacion", "participacion_callout_visibilidad");
+    register_setting("opciones_participacion", "participacion_callout_titulo");
+    register_setting("opciones_participacion", "participacion_callout_texto");
+    register_setting("opciones_participacion", "participacion_callout_texto_boton");
+    register_setting("opciones_participacion", "participacion_callout_enlace_boton");
 }
 ?>
 
 <?php
-
 function PaginaParticipacion() {
     if (!current_user_can('manage_options'))
         wp_die(__("No tienes acceso a esta página."));
     ?>
     <div class="wrap">
-        <h1><span class="dashicons dashicons-testimonial" style="font-size: 2rem; margin-right: 1rem;"></span> Página de Participación</h1>
-        <p>Opciones de configuración de la página de Participación</p>
+        <h1><span class="dashicons dashicons-format-chat" style="font-size: 2rem; margin-right: 1rem;"></span> Página de Participación <small>- Opciones de configuración</small></h1>
+        
         <hr>
 
         <form method="post" action="options.php">
-          <?php settings_fields('datos_contacto'); ?>
+          <?php settings_fields('opciones_participacion'); ?>
 
-					<h2>Datos de contacto</h2>
-					<p>Estos son los datos de contacto de la delegación, aparecerán en el footer y en la página de contacto.</p>
+					<h2>Destacado</h2>
+          <p>Esta es la sección arriba de la página que muestra contenido multimedia y un texto destacado. Especialmente indicado para las campañas Impulsa.</p>
           <table class="form-table">
             <tr valign="top">
-              <th scope="row">Nombre de la delegación</th>
-              <td><input type="text" name="delegacion_nombre" size="30" value="<?php echo get_option('delegacion_nombre'); ?>" /><br>
-              <small>Ej: Podem Balears</small></td>
+              <th scope="row">Mostrar Destacado</th>
+              <td>
+              <?php $options = get_option( "participacion_destacado_visibilidad" ); ?>
+              <input type="checkbox" name="participacion_destacado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Destacados</span>
+            </tr>
+          </table>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Titulo del destacado</th>
+              <td><input type="text" name="participacion_destacado_titulo" size="40" value="<?php echo get_option('participacion_destacado_titulo'); ?>" />
             </tr>
             <tr valign="top">
-              <th scope="row">Dirección de la sede</th>
-              <td><input type="text" name="delegacion_direccion" size="30" value="<?php echo get_option('delegacion_direccion'); ?>" /></td>
+              <th scope="row">Logotipo opcional</th>
+              <td><input type="text" name="participacion_destacado_logo" size="40" value="<?php echo get_option('participacion_destacado_logo'); ?>" />
+              <p class="description">Pega aquí la URL de la imagen.</p></td>
             </tr>
             <tr valign="top">
-              <th scope="row">Teléfono de contacto</th>
-              <td><input type="text" name="delegacion_telefono" size="30" value="<?php echo get_option('delegacion_telefono'); ?>" /></td>
+              <th scope="row">Texto del destacado</th>
+              <td><textarea name="participacion_destacado_texto" cols="37" rows="10"><?php echo get_option('participacion_destacado_texto'); ?></textarea>
+              <p class="description">Puedes usar &lt;br&gt;&lt;br&gt; para separar parrafos.</p></td>
             </tr>
             <tr valign="top">
-              <th scope="row">Horario de mañanas</th>
-              <td><input type="text" name="delegacion_horario_am" size="30" value="<?php echo get_option('delegacion_horario_am'); ?>" /></td>
+              <th scope="row">Contenido multimedia</th>
+              <td><textarea name="participacion_destacado_media" cols="37" rows="10"><?php echo get_option('participacion_destacado_media'); ?></textarea>
+              <p class="description">Pega aquí el código de YouTube o el enlace a la imagen. <br>El contenido debe tener 600px de ancho como mínimo.</p></td>
             </tr>
             <tr valign="top">
-              <th scope="row">Horario de tardes</th>
-              <td><input type="text" name="delegacion_horario_pm" size="30" value="<?php echo get_option('delegacion_horario_pm'); ?>" /></td>
+            <th scope="row">Botón uno</th>
+            <td>
+            <input type="text" name="participacion_destacado_texto_boton_uno" size="40" value="<?php echo get_option('participacion_destacado_texto_boton_uno'); ?>" />
+            <span class="description">Texto del botón</span>
+            <br>
+            <input type="text" name="participacion_destacado_enlace_boton_uno" size="40" value="<?php echo get_option('participacion_destacado_enlace_boton_uno'); ?>" />
+            <span class="description">Enlace del botón</span>
+            <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Botón dos</th>
+            <td>
+            <input type="text" name="participacion_destacado_texto_boton_dos" size="40" value="<?php echo get_option('participacion_destacado_texto_boton_dos'); ?>" />
+            <span class="description">Texto del botón</span>
+            <br>
+            <input type="text" name="participacion_destacado_enlace_boton_dos" size="40" value="<?php echo get_option('participacion_destacado_enlace_boton_dos'); ?>" />
+            <span class="description">Enlace del botón</span>
+            <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+          </tr>
+          </table>
+
+          <hr>
+
+          <h2>Herramientas de participacion</h2>
+          <p>Esta es la sección que muestra los enlaces a las herramientas de participación de esta delegación.</p>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Mostrar Herramientas</th>
+              <td>
+              <?php $options = get_option( "participacion_herramientas_visibilidad" ); ?>
+              <input type="checkbox" name="participacion_herramientas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Herramientas</span>
             </tr>
             <tr valign="top">
-              <th scope="row">Mapa</th>
-              <td><textarea name="delegacion_mapa" cols="37" rows="10"><?php echo get_option('delegacion_mapa'); ?></textarea><br>
-              <small>Pega aquí el código de Google Maps</small></td>
+              <th scope="row">Columna izquierda</th>
+              <td>
+              <input type="text" name="participacion_herramientas_enlace_columna_izquierda" size="40" value="<?php echo get_option('participacion_herramientas_enlace_columna_izquierda'); ?>" />
+              <span class="description">Enlace</span>
+              <br>
+              <input type="text" name="participacion_herramientas_imagen_columna_izquierda" size="40" value="<?php echo get_option('participacion_herramientas_imagen_columna_izquierda'); ?>" />
+              <span class="description">Imagen</span>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Columna central</th>
+              <td>
+              <input type="text" name="participacion_herramientas_enlace_columna_central" size="40" value="<?php echo get_option('participacion_herramientas_enlace_columna_central'); ?>" />
+              <span class="description">Enlace</span>
+              <br>
+              <input type="text" name="participacion_herramientas_imagen_columna_central" size="40" value="<?php echo get_option('participacion_herramientas_imagen_columna_central'); ?>" />
+              <span class="description">Imagen</span>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Columna derecha</th>
+              <td>
+              <input type="text" name="participacion_herramientas_imagen_columna_derecha" size="40" value="<?php echo get_option('participacion_herramientas_imagen_columna_derecha'); ?>" />
+              <span class="description">Enlace</span>
+              <br>
+              <input type="text" name="participacion_herramientas_imagen_columna_derecha" size="40" value="<?php echo get_option('participacion_herramientas_imagen_columna_derecha'); ?>" />
+              <span class="description">Imagen</span>
             </tr>
           </table>
 
           <hr>
 
-          <h2>Perfiles sociales</h2>
+          <h2>Callout</h2>
+          <p>Esta es la sección a pie de página que sirve para insertar mensajes destacados con título, texto y enlace opcionales.</p>
           <table class="form-table">
             <tr valign="top">
-              <th scope="row">Twitter</th>
-              <td><input type="text" name="delegacion_twitter" size="40" value="<?php echo get_option('delegacion_twitter'); ?>" /><br>
-              <small>URL de Twitter</small></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Facebook</th>
-              <td><input type="text" name="delegacion_facebook" size="40" value="<?php echo get_option('delegacion_facebook'); ?>" /><br>
-              <small>URL de Facebook</small></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">YouTube</th>
-              <td><input type="text" name="delegacion_youtube" size="40" value="<?php echo get_option('delegacion_youtube'); ?>" /><br>
-              <small>URL de YouTube</small></td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Instagram</th>
-              <td><input type="text" name="delegacion_instagram" size="40" value="<?php echo get_option('delegacion_instagram'); ?>" /><br>
-              <small>URL de Instagram</small></td>
+              <th scope="row">Mostrar callout</th>
+              <td>
+              <?php $options = get_option( "participacion_callout_visibilidad" ); ?>
+              <input type="checkbox" name="participacion_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
             </tr>
           </table>
-
-          <hr>
-
-          <h2>Analitica de página</h2>
-          <p>Las analíticas de página ayudan a saber el número de visitantes, las páginas más vistas y otros parametros relativos a este sitio web.</p>
           <table class="form-table">
             <tr valign="top">
-              <th scope="row">ID de Google Analytics</th>
-              <td><input type="text" name="delegacion_analitica" size="30" value="<?php echo get_option('delegacion_analitica'); ?>" /></td>
+              <th scope="row">Título del callout</th>
+              <td><input type="text" name="participacion_callout_titulo" size="40" value="<?php echo get_option('participacion_callout_titulo'); ?>" /></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Texto del callout</th>
+              <td><textarea name="participacion_callout_texto" cols="37" rows="10"><?php echo get_option('participacion_callout_texto'); ?></textarea></td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Botón del callout</th>
+              <td><input type="text" name="participacion_callout_texto_boton" size="40" value="<?php echo get_option('participacion_callout_texto_boton'); ?>" />
+              <span class="description">Texto del botón</span>
+              <br>
+              <input type="text" name="participacion_callout_enlace_boton" size="40" value="<?php echo get_option('participacion_callout_enlace_boton'); ?>" />
+              <span class="description">Enlace del botón</span>
+              <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
             </tr>
           </table>
 

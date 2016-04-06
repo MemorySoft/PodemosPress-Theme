@@ -20,7 +20,7 @@ function CreaMenuOrganizacion() {
 }
 
 function RegistraOpcionesOrganizacion() {
-  // Añadimos las opciones a la base de datos
+
   add_option("organizacion_intro_visibilidad","","","yes");
   add_option("organizacion_intro_texto","","","yes");
   add_option("organizacion_intro_media","","","yes");
@@ -59,59 +59,59 @@ function RegistraOpcionesOrganizacion() {
   add_option("organizacion_callout_texto_boton","","","yes");
   add_option("organizacion_callout_enlace_boton","","","yes");
   
-  // Regististramos las opciones que este formulario puede actualizar
-  register_setting("pagina_organizacion", "organizacion_intro_visibilidad");
-  register_setting("pagina_organizacion", "organizacion_intro_texto");
-  register_setting("pagina_organizacion", "organizacion_intro_media");
 
-  register_setting("pagina_organizacion", "organizacion_asamblea_descripcion");
-  register_setting("pagina_organizacion", "organizacion_asamblea_texto_documento_politico");
-  register_setting("pagina_organizacion", "organizacion_asamblea_enlace_documento_politico");
-  register_setting("pagina_organizacion", "organizacion_asamblea_texto_documento_organizativo");
-  register_setting("pagina_organizacion", "organizacion_asamblea_enlace_documento_organizativo");
-  register_setting("pagina_organizacion", "organizacion_asamblea_texto_documento_codigo_etico");
-  register_setting("pagina_organizacion", "organizacion_asamblea_enlace_documento_codigo_etico");
+  register_setting("opciones_organizacion", "organizacion_intro_visibilidad");
+  register_setting("opciones_organizacion", "organizacion_intro_texto");
+  register_setting("opciones_organizacion", "organizacion_intro_media");
 
-  register_setting("pagina_organizacion", "organizacion_secretaria_descripcion");
-  register_setting("pagina_organizacion", "organizacion_secretaria_texto_boton");
-  register_setting("pagina_organizacion", "organizacion_secretaria_enlace_boton");
-  register_setting("pagina_organizacion", "organizacion_consejo_descripcion"); 
-  register_setting("pagina_organizacion", "organizacion_consejo_texto_boton");
-  register_setting("pagina_organizacion", "organizacion_consejo_enlace_boton");
-  register_setting("pagina_organizacion", "organizacion_comision_descripcion");
-  register_setting("pagina_organizacion", "organizacion_comision_texto_boton");
-  register_setting("pagina_organizacion", "organizacion_comision_enlace_boton");
+  register_setting("opciones_organizacion", "organizacion_asamblea_descripcion");
+  register_setting("opciones_organizacion", "organizacion_asamblea_texto_documento_politico");
+  register_setting("opciones_organizacion", "organizacion_asamblea_enlace_documento_politico");
+  register_setting("opciones_organizacion", "organizacion_asamblea_texto_documento_organizativo");
+  register_setting("opciones_organizacion", "organizacion_asamblea_enlace_documento_organizativo");
+  register_setting("opciones_organizacion", "organizacion_asamblea_texto_documento_codigo_etico");
+  register_setting("opciones_organizacion", "organizacion_asamblea_enlace_documento_codigo_etico");
 
-  register_setting("pagina_organizacion","organizacion_areas_visibilidad");
+  register_setting("opciones_organizacion", "organizacion_secretaria_descripcion");
+  register_setting("opciones_organizacion", "organizacion_secretaria_texto_boton");
+  register_setting("opciones_organizacion", "organizacion_secretaria_enlace_boton");
+  register_setting("opciones_organizacion", "organizacion_consejo_descripcion"); 
+  register_setting("opciones_organizacion", "organizacion_consejo_texto_boton");
+  register_setting("opciones_organizacion", "organizacion_consejo_enlace_boton");
+  register_setting("opciones_organizacion", "organizacion_comision_descripcion");
+  register_setting("opciones_organizacion", "organizacion_comision_texto_boton");
+  register_setting("opciones_organizacion", "organizacion_comision_enlace_boton");
 
-  register_setting("pagina_organizacion", "organizacion_circulos_visibilidad");
-  register_setting("pagina_organizacion", "organizacion_circulos_texto");
-  register_setting("pagina_organizacion", "organizacion_circulos_media");
-  register_setting("pagina_organizacion", "organizacion_circulos_texto_boton_derecho");
-  register_setting("pagina_organizacion", "organizacion_circulos_enlace_boton_derecho");
-  register_setting("pagina_organizacion", "organizacion_circulos_texto_boton_izquierdo");
-  register_setting("pagina_organizacion", "organizacion_circulos_enlace_boton_izquierdo");
+  register_setting("opciones_organizacion","organizacion_areas_visibilidad");
 
-  register_setting("pagina_organizacion", "organizacion_callout_visibilidad");
-  register_setting("pagina_organizacion", "organizacion_callout_titulo");
-  register_setting("pagina_organizacion", "organizacion_callout_texto");
-  register_setting("pagina_organizacion", "organizacion_callout_texto_boton");
-  register_setting("pagina_organizacion", "organizacion_callout_enlace_boton");   
+  register_setting("opciones_organizacion", "organizacion_circulos_visibilidad");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto");
+  register_setting("opciones_organizacion", "organizacion_circulos_media");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_derecho");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_derecho");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_izquierdo");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_izquierdo");
+
+  register_setting("opciones_organizacion", "organizacion_callout_visibilidad");
+  register_setting("opciones_organizacion", "organizacion_callout_titulo");
+  register_setting("opciones_organizacion", "organizacion_callout_texto");
+  register_setting("opciones_organizacion", "organizacion_callout_texto_boton");
+  register_setting("opciones_organizacion", "organizacion_callout_enlace_boton");   
 }
 ?>
 
 <?php
-
 function PaginaOrganizacion() {
     if (!current_user_can('manage_options'))
         wp_die(__("No tienes acceso a esta página."));
     ?>
     <div class="wrap">
       <h1><span class="dashicons dashicons-networking" style="font-size: 2rem; margin-right: 1rem;"></span> Pagina de Organización <small>- Opciones de configuración</small></h1>
+      
       <hr>
 
       <form method="post" action="options.php">
-        <?php settings_fields('pagina_organizacion'); ?>
+        <?php settings_fields('opciones_organizacion'); ?>
 
         <h2>Introducción</h2>
         <p>Esta es la sección arriba de la página que muestra un video y un texto introductorio.</p>

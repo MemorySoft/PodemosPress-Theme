@@ -1,55 +1,5 @@
-<?php 
-
-  /**
-   *  VARIABLES DE OPCIONES DE HOME
-   */
-
-  // Globales
-  $ambito                           = get_option('delegacion_ambito');
-  $region                           = get_option('delegacion_region');
-  // Breadcrumb
-  $breadcrumb_ver                   = get_option("home_breadcrumb_visibilidad");
-  // Carrusel
-  $carrusel_ver                     = get_option("home_carrusel_visibilidad");
-  // Destacado
-  $destacado_ver                    = get_option("home_destacado_visibilidad");
-  // Portales
-  $port_ver                         = get_option("home_portales_visibilidad");
-  $port_titulo_izq                  = get_option("home_portales_titulo_izquierda");
-  $port_texto_izq                   = get_option("home_portales_texto_izquierda");
-  $port_texto_btn_izq               = get_option("home_portales_texto_boton_izquierda");
-  $port_enlace_btn_izq              = get_option("home_portales_enlace_boton_izquierda");
-  $port_titulo_der                  = get_option("home_portales_titulo_derecha");
-  $port_texto_der                   = get_option("home_portales_texto_derecha");
-  $port_texto_btn_der               = get_option("home_portales_texto_boton_derecha");
-  $port_enlace_btn_der              = get_option("home_portales_enlace_boton_derecha");
-  // Videos
-  $video_ver                        = get_option("home_videos_visibilidad");
-  $video_uno                        = get_option("home_video_uno");
-  $video_dos                        = get_option("home_video_dos");
-  $video_tres                       = get_option("home_video_tres");
-  // Colaboracion
-  $colab_ver                        = get_option("home_colaboracion_visibilidad");
-  $colab_titulo_uno                 = get_option("home_colaboracion_titulo_uno");
-  $colab_texto_uno                  = get_option("home_colaboracion_texto_uno");
-  $colab_enlace_uno                 = get_option("home_colaboracion_enlace_uno");
-  $colab_titulo_dos                 = get_option("home_colaboracion_titulo_dos");
-  $colab_texto_dos                  = get_option("home_colaboracion_texto_dos");
-  $colab_enlace_dos                 = get_option("home_colaboracion_enlace_dos");
-  $colab_titulo_tres                = get_option("home_colaboracion_titulo_tres");
-  $colab_texto_tres                 = get_option("home_colaboracion_texto_tres");
-  $colab_enlace_tres                = get_option("home_colaboracion_enlace_tres");
-  $colab_titulo_cuatro              = get_option("home_colaboracion_titulo_cuatro");
-  $colab_texto_cuatro               = get_option("home_colaboracion_texto_cuatro");
-  $colab_enlace_cuatro              = get_option("home_colaboracion_enlace_cuatro");
-  // Callout
-  $callout_ver                      = get_option('home_callout_visibilidad');
-  $callout_titulo                   = get_option('home_callout_titulo');
-  $callout_texto                    = get_option('home_callout_texto');
-  $callout_boton                    = get_option('home_callout_texto_boton');
-  $callout_enlace                   = get_option('home_callout_enlace_boton');
- ?>
-
+<?php /* Template Name: Portada */ ?>
+<?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 
 	<!-- CONTENIDO DESTACADO | CARRUSEL DE NOTICIAS -->
@@ -97,19 +47,19 @@
   <!-- CONTENIDO DESTACADO | ACCESO PORTALES -->
 
   <?php 
-  	if ($port_ver == 1) {
+  	if ($portales_ver == 1) {
 		?>
 	  <div class="franja fondo-gris--claro">
 	    <div class="row sin-margen--abajo texto-centrado">
 	      <div class="small-12 large-6 columns">
-	        <h4><?php echo $port_titulo_izq ?></h4>
-	        <p><?php echo $port_texto_izq ?></p>
-	        <a href="<?php echo $port_enlace_btn_izq ?>" class="small button"><?php echo $port_texto_btn_izq ?></a>
+	        <h4><?php echo $portales_titulo_izq ?></h4>
+	        <p><?php echo $portales_texto_izq ?></p>
+	        <a href="<?php echo $portales_enlace_btn_izq ?>" class="small button"><?php echo $portales_texto_btn_izq ?></a>
 	      </div>
 	      <div class="small-12 large-6 columns">
-	        <h4><?php echo $port_titulo_der ?></h4>
-          <p><?php echo $port_texto_der ?></p>
-          <a href="<?php echo $port_enlace_btn_der ?>" class="small button"><?php echo $port_texto_btn_der ?></a>
+	        <h4><?php echo $portales_titulo_der ?></h4>
+          <p><?php echo $portales_texto_der ?></p>
+          <a href="<?php echo $portales_enlace_btn_der ?>" class="small button"><?php echo $portales_texto_btn_der ?></a>
 	      </div>
 	    </div>
 	  </div>
@@ -338,7 +288,7 @@
   <!-- CONTENIDO DESTACADO | COLABORACIÓN -->
 
 	<?php 
-  	if ($colab_ver == 1) {
+  	if ($colabora_ver == 1) {
   	?>
 	  <div class="row" data-equalizer data-equalize-on="medium">
 	    <div class="small-12 columns">
@@ -347,11 +297,11 @@
 	    <div class="small-12 large-3 columns">
 
         <?php 
-        if ($colab_enlace_uno !== '' && $colab_titulo_uno !== '' && $colab_texto_uno !== '') { ?>
-  	    	<a href="<?php echo $colab_enlace_uno ?>">
+        if ($colabora_enlace_uno !== '' && $colabora_titulo_uno !== '' && $colabora_texto_uno !== '') { ?>
+  	    	<a href="<?php echo $colabora_enlace_uno ?>">
   	      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
-  	          <h5><?php echo $colab_titulo_uno ?></h5>
-  	          <p><?php echo $colab_texto_uno ?></p>
+  	          <h5><?php echo $colabora_titulo_uno ?></h5>
+  	          <p><?php echo $colabora_texto_uno ?></p>
   	      	</div>
   	      </a>
         <?php } ?>
@@ -359,24 +309,11 @@
 	    </div>
 	    <div class="small-12 large-3 columns">
         <?php 
-        if ($colab_enlace_dos !== '' && $colab_titulo_dos !== '' && $colab_texto_dos !== '') { ?>
-  	    	<a href="<?php echo $colab_enlace_dos ?>">
+        if ($colabora_enlace_dos !== '' && $colabora_titulo_dos !== '' && $colabora_texto_dos !== '') { ?>
+  	    	<a href="<?php echo $colabora_enlace_dos ?>">
   	      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
-  	          <h5><?php echo $colab_titulo_dos ?></h5>
-  	          <p><?php echo $colab_texto_dos ?></p>
-  	      	</div>
-  	      </a>
-        <?php } ?>
-
-	    </div>
-	    <div class="small-12 large-3 columns">
-
-        <?php 
-        if ($colab_enlace_tres !== '' && $colab_titulo_tres !== '' && $colab_texto_tres !== '') { ?>
-  	    	<a href="<?php echo $colab_enlace_tres ?>">
-  	      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
-  	          <h5><?php echo $colab_titulo_tres ?></h5>
-  	          <p><?php echo $colab_texto_tres ?></p>
+  	          <h5><?php echo $colabora_titulo_dos ?></h5>
+  	          <p><?php echo $colabora_texto_dos ?></p>
   	      	</div>
   	      </a>
         <?php } ?>
@@ -385,11 +322,24 @@
 	    <div class="small-12 large-3 columns">
 
         <?php 
-        if ($colab_enlace_cuatro !== '' && $colab_titulo_cuatro !== '' && $colab_texto_cuatro !== '') { ?>
-  	    	<a href="<?php echo $colab_enlace_cuatro ?>">
+        if ($colabora_enlace_tres !== '' && $colabora_titulo_tres !== '' && $colabora_texto_tres !== '') { ?>
+  	    	<a href="<?php echo $colabora_enlace_tres ?>">
   	      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
-  	          <h5><?php echo $colab_titulo_cuatro ?></h5>
-  	          <p><?php echo $colab_texto_cuatro ?></p>
+  	          <h5><?php echo $colabora_titulo_tres ?></h5>
+  	          <p><?php echo $colabora_texto_tres ?></p>
+  	      	</div>
+  	      </a>
+        <?php } ?>
+
+	    </div>
+	    <div class="small-12 large-3 columns">
+
+        <?php 
+        if ($colabora_enlace_cuatro !== '' && $colabora_titulo_cuatro !== '' && $colabora_texto_cuatro !== '') { ?>
+  	    	<a href="<?php echo $colabora_enlace_cuatro ?>">
+  	      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
+  	          <h5><?php echo $colabora_titulo_cuatro ?></h5>
+  	          <p><?php echo $colabora_texto_cuatro ?></p>
   	      	</div>
   	      </a>
         <?php } ?>
@@ -401,17 +351,17 @@
   <!-- CONTENIDO | RECORDATORIO -->
 
   <?php 
-  if ($callout_ver == 1) { ?>
+  if ($callout_home_ver == 1) { ?>
     <div class="row">
       <div class="small-12 columns">
         <div class="large callout texto-centrado fondo-gris--claro">
-          <h4><?php echo $callout_titulo ?></h4>
-          <p><?php echo $callout_texto ?></p>
+          <h4><?php echo $callout_home_titulo ?></h4>
+          <p><?php echo $callout_home_texto ?></p>
           
           <?php 
-          if ($callout_boton !== '' && $callout_enlace !== '') { ?>
-            <a href="<?php echo $callout_enlace ?>" class="button">
-              <?php echo $callout_boton ?>
+          if ($callout_home_boton !== '' && $callout_home_enlace !== '') { ?>
+            <a href="<?php echo $callout_home_enlace ?>" class="button">
+              <?php echo $callout_home_boton ?>
             </a>
           <?php } ?>
 

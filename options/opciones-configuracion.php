@@ -27,6 +27,7 @@ function CreaMenuConfiguracion() {
 }
 
 function RegistraOpcionesConfiguracion() {
+
   add_option("delegacion_ambito","","","yes");
   add_option("delegacion_region","","","yes");
   add_option("delegacion_nombre","","","yes");
@@ -62,8 +63,8 @@ function ConfiguracionGlobal() {
     ?> 
 
     <div class="wrap">
-        <h1><span class="dashicons dashicons-admin-generic" style="font-size: 2rem; margin-right: 1rem;"></span>  Configuración global</h1>
-        <p>Gestiona los ajustes globales del sitio web</p>
+        <h1><span class="dashicons dashicons-admin-generic" style="font-size: 2rem; margin-right: 1rem;"></span>  Configuración global <small>- Ajustes globales del sitio web</small></h1>
+      
         <hr>
 
         <form method="post" action="options.php">
