@@ -179,16 +179,34 @@ function add_fb_open_graph_tags() {
 * SIDEBARS Y AREAS DE WIDGETS
 **********************************************************************************************************************/ 
 if ( function_exists( 'register_sidebar' ) ) {
+	// Home
 	register_sidebar( array(
-		'name' => 'Home lateral',
-		'id' => 'home-lateral',
+		'name' => 'Home lateral Uno',
+		'id' => 'home-lateral-uno',
 		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
 	) );
 	register_sidebar( array(
-		'name' => 'Home Footer Uno',
+		'name' => 'Home lateral Dos',
+		'id' => 'home-lateral-dos',
+		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+	register_sidebar( array(
+		'name' => 'Home lateral Tres',
+		'id' => 'home-lateral-tres',
+		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+	// Footer
+	register_sidebar( array(
+		'name' => 'Footer Uno',
 		'id' => 'footer-uno',
 		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',
@@ -196,7 +214,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_title' => '',
 	) );
 	register_sidebar( array(
-		'name' => 'Home Footer Dos',
+		'name' => 'Footer Dos',
 		'id' => 'footer-dos',
 		'before_widget' => '<div id="%1$s" class="widget-contenedor %2$s">',
 		'after_widget' => '</div>',

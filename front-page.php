@@ -179,8 +179,9 @@
 
     <div class="small-12 large-4 columns barra-lateral">
       
-      <div class="modulo modulo-agenda">
-        <h5 class="titulo">Eventos</h5>
+      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-uno') ) : ?>
+      	<div class="modulo modulo-agenda">
+        	<h5 class="titulo">Eventos</h5>
           <div class="modulo-agenda-lista">
             <article class="evento">
               <div class="evento-fecha">
@@ -225,35 +226,40 @@
           <div class="modulo-controles">
             <a href="#" class="tiny button">Ver agenda completa</a>
           </div>
-      </div>
+      	</div>
+      <?php endif; ?>
 
-      <div class="modulo modulo-twitter">
-        <h5 class="titulo">Twitter</h5>
-        <a class="twitter-timeline"  href="https://twitter.com/hectorasencio" data-widget-id="701706379107680256">Tweets por @hectorasencio.</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
+      <!-- BARRA LATERAL | REDES -->
+
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-dos') ) : ?>
+	      <div class="modulo modulo-twitter">
+	        <h5 class="titulo">Redes</h5>
+	        <a class="twitter-timeline"  href="https://twitter.com/hectorasencio" data-widget-id="701706379107680256">Tweets por @hectorasencio.</a>
+	        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	        </script>
+	      </div>
+	    <?php endif; ?>
 
       <!-- BARRA LATERAL | MÓDULOS -->
 
-      <div class="modulo modulo-destacado">
-        <h5 class="titulo">Contenido destacado</h5>
-        <p class="destacado-descripcion">5/2/2016 Rueda de prensa de Pablo Iglesias tras su encuentro con Pedro Sánchez</p>
-        <div class="destacado-media flex-video">
-          <iframe width="853" height="480" src="https://www.youtube.com/embed/1teJ9Ux-0ok?rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-
-      <div class="modulo modulo-destacado">
-        <h5 class="titulo">Contenido destacado</h5>
-        <p class="destacado-descripcion">
-          Sigue en directo la comparecencia de Esperanza Aguirre en la Comisión de Corrupción de la Asamblea de Madrid
-        </p>
-        <div class="destacado-media flex-video">
-          <!-- <a href="#"><img class="thumbnail" src="<?php bloginfo('template_directory'); ?>/img/test/espeonza.jpg" alt=""></a> -->
-          <img class="thumbnail" src="http://placehold.it/350x300" alt="imagen">
-        </div>
-      </div>
-
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-tres') ) : ?>
+	      <div class="modulo modulo-destacado">
+	        <h5 class="titulo">Contenido destacado</h5>
+	        <p class="destacado-descripcion">5/2/2016 Rueda de prensa de Pablo Iglesias tras su encuentro con Pedro Sánchez</p>
+	        <div class="destacado-media flex-video">
+	          <iframe width="853" height="480" src="https://www.youtube.com/embed/1teJ9Ux-0ok?rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+	        </div>
+	      </div>
+	      <div class="modulo modulo-destacado">
+	        <h5 class="titulo">Contenido destacado</h5>
+	        <p class="destacado-descripcion">
+	          Sigue en directo la comparecencia de Esperanza Aguirre en la Comisión de Corrupción de la Asamblea de Madrid
+	        </p>
+	        <div class="destacado-media flex-video">
+	          <img class="thumbnail" src="http://placehold.it/350x300" alt="imagen">
+	        </div>
+	      </div>
+			<?php endif; ?>
     </div>
   </div>
 
