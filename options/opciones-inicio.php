@@ -8,9 +8,9 @@ add_action('admin_init', 'RegistraOpcionesInicio');
 
 function CreaMenuInicio() {
   add_submenu_page(
-    "configuracion-global",
-  	__("Página de inicio"), 
-  	__("Página de inicio"), 
+    "configuracion",
+  	__("Inicio"), 
+  	__("Inicio"), 
   	"manage_options", 
   	"home", 
   	"PaginaInicio"
@@ -19,7 +19,6 @@ function CreaMenuInicio() {
 
 function RegistraOpcionesInicio() {
 
-  add_option("home_breadcrumb_visibilidad","","","yes");
   add_option("home_carrusel_visibilidad","","","yes");
   add_option("home_destacado_visibilidad","","","yes");
 
@@ -52,8 +51,17 @@ function RegistraOpcionesInicio() {
   add_option("home_colaboracion_texto_cuatro","","","yes");
   add_option("home_colaboracion_enlace_cuatro","","","yes");
 
+  add_option("home_twitter_widget","","","yes");
+  add_option("home_facebook_widget","","","yes");
+  add_option("home_youtube_widget","","","yes");
 
-  register_setting("opciones_home", "home_breadcrumb_visibilidad");
+  add_option("home_callout_visibilidad","","","yes");
+  add_option("home_callout_titulo","","","yes");
+  add_option("home_callout_texto","","","yes");
+  add_option("home_callout_texto_boton","","","yes");
+  add_option("home_callout_enlace_boton","","","yes");
+
+
   register_setting("opciones_home", "home_carrusel_visibilidad");
   register_setting("opciones_home", "home_destacado_visibilidad");
 
@@ -86,6 +94,10 @@ function RegistraOpcionesInicio() {
   register_setting("opciones_home", "home_colaboracion_texto_cuatro");
   register_setting("opciones_home", "home_colaboracion_enlace_cuatro");
 
+  register_setting("opciones_home", "home_twitter_widget");
+  register_setting("opciones_home", "home_facebook_widget");
+  register_setting("opciones_home", "home_youtube_widget");
+
   register_setting("opciones_home", "home_callout_visibilidad");
   register_setting("opciones_home", "home_callout_titulo");
   register_setting("opciones_home", "home_callout_texto");
@@ -104,21 +116,10 @@ function PaginaInicio() {
     
     <hr>
 
+    <?php settings_errors(); ?>
+
     <form method="post" action="options.php">
       <?php settings_fields('opciones_home'); ?>
-
-      <h2>Breadcrumb</h2>
-      <p>Este es el navegador que te muestra la ruta según la pagina que estás.</p>
-      <table class="form-table">
-        <tr valign="top">
-          <th scope="row">Mostrar breadcrumb</th>
-          <td>
-          <?php $options = get_option( "home_breadcrumb_visibilidad" ); ?>
-          <input type="checkbox" name="home_breadcrumb_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bread crumb en portada</span>
-        </tr>
-      </table>
-
-      <hr>
 
       <h2>Carrusel de portada</h2>
       <p>Esta es la sección donde aparecen los post que tienen la categoria "Portada".</p>
@@ -159,37 +160,39 @@ function PaginaInicio() {
       <table class="form-table">
         <tr valign="top">
           <th scope="row">Título de la columna izquierda</th>
-          <td><input type="text" name="home_portales_titulo_izquierda" size="40" value="<?php echo get_option('portales_titulo_izquierda'); ?>" /></td>
+          <td><input type="text" name="home_portales_titulo_izquierda" size="40" value="<?php echo get_option('home_portales_titulo_izquierda'); ?>" /></td>
         </tr>
         <tr valign="top">
           <th scope="row">Texto de la columna izquierda</th>
-          <td><textarea name="home_portales_texto_izquierda" cols="37" rows="10"><?php echo get_option('portales_texto_izquierda'); ?></textarea></td>
+          <td><textarea name="home_portales_texto_izquierda" cols="37" rows="10"><?php echo get_option('home_portales_texto_izquierda'); ?></textarea></td>
         </tr>
         <tr valign="top">
           <th scope="row">Botón izquierdo</th>
-          <td><input type="text" name="home_portales_texto_boton_izquierda" size="40" value="<?php echo get_option('portales_texto_boton_izquierda'); ?>" />
+          <td><input type="text" name="home_portales_texto_boton_izquierda" size="40" value="<?php echo get_option('home_portales_texto_boton_izquierda'); ?>" />
           <span class="description">Texto del botón</span>
           <br>
-          <input type="text" name="home_portales_enlace_boton_izquierda" size="40" value="<?php echo get_option('portales_enlace_boton_izquierda'); ?>" />
+          <input type="text" name="home_portales_enlace_boton_izquierda" size="40" value="<?php echo get_option('home_portales_enlace_boton_izquierda'); ?>" />
           <span class="description">Enlace del botón</span></td>
         </tr>
       </table>
+
       <hr>
+      
       <table class="form-table">
         <tr valign="top">
           <th scope="row">Título de la columna derecha</th>
-          <td><input type="text" name="home_portales_titulo_derecha" size="40" value="<?php echo get_option('portales_titulo_derecha'); ?>" /></td>
+          <td><input type="text" name="home_portales_titulo_derecha" size="40" value="<?php echo get_option('home_portales_titulo_derecha'); ?>" /></td>
         </tr>
         <tr valign="top">
           <th scope="row">Texto de la columna derecha</th>
-          <td><textarea name="home_portales_texto_derecha" cols="37" rows="10"><?php echo get_option('portales_texto_derecha'); ?></textarea></td>
+          <td><textarea name="home_portales_texto_derecha" cols="37" rows="10"><?php echo get_option('home_portales_texto_derecha'); ?></textarea></td>
         </tr>
         <tr valign="top">
           <th scope="row">Botón derecho</th>
-          <td><input type="text" name="home_portales_texto_boton_derecha" size="40" value="<?php echo get_option('portales_texto_boton_derecha'); ?>" />
+          <td><input type="text" name="home_portales_texto_boton_derecha" size="40" value="<?php echo get_option('home_portales_texto_boton_derecha'); ?>" />
           <span class="description">Texto del botón</span>
           <br>
-          <input type="text" name="home_portales_enlace_boton_derecha" size="40" value="<?php echo get_option('portales_enlace_boton_derecha'); ?>" />
+          <input type="text" name="home_portales_enlace_boton_derecha" size="40" value="<?php echo get_option('home_portales_enlace_boton_derecha'); ?>" />
           <span class="description">Enlace del botón</span></td>
         </tr>
       </table>
@@ -208,7 +211,7 @@ function PaginaInicio() {
       </table>
       <table class="form-table">
         <tr valign="top">
-          <th scope="row">Video 2</th>
+          <th scope="row">Video 1</th>
           <td><textarea name="home_video_uno" cols="37" rows="5"><?php echo get_option('home_video_uno'); ?></textarea>
           <p class="description">Pega aquí el código de YouTube</p></td>
         </tr>
@@ -290,6 +293,26 @@ function PaginaInicio() {
       </table>
 
       <hr>
+      
+      <h2>Redes Sociales</h2>
+      <p>Estos son los time lines de los perfiles de Twitter y Facebook, así como el botón de suscripción a Youtube de esta delegación, que salen en la barra lateral de la página de inicio cuando no están activados los widgets de Wordpress.</p>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Timeline de Twitter</th>
+          <td><textarea name="home_twitter_widget" cols="37" rows="10"><?php echo get_option('home_twitter_widget'); ?></textarea>
+          <p class="description">Pega aquí el código del <a href="https://twitter.com/settings/widgets">widget de Twitter</a></p></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Timeline de Facebook</th>
+          <td><textarea name="home_facebook_widget" cols="37" rows="10"><?php echo get_option('home_facebook_widget'); ?></textarea>
+          <p class="description">Pega aquí el código del <a href="https://developers.facebook.com/docs/plugins/page-plugin">widget de Facebook</a></p></td>
+        </tr>
+        <tr valign="top">
+          <th scope="row">Botón de suscripción de Youtube</th>
+          <td><textarea name="home_youtube_widget" cols="37" rows="10"><?php echo get_option('home_youtube_widget'); ?></textarea>
+          <p class="description">Pega aquí el código del <a href="https://developers.google.com/youtube/youtube_subscribe_button">widget de Youtube</a></p></td>
+        </tr>
+      </table>
 
       <h2>Callout</h2>
       <p>Esta es la sección a pie de página que sirve para insertar mensajes destacados con título, texto y enlace opcionales.</p>

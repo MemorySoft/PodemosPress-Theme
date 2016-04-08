@@ -1,12 +1,12 @@
 /*
-*	PODEMOS BALEARES
-*	----------------
-*	Basado en Foundation 6.1.2 | foundation.zurb.com
+*	  PODEMOS BALEARES
+*	  ----------------
+*	  Basado en Foundation 6.1.2 | foundation.zurb.com
 * 
-*	Autor: Hector Asencio @MemorySoft
-* Copyright Memory Soft 2016
-* Licencia: MIT
-* Versión: 0.1
+*	  Autor: Hector Asencio @MemorySoft
+*   Copyright Memory Soft 2016
+*   Licencia: MIT
+*   Versión: 0.1
 * 
 */
 
@@ -41,8 +41,8 @@ a {
 }
 p a { 
 	text-decoration: underline;
-	}
-a:hover {
+}
+a:focus, a:hover {
   color: #999;
   opacity: .5;
   text-decoration: none;
@@ -80,7 +80,7 @@ p {
 .top-bar-title {
   color: #54075B;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   font-weight: bold;
 }
 
@@ -92,8 +92,9 @@ p {
 }
 .menu .menu-item a {
   display: block;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1rem;
   line-height: 1;
+  font-size: .8rem;
   text-transform: uppercase;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
 }
@@ -102,7 +103,7 @@ p {
   list-style: none;
   width: 200px;
   position: absolute;
-  margin-top: 4rem;
+  margin-top: 3.8rem;
   margin-left: 0;
   top: 0;
   left: 0;
@@ -114,12 +115,13 @@ p {
 }
 .menu .menu-item:hover .sub-menu {
   display: inherit;
+  z-index: 1;
 }
-.current_page_item {
-  border-bottom:  3px solid #54075B;
+.top-bar .menu .current_page_item {
+  background: #54075B;
 }
-.current_page_item a {
-  color: #54075B;
+.top-bar .menu .current_page_item a {
+  color: #fff;
 }
 
 ul.menu-horizontal {
@@ -236,6 +238,16 @@ ul.menu-horizontal {
 	color: #333;
 }
 
+.callout-enlinea {
+  padding: .5rem;
+}
+.callout-enlinea-texto {
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin: 0 1rem
+}
+
 /* PESTAÑAS */
 .tabs {
     background: #fff;
@@ -309,9 +321,9 @@ h4.logo-texto {
 }
 
 /* CARRUSELES */
-.owl-carousel {
+/*.owl-carousel {
 	margin: 2rem 0;
-}
+}*/
 .owl-carousel .item {
 	padding: 0 .5rem;
 }

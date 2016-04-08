@@ -8,14 +8,12 @@ add_action('admin_init', 'RegistraOpcionesMiembros');
 
 function CreaMenuMiembros() {
     add_submenu_page(
-      'configuracion-global',
+      'configuracion',
     	__("Miembros"), 
     	__("Miembros"), 
     	"manage_options", 
     	"miembros", 
-    	"PaginaMiembros", 
-    	null, 
-    	4.2
+    	"PaginaMiembros"
     	);
 }
 
@@ -97,6 +95,8 @@ function PaginaMiembros() {
         <h1><span class="dashicons dashicons-admin-users" style="font-size: 2rem; margin-right: 1rem;"></span> Pagina de Miembros <small>- Opciones de configuración</small></h1>
         
         <hr>
+
+        <?php settings_errors(); ?>
 
         <form method="post" action="options.php">
           <?php settings_fields('opciones_miembros'); ?>

@@ -9,14 +9,9 @@
   <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/img/favicon.png">
   <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/img/favicon.ico">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS 2.0 Feed para los artículos de Código Nuevo" href="<?php bloginfo('rss2_url'); ?>" />
-  <link rel="alternate" type="application/atom+xml" title="Atom 0.3 - <?php bloginfo('name'); ?> " href="<?php bloginfo('atom_url'); ?>" />
-  <link rel="alternate" type="application/rss+xml" title="Comments Feed - para todos los comentarios de Código Nuevo" href="<?php bloginfo('comments_rss2_url'); ?>" />
-
 	<!-- Estilos críticos -->
   <style>
-		/* Inserta aquí los estilo críticos que deben cargar al inicio */
+		/* Inserta aquí los estilos críticos que se deban cargar al inicio */
   </style>
 
   <!-- Estilos -->
@@ -41,29 +36,61 @@
 
   <!-- Scripts -->
   <script src="<?php bloginfo('template_directory'); ?>/js/vendor/jquery.min.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/vendor/what-input.min.js"></script>
+  
   <script src="<?php bloginfo('template_directory'); ?>/js/vendor/owl.carousel.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/js/foundation.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/js/app.js"></script>
 
   <!-- Cabeceras insertadas por WordPress -->
   <?php wp_head(); ?>
+  <?php include('/options/variables.php'); ?>
 </head>
 
 <body <?php body_class(); ?>>
 
-	<!-- CABECERA -->
+  <!-- CARALIBRO -->
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- CABECERA | BANNER GLOBAL -->
+  <?php 
+    if ($banner_ver == 1) {
+    ?>
+    <div class="franja--estrecha fondo-morado sin-margen--abajo">
+      <div class="callout-enlinea texto-centrado">
+        <span class="callout-enlinea-texto"><strong><?php echo $banner_texto ?></strong></span>
+        <?php if ($banner_texto_boton !== '' && $banner_enlace_boton !== '') { ?>
+          <span class="callout-enlinea-boton">
+            <a href="<?php echo $banner_enlace_boton ?>" class="button tiny invertido sin-margen--abajo">
+              <?php echo $banner_texto_boton ?>
+            </a>
+          </span>
+        <?php } ?>
+      </div>
+    </div>
+  <?php } ?>
+  
+  <!-- CABECERA | IDIOMAS -->
 
   <div class="franja--estrecha fondo-gris--claro sin-margen--abajo">
     <div class="row sin-margen--abajo">
       <div class="small-12 large-3 large-offset-9 columns">
-        <ul class="menu selector-idioma">
+        <ul class="menu align-right selector-idioma">
           <li><a href="">Castellano</a></li>
           <li><a href="">Català</a></li>
         </ul>
       </div>
     </div>
   </div>
+  
+  <!-- CABECERA | NAVEGACIÓN -->
 
   <div class="top-bar">
     <div class="row">
@@ -93,9 +120,8 @@
     </div>
   </div>
 
-  <!-- BREADCRUMB -->
+  <!-- CONTENIDO | BREADCRUMB -->
   <?php 
-    $breadcrumb_ver = get_option('home_breadcrumb_visibilidad');
     if ($breadcrumb_ver == 1 && is_home()) {
     ?>
     <div class="row">

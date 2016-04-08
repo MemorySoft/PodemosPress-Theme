@@ -1,12 +1,40 @@
 <?php 
 
 /**
- *  COMUNES
- *  -------
+ *  GLOBALES
+ *  --------
  */
-// Globales
-$ambito 															= get_option('delegacion_ambito');
-$region 															= get_option('delegacion_region');
+// Breadcrumb
+$breadcrumb_ver												= get_option("global_breadcrumb_visibilidad");
+// Banner
+$banner_ver 													= get_option("global_banner_visibilidad");
+$banner_texto 												= get_option("global_banner_texto");
+$banner_texto_boton 									= get_option("global_banner_texto_boton");
+$banner_enlace_boton 									= get_option("global_banner_enlace_boton");
+// Menu Subdelegaciones
+$subdelegaciones_ver									= get_option("global_menu_subdelegaciones_visibilidad");
+// Analitica
+$analitica 														= get_option("global_analitica");
+
+/**
+ *  DELEGACION
+ *  ----------
+ */
+// Territorio
+$ambito																= get_option("delegacion_ambito");
+$region 															= get_option("delegacion_region");
+// Datos
+$delegacion_nombre 										= get_option("delegacion_nombre");
+$delegacion_direccion 								= get_option("delegacion_direccion");
+$delegacion_telefono 									= get_option("delegacion_telefono");
+$delegacion_horario_am 								= get_option("delegacion_horario_am");
+$delegacion_horario_pm 								= get_option("delegacion_horario_pm");
+$delegacion_mapa 											= get_option("delegacion_mapa");
+// Redes Sociales
+$enlace_twitter 											= get_option('delegacion_twitter');
+$enlace_facebook 											= get_option('delegacion_facebook');
+$enlace_youtube 											= get_option('delegacion_youtube');
+$enlace_instagram 										= get_option('delegacion_instagram');
 
 /**
  *  INICIO
@@ -47,12 +75,62 @@ $colabora_enlace_tres                	= get_option("home_colaboracion_enlace_tre
 $colabora_titulo_cuatro              	= get_option("home_colaboracion_titulo_cuatro");
 $colabora_texto_cuatro               	= get_option("home_colaboracion_texto_cuatro");
 $colabora_enlace_cuatro              	= get_option("home_colaboracion_enlace_cuatro");
+// Redes Sociales
+$timeline_twitter 										= get_option("home_twitter_widget");
+$timeline_facebook 										= get_option("home_facebook_widget");
+$timeline_youtube 										= get_option("home_youtube_widget");
 // Callout
 $callout_home_ver                 		= get_option('home_callout_visibilidad');
 $callout_home_titulo              		= get_option('home_callout_titulo');
 $callout_home_texto               		= get_option('home_callout_texto');
 $callout_home_boton               		= get_option('home_callout_texto_boton');
 $callout_home_enlace              		= get_option('home_callout_enlace_boton');
+
+/**
+ *  PROGRAMA
+ *  --------
+ */
+// Bloque A
+$bloqueA_ver 													= get_option("programa_bloque_a_visibilidad");
+$bloqueA_titulo 											= get_option("programa_bloque_a_titulo");
+$bloqueA_texto_boton_1 								= get_option("programa_bloque_a_texto_boton_uno");
+$bloqueA_enlace_boton_1 							= get_option("programa_bloque_a_enlace_boton_uno");
+$bloqueA_texto_boton_2 								= get_option("programa_bloque_a_texto_boton_dos");
+$bloqueA_enlace_boton_2 							= get_option("programa_bloque_a_enlace_boton_dos");
+// Bloque B
+$bloqueB_ver 													= get_option("programa_bloque_b_visibilidad");
+$bloqueB_titulo 											= get_option("programa_bloque_b_titulo");
+$bloqueB_texto_boton_1 								= get_option("programa_bloque_b_texto_boton_uno");
+$bloqueB_enlace_boton_1 							= get_option("programa_bloque_b_enlace_boton_uno");
+$bloqueB_texto_boton_2 								= get_option("programa_bloque_b_texto_boton_dos");
+$bloqueB_enlace_boton_2 							= get_option("programa_bloque_b_enlace_boton_dos");
+// Bloque C
+$bloqueC_ver 													= get_option("programa_bloque_c_visibilidad");
+$bloqueC_titulo 											= get_option("programa_bloque_c_titulo");
+$bloqueC_texto_boton_1 								= get_option("programa_bloque_c_texto_boton_uno");
+$bloqueC_enlace_boton_1 							= get_option("programa_bloque_c_enlace_boton_uno");
+$bloqueC_texto_boton_2 								= get_option("programa_bloque_c_texto_boton_dos");
+$bloqueC_enlace_boton_2 							= get_option("programa_bloque_c_enlace_boton_dos");
+// Bloque D
+$bloqueD_ver 													= get_option("programa_bloque_d_visibilidad");
+$bloqueD_titulo 											= get_option("programa_bloque_d_titulo");
+$bloqueD_texto_boton_1 								= get_option("programa_bloque_d_texto_boton_uno");
+$bloqueD_enlace_boton_1 							= get_option("programa_bloque_d_enlace_boton_uno");
+$bloqueD_texto_boton_2 								= get_option("programa_bloque_d_texto_boton_dos");
+$bloqueD_enlace_boton_2 							= get_option("programa_bloque_d_enlace_boton_dos");
+// Bloque E
+$bloqueE_ver 													= get_option("programa_bloque_e_visibilidad");
+$bloqueE_titulo 											= get_option("programa_bloque_e_titulo");
+$bloqueE_texto_boton_1 								= get_option("programa_bloque_e_texto_boton_uno");
+$bloqueE_enlace_boton_1 							= get_option("programa_bloque_e_enlace_boton_uno");
+$bloqueE_texto_boton_2 								= get_option("programa_bloque_e_texto_boton_dos");
+$bloqueE_enlace_boton_2 							= get_option("programa_bloque_e_enlace_boton_dos");
+// Callout
+$callout_programa_ver                 = get_option('programa_callout_visibilidad');
+$callout_programa_titulo              = get_option('programa_callout_titulo');
+$callout_programa_texto               = get_option('programa_callout_texto');
+$callout_programa_boton               = get_option('programa_callout_texto_boton');
+$callout_programa_enlace              = get_option('programa_callout_enlace_boton');
 
 /**
  *  ORGANIZACIÓN
@@ -129,6 +207,23 @@ $callout_miembros_titulo							= get_option('miembros_callout_titulo');
 $callout_miembros_texto 							= get_option('miembros_callout_texto');
 $callout_miembros_boton 							= get_option('miembros_callout_texto_boton');
 $callout_miembros_enlace 							= get_option('miembros_callout_enlace_boton');
+
+/**
+ *  INSTITUCIONES
+ *  -------------
+ */
+// Nombre
+$institucion                     			= get_option("instituciones_nombre");
+// Carrusel
+$carrusel_ver                     		= get_option("instituciones_carrusel_visibilidad");
+// Actividad
+$actividad_ver                    		= get_option("instituciones_actividad_visibilidad");
+// Callout
+$callout_instituciones_ver 						= get_option('instituciones_callout_visibilidad');
+$callout_instituciones_titulo					= get_option('instituciones_callout_titulo');
+$callout_instituciones_texto 					= get_option('instituciones_callout_texto');
+$callout_instituciones_boton 					= get_option('instituciones_callout_texto_boton');
+$callout_instituciones_enlace 				= get_option('instituciones_callout_enlace_boton');
 
 /**
  *  PARTICIPACION

@@ -2,13 +2,17 @@
 <?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 
-<!-- CONTENIDO | CAMPAÑA -->
+<!-- CONTENIDO | WIDGETS -->
 
-<div class="row">
+<div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Participa</h5>
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participacion-arriba') ) : ?>
+
+    <?php endif; ?>
   </div>
 </div>
+
+<!-- CONTENIDO | CAMPAÑA -->
 
 <?php
 if ($destacado_ver == 1) { ?>
@@ -141,6 +145,16 @@ if ($herramientas_ver == 1) { ?>
       </a>
     <?php } ?>
 
+  </div>
+</div>
+
+<!-- CONTENIDO | WIDGETS -->
+
+<div class="row sin-margen--abajo">
+  <div class="small-12 columns">
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participacion-abajo') ) : ?>
+
+    <?php endif; ?>
   </div>
 </div>
 

@@ -8,14 +8,12 @@ add_action('admin_init', 'RegistraOpcionesOrganizacion');
 
 function CreaMenuOrganizacion() {
   add_submenu_page(
-    'configuracion-global',
+    'configuracion',
   	__("Organización"), 
   	__("Organización"), 
   	"manage_options", 
   	"organizacion", 
-  	"PaginaOrganizacion", 
-  	null, 
-  	4.2
+  	"PaginaOrganizacion"
   	);
 }
 
@@ -109,6 +107,8 @@ function PaginaOrganizacion() {
       <h1><span class="dashicons dashicons-networking" style="font-size: 2rem; margin-right: 1rem;"></span> Pagina de Organización <small>- Opciones de configuración</small></h1>
       
       <hr>
+
+      <?php settings_errors(); ?>
 
       <form method="post" action="options.php">
         <?php settings_fields('opciones_organizacion'); ?>

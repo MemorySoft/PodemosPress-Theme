@@ -2,6 +2,16 @@
 <?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 
+<!-- CONTENIDO | WIDGETS -->
+
+<div class="row sin-margen--abajo">
+	<div class="small-12 columns">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('miembros-arriba') ) : ?>
+
+		<?php endif; ?>
+	</div>
+</div>
+
 <!-- CONTENIDO | SECRETARÍA GENERAL -->
 
 <div class="row">
@@ -391,20 +401,30 @@ if ($cg_ver == 1) { ?>
 	</div>
 <?php } ?>
 
+<!-- CONTENIDO | WIDGETS -->
+
+<div class="row sin-margen--abajo">
+	<div class="small-12 columns">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('miembros-abajo') ) : ?>
+
+		<?php endif; ?>
+	</div>
+</div>
+
 <!-- CONTENIDO | RECORDATORIO -->
 
 <?php 
-if ($callout_ver == 1) { ?>
+if ($callout_miembros_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
 	    <div class="large callout texto-centrado fondo-gris--claro">
-	      <h4><?php echo $callout_titulo ?></h4>
-				<p><?php echo $callout_texto ?></p>
+	      <h4><?php echo $callout_miembros_titulo ?></h4>
+				<p><?php echo $callout_miembros_texto ?></p>
 				
 				<?php 
-			  if ($callout_boton !== '' && $callout_enlace !== '') { ?>
-    			<a href="<?php echo $callout_enlace ?>" class="button">
-    				<?php echo $callout_boton ?>
+			  if ($callout_miembros_boton !== '' && $callout_miembros_enlace !== '') { ?>
+    			<a href="<?php echo $callout_miembros_enlace ?>" class="button">
+    				<?php echo $callout_miembros_boton ?>
     			</a>
 				<?php	} ?>
 

@@ -1,6 +1,16 @@
 <?php /* Template Name: Organizacion */ ?>
 <?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
+
+<!-- CONTENIDO | WIDGETS -->
+
+<div class="row sin-margen--abajo">
+	<div class="small-12 columns">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('organizacion-arriba') ) : ?>
+
+		<?php endif; ?>
+	</div>
+</div>
 			
 <!-- CONTENIDO | INTRO -->
 <?php 
@@ -298,6 +308,16 @@ if ($areas_ver == 1) { ?>
 	  </div>
 	</div>
 <?php } ?>
+
+<!-- CONTENIDO | WIDGETS -->
+
+<div class="row sin-margen--abajo">
+	<div class="small-12 columns">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('organizacion-abajo') ) : ?>
+
+		<?php endif; ?>
+	</div>
+</div>
 
 <!-- CONTENIDO | CÍRCULOS -->
 <?php 

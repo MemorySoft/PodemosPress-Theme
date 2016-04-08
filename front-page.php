@@ -2,22 +2,25 @@
 <?php include('/options/variables.php'); ?>
 <?php get_header(); ?>
 
-	<!-- CONTENIDO DESTACADO | CARRUSEL DE NOTICIAS -->
+	<!-- CONTENIDO | CARRUSEL DE NOTICIAS -->
+
   <?php 
     if ($carrusel_ver == 1) {
     ?>    
     <div class="row">
       <div class="large-12 columns">
-        <div class="-carrusel-un-item--sin-controles">
-          <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
-          <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
-          <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
-        </div>
+      	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
+		      <div class="-carrusel-un-item--sin-controles">
+		        <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
+		        <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
+		        <div><a href="#"><img src="http://placehold.it/1200x450" alt=""></a></div>
+		      </div>
+        <?php endif; ?>
       </div>
     </div>
   <?php } ?>
 
-  <!-- CONTENIDO DESTACADO | CAMPAÑA DESTACADA -->
+  <!-- CONTENIDO | CAMPAÑA DESTACADA -->
 
   <?php 
     if ($destacado_ver == 1) {
@@ -44,7 +47,7 @@
     </div>
   <?php } ?>
 
-  <!-- CONTENIDO DESTACADO | ACCESO PORTALES -->
+  <!-- CONTENIDO | ACCESO PORTALES -->
 
   <?php 
   	if ($portales_ver == 1) {
@@ -65,7 +68,7 @@
 	  </div>
   <?php	} ?>
 
-  <!-- CONTENIDO PRINCIPAL | ACTUALIDAD -->
+  <!-- CONTENIDO | ACTUALIDAD -->
 
   <div class="row">
     <div class="small-12 large-8 columns contenido-principal">
@@ -229,41 +232,42 @@
       	</div>
       <?php endif; ?>
 
-      <!-- BARRA LATERAL | REDES -->
+      <!-- BARRA LATERAL | DESTACADO -->
 
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-dos') ) : ?>
-	      <div class="modulo modulo-twitter">
-	        <h5 class="titulo">Redes</h5>
-	        <a class="twitter-timeline"  href="https://twitter.com/hectorasencio" data-widget-id="701706379107680256">Tweets por @hectorasencio.</a>
-	        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-	        </script>
-	      </div>
-	    <?php endif; ?>
 
-      <!-- BARRA LATERAL | MÓDULOS -->
+			<?php endif; ?>
+
+      <!-- BARRA LATERAL | REDES -->
 
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-tres') ) : ?>
-	      <div class="modulo modulo-destacado">
-	        <h5 class="titulo">Contenido destacado</h5>
-	        <p class="destacado-descripcion">5/2/2016 Rueda de prensa de Pablo Iglesias tras su encuentro con Pedro Sánchez</p>
-	        <div class="destacado-media flex-video">
-	          <iframe width="853" height="480" src="https://www.youtube.com/embed/1teJ9Ux-0ok?rel=0&controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
-	        </div>
-	      </div>
-	      <div class="modulo modulo-destacado">
-	        <h5 class="titulo">Contenido destacado</h5>
-	        <p class="destacado-descripcion">
-	          Sigue en directo la comparecencia de Esperanza Aguirre en la Comisión de Corrupción de la Asamblea de Madrid
-	        </p>
-	        <div class="destacado-media flex-video">
-	          <img class="thumbnail" src="http://placehold.it/350x300" alt="imagen">
-	        </div>
-	      </div>
-			<?php endif; ?>
+				<h5 class="titulo">Redes</h5>
+				<?php
+        if ($timeline_twitter !== '') { ?>
+		      <div class="modulo modulo-twitter">
+		        <?php echo $timeline_twitter ?>
+		      </div>
+		    <?php }
+		    if ($timeline_facebook !== '') { ?>
+		      <div class="modulo modulo-facebook">
+		        <?php echo $timeline_facebook ?>
+		      </div>
+		    <?php } ?>
+	    <?php endif; ?>
     </div>
   </div>
 
-  <!-- CONTENIDO DESTACADO | CANAL YOUTUBE -->
+  <!-- CONTENIDO | WIDGETS -->
+
+	<div class="row sin-margen--abajo">
+		<div class="small-12 columns">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-enmedio') ) : ?>
+
+			<?php endif; ?>
+		</div>
+	</div>
+
+  <!-- CONTENIDO | CANAL YOUTUBE -->
 
   <?php 
   	if ($video_ver == 1) {
@@ -287,11 +291,19 @@
 	      	<?php echo $video_tres ?>
 	      </div>
 	    </div>
-	  </div>
+			<div class="small-12 columns">
+	      <?php
+		    if ($timeline_youtube !== '') { ?>
+		      <div class="modulo modulo-youtube">
+		        <span class="flota-derecha"><?php echo $timeline_youtube ?></span>
+		      </div>
+		    <?php } ?>
+	    </div>
+		</div>
 	<?php } ?>
 
 
-  <!-- CONTENIDO DESTACADO | COLABORACIÓN -->
+  <!-- CONTENIDO | COLABORACIÓN -->
 
 	<?php 
   	if ($colabora_ver == 1) {

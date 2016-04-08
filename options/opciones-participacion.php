@@ -8,7 +8,7 @@ add_action('admin_init', 'RegistraOpcionesParticipacion');
 
 function CreaMenuParticipacion() {
     add_submenu_page(
-      "configuracion-global",
+      "configuracion",
     	__("Participación"), 
     	__("Participación"), 
     	"manage_options", 
@@ -78,6 +78,8 @@ function PaginaParticipacion() {
         <h1><span class="dashicons dashicons-format-chat" style="font-size: 2rem; margin-right: 1rem;"></span> Página de Participación <small>- Opciones de configuración</small></h1>
         
         <hr>
+
+        <?php settings_errors(); ?>
 
         <form method="post" action="options.php">
           <?php settings_fields('opciones_participacion'); ?>
