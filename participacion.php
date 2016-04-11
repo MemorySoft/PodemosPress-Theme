@@ -70,25 +70,27 @@ if ($herramientas_ver == 1) { ?>
 	</div>
 <?php } ?>
 
-<!-- CONTENIDO | WIDGETS CENTRALES -->
+<!-- CONTENIDO | WIDGETS -->
 
-<div class="row" data-equalizer data-equalize-on="medium">
-	<div class="small-12 medium-6 columns">
-	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
-	    <h4>Iniciativas Ciudadanas</h4>
-	    <p>La iniciativas ciudadanas son el mecanismo a través del cual las propuestas más apoyadas por los inscritos pueden llevarse a la organización y ser defendidas o aceptadas a través de votación.</p>
-	    <p>
-	    <a href="" class="small button">Ver iniciativas</a>
-	    </p>
-	  </div>
-	</div>
-	<div class="small-12 medium-6 columns">
-	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
-	    <h4>Equipos de acción participativa</h4>
-	    <p>Los Equipos de Acción Participativa (EAP) son grupos territoriales de gente con ganas de participar en cuestiones concretas y directas que requieren menor deliberación e implicación constante que la participación en los Círculos, quienes además tienen competencias orgánicas.</p>
-	    <p><a href="" class="small button">Únete</a></p>
-	  </div>
-	</div>
+<div class="row sin-margen--abajo" data-equalizer data-equalize-on="medium">
+	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participacion-enmedio') ) : ?>
+    <div class="small-12 medium-6 columns">
+  	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
+  	    <h4>Iniciativas Ciudadanas</h4>
+  	    <p>La iniciativas ciudadanas son el mecanismo a través del cual las propuestas más apoyadas por los inscritos pueden llevarse a la organización y ser defendidas o aceptadas a través de votación. Entra en tu cuenta y vota los proyectos.</p>
+  	    <p>
+  	    <a href="https://participa.podemos.info/es/propuestas" class="small button">Ver iniciativas</a>
+  	    </p>
+  	  </div>
+  	</div>
+  	<div class="small-12 medium-6 columns">
+  	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
+  	    <h4>Equipos de acción participativa</h4>
+  	    <p>Los Equipos de Acción Participativa (EAP) son grupos territoriales de gente con ganas de participar en cuestiones concretas y directas que requieren menor deliberación e implicación constante que la participación en los Círculos.</p>
+  	    <p><a href="https://participa.podemos.info/users/sign_in" class="small button">Únete</a></p>
+  	  </div>
+  	</div>
+  <?php endif; ?>
 </div>
 
 <!-- CONTENIDO DESTACADO | COLABORACIÓN -->

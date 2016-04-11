@@ -17,8 +17,8 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Istok+Web:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/owl.carousel.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/owl.theme.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.carousel.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.theme.css">
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" /> 
   
   <!-- Twitter card -->
@@ -35,11 +35,11 @@
   <meta itemprop="image" content="<?php echo esc_url( get_theme_mod( 'new_code_logo' ) ); ?>">
 
   <!-- Scripts -->
-  <script src="<?php bloginfo('template_directory'); ?>/js/vendor/jquery.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/jquery.min.js"></script>
   
-  <script src="<?php bloginfo('template_directory'); ?>/js/vendor/owl.carousel.min.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/foundation.min.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/js/app.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/owl.carousel.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/foundation.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/app.js"></script>
 
   <!-- Cabeceras insertadas por WordPress -->
   <?php wp_head(); ?>

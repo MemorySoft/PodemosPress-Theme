@@ -1,18 +1,18 @@
 /*
-*	  PODEMOS BALEARES
-*	  ----------------
-*	  Basado en Foundation 6.1.2 | foundation.zurb.com
+*   PODEMOS BALEARES
+*   ----------------
+*   Basado en Foundation 6.1.2 | foundation.zurb.com
 * 
-*	  Autor: Hector Asencio @MemorySoft
+*   Autor: Hector Asencio @MemorySoft
 *   Copyright Memory Soft 2016
 *   Licencia: MIT
 *   Versión: 0.1
 * 
 */
 
-/*	GENERALES
-		Estilos relativos al elementos HTML
-		que han sidfo reajustados
+/*  GENERALES
+    Estilos relativos al elementos HTML
+    que han sidfo reajustados
 ***********************************************************************/
 body {
   font-family: "Istok Web", Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
@@ -32,7 +32,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     line-height: 0;
 }
 li h1, li h2, li h3, li h4, li h5, li h6 {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 a {
@@ -40,7 +40,7 @@ a {
   text-decoration: none;
 }
 p a { 
-	text-decoration: underline;
+  text-decoration: underline;
 }
 a:focus, a:hover {
   color: #999;
@@ -52,10 +52,10 @@ p {
   line-height: 1.4;
 }
 
-/*	REAJUSTANDO FOUNDATION
-		Agrupa los elementos del framework 
-		que han sido modificados o extendidos 
-		con nuevas clases
+/*  REAJUSTANDO FOUNDATION
+    Agrupa los elementos del framework 
+    que han sido modificados o extendidos 
+    con nuevas clases
 ***********************************************************************/
 
 /* GRID */
@@ -226,7 +226,7 @@ ul.menu-horizontal {
 
 /* CALLOUTS */
 .callout {
-	margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0;
 }
 .callout:not('fondo-morado') h1,
 .callout:not('fondo-morado') h2,
@@ -234,8 +234,8 @@ ul.menu-horizontal {
 .callout:not('fondo-morado') h4,
 .callout:not('fondo-morado') h5,
 .callout:not('fondo-morado') h6 {
-	margin-bottom: 2rem;
-	color: #333;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
 .callout-enlinea {
@@ -276,33 +276,33 @@ ul.menu-horizontal {
 
 /* MODALES */
 .reveal.full {
-	padding-top: 6rem;
+  padding-top: 6rem;
 }
 
 /* FOOTER */
 .footer {
-	padding-top: 3rem;
+  padding-top: 3rem;
 }
 
-/*	COMPONENTES
-		Todos los elementos nuevos
-		que no forman parte del framework
+/*  COMPONENTES
+    Todos los elementos nuevos
+    que no forman parte del framework
 ***********************************************************************/
 
 /* TÍTULOS */
 .titulo {
-	border-bottom: 1px solid rgba(10, 10, 10, 0.25);
-	margin-bottom: 2em;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.25);
+  margin-bottom: 2em;
 }
 
-/*	Lo usamos para estilar los logotipos de Podemos 
-		construidos con texto en el footer, la navegación 
-		y la información de contacto*/
+/*  Lo usamos para estilar los logotipos de Podemos 
+    construidos con texto en el footer, la navegación 
+    y la información de contacto*/
 h2.logo-texto {
-	line-height: 2.5rem;
+  line-height: 2.5rem;
 }
 h4.logo-texto {
-	line-height: 1.6rem;
+  line-height: 1.6rem;
 }
 
 /* FRANJAS */
@@ -317,36 +317,36 @@ h4.logo-texto {
 
 /* MODULOS */
 .modulo {
-	margin-bottom: 4em;
+  margin-bottom: 4em;
 }
 
 /* CARRUSELES */
 /*.owl-carousel {
-	margin: 2rem 0;
+  margin: 2rem 0;
 }*/
 .owl-carousel .item {
-	padding: 0 .5rem;
+  padding: 0 .5rem;
 }
 
 /* ARTICULOS */
 .articulo {
-	margin-bottom: 2rem;
-	display: block; 
-	text-decoration: none;
+  margin-bottom: 2rem;
+  display: block; 
+  text-decoration: none;
 }
 .articulo-imagen {
-	max-width: none; 
+  max-width: none; 
 }
 .articulo-extracto {
-	color: #333;
+  color: #333;
 }
 .articulo-seccion {
   display: table-cell;
   vertical-align: top; 
 }
 .articulo-seccion--vertical {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 }
 .articulo-seccion:first-child {
   padding-right: 1rem; 
@@ -361,11 +361,11 @@ h4.logo-texto {
   vertical-align: bottom; 
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
-	.stack-for-small .articulo-seccion {
-	  display: block;
-	  padding: 0;
-	  padding-bottom: 1rem; 
-	}
+  .stack-for-small .articulo-seccion {
+    display: block;
+    padding: 0;
+    padding-bottom: 1rem; 
+  }
   .stack-for-small .articulo-imagen {
     width: 100%; 
   } 
@@ -373,23 +373,23 @@ h4.logo-texto {
 
 /* MIEMBROS */
 .miembro {
-	margin-bottom: 2rem;
-	display: block; 
-	text-decoration: none;
+  margin-bottom: 2rem;
+  display: block; 
+  text-decoration: none;
 }
 .miembro-imagen {
-	max-width: none; 
+  max-width: none; 
 }
 .miembro-extracto {
-	color: #333;
+  color: #333;
 }
 .miembro-seccion {
   display: table-cell;
   vertical-align: top; 
 }
 .miembro-seccion--vertical {
-	display: block;
-	text-align: center;
+  display: block;
+  text-align: center;
 }
 .miembro-seccion:first-child {
   padding-right: 1rem; 
@@ -404,11 +404,11 @@ h4.logo-texto {
   vertical-align: bottom; 
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
-	.stack-for-small .miembro-seccion {
-	  display: block;
-	  padding: 0;
-	  padding-bottom: 1rem; 
-	}
+  .stack-for-small .miembro-seccion {
+    display: block;
+    padding: 0;
+    padding-bottom: 1rem; 
+  }
   .stack-for-small .miembro-imagen {
     width: 100%; 
   } 
@@ -496,7 +496,7 @@ h4.logo-texto {
   content: "";
 }
 .control-abrir--derecha {
-	float: right;
+  float: right;
 }
 
 .control-cerrar {
@@ -527,7 +527,7 @@ h4.logo-texto {
   transform: rotate(45deg);
 }
 .control-cerrar--derecha {
-	float: right;
+  float: right;
 }
 
 /* TARJETAS */
@@ -539,7 +539,7 @@ h4.logo-texto {
   position: relative;
 }
 .tarjeta-titulo {
-	font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   line-height: 1.7rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -551,14 +551,14 @@ h4.logo-texto {
   height: 16rem;
 }
 .tarjeta-reverso {
-	background: #22bb5b;
-	display: none;
-	position: absolute;
-	top: 0;
+  background: #22bb5b;
+  display: none;
+  position: absolute;
+  top: 0;
 }
 .tarjeta-accion {
-	overflow: hidden;
-	background: #eee;
+  overflow: hidden;
+  background: #eee;
   padding: 1.3rem;
   border-top: 1px solid #ccc;
 }
@@ -567,7 +567,7 @@ h4.logo-texto {
   text-decoration: none;
 }
 .tarjeta-accion a:hover {
-	opacity: .5;			
+  opacity: .5;      
 }
 .tarjeta-imagen {
   position: relative;
@@ -584,13 +584,13 @@ h4.logo-texto {
 }
 
 .tarjeta-morada {
-	background: #54075B;
-	color: #fff;
+  background: #54075B;
+  color: #fff;
 }
 .tarjeta-morada .tarjeta-accion {
-	background: transparent;
-	border-top: none;
-	color: #fff;
+  background: transparent;
+  border-top: none;
+  color: #fff;
 }
 .tarjeta-morada .tarjeta-accion a {
   color: #54075B;
@@ -603,13 +603,13 @@ h4.logo-texto {
 }
 
 .tarjeta-verde {
-	background: #22bb5b;
-	color: #fff;
+  background: #22bb5b;
+  color: #fff;
 }
 .tarjeta-verde .tarjeta-accion {
-	background: transparent;
-	border-top: none;
-	color: #fff;
+  background: transparent;
+  border-top: none;
+  color: #fff;
 }
 .tarjeta-verde .tarjeta-accion a {
   color: #22bb5b;
@@ -622,19 +622,19 @@ h4.logo-texto {
 }
 
 
-/*	UTILIDADES Versión 0.1
-		Clases intercambiables 
-		que ayudan a la maquetación
+/*  UTILIDADES Versión 0.1
+    Clases intercambiables 
+    que ayudan a la maquetación
 ***********************************************************************/
 
 /* FORMAS */
 .circular {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 /* FLOTADORES */
 .flota-derecha {
-	float: right;
+  float: right;
 }
 
 /* TEXTO */
@@ -642,18 +642,18 @@ h4.logo-texto {
   text-align: center;
 }
 .texto-centrado li {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 .texto-mini {
-	font-size: 60%;
+  font-size: 60%;
 }
 
 /* COLORES */
 .fondo-morado,
 .fondo-morado a {
-	background: #54075B;
-	color: #fff;
+  background: #54075B;
+  color: #fff;
 }
 
 .fondo-gris--claro {
@@ -672,12 +672,12 @@ h4.logo-texto {
 
 /* DECORACIÓN PARA LISTAS */
 .lista--entre-lineas li {
-	width: 80%;
-	border-bottom: 1px solid #ccc;
-	padding: .5rem 0;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+  padding: .5rem 0;
 }
 .lista--entre-lineas li:last-child {
-	border-bottom: none;
+  border-bottom: none;
 }
 .lista--simple,
 .lista--simple ul {
@@ -687,40 +687,40 @@ h4.logo-texto {
 
 /* BORDES */
 .tiene-borde--arriba {
-	border: none;
-	border-top: 1px solid rgba(10, 10, 10, 0.25);
+  border: none;
+  border-top: 1px solid rgba(10, 10, 10, 0.25);
 }
 
 /* RESEST DE MÁRGENES */
 .sin-margen {
-	margin: 0;
+  margin: 0;
 }
 .sin-margen--arriba {
-	margin-top: 0;
+  margin-top: 0;
 }
 .sin-margen--abajo {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 .sin-margen--izquierdo {
-	margin-left: 0;
+  margin-left: 0;
 }
 .sin-margen--derecho {
-	margin-right: 0;
+  margin-right: 0;
 }
 
 /* RESET DE RELLENOS */
 .sin-relleno {
-	padding: 0;
+  padding: 0;
 }
 .sin-relleno--arriba {
-	padding-top: 0;
+  padding-top: 0;
 }
 .sin-relleno--abajo {
-	padding-bottom: 0;
+  padding-bottom: 0;
 }
 .sin-relleno--izquierdo {
-	padding-left: 0;
+  padding-left: 0;
 }
 .sin-relleno--derecho {
-	padding-right: 0;
+  padding-right: 0;
 }

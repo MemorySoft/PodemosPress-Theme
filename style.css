@@ -7,5 +7,5 @@ Author URI: http://hectorasencio.com
 Version: 1.0
 Tags: responsive, two-columns, right-sidebar, custom-background, custom-logo, featured-images, full-width-template, post-formats, custom-widgets
 */
-@import url(css/foundation.min.css);
-@import url(css/app.css);
+@import url(styles/foundation.min.css);
+@import url(styles/app.css);

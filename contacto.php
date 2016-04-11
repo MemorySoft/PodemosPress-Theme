@@ -49,285 +49,293 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="small-12 medium-4 columns"><img src="http://placehold.it/400x200" alt=""></div>
-  <div class="small-12 medium-4 columns"><img src="http://placehold.it/400x200" alt=""></div>
-  <div class="small-12 medium-4 columns"><img src="http://placehold.it/400x200" alt=""></div>
-</div>
-
 <!-- CONTENIDO | FORMULARIO -->
 
-<div class="row">
-  <h5 class="titulo texto-centrado">Formulario de contacto</h5>
-  <div class="small-12 columns texto-centrado">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique.</p>
-  </div>
-</div>
-<div class="row">
-  <div class="small-12 medium-8 large-centered column">
-    <form>
-      <div class="row">
-        <div class="medium-6 columns">
-          <!-- Seleccion de destinatario -->
-          <label>Selecciona un destinatario
-            <select>
-              <option value="Área de Comunicación Autonómica">Área de Comunicación</option>
-              <option value="Secretaría General Autonómica">Secretaría General</option>
-              <option value="Consejo Ciudadano Autonómico">Consejo Ciudadano</option>
-              <option value="Comisión de Garantias Democráticas">Comisión de Garantias</option>
-              <option value="Grupo Parlamentario">Grupo Parlamentario</option>
-            </select>
-          </label>
-          <p class="help-text" id="destinatarioHelpText">Escoje el área o ámbito de Podemos Balears al que deseas enviar tu mensaje.</p>
-        </div>
-        <div class="medium-6 columns">
-          <div class="callout fondo-gris--claro">
-            <h5>Destinatario del mensaje: <br><small>Área de Comunicación Autonómica</small></h5>
-          </div>
-        </div>
-        <hr>
-        <!-- Datos y mensaje -->
-        <div class="medium-6 columns">
-          <label>Nombre
-            <input type="text" placeholder="">
-          </label>
-        </div>
-        <div class="medium-6 columns">
-          <label>Email de contacto
-            <input type="text" placeholder="">
-          </label>
-        </div>
-        <div class="medium-6 columns">
-          <fieldset>
-            <legend>Membresia (opcional)</legend>
-            <input type="radio" name="simpatizante" value="Simpatizante" id="simpatizante" required><label for="simpatizante">Simpatizante</label>
-            <input type="radio" name="inscrita" value="Inscrita" id="inscrita"><label for="inscrita">Inscrita</label>
-            <input type="radio" name="cargo" value="Cargo" id="cargo"><label for="cargo">Cargo</label>
-            <input type="radio" name="otro" value="Otro" id="otro"><label for="otro">Otro</label>
-          </fieldset>
-        </div>
-        <div class="medium-6 columns">
-          <label>Teléfono (opcional)
-            <input type="text" placeholder="">
-          </label>
-        </div>
-        <div class="medium-12 columns">
-          <label>
-            Mensaje
-            <textarea placeholder="" rows="8"></textarea>
-          </label>
-        </div>
-        <div class="medium-6 columns">
-          <fieldset>
-            <input type="radio" name="simpatizante" value="Simpatizante" id="Simpatizante" required><label for="Simpatizante">Acepto la <a href="">política de privacidad</a> de datos</label>
-          </fieldset>
-        </div>
-        <div class="medium-6 columns"><button class="button flota-derecha" type="submit">Enviar</button></div>
-      </div>
-    </form>
-  </div>
-</div>
+<?php 
+  if ($formulario_ver == 1) {
+  ?>
+	<div class="row">
+	  <h5 class="titulo texto-centrado">Formulario de contacto</h5>
+	  <div class="small-12 columns texto-centrado">
+	  	<?php
+	    if ($ac_descripcion !== '') { ?>
+	    	<p><?php echo $formulario_descripcion ?></p>
+	   	<?php } 
+	  	else { ?>
+	    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique.</p>
+	    <?php } ?>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-12 medium-8 large-centered column">
+	    <form>
+	      <div class="row">
+	        <div class="medium-6 columns">
+	          <!-- Seleccion de destinatario -->
+	          <label>Selecciona un destino
+	            <select>
+	              <option value="Área de Comunicación Autonómica">Área de Comunicación</option>
+	              <option value="Secretaría General Autonómica">Secretaría General</option>
+	              <option value="Consejo Ciudadano Autonómico">Consejo Ciudadano</option>
+	              <option value="Comisión de Garantias Democráticas">Comisión de Garantias</option>
+	              <option value="Grupo Parlamentario">Grupo Parlamentario</option>
+	            </select>
+	          </label>
+	          <p class="help-text" id="destinatarioHelpText">Escoge el área o ámbito de Podemos Balears al que deseas enviar tu mensaje.</p>
+	        </div>
+	        <div class="medium-6 columns">
+	          <div class="callout fondo-gris--claro">
+	            <h5>Destinatario del mensaje: <br><small>Área de Comunicación Autonómica</small></h5>
+	          </div>
+	        </div>
+	        <hr>
+	        <!-- Datos y mensaje -->
+	        <div class="medium-6 columns">
+	          <label>Nombre
+	            <input type="text" placeholder="">
+	          </label>
+	        </div>
+	        <div class="medium-6 columns">
+	          <label>Email de contacto
+	            <input type="text" placeholder="">
+	          </label>
+	        </div>
+	        <div class="medium-6 columns">
+	          <fieldset>
+	            <legend>Membresia (opcional)</legend>
+	            <input type="radio" name="simpatizante" value="Simpatizante" id="simpatizante" required><label for="simpatizante">Simpatizante</label>
+	            <input type="radio" name="inscrita" value="Inscrita" id="inscrita"><label for="inscrita">Inscrita</label>
+	            <input type="radio" name="cargo" value="Cargo" id="cargo"><label for="cargo">Cargo</label>
+	            <input type="radio" name="otro" value="Otro" id="otro"><label for="otro">Otro</label>
+	          </fieldset>
+	        </div>
+	        <div class="medium-6 columns">
+	          <label>Teléfono (opcional)
+	            <input type="text" placeholder="">
+	          </label>
+	        </div>
+	        <div class="medium-12 columns">
+	          <label>
+	            Mensaje
+	            <textarea placeholder="" rows="8"></textarea>
+	          </label>
+	        </div>
+	        <div class="medium-6 columns">
+	          <fieldset>
+	            <input type="radio" name="simpatizante" value="Simpatizante" id="Simpatizante" required><label for="Simpatizante">Acepto la <a href="<?php echo $formulario_enlace ?>">política de privacidad</a> de datos</label>
+	          </fieldset>
+	        </div>
+	        <div class="medium-6 columns"><button class="button flota-derecha" type="submit">Enviar</button></div>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+<?php } ?>
 
 <!-- CONTENIDO | DIRECTORIO -->
 
-<div class="row">
-  <h5 class="titulo texto-centrado">Directorio</h5>
-  <div class="small-12 columns texto-centrado">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique.</p>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="directorio no-bullet entre-lineas texto-centrado">
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="directorio no-bullet entre-lineas texto-centrado">
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-    </ul>
-  </div>
-  <div class="medium-4 columns">
-    <ul class="directorio no-bullet entre-lineas texto-centrado">
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-      <li>
-        <h6>Lorem Ipsum Dolor</h6>
-        <p>alg@esunfru.to</p>
-      </li>
-    </ul>
-  </div>
-</div>
+<?php 
+  if ($directorio_ver == 1) {
+  ?>
+	<div class="row">
+	  <h5 class="titulo texto-centrado">Directorio</h5>
+	  <div class="small-12 columns texto-centrado">
+	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus asperiores consectetur totam labore nam autem mollitia error quos dolores quasi aspernatur, commodi, vitae incidunt vero repellat provident facere tenetur omnis at esse praesentium culpa quibusdam alias eos similique.</p>
+	  </div>
+	  <div class="medium-4 columns">
+	    <ul class="directorio no-bullet entre-lineas texto-centrado">
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="medium-4 columns">
+	    <ul class="directorio no-bullet entre-lineas texto-centrado">
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="medium-4 columns">
+	    <ul class="directorio no-bullet entre-lineas texto-centrado">
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	      <li>
+	        <h6>Lorem Ipsum Dolor</h6>
+	        <p>alg@esunfru.to</p>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+<?php } ?>
 
 <!-- CONTENIDO | WIDGETS -->
 
