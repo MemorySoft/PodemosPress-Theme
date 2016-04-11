@@ -1,4 +1,4 @@
-  <?php include('/options/variables.php'); ?>
+  <?php include('/includes/opciones/variables.php'); ?>
 
   <!-- PIE DE PÁGINA -->
 

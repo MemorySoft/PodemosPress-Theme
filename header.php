@@ -43,7 +43,7 @@
 
   <!-- Cabeceras insertadas por WordPress -->
   <?php wp_head(); ?>
-  <?php include('/options/variables.php'); ?>
+  <?php include('/includes/opciones/variables.php'); ?>
 </head>
 
 <body <?php body_class(); ?>>

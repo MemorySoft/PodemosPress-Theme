@@ -1,5 +1,5 @@
 <?php /* Template Name: Participación */ ?>
-<?php include('/options/variables.php'); ?>
+<?php include('/includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | WIDGETS -->

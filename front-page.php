@@ -1,5 +1,5 @@
 <?php /* Template Name: Portada */ ?>
-<?php include('/options/variables.php'); ?>
+<?php include('/includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 	<!-- CONTENIDO | CARRUSEL DE NOTICIAS -->

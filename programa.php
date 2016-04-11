@@ -1,5 +1,5 @@
 <?php /* Template Name: Programa */ ?>
-<?php include('/options/variables.php'); ?>
+<?php include('/includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | WIDGETS -->
@@ -125,7 +125,7 @@
         <span class="tarjeta-titulo">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
       </div>
       <div class="tarjeta-accion">
-        <a href="javascript:void(0)" class="control-abrir control-abrir--derecha" data-open="modal-ejemplo"></a>x
+        <a href="javascript:void(0)" class="control-abrir control-abrir--derecha" data-open="modal-ejemplo"></a>
       </div>
     </div>
   </div>
