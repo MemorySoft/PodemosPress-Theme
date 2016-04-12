@@ -129,6 +129,23 @@
       </div>
     </div>
   </div>
+  <!-- MODALES | PROGRAMA -->
+  <div class="full reveal" id="modal-ejemplo" data-reveal>
+    <div class="row">
+      <div class="small-12 columns">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum maiores quae, neque.</h2>
+        <p class="lead">Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ab deserunt dignissimos recusandae cupiditate, a esse et perferendis voluptate molestias quis veniam quos unde ipsam provident optio rerum non ipsum expedita vero tempore. Cum, assumenda.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perspiciatis rem qui odit. Magni quasi maiores repudiandae ut praesentium explicabo dolor ex vitae consequatur rerum illo, aliquam quibusdam nemo laboriosam provident. Delectus incidunt quaerat adipisci beatae, blanditiis labore impedit, ipsa iusto dolor, vel, optio facilis maiores natus modi. Accusantium, at, distinctio! Repudiandae?</p>
+        <p>
+          <a href="javascript:void(0)" class="button">Simple button</a>
+          <hr>
+          <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
   <div class="small-12 medium-4 columns">
     <div class="tarjeta tarjeta-morada">
       <div class="tarjeta-contenido">
@@ -244,3 +261,4 @@ if ($callout_programa_ver == 1) { ?>
 <?php } ?>
 
 <?php get_footer(); ?>
+

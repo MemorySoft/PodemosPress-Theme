@@ -1,4 +1,12 @@
 <?php
+/**
+ * PodemosPress
+ * ------------
+ * Funciones y definiciones
+ *
+ * @package PodemosPress
+ * @since 1.0
+ */
 require_once('includes/init.php'); // Cargamos el soporte básico
 
 /**

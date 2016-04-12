@@ -69,8 +69,25 @@ function podemospress_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// SOPORTE PARA FONDO PERSONALIZADO
-	add_theme_support( 'custom-background' );
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'fff',
+	) );
 
+	// SOPORTE PARA LOGOTIPO PERSONALIZADO
+	function podemospress_theme_customizer( $wp_customize ) {
+		$wp_customize->add_section( 'podemospress_logo_section' , array(
+			'title' => __( 'Logotipo', 'podemospress' ),
+			'priority' => 30,
+			'description' => 'Añade un imagen para reemplazar el nombre del sitio por un logotipo personalizado',
+		) );
+		$wp_customize->add_setting( 'podemospress_logo' );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'podemospress_logo', array(
+			'label' => __( 'Personaliza el logotipo', 'podemospress' ),
+			'section' => 'podemospress_logo_section',
+			'settings' => 'podemospress_logo',
+		) ) );
+	}
+	add_action( 'customize_register', 'podemospress_theme_customizer' );
 }
 add_action( 'after_setup_theme', 'podemospress_setup' );
 ?>

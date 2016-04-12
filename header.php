@@ -6,20 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
 	<!-- Iconos -->
-  <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/img/favicon.png">
-  <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/img/favicon.ico">
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_directory'); ?>/imagenes/favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('template_directory'); ?>/imagenes/favicon.ico">
 
-	<!-- Estilos críticos -->
+  <!-- Estilos críticos -->
   <style>
-		/* Inserta aquí los estilos críticos que se deban cargar al inicio */
+    /* Inserta aquí los estilos críticos que se deban cargar al inicio */
   </style>
 
   <!-- Estilos -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Istok+Web:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.carousel.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.theme.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" /> 
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.carousel.css" />
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/styles/owl.theme.css" />
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style.css" />  
   
   <!-- Twitter card -->
   <meta name="twitter:widgets:csp" content="on">
@@ -36,9 +36,9 @@
 
   <!-- Scripts -->
   <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/jquery.min.js"></script>
-  
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/foundation.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/owl.carousel.min.js"></script>
-  <script src="<?php bloginfo('template_directory'); ?>/javascript/foundation.min.js"></script>
+  <script src="<?php bloginfo('template_directory'); ?>/javascript/vendor/motion-ui.min.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/javascript/app.js"></script>
 
   <!-- Cabeceras insertadas por WordPress -->
@@ -99,10 +99,10 @@
           <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
             <span class="menu-icon dark" data-toggle></span>
           </span>
-          <?php if ( get_theme_mod( 'themeslug_logo' ) ) : ?>
+          <?php if ( get_theme_mod( 'podemospress_logo' ) ) : ?>
 				    <div class='site-logo'>
 				      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
-				      	<img src='<?php echo esc_url( get_theme_mod( 'themeslug_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+				      	<img src='<?php echo esc_url( get_theme_mod( 'podemospress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
 				      </a>
 				    </div>
 					<?php else : ?>
