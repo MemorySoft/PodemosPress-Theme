@@ -37,6 +37,7 @@ require_once('includes/opciones/contacto.php');
 /**
 * WIDGETS
 *********************************************************************************************************/
-require_once('includes/widgets/bloque.php');
+require_once('includes/widgets/bloque_largo.php');
+require_once('includes/widgets/bloque_corto.php');
 
 ?>

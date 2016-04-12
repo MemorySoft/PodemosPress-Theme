@@ -4,7 +4,7 @@
 
 <!-- CONTENIDO | WIDGETS -->
 
-<div class="row sin-margen--abajo">
+<div class="row sin-margen--abajo" data-equalizer data-equalize-on="medium">
 	<div class="small-12 columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('programa-arriba') ) : ?>
 

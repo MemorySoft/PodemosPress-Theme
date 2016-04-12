@@ -641,6 +641,29 @@ h4.logo-texto {
 }
 
 
+/* BLOQUES */
+[id^="bloque_destacado_corto-"] {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  padding-right: .9375rem;
+  padding-left: .9375rem;
+  margin-bottom: 0;
+}
+[id^="bloque_destacado_corto-"]:first-child {
+  padding-left: 0;
+}
+[id^="bloque_destacado_corto-"]:last-child {
+  padding-right: 0;
+}
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+  [id^="bloque_destacado_corto-"] {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
 /*  UTILIDADES Versión 0.1
     Clases intercambiables 
     que ayudan a la maquetación
