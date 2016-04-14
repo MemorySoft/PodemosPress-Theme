@@ -75,23 +75,23 @@ class bloque_destacado_largo extends WP_Widget {
 
 	    echo $before_widget;
 
-	    if ( !empty($titulo) ) {
-	    echo $before_title; 
-	    echo '<div class="large callout fondo-gris--claro">';
-	    echo '<h4>';
-	    echo $titulo;
-	    echo '</h4>';
-	    echo '<p>';
-	    echo $texto;
-	    echo '</p>'; 
-	    echo '<a class="small button" href="';
-	    echo $link . '">';
-	    echo $boton;
-	    echo '</a>';
-	    echo '</div>';
-	    echo $after_title;
+	    if ( !empty($titulo) ) { 
+  	    echo '<div class="large callout fondo-gris--claro">';
+        echo $before_title;
+  	    echo '<h4>';
+  	    echo $titulo;
+  	    echo '</h4>';
+        echo $after_title;
+  	    echo '<p>';
+  	    echo $texto;
+  	    echo '</p>'; 
+  	    echo '<a class="small button" href="';
+  	    echo $link . '">';
+  	    echo $boton;
+  	    echo '</a>';
+  	    echo '</div>';
 	    }
-
+      
 	    echo $after_widget;
 	}
 }

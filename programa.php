@@ -1,5 +1,5 @@
 <?php /* Template Name: Programa */ ?>
-<?php include('/includes/opciones/variables.php'); ?>
+<?php include('includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | WIDGETS -->
@@ -91,7 +91,7 @@
 		if ($bloqueE_ver == 1 && $bloqueE_titulo !== '') {
     ?>
 	  <div class="small-12 columns">
-	    <div class="large callout texto-centrado fondo-gris--claro">
+	    <div class="large callout fondo-gris--claro">
 
 	      <h4><?php echo $bloqueE_titulo ?></h4>
 	      <p>
@@ -119,34 +119,42 @@
     	<?php } ?>
     </h5>
   </div>
-  <div class="small-12 medium-4 columns">
-    <div class="tarjeta tarjeta-morada">
-      <div class="tarjeta-contenido">
-        <span class="tarjeta-titulo">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
-      </div>
-      <div class="tarjeta-accion">
-        <a href="javascript:void(0)" class="control-abrir control-abrir--derecha" data-open="modal-ejemplo"></a>
-      </div>
-    </div>
-  </div>
-  <!-- MODALES | PROGRAMA -->
-  <div class="full reveal" id="modal-ejemplo" data-reveal>
-    <div class="row">
-      <div class="small-12 columns">
-        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum maiores quae, neque.</h2>
-        <p class="lead">Lorem ipsum dolor sit amet.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis ab deserunt dignissimos recusandae cupiditate, a esse et perferendis voluptate molestias quis veniam quos unde ipsam provident optio rerum non ipsum expedita vero tempore. Cum, assumenda.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perspiciatis rem qui odit. Magni quasi maiores repudiandae ut praesentium explicabo dolor ex vitae consequatur rerum illo, aliquam quibusdam nemo laboriosam provident. Delectus incidunt quaerat adipisci beatae, blanditiis labore impedit, ipsa iusto dolor, vel, optio facilis maiores natus modi. Accusantium, at, distinctio! Repudiandae?</p>
-        <p>
-          <a href="javascript:void(0)" class="button">Simple button</a>
-          <hr>
-          <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
-        </p>
-      </div>
-    </div>
-  </div>
+  <?php
+    $mypost = array( 'post_type' => 'puntos-del-programa', );
+    $loop = new WP_Query( $mypost );
+    ?>
+    <?php while ( $loop->have_posts() ) : $loop->the_post();?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="small-12 medium-4 columns">
+          <div class="tarjeta tarjeta-morada">
+            <div class="tarjeta-contenido">
+              <span class="tarjeta-titulo">
+                <?php the_title(); ?>
+              </span>
+            </div>
+            <div class="tarjeta-accion">
+              <a href="javascript:void(0)" class="control-abrir control-abrir--derecha" data-open="modal-<?php the_ID(); ?>"></a>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL | PROGRAMA -->
+        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
+          <div class="row">
+            <div class="small-12 columns">
+              <h2><?php the_title(); ?></h2>
+              <p class="lead"></p>
+              <?php the_content(); ?>
+              <p>
+                <hr>
+                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    <?php endwhile; ?>
 
-  <div class="small-12 medium-4 columns">
+  <!-- <div class="small-12 medium-4 columns">
     <div class="tarjeta tarjeta-morada">
       <div class="tarjeta-contenido">
         <span class="tarjeta-titulo">Lorem ipsum dolor sit amet, consectetur adipisicing.</span>
@@ -225,7 +233,7 @@
         <a href="javascript:void(0)" class="control-abrir control-abrir--derecha" data-open="modal-ejemplo"></a>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <!-- CONTENIDO | WIDGETS -->
@@ -244,7 +252,7 @@
 if ($callout_programa_ver == 1) { ?>
   <div class="row">
     <div class="small-12 columns">
-      <div class="large callout texto-centrado fondo-gris--claro">
+      <div class="large callout fondo-gris--claro">
         <h4><?php echo $callout_programa_titulo ?></h4>
         <p><?php echo $callout_programa_texto ?></p>
         

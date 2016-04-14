@@ -1,5 +1,5 @@
 <?php /* Template Name: Portada */ ?>
-<?php include('/includes/opciones/variables.php'); ?>
+<?php include('includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 	<!-- CONTENIDO | CARRUSEL DE NOTICIAS -->
@@ -372,7 +372,7 @@
   if ($callout_home_ver == 1) { ?>
     <div class="row">
       <div class="small-12 columns">
-        <div class="large callout texto-centrado fondo-gris--claro">
+        <div class="large callout fondo-gris--claro">
           <h4><?php echo $callout_home_titulo ?></h4>
           <p><?php echo $callout_home_texto ?></p>
           

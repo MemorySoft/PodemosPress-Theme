@@ -96,9 +96,7 @@ function RegistraOpcionesOrganizacion() {
   register_setting("opciones_organizacion", "organizacion_callout_texto_boton");
   register_setting("opciones_organizacion", "organizacion_callout_enlace_boton");   
 }
-?>
 
-<?php
 function PaginaOrganizacion() {
     if (!current_user_can('manage_options'))
         wp_die(__("No tienes acceso a esta página."));

@@ -24,9 +24,7 @@ function RegistraOpcionesActualidad() {
 
   register_setting("opciones_home", "actualidad_carrusel_visibilidad");
 }
-?>
 
-<?php
 function PaginaActualidad() {
   if (!current_user_can('manage_options'))
       wp_die(__("No tienes acceso a esta página."));

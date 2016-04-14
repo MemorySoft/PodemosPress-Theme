@@ -67,9 +67,7 @@ function RegistraOpcionesParticipacion() {
     register_setting("opciones_participacion", "participacion_callout_texto_boton");
     register_setting("opciones_participacion", "participacion_callout_enlace_boton");
 }
-?>
 
-<?php
 function PaginaParticipacion() {
     if (!current_user_can('manage_options'))
         wp_die(__("No tienes acceso a esta página."));

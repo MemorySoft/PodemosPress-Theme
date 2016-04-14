@@ -1,5 +1,5 @@
 <?php /* Template Name: Actualidad */ ?>
-<?php include('/includes/opciones/variables.php'); ?>
+<?php include('includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 <!-- CONTENIDO | WIDGETS -->

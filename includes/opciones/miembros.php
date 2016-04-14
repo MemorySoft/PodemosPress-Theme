@@ -84,9 +84,7 @@ function RegistraOpcionesMiembros() {
     register_setting("opciones_miembros", "miembros_callout_enlace_boton");
     register_setting("opciones_miembros", "miembros_callout_boton_visibilidad");
 }
-?>
 
-<?php
 function PaginaMiembros() {
     if (!current_user_can('manage_options'))
         wp_die(__("No tienes acceso a esta página."));
