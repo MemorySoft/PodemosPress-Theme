@@ -62,9 +62,6 @@ function podemospress_setup() {
 	// SOPORTE PARA IMÁGENES DESTACADAS
 	add_theme_support( 'post-thumbnails' );
 
-	// SOPORTE PARA FORMATOS DE ENTRADAS
-	add_theme_support( 'post-formats', array( 'audio','gallery','video'.'link','quote','image','status' ) );
-
 	// SOPORTE PARA RSS DE LAS ENTRADAS
 	add_theme_support( 'automatic-feed-links' );
 

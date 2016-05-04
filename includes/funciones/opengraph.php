@@ -12,7 +12,7 @@ function add_fb_open_graph_tags() {
 			$image = ''; 
 		}
 		$description = get_bloginfo( 'description' );
-		$description = my_excerpt( $post->post_content, $post->post_excerpt );
+		$description = the_excerpt( $post->post_content, $post->post_excerpt );
 		$description = strip_tags( $description );
 		$description = str_replace( "\"", "'", $description );
 ?>
