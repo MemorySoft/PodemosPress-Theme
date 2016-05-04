@@ -81,6 +81,7 @@ if ($intro_ver == 1) { ?>
 		  <?php } ?>
 
 		  </p>
+		  <br>
 	  </div>
 
 	<!-- CONTENIDO | ÓRGANOS -->

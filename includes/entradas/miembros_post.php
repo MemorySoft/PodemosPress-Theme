@@ -3,7 +3,7 @@ function crear_cargos() {
   register_post_type( 'cargos',
     array(
       'labels' => array(
-        'name' => 'Cargos de la delegación',
+        'name' => 'Cargos',
         'singular_name' => 'Cargo',
         'add_new' => 'Añadir Cargo',
         'add_new_item' => 'Nuevo Cargo',

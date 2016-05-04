@@ -3,7 +3,7 @@ function crear_direccion_de_contacto() {
   register_post_type( 'direccion-contacto',
     array(
       'labels' => array(
-        'name' => 'Direcciones de Contacto',
+        'name' => 'Contactos',
         'singular_name' => 'Dirección de contacto',
         'add_new' => 'Añadir Dirección',
         'add_new_item' => 'Nueva Dirección de contacto',

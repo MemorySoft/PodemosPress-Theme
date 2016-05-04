@@ -3,7 +3,7 @@ function crear_puntos_del_programa() {
   register_post_type( 'puntos-del-programa',
     array(
       'labels' => array(
-        'name' => 'Puntos del Programa',
+        'name' => 'Programa',
         'singular_name' => 'Punto del Programa',
         'add_new' => 'Añadir punto',
         'add_new_item' => 'Nuevo punto del Programa',
