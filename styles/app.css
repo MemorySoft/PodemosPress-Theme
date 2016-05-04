@@ -137,6 +137,13 @@ ul.menu-horizontal {
   padding: .7rem 1rem;
 }
 
+.menu-actualidad li {
+  border-right: 1px solid #fff; 
+}
+.menu-actualidad li:hover {
+  background: #22bb5b;
+}
+
 .breadcrumbs a {
     color: #54075B;
     text-decoration: none
@@ -306,6 +313,26 @@ ul.menu-horizontal {
   padding-top: 3rem;
 }
 
+/*  WORDPRESS
+    Modificaciones de componentes
+    nativos de WordPress
+***********************************************************************/
+
+/* GALERIAS */
+#gallery-1 .gallery-item {
+  padding: .5rem;
+}
+#gallery-1 img {
+  border: none !important;
+}
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+  #gallery-1 .gallery-item {
+    width: 100% !important;
+    padding: 0 .5rem;
+
+  }
+}
+
 /*  COMPONENTES
     Todos los elementos nuevos
     que no forman parte del framework
@@ -354,7 +381,8 @@ h4.logo-texto {
   text-decoration: none;
 }
 .articulo-imagen {
-  max-width: none; 
+  max-width: 100%; 
+  margin-bottom: 1rem;
 }
 .articulo-extracto {
   color: #333;
@@ -362,10 +390,6 @@ h4.logo-texto {
 .articulo-seccion {
   display: table-cell;
   vertical-align: top; 
-}
-.articulo-seccion--vertical {
-  display: block;
-  text-align: center;
 }
 .articulo-seccion:first-child {
   padding-right: 1rem; 
@@ -379,13 +403,27 @@ h4.logo-texto {
 .articulo-seccion.bottom {
   vertical-align: bottom; 
 }
+.articulo-seccion--vertical {
+  display: block;
+  text-align: center;
+}
+.articulo-seccion.articulo-seccion--vertical {
+  padding-right: 0;
+}
+.articulo-seccion .articulo-imagen {
+  max-width: 280px;
+}
+.articulo-seccion--vertical .articulo-imagen {
+  max-width: 100%;
+}
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
   .stack-for-small .articulo-seccion {
     display: block;
     padding: 0;
     padding-bottom: 1rem; 
   }
-  .stack-for-small .articulo-imagen {
+  .stack-for-small .articulo-seccion .articulo-imagen,
+  .stack-for-small .articulo-seccion--vertical .articulo-imagen {
     width: 100%; 
   } 
 }
@@ -661,6 +699,10 @@ h4.logo-texto {
     width: 100%;
     padding: 0;
   }
+}
+
+.carrusel {
+  padding-bottom: 1rem;
 }
 
 
