@@ -7,7 +7,7 @@ class bloque_destacado_largo extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$instance = wp_parse_args( (array) $instance, array( 'titulo' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'titulo' => '','texto' => '', 'boton' => '', 'link' => '' ) );
 		$titulo = esc_attr($instance['titulo']);
 		$texto = esc_attr($instance['texto']);
 		$boton = esc_attr($instance['boton']);
