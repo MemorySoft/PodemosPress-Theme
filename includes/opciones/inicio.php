@@ -33,9 +33,6 @@ function RegistraOpcionesInicio() {
   add_option("home_portales_enlace_boton_derecha","","","yes");
 
   add_option("home_videos_visibilidad","","","yes");
-  add_option("home_video_uno","","","yes");
-  add_option("home_video_dos","","","yes");
-  add_option("home_video_tres","","","yes");
 
   add_option("home_colaboracion_visibilidad","","","yes");
   add_option("home_colaboracion_titulo_uno","","","yes");
@@ -198,30 +195,13 @@ function PaginaInicio() {
       <hr>
 
       <h2>Videos destacados</h2>
-      <p>Pega aquí el código de YouTube de los videos que quieres que salgan en portada.</p>
+      <p>Controla la visibilidad de la sección Vídeos en la página de inicio.</p>
       <table class="form-table">
         <tr valign="top">
-          <th scope="row">Mostrar Videos</th>
+          <th scope="row">Mostrar Vídeos</th>
           <td>
           <?php $options = get_option( "home_videos_visibilidad" ); ?>
-          <input type="checkbox" name="home_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar los videos</span>
-        </tr>
-      </table>
-      <table class="form-table">
-        <tr valign="top">
-          <th scope="row">Video 1</th>
-          <td><textarea name="home_video_uno" cols="37" rows="5"><?php echo get_option('home_video_uno'); ?></textarea>
-          <p class="description">Pega aquí el código de YouTube</p></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Video 2</th>
-          <td><textarea name="home_video_dos" cols="37" rows="5"><?php echo get_option('home_video_dos'); ?></textarea>
-          <p class="description">Pega aquí el código de YouTube</p></td>
-        </tr>
-        <tr valign="top">
-          <th scope="row">Video 3</th>
-          <td><textarea name="home_video_tres" cols="37" rows="5"><?php echo get_option('home_video_tres'); ?></textarea>
-          <p class="description">Pega aquí el código de YouTube</p></td>
+          <input type="checkbox" name="home_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar los vídeos</span>
         </tr>
       </table>
 

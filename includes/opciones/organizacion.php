@@ -240,7 +240,7 @@ function PaginaOrganizacion() {
             <th scope="row">Mostrar Áreas</th>
             <td>
             <?php $options = get_option( "organizacion_areas_visibilidad" ); ?>
-            <input type="checkbox" name="organizacion_areas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Círculos</span>
+            <input type="checkbox" name="organizacion_areas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Áreas</span>
           </tr>
         </table>
 

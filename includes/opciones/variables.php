@@ -42,9 +42,9 @@ $enlace_instagram 										= get_option('delegacion_instagram');
 // Breadcrumb
 $breadcrumb_ver                   		= get_option('home_breadcrumb_visibilidad');
 // Carrusel
-$carrusel_ver                     		= get_option('home_carrusel_visibilidad');
+$carrusel_home_ver                     		= get_option('home_carrusel_visibilidad');
 // Destacado
-$destacado_ver                    		= get_option('home_destacado_visibilidad');
+$destacado_home_ver                    		= get_option('home_destacado_visibilidad');
 // Portales
 $portales_ver                         = get_option('home_portales_visibilidad');
 $portales_titulo_izq                  = get_option('home_portales_titulo_izquierda');
@@ -57,9 +57,6 @@ $portales_texto_btn_der               = get_option('home_portales_texto_boton_de
 $portales_enlace_btn_der              = get_option('home_portales_enlace_boton_derecha');
 // Videos
 $video_ver                        		= get_option('home_videos_visibilidad');
-$video_uno                        		= get_option('home_video_uno');
-$video_dos                        		= get_option('home_video_dos');
-$video_tres                       		= get_option('home_video_tres');
 // Colaboracion
 $colabora_ver                        	= get_option('home_colaboracion_visibilidad');
 $colabora_titulo_uno                 	= get_option('home_colaboracion_titulo_uno');
@@ -214,7 +211,7 @@ $callout_miembros_enlace 							= get_option('miembros_callout_enlace_boton');
 // Nombre
 $institucion                     			= get_option('instituciones_nombre');
 // Carrusel
-$carrusel_ver                     		= get_option('instituciones_carrusel_visibilidad');
+$carrusel_instituciones_ver           = get_option('instituciones_carrusel_visibilidad');
 // Actividad
 $actividad_ver                    		= get_option('instituciones_actividad_visibilidad');
 // Callout
@@ -254,8 +251,17 @@ $callout_participa_boton 							= get_option('participacion_callout_texto_boton'
 $callout_participa_enlace 						= get_option('participacion_callout_enlace_boton');
 
 /**
- *  PARTICIPACION
- *  -------------
+ *  ACTUALIDAD
+ *  ----------
+ */
+$carrusel_prensa_ver 									= get_option('actualidad_carrusel_prensa_visibilidad');
+$carrusel_noticias_ver 								= get_option('actualidad_carrusel_noticias_visibilidad');
+$carrusel_opinion_ver 								= get_option('actualidad_carrusel_opinion_visibilidad');
+$carrusel_videos_ver 									= get_option('actualidad_carrusel_videos_visibilidad');
+
+/**
+ *  CONTACTO
+ *  --------
  */
 $formulario_ver 											= get_option('contacto_formulario_visibilidad');
 $formulario_texto 										= get_option('contacto_formulario_descripcion');

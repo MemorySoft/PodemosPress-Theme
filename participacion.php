@@ -72,7 +72,7 @@ if ($herramientas_ver == 1) { ?>
 
 <!-- CONTENIDO | WIDGETS -->
 
-<div class="row sin-margen--abajo" data-equalizer data-equalize-on="medium">
+<div class="row" data-equalizer data-equalize-on="medium">
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participacion-enmedio') ) : ?>
     <div class="small-12 medium-6 columns">
   	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
@@ -104,7 +104,7 @@ if ($herramientas_ver == 1) { ?>
   <?php 
   if ($colabora_enlace_uno !== '' && $colabora_titulo_uno !== '' && $colabora_texto_uno !== '') { ?>
   	<a href="<?php echo $colabora_enlace_uno ?>">
-    	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
+    	<div class="callout fondo-morado texto-centrado" data-equalizer-watch>
         <h5><?php echo $colabora_titulo_uno ?></h5>
         <p><?php echo $colabora_texto_uno ?></p>
     	</div>
@@ -116,7 +116,7 @@ if ($herramientas_ver == 1) { ?>
     <?php 
     if ($colabora_enlace_dos !== '' && $colabora_titulo_dos !== '' && $colabora_texto_dos !== '') { ?>
     	<a href="<?php echo $colabora_enlace_dos ?>">
-      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
+      	<div class="callout fondo-morado texto-centrado" data-equalizer-watch>
           <h5><?php echo $colabora_titulo_dos ?></h5>
           <p><?php echo $colabora_texto_dos ?></p>
       	</div>
@@ -128,7 +128,7 @@ if ($herramientas_ver == 1) { ?>
     <?php 
     if ($colabora_enlace_tres !== '' && $colabora_titulo_tres !== '' && $colabora_texto_tres !== '') { ?>
     	<a href="<?php echo $colabora_enlace_tres ?>">
-      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
+      	<div class="callout fondo-morado texto-centrado" data-equalizer-watch>
           <h5><?php echo $colabora_titulo_tres ?></h5>
           <p><?php echo $colabora_texto_tres ?></p>
       	</div>
@@ -140,7 +140,7 @@ if ($herramientas_ver == 1) { ?>
     <?php 
     if ($colabora_enlace_cuatro !== '' && $colabora_titulo_cuatro !== '' && $colabora_texto_cuatro !== '') { ?>
     	<a href="<?php echo $colabora_enlace_cuatro ?>">
-      	<div class="callout large fondo-morado texto-centrado" data-equalizer-watch>
+      	<div class="callout fondo-morado texto-centrado" data-equalizer-watch>
           <h5><?php echo $colabora_titulo_cuatro ?></h5>
           <p><?php echo $colabora_texto_cuatro ?></p>
       	</div>

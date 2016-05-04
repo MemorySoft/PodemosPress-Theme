@@ -1,8 +1,13 @@
 <?php /* Template Name: Instituciones */ ?>
 <?php include('includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
+<?php
+  // Generamos los enlaces a la categoria
+  $instituciones_id = get_cat_ID( 'instituciones' );
+  $instituciones_link = get_category_link( $instituciones_id );
+?>
 
-<!-- CONTENIDO | WIDGETS -->
+<!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
@@ -12,9 +17,10 @@
 	</div>
 </div>
 
-<!-- CONTENIDO | ACTUALIDAD INSTITUCIONAL-->
+<!-- NOTICIAS INSTITUCIONALES-->
+
 <?php 
-  if ($carrusel_ver == 1) {
+  if ($carrusel_instituciones_ver == 1) {
   ?>    
 	<div class="row">
 	  <div class="small-12 columns">
@@ -24,91 +30,44 @@
 	    		en el <?php echo $institucion ?>
 	    	<?php } ?>
 	    </h5>
-	    <div class="-carrusel-tres-items--navegacion">      
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	      <div class="item">
-	        <div class="articulo stack-for-small">
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <div class="thumbnail">
-	              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-	            </div>
-	          </div>
-	          <div class="articulo-seccion articulo-seccion--vertical">
-	            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-	            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
+	  </div>
+	  <div class="large-12 columns">
+	    <div class="carrusel -carrusel-tres-items--paginacion sin-margen--abajo">
+        <?php 
+          $args=array(
+          'post_type' => 'post',
+          'category_name' => 'instituciones',
+          'posts_per_page'=> 6,
+        );
+        $instituciones_item = new WP_Query($args);
+        if( $instituciones_item->have_posts() ) { ?>
+          <?php  while ( $instituciones_item->have_posts() ) : $instituciones_item->the_post(); ?>
+
+            <div class="item">
+              <div class="articulo stack-for-small">
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <div class="articulo-imagen">
+                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                  </div>
+                </div>
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                </div>
+              </div>
+            </div>
+
+          <?php endwhile; ?>
+        <?php } ?>
+      </div>
+      <p class="texto-centrado">
+        <a href="<?php echo esc_url( $prensa_link ); ?>" title="ir a la página de las publicaciones de la categoría Instituciones">ver los artículos en Instituciones</a>
+      </p>
 	  </div>
 	</div>
 <?php } ?>
 
-<!-- CONTENIDO | ACTIVIDAD PARLAMENTARIA -->
+<!-- ACTIVIDAD INSTITUCIONAL -->
 
 <?php 
   if ($actividad_ver == 1) {
@@ -309,7 +268,7 @@
 	</div>
 <?php } ?>
 
-<!-- CONTENIDO | WIDGETS -->
+<!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
@@ -319,7 +278,7 @@
 	</div>
 </div>
 
-<!-- CONTENIDO | CARGOS ELECTOS -->
+<!-- CARGOS ELECTOS -->
 
 <div class="row">
   <div class="small-12 columns">
@@ -334,7 +293,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -352,7 +311,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -370,7 +329,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -388,7 +347,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -406,7 +365,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -424,7 +383,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -442,7 +401,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -460,7 +419,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -478,7 +437,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -496,7 +455,7 @@
   <div class="item small-12 medium-2 columns end">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -514,7 +473,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -532,7 +491,7 @@
   <div class="item small-12 medium-2 columns">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -550,7 +509,7 @@
   <div class="item small-12 medium-2 columns end">
     <div class="articulo stack-for-small">
       <div class="articulo-seccion articulo-seccion--vertical">
-        <div class="thumbnail circular">
+        <div class="articulo-imagen circular">
           <img class="articulo-imagen circular" src="http://placehold.it/130x130" alt="">
         </div>
       </div>
@@ -567,7 +526,7 @@
   </div>
 </div>
 
-<!-- CONTENIDO | WIDGETS -->
+<!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
@@ -577,7 +536,7 @@
 	</div>
 </div>
 
-<!-- CONTENIDO | RECORDATORIO -->
+<!-- RECORDATORIO -->
 
 <?php 
 if ($callout_instituciones_ver == 1) { ?>

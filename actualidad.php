@@ -1,6 +1,15 @@
 <?php /* Template Name: Actualidad */ ?>
 <?php include('includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
+<?php
+  // Generamos los enlaces a las categorias
+  $prensa_id = get_cat_ID( 'sala-de-prensa' );
+  $prensa_link = get_category_link( $prensa_id );
+  $noticias_id = get_cat_ID( 'noticias' );
+  $noticias_link = get_category_link( $noticias_id );
+  $opinion_id = get_cat_ID( 'opinion' );
+  $opinion_link = get_category_link( $opinion_id );
+?>
 
 <!-- CONTENIDO | WIDGETS -->
 
@@ -12,13 +21,13 @@
 	</div>
 </div>
 
-<!-- CONTENIDO | NAVEGACIÓN CATEGORIAS -->
+<!-- NAVEGACIÓN CATEGORIAS -->
     
 <div class="row">
   <div class="small-12 columns">
     <div data-sticky-container>
       <div data-sticky data-options="marginTop:0;" style="width:100%">
-        <ul class="menu expanded fondo-morado texto-centrado">
+        <ul class="menu menu-actualidad expanded fondo-morado texto-centrado">
           <li><a href="#prensa">Sala de prensa</a></li>
           <li><a href="#noticias">Noticias</a></li>
           <li><a href="#opinion">Opinión</a></li>
@@ -29,731 +38,180 @@
   </div>
 </div>
 
-<!-- CONTENIDO | SALA DE PRENSA -->
+<!-- SALA DE PRENSA -->
 
-<div id="prensa" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Sala de prensa</h5>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--paginacion">       
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
+<?php 
+  if ($carrusel_prensa_ver == 1) {
+  ?>    
+  <div id="prensa" class="row">
+    <div class="small-12 columns">
+      <h5 class="titulo texto-centrado">Sala de prensa</h5>
+    </div>
+    <div class="large-12 columns">
+      <div class="carrusel -carrusel-tres-items--paginacion sin-margen--abajo">
+        <?php 
+          $args=array(
+          'post_type' => 'post',
+          'category_name' => 'sala-de-prensa',
+          'posts_per_page'=> 6,
+        );
+        $prensa_item = new WP_Query($args);
+        if( $prensa_item->have_posts() ) { ?>
+          <?php  while ( $prensa_item->have_posts() ) : $prensa_item->the_post(); ?>
+
+            <div class="item">
+              <div class="articulo stack-for-small">
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <div class="articulo-imagen">
+                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                  </div>
+                </div>
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
+
+          <?php endwhile; ?>
+        <?php } ?>
       </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
+      <p class="texto-centrado">
+        <a href="<?php echo esc_url( $prensa_link ); ?>" title="ir a la página Sala de Prensa">ver los artículos en Sala de Prensa</a>
+      </p>
     </div>
   </div>
-</div>
+<?php } ?>
 
-<!-- CONTENIDO | NOTICIAS -->
+<!-- NOTICIAS -->
 
-<div id="noticias" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Noticias</h5>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--paginacion">       
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
+<?php 
+  if ($carrusel_noticias_ver == 1) {
+  ?>    
+  <div id="noticias" class="row">
+    <div class="small-12 columns">
+      <h5 class="titulo texto-centrado">Noticias</h5>
+    </div>
+    <div class="large-12 columns">
+      <div class="carrusel -carrusel-tres-items--paginacion sin-margen--abajo">
+        <?php 
+          $args=array(
+          'post_type' => 'post',
+          'category_name' => 'noticias',
+          'posts_per_page'=> 6,
+        );
+        $noticias_item = new WP_Query($args);
+        if( $noticias_item->have_posts() ) { ?>
+          <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
+
+            <div class="item">
+              <div class="articulo stack-for-small">
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <div class="articulo-imagen">
+                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                  </div>
+                </div>
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
+
+          <?php endwhile; ?>
+        <?php } ?>
       </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
+      <p class="texto-centrado">
+        <a href="<?php echo esc_url( $noticias_link ); ?>" title="ir a la página de la categoría Noticias">ver los artículos en Noticias</a>
+      </p>
     </div>
   </div>
-</div>
+<?php } ?>
 
-<!-- CONTENIDO | OPINIÓN -->
+<!-- OPINIÓN -->
 
-<div id="opinion" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Opinión</h5>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--paginacion">       
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
+<?php 
+  if ($carrusel_opinion_ver == 1) {
+  ?>    
+  <div id="opinion" class="row">
+    <div class="small-12 columns">
+      <h5 class="titulo texto-centrado">Opinión</h5>
+    </div>
+    <div class="large-12 columns">
+      <div class="carrusel -carrusel-tres-items--paginacion sin-margen--abajo">
+        <?php 
+          $args=array(
+          'post_type' => 'post',
+          'category_name' => 'opinion',
+          'posts_per_page'=> 6,
+        );
+        $opinion_item = new WP_Query($args);
+        if( $opinion_item->have_posts() ) { ?>
+          <?php  while ( $opinion_item->have_posts() ) : $opinion_item->the_post(); ?>
+
+            <div class="item">
+              <div class="articulo stack-for-small">
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <div class="articulo-imagen">
+                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                  </div>
+                </div>
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
+
+          <?php endwhile; ?>
+        <?php } ?>
       </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
+      <p class="texto-centrado">
+        <a href="<?php echo esc_url( $opinion_link ); ?>" title="ir a la página de la categoría Opinión">ver los artículos en Opinión</a>
+      </p>
     </div>
   </div>
-</div>
+<?php } ?>
 
-<!-- CONTENIDO | CANAL YUOTUBE -->
+<!-- CANAL YOUTUBE -->
 
-<div id="videos" class="row">
-  <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Videos</h5>
-  </div>
-  <div class="small-12 columns">
-    <div class="-carrusel-tres-items--paginacion">       
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
+<?php 
+  if ($carrusel_videos_ver == 1) {
+  ?>    
+  <div id="videos" class="row">
+    <div class="small-12 columns">
+      <h5 class="titulo texto-centrado">Vídeos</h5>
+    </div>
+    <div class="large-12 columns">
+      <div class="carrusel -carrusel-tres-items--paginacion sin-margen--abajo">
+        <?php 
+          $args=array(
+          'post_type' => 'video',
+          'posts_per_page'=> 6,
+        );
+        $videos_item = new WP_Query($args);
+        if( $videos_item->have_posts() ) { ?>
+          <?php  while ( $videos_item->have_posts() ) : $videos_item->the_post(); ?>
+
+            <div class="item">
+              <div class="articulo stack-for-small">
+                <div class="articulo-seccion articulo-seccion--vertical">
+                  <div class="articulo-imagen flex-video">
+                    <?php the_content(); ?>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
+
+          <?php endwhile; ?>
+        <?php } ?>
       </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="articulo stack-for-small">
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <div class="thumbnail">
-              <img class="articulo-imagen" src="http://placehold.it/350x200" alt="">
-            </div>
-          </div>
-          <div class="articulo-seccion articulo-seccion--vertical">
-            <h4 class="articulo-titulo">Lorem ipsum dolor sit amet</h4>
-            <p class="articulo-extracto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, corporis. Unde eveniet facilis facere nobis deleniti voluptatem, quibusdam harum dolor illum labore ipsum.</p>
-          </div>
-        </div>
-      </div>
+      <p class="texto-centrado"><a href="#">Ver todos los vídeos</a></p>
     </div>
   </div>
-</div>
+<?php } ?>
 
-<!-- CONTENIDO | WIDGETS -->
+<!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
