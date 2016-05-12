@@ -25,6 +25,15 @@ function RegistraOpcionesInstituciones() {
 
   add_option("instituciones_actividad_visibilidad","","","yes");
 
+  add_option("instituciones_ayuntamiento_visibilidad","","","yes");
+  add_option("instituciones_consell_insular_visibilidad","","","yes");
+  add_option("instituciones_cabildo_visibilidad","","","yes");
+  add_option("instituciones_gobierno_autonomico_visibilidad","","","yes");
+  add_option("instituciones_parlamento_autonomico_visibilidad","","","yes");
+  add_option("instituciones_senado_visibilidad","","","yes");
+  add_option("instituciones_congreso_visibilidad","","","yes");
+  add_option("instituciones_gobierno_central_visibilidad","","","yes");
+
   add_option("instituciones_callout_visibilidad","","","yes");
   add_option("instituciones_callout_titulo","","","yes");
   add_option("instituciones_callout_texto","","","yes");
@@ -37,6 +46,15 @@ function RegistraOpcionesInstituciones() {
   register_setting("opciones_instituciones", "instituciones_carrusel_visibilidad");
 
   register_setting("opciones_instituciones", "instituciones_actividad_visibilidad");
+
+  register_setting("opciones_instituciones", "instituciones_ayuntamiento_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_consell_insular_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_cabildo_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_gobierno_autonomico_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_parlamento_autonomico_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_senado_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_congreso_visibilidad");
+  register_setting("opciones_instituciones", "instituciones_gobierno_central_visibilidad");
 
   register_setting("opciones_instituciones", "instituciones_callout_visibilidad");
   register_setting("opciones_instituciones", "instituciones_callout_titulo");
@@ -65,7 +83,8 @@ function PaginaInstituciones() {
         <tr valign="top">
           <th scope="row">Nombre de la institución</th>
           <td><input type="text" name="instituciones_nombre" size="40" value="<?php echo get_option('instituciones_nombre'); ?>" />
-          <p class="description">E.j. Consell Insula de Menorca</p></td>
+          <p class="description">E.j. Consell Insula de Menorca</p>
+          </td>
         </tr>
       </table>
 
@@ -79,6 +98,7 @@ function PaginaInstituciones() {
           <td>
           <?php $options = get_option( "instituciones_carrusel_visibilidad" ); ?>
           <input type="checkbox" name="instituciones_carrusel_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el carrusel</span>
+          </td>
         </tr>
       </table>
 
@@ -92,10 +112,45 @@ function PaginaInstituciones() {
           <td>
           <?php $options = get_option( "instituciones_actividad_visibilidad" ); ?>
           <input type="checkbox" name="instituciones_actividad_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la Actividad</span>
+          </td>
         </tr>
       </table>
 
       <hr>
+
+      <h2>Cargos institucionales</h2>
+      <p>Controla la visibilidad de las secciones que muestran los cargos electos en las diferentes instituciones donde esta delegación tiene representación. Se puede marcar más de una.</p>
+      <table class="form-table">
+        <tr valign="top">
+          <th scope="row">Marca las instituciones con representación</th>
+          <td>
+          <?php $options = get_option( "instituciones_ayuntamiento_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_ayuntamiento_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Ayuntamiento</span><br>
+          <?php $options = get_option( "instituciones_consell_insular_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_consell_insular_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Consell Insular</span><br>
+          <?php $options = get_option( "instituciones_cabildo_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_cabildo_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Cabildo</span><br>
+          <?php $options = get_option( "instituciones_gobierno_autonomico_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_gobierno_autonomico_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Gobierno Autonómico</span><br>
+          <?php $options = get_option( "instituciones_parlamento_autonomico_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_parlamento_autonomico_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Parlamento Autonómico</span><br>
+          <?php $options = get_option( "instituciones_senado_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_senado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Senado</span><br>
+          <?php $options = get_option( "instituciones_congreso_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_congreso_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Congreso</span><br>
+          <?php $options = get_option( "instituciones_gobierno_central_visibilidad" ); ?>
+          <input type="checkbox" name="instituciones_gobierno_central_visibilidad" <?php checked( $options, 1 ); ?> value="1"> 
+          <span class="description">Gobierno central</span><br>
+          </td>
+        </tr>
+      </table>
 
       <h2>Callout</h2>
       <p>Esta es la sección a pie de página que sirve para insertar mensajes destacados con título, texto y enlace opcionales.</p>
@@ -105,12 +160,14 @@ function PaginaInstituciones() {
           <td>
           <?php $options = get_option( "instituciones_callout_visibilidad" ); ?>
           <input type="checkbox" name="instituciones_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+          </td>
         </tr>
       </table>
       <table class="form-table">
         <tr valign="top">
           <th scope="row">Título del callout</th>
           <td><input type="text" name="instituciones_callout_titulo" size="40" value="<?php echo get_option('instituciones_callout_titulo'); ?>" /></td>
+
         </tr>
         <tr valign="top">
           <th scope="row">Texto del callout</th>
