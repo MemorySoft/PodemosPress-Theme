@@ -23,7 +23,7 @@ function RegistraOpcionesParticipacion() {
     add_option("participacion_destacado_titulo","","","yes");
 	  add_option("participacion_destacado_logo","","","yes");
 	  add_option("participacion_destacado_texto","","","yes");
-	  add_option("participacion_destacado_media","","","yes");
+	  add_option("participacion_destacado_imagen","","","yes");
 	  add_option("participacion_destacado_texto_boton_uno","","","yes");
 	  add_option("participacion_destacado_enlace_boton_uno","","","yes");
     add_option("participacion_destacado_texto_boton_dos","","","yes");
@@ -47,7 +47,7 @@ function RegistraOpcionesParticipacion() {
     register_setting("opciones_participacion", "participacion_destacado_titulo");
 	  register_setting("opciones_participacion", "participacion_destacado_logo");
 	  register_setting("opciones_participacion", "participacion_destacado_texto");
-	  register_setting("opciones_participacion", "participacion_destacado_media");
+	  register_setting("opciones_participacion", "participacion_destacado_imagen");
 	  register_setting("opciones_participacion", "participacion_destacado_texto_boton_uno");
 	  register_setting("opciones_participacion", "participacion_destacado_enlace_boton_uno");
 	  register_setting("opciones_participacion", "participacion_destacado_texto_boton_dos");
@@ -109,8 +109,8 @@ function PaginaParticipacion() {
             </tr>
             <tr valign="top">
               <th scope="row">Contenido multimedia</th>
-              <td><textarea name="participacion_destacado_media" cols="37" rows="10"><?php echo get_option('participacion_destacado_media'); ?></textarea>
-              <p class="description">Pega aquí el código de YouTube o el enlace a la imagen. <br>El contenido debe tener 600px de ancho como mínimo.</p></td>
+              <td><input type="text" name="participacion_destacado_imagen" size="40" value="<?php echo get_option('participacion_destacado_imagen'); ?>">
+              <p class="description">Pega aquí el enlace a la imagen. <br>El contenido debe tener 600px de ancho como mínimo.</p></td>
             </tr>
             <tr valign="top">
             <th scope="row">Botón uno</th>
