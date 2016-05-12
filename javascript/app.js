@@ -22,26 +22,21 @@ $(document).ready(function() {
   });
 
   $(".-carrusel-tres-items--navegacion").owlCarousel({
-    autoPlay: true,
+    autoPlay: false,
     navigation: true,
-    navigationText: ["«","»"],
+    navigationText: ["←","→"],
     pagination: false,
     items : 3,
     itemsDesktop : [1200,3],
     itemsDesktopSmall : [400,1]
   });
-});
 
-var image_field;
-jQuery(function($){
-  $(document).on('click', 'input.select-img', function(evt){
-    image_field = $(this).siblings('.img');
-    tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-    return false;
+  // TARJETAS
+  $('.control-abrir').click(function() {
+    $(this).parents('.tarjeta').find('.tarjeta-reverso').slideDown('fast');
   });
-  window.send_to_editor = function(html) {
-    imgurl = $('img', html).attr('src');
-    image_field.val(imgurl);
-    tb_remove();
-  }
+  $('.control-cerrar').click(function() {
+    $(this).parents('.tarjeta').find('.tarjeta-reverso').slideUp('fast');
+  });
+  
 });
