@@ -19,13 +19,9 @@ function CreaMenuMiembros() {
 
 function RegistraOpcionesMiembros() {
 
-    add_option("miembros_secretaria_bio","","","yes");
-    add_option("miembros_secretaria_imagen","","","yes");
+    add_option("miembros_secretaria_visibilidad","","","yes");
     add_option("miembros_secretaria_texto_boton","","","yes");
     add_option("miembros_secretaria_enlace_boton","","","yes");
-    add_option("miembros_secretaria_twitter","","","yes");
-    add_option("miembros_secretaria_facebook","","","yes");
-    add_option("miembros_secretaria_email","","","yes");
 
     add_option("miembros_consejo_visibilidad","","","yes");
     add_option("miembros_consejo_descripcion","","","yes");
@@ -52,13 +48,9 @@ function RegistraOpcionesMiembros() {
     add_option("miembros_callout_boton_visibilidad","","","yes");
 
 	  
-    register_setting("opciones_miembros", "miembros_secretaria_bio");
-    register_setting("opciones_miembros", "miembros_secretaria_imagen");
+    register_setting("opciones_miembros", "miembros_secretaria_visibilidad");
     register_setting("opciones_miembros", "miembros_secretaria_texto_boton");
     register_setting("opciones_miembros", "miembros_secretaria_enlace_boton");
-    register_setting("opciones_miembros", "miembros_secretaria_twitter");
-    register_setting("opciones_miembros", "miembros_secretaria_facebook");
-    register_setting("opciones_miembros", "miembros_secretaria_email");
     
     register_setting("opciones_miembros", "miembros_consejo_visibilidad");
     register_setting("opciones_miembros", "miembros_consejo_descripcion");
@@ -91,6 +83,7 @@ function PaginaMiembros() {
     ?>
     <div class="wrap">
         <h1><span class="dashicons dashicons-admin-users" style="font-size: 2rem; margin-right: 1rem;"></span> Pagina de Miembros <small>- Opciones de configuración</small></h1>
+        <p>Para añadir miembros debes hacerlo en el apartado <i>Cargos</i> del menú lateral.</p>
         
         <hr>
 
@@ -100,19 +93,16 @@ function PaginaMiembros() {
           <?php settings_fields('opciones_miembros'); ?>
 
           <h2>Secretaría General</h2>
-          <p>Esta es la información que aparecerá en la sección Secretaria General de la página de Miembros</p>
+          <p>Controla la visibilidad de la sección y el enlace al documento político-organizativo de la secretaría general de esta delegación.</p>
           <table class="form-table">
-
             <tr valign="top">
-              <th scope="row">Biografia del perfil</th>
-              <td><textarea name="miembros_secretaria_bio" cols="37" rows="10"><?php echo get_option('miembros_secretaria_bio'); ?></textarea>
-              <p class="description">Breve biografía de la persona que tiene el cargo.</p></td>
+              <th scope="row">Mostrar Secretaría General</th>
+              <td>
+              <?php $options = get_option( "miembros_secretaria_visibilidad" ); ?>
+              <input type="checkbox" name="miembros_secretaria_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Secretaría General</span>
             </tr>
-            <tr valign="top">
-              <th scope="row">Imagen del perfil</th>
-              <td><input type="text" name="miembros_secretaria_imagen" size="40" value="<?php echo get_option('miembros_secretaria_imagen'); ?>" />
-              <p class="description">Debes subir la imagen a la <a href="upload.php" target="_blank">galeria de imágenes</a> y copiar la URL aquí.</p></td>
-            </tr>
+          </table>
+          <table class="form-table">
             <tr valign="top">
               <th scope="row">Documento <br>político-organizativo</th>
               <td>
@@ -122,20 +112,6 @@ function PaginaMiembros() {
               <input type="text" name="miembros_secretaria_enlace_boton" size="40" value="<?php echo get_option('miembros_secretaria_enlace_boton'); ?>" />
               <span class="description">Enlace del botón</span>
               <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
-              </td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Contacto público <p class="description">Enlaces a perfiles sociales y dirección de email oficial</p></th>
-              <td>
-              <input type="text" name="miembros_secretaria_twitter" size="40" value="<?php echo get_option('miembros_secretaria_twitter'); ?>" />
-              <span class="description">Twitter</span>
-              <br>
-              <input type="text" name="miembros_secretaria_facebook" size="40" value="<?php echo get_option('miembros_secretaria_facebook'); ?>" />
-              <span class="description">Facebook</span>
-              <br>
-              <input type="text" name="miembros_secretaria_email" size="40" value="<?php echo get_option('miembros_secretaria_email'); ?>" />
-              <span class="description">Email</span>
-              <p class="description">Ej: sg@menorca.podemos.info</p>
               </td>
             </tr>
           </table>
@@ -179,11 +155,6 @@ function PaginaMiembros() {
               <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
               </td>
             </tr>
-            <tr valign="top">
-              <th scope="row">Miembros</th>
-              <td><a href="" class="button-secondary">Añadir miembro</a><br>
-              <p class="description">Agrega un miembro al Consejo Ciudadano. (Redirige a otra página)</p></td>
-            </tr>
           </table>
 
           <hr>
@@ -224,11 +195,6 @@ function PaginaMiembros() {
               <span class="description">Enlace del botón</span>
               <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
               </td>
-            </tr>
-            <tr valign="top">
-              <th scope="row">Miembros</th>
-              <td><a href="" class="button-secondary">Añadir miembro</a><br>
-              <p class="description">Agrega un miembro al Comisión de garantias. (Redirige a otra página)</p></td>
             </tr>
           </table>
 
