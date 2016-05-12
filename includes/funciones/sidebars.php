@@ -25,8 +25,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido bajo la sección de Actualidad de la página de inicio',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Inicio Lateral Arriba',
@@ -34,8 +34,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'ATENCIÓN: Asignar widgets a este contenedor desactivará la Agenda de la página de inicio!',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Inicio Lateral Medio',
@@ -43,8 +43,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la Agenda de la página de inicio',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Inicio Lateral Abajo',
@@ -52,8 +52,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'ATENCIÓN: Asignar widgets a este contenedor desactivará los widgets de Redes Sociales de la página de inicio!',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Pograma
 	register_sidebar( array(
@@ -62,8 +62,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Programa',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Programa Bajo Objetivos',
@@ -71,8 +71,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Objetivos de la página de Programa',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Organización
 	register_sidebar( array(
@@ -81,8 +81,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Organización',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Organizacion Bajo Areas',
@@ -90,8 +90,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Áreas de la página de Organización',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Miembros
 	register_sidebar( array(
@@ -100,8 +100,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Miembros',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Miembros Abajo',
@@ -109,8 +109,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido abajo de la página de Miembros',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Instituciones
 	register_sidebar( array(
@@ -119,8 +119,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Instituciones',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Instituciones Bajo Actividad',
@@ -128,8 +128,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Actividad de la página de Instituciones',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Instituciones Bajo Cargos',
@@ -137,8 +137,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Relación de Cargos de la página de Instituciones',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Actualidad
 	register_sidebar( array(
@@ -147,8 +147,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Actualidad',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Actualidad Abajo',
@@ -156,8 +156,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido abajo de la página de Actualidad',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Participación
 	register_sidebar( array(
@@ -166,8 +166,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Participación',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Participación Bajo Herramientas',
@@ -175,8 +175,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido bajo la sección Herramientas de la página de Participación',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Participación Abajo',
@@ -184,8 +184,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Áreas de la página de Participación',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Contacto
 	register_sidebar( array(
@@ -194,8 +194,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido arriba de la página de Contacto',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Contacto Bajo Directorio',
@@ -203,8 +203,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido debajo de la sección Directorio de la página de Contacto',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	// Footer
 	register_sidebar( array(
@@ -213,8 +213,8 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido en la columna central del pie de página',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
 		'name' => 'Footer Dos',
@@ -222,8 +222,18 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'description'   => 'Inserta contenido en la columna derecha del pie de página',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
+	) );
+
+	register_sidebar( array(
+		'name' => 'Sidebar Blog',
+		'id' => 'sidebar',
+		'description'   => 'Inserta contenido en la columna izquierda de las páginas de artículos',
+		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h5 class="titulo">',
+		'after_title' => '</h5>',
 	) );
 }
 ?>
