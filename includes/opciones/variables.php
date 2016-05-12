@@ -42,9 +42,9 @@ $enlace_instagram 										= get_option('delegacion_instagram');
 // Breadcrumb
 $breadcrumb_ver                   		= get_option('home_breadcrumb_visibilidad');
 // Carrusel
-$carrusel_home_ver                     		= get_option('home_carrusel_visibilidad');
+$carrusel_home_ver                    = get_option('home_carrusel_visibilidad');
 // Destacado
-$destacado_home_ver                    		= get_option('home_destacado_visibilidad');
+$destacado_home_ver                   = get_option('home_destacado_visibilidad');
 // Portales
 $portales_ver                         = get_option('home_portales_visibilidad');
 $portales_titulo_izq                  = get_option('home_portales_titulo_izquierda');
@@ -176,13 +176,9 @@ $callout_organizacion_enlace 					= get_option('organizacion_callout_enlace_boto
  *  --------
  */
 // Secretaría General
-$sg_bio 															= get_option('miembros_secretaria_bio');
-$sg_imagen 														= get_option('miembros_secretaria_imagen');
-$sg_texto_boton 											= get_option('miembros_secretaria_texto_boton');
-$sg_enlace_boton 											= get_option('miembros_secretaria_enlace_boton');
-$sg_twitter 													= get_option('miembros_secretaria_twitter');
-$sg_facebook 													= get_option('miembros_secretaria_facebook');
-$sg_email 														= get_option('miembros_secretaria_email');
+$sg_ver 															= get_option('miembros_secretaria_visibilidad');
+$sg_texto_boton_doc 									= get_option('miembros_secretaria_texto_boton');
+$sg_enlace_boton_doc 									= get_option('miembros_secretaria_enlace_boton');
 // Consejo Ciudadano
 $cc_ver 															= get_option('miembros_consejo_visibilidad');
 $cc_descripcion 											= get_option('miembros_consejo_descripcion');
@@ -214,6 +210,15 @@ $institucion                     			= get_option('instituciones_nombre');
 $carrusel_instituciones_ver           = get_option('instituciones_carrusel_visibilidad');
 // Actividad
 $actividad_ver                    		= get_option('instituciones_actividad_visibilidad');
+// Cargos institucionales
+$ayuntamiento_ver 										= get_option("instituciones_ayuntamiento_visibilidad");
+$consell_ver 													= get_option("instituciones_consell_insular_visibilidad");
+$cabildo_ver 													= get_option("instituciones_cabildo_visibilidad");
+$gobierno_autonomico_ver 							= get_option("instituciones_gobierno_autonomico_visibilidad");
+$parlamento_autonomico_ver 						= get_option("instituciones_parlamento_autonomico_visibilidad");
+$senado_ver 													= get_option("instituciones_senado_visibilidad");
+$congreso_ver 												= get_option("instituciones_congreso_visibilidad");
+$gobierno_ver 												= get_option("instituciones_gobierno_central_visibilidad");
 // Callout
 $callout_instituciones_ver 						= get_option('instituciones_callout_visibilidad');
 $callout_instituciones_titulo					= get_option('instituciones_callout_titulo');
@@ -230,7 +235,7 @@ $destacado_ver 												= get_option('participacion_destacado_visibilidad');
 $destacado_titulo 										= get_option('participacion_destacado_titulo');
 $destacado_logo 											= get_option('participacion_destacado_logo');
 $destacado_texto 											= get_option('participacion_destacado_texto');
-$destacado_media 											= get_option('participacion_destacado_media');
+$destacado_imagen 										= get_option('participacion_destacado_imagen');
 $destacado_texto_btn_1 								= get_option('participacion_destacado_texto_boton_uno');
 $destacado_enlace_btn_1 							= get_option('participacion_destacado_enlace_boton_uno');
 $destacado_texto_btn_2 								= get_option('participacion_destacado_texto_boton_dos');
@@ -254,17 +259,22 @@ $callout_participa_enlace 						= get_option('participacion_callout_enlace_boton
  *  ACTUALIDAD
  *  ----------
  */
+// Carruseles
 $carrusel_prensa_ver 									= get_option('actualidad_carrusel_prensa_visibilidad');
 $carrusel_noticias_ver 								= get_option('actualidad_carrusel_noticias_visibilidad');
 $carrusel_opinion_ver 								= get_option('actualidad_carrusel_opinion_visibilidad');
 $carrusel_videos_ver 									= get_option('actualidad_carrusel_videos_visibilidad');
+// Calendario
+$calendario														= get_option('actualidad_calendario_destacado');
 
 /**
  *  CONTACTO
  *  --------
  */
+// Formulario
 $formulario_ver 											= get_option('contacto_formulario_visibilidad');
 $formulario_texto 										= get_option('contacto_formulario_descripcion');
 $formulario_enlace										= get_option('contacto_formulario_enlace_legal');
+// Directorio
 $directorio_ver 											= get_option('contacto_directorio_visibilidad');
 ?>
