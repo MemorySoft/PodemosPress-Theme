@@ -10,7 +10,7 @@
           <h5><?php echo $delegacion_direccion ?></h5>
           <div class="media-object">
             <div class="media-object-section">
-              <i class="fa fa-clock-o fa-3x"></i>
+              <i class="fa fa-clock-o fa-2x"></i>
             </div>
             <div class="media-object-section">
               <p>
@@ -23,7 +23,7 @@
           </div>
           <div class="media-object">
             <div class="media-object-section">
-              <i class="fa fa-phone fa-3x"></i>
+              <i class="fa fa-phone fa-2x"></i>
             </div>
             <div class="media-object-section">
               <h3 class="sin-margen"><?php echo $delegacion_telefono ?></h3>
