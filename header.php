@@ -119,16 +119,3 @@
       </div>
     </div>
   </div>
-
-  <!-- CONTENIDO | BREADCRUMB -->
-  <?php 
-    if ($breadcrumb_ver == 1 && is_home()) {
-    ?>
-    <div class="row">
-      <div class="hide-for-small medium-12 columns">
-        <nav aria-label="Estás aquí:" role="navigation">
-          <?php breadcrumb(); ?>
-        </nav>
-      </div>
-    </div>
-  <?php } ?>
