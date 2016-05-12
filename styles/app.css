@@ -12,7 +12,7 @@
 
 /*  GENERALES
     Estilos relativos al elementos HTML
-    que han sidfo reajustados
+    que han sido reajustados
 ***********************************************************************/
 body {
   font-family: "Istok Web", Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
@@ -62,11 +62,20 @@ p {
 .row {
   margin-bottom: 4em;
 }
+.column:last-child:not(:first-child), 
+.columns:last-child:not(:first-child) {
+    float: left;
+}
+
+/* TEXTO */
+.lead {
+  line-height: 1.5;
+}
 
 /* TOPBAR */
 .top-bar {
   margin-bottom: 2em;
-  padding: 0;
+  padding: 0;articulo
   box-shadow: 0 0 5px #efefef;
 }
 .top-bar, 
@@ -173,7 +182,7 @@ ul.menu-horizontal {
 .button.hollow:hover, 
 .button.hollow:focus {
     border-color: #54075B;
-    color: #54075B;
+    color: #54075B; 
 }
 .button.success {
   background-color: #22bb5b;
@@ -230,6 +239,11 @@ ul.menu-horizontal {
   background: #333;
   border: 1px solid #333;
   color: #fff;
+}
+
+.button.plano {
+  border: transparent;
+  background: transparent;
 }
 
 .close-button {
@@ -312,6 +326,9 @@ ul.menu-horizontal {
 .footer {
   padding-top: 3rem;
 }
+.footer .media-object-section h3 {
+  line-height: .9;
+}
 
 /*  WORDPRESS
     Modificaciones de componentes
@@ -354,6 +371,35 @@ h4.logo-texto {
   line-height: 1.6rem;
 }
 
+/* BOTONES SOCIALES */
+.boton-social {
+  max-width: 200px;
+  display: inline;
+  margin: .5rem .5rem .5rem 0;
+  padding: .5rem 1rem;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+.boton-social:hover {
+  background: #343434;
+  color: #fff;
+  text-decoration: none;
+}
+.boton-facebook {
+  background: #4c67a1;
+}
+.boton-twitter {
+  background: #59a8d8;
+}
+.boton-google {
+  background: #dd4b39;
+}
+.boton-instagram {
+  background: #9e7056;
+}
+
 /* FRANJAS */
 .franja {
   padding: 4em 0;
@@ -381,11 +427,21 @@ h4.logo-texto {
   text-decoration: none;
 }
 .articulo-imagen {
-  max-width: 100%; 
+  min-width: 100%; 
   margin-bottom: 1rem;
+}
+.articulo-info {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 .articulo-extracto {
   color: #333;
+}
+.articulo-contacto {
+  margin-top: .5rem;
+}
+.articulo-contacto a {
+  margin: 0 .5rem;
 }
 .articulo-seccion {
   display: table-cell;
@@ -411,7 +467,7 @@ h4.logo-texto {
   padding-right: 0;
 }
 .articulo-seccion .articulo-imagen {
-  max-width: 280px;
+  max-width: 580px;
 }
 .articulo-seccion--vertical .articulo-imagen {
   max-width: 100%;
@@ -424,49 +480,6 @@ h4.logo-texto {
   }
   .stack-for-small .articulo-seccion .articulo-imagen,
   .stack-for-small .articulo-seccion--vertical .articulo-imagen {
-    width: 100%; 
-  } 
-}
-
-/* MIEMBROS */
-.miembro {
-  margin-bottom: 2rem;
-  display: block; 
-  text-decoration: none;
-}
-.miembro-imagen {
-  max-width: none; 
-}
-.miembro-extracto {
-  color: #333;
-}
-.miembro-seccion {
-  display: table-cell;
-  vertical-align: top; 
-}
-.miembro-seccion--vertical {
-  display: block;
-  text-align: center;
-}
-.miembro-seccion:first-child {
-  padding-right: 1rem; 
-}
-.miembro-seccion:last-child:not(:nth-child(2)) {
-  padding-left: 1rem; 
-}
-.miembro-seccion.middle {
-  vertical-align: middle; 
-}
-.miembro-seccion.bottom {
-  vertical-align: bottom; 
-}
-@media screen and (min-width: 0em) and (max-width: 39.9375em) {
-  .stack-for-small .miembro-seccion {
-    display: block;
-    padding: 0;
-    padding-bottom: 1rem; 
-  }
-  .stack-for-small .miembro-imagen {
     width: 100%; 
   } 
 }
@@ -668,9 +681,6 @@ h4.logo-texto {
   border-top: none;
   color: #fff;
 }
-.tarjeta-verde .tarjeta-accion a {
-  color: #22bb5b;
-}
 .tarjeta-verde .control-abrir:after,
 .tarjeta-verde .control-abrir:before,
 .tarjeta-verde .control-cerrar:after,
@@ -678,6 +688,30 @@ h4.logo-texto {
   background-color: #fff;
 }
 
+.tarjeta-reverso a,
+.tarjeta-reverso .tarjeta-accion a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CONTACTOS */
+.directorio-item {
+  margin: .5rem;
+}
+.directorio-nombre {
+  border-bottom: 1px solid hsla(0,0%,4%,.25);
+  margin-bottom: 1rem;
+}
+.directorio-telefono {
+  font-size: 1.4rem;
+}
+.directorio-email {
+  margin-bottom: 1rem;
+}
+
+a.leer-mas {
+  text-decoration: none;
+}
 
 /* BLOQUES */
 [id^="bloque_destacado_corto-"] {
@@ -701,10 +735,113 @@ h4.logo-texto {
   }
 }
 
+/* CARRUSELES */
+.owl-carousel .owl-item {
+  padding: 0 .5rem;
+  border: none;
+}
+.owl-theme {
+  position: relative;
+}
+.owl-theme .owl-controls {
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  overflow: hidden;
+}
+.instituciones-noticias .owl-theme .owl-controls,
+.actualidad-carrusel .owl-theme .owl-controls {
+  width: 120%;
+  margin-left: -10%;
+}
+.owl-theme .owl-controls .owl-buttons div {
+  color: #333;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin: 5px;
+  padding: 3px 10px;
+  font-size: 2rem;
+  background: transparent;
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+  float: left;
+}
+.owl-theme .owl-controls .owl-buttons .owl-next {
+  float: right;
+}
+
 .carrusel {
   padding-bottom: 1rem;
 }
 
+/* SIDEBARS */
+.sidebar {
+  text-align: right;
+}
+.sidebar li {
+  list-style: none;
+}
+.sidebar > li {
+  font-weight: bold;
+  font-size: 1.3rem;
+  font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  text-transform: uppercase;
+}
+.sidebar > li a {
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: "Istok Web", Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  text-transform: none;
+}
+
+/* FORMULARIO */
+.formulario- .error {
+  color: #FF0000;
+  margin-bottom: .5rem;
+}
+
+/*  PÁGINAS
+    Estilos específicos para 
+    ciertas páginas
+***********************************************************************/
+
+/* PORTADA */
+.home .owl-carousel .owl-item {
+  padding: 0;
+}
+.home .carrusel {
+  padding-bottom: 4rem;
+}
+.home .top-bar {
+  margin-bottom: 0;
+}
+
+/* MIEMBROS */
+.internos-cargos .articulo-titulo {
+  margin-bottom: .5rem;
+}
+.page-template-miembros .internos-cargos .articulo-imagen img,
+.page-template-miembros .reveal .articulo-imagen img {
+  max-width: 230px;
+}
+
+/* INSTITUCIONES */
+.instituciones-actividad {
+  display: none; /* Temporalmente hasta que podamos implementar el componente */
+}
+.instituciones-cargos .articulo-titulo {
+  margin-bottom: .5rem;
+}
+.page-template-instituciones .instituciones-cargos .articulo-imagen img,
+.page-template-instituciones .reveal .articulo-imagen img {
+  max-width: 130px;
+}
+
+/* POST */
+.single .articulo-imagen img {
+  min-width: 100%;
+}
 
 /*  UTILIDADES Versión 0.1
     Clases intercambiables 
@@ -712,7 +849,8 @@ h4.logo-texto {
 ***********************************************************************/
 
 /* FORMAS */
-.circular {
+.circular,
+.circular img {
   border-radius: 50%;
 }
 
@@ -728,6 +866,12 @@ h4.logo-texto {
 .texto-centrado li {
   margin: 0 auto;
 }
+.texto-derecha {
+  text-align: right;
+}
+.texto-izquierda {
+  text-align: left;
+}
 
 .texto-mini {
   font-size: 60%;
@@ -738,6 +882,13 @@ h4.logo-texto {
 .fondo-morado a {
   background: #54075B;
   color: #fff;
+}
+
+.fondo-verde,
+.fondo-verde a {
+  background: #22bb5b;
+  color: #fff;
+  border: none;
 }
 
 .fondo-gris--claro {
