@@ -28,8 +28,6 @@ function CreaMenuConfiguracion() {
 
 function RegistraOpcionesConfiguracion() {
 
-  
-  add_option("global_breadcrumb_visibilidad","","","yes");
 
   add_option("global_banner_visibilidad","","","yes");
   add_option("global_banner_texto","","","yes");
@@ -49,8 +47,6 @@ function RegistraOpcionesConfiguracion() {
   register_setting("opciones_globales", "global_banner_enlace_boton");
 
   register_setting("opciones_globales", "global_menu_subdelegaciones_visibilidad");
-
-  register_setting("opciones_globales", "global_breadcrumb_visibilidad");
 }
 
 function ConfiguracionGlobal() {
@@ -67,19 +63,6 @@ function ConfiguracionGlobal() {
 
       <form method="post" action="options.php">
         <?php settings_fields('opciones_globales'); ?>
-
-				<h2>Breadcrumb</h2>
-	      <p>Este es el navegador que te muestra la ruta según la pagina que estás.</p>
-	      <table class="form-table">
-	        <tr valign="top">
-	          <th scope="row">Mostrar breadcrumb</th>
-	          <td>
-	          <?php $options = get_option( "global_breadcrumb_visibilidad" ); ?>
-	          <input type="checkbox" name="global_breadcrumb_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bread crumb en portada</span>
-	        </tr>
-	      </table>
-
-	      <hr>
 
 	      <h2>Anuncio global</h2>
 	      <p>Este contenido aparecerá en la parte superior de todas las páginas del sitio. Úsalo consecuentemente.</p>
