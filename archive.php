@@ -43,14 +43,15 @@
 
     <div class="small-12 medium-4 columns show-for-medium sidebar">
       <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('sidebar') ) : ?>
-        <?php wp_get_archives('type=postbypost&limit=10'); ?>
-        <hr>
-        <?php wp_get_archives('type=yearly'); ?>
-        <hr>
-        <?php wp_list_categories(); ?>
-        <hr>
-        <?php wp_list_pages(); ?>
+              
       <?php endif; ?>
+      <?php wp_list_categories(); ?>
+      <hr>
+      <li>Más recientes</li>
+      <?php wp_get_archives('type=postbypost&limit=10'); ?>
+      <hr>
+      <li>Archivo</li>
+      <?php wp_get_archives('type=yearly'); ?>
     </div>
 
     <!-- ARTICULOS -->
