@@ -38,6 +38,7 @@ require_once('includes/opciones/delegacion.php');
 require_once('includes/entradas/programa_post.php');
 require_once('includes/entradas/miembros_post.php');
 require_once('includes/entradas/contacto_post.php');
+require_once('includes/entradas/areas_post.php');
 require_once('includes/entradas/carrusel_post.php');
 require_once('includes/entradas/destacado_post.php');
 require_once('includes/entradas/videos_post.php');
@@ -51,5 +52,6 @@ require_once('includes/widgets/bloque_corto.php');
 /**
 * PLUGINS INTEGRADOS
 *********************************************************************************************************/
-
+require_once('includes/plugins/image-widget/plugin.php');
+// require_once('includes/plugins/calendarios/plugin.php');
 ?>
