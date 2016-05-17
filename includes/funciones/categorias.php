@@ -18,6 +18,9 @@ function podemospress_crear_categorias() {
         elseif ( !category_exists( 'Instituciones' ) ) {
         	wp_create_category( 'Instituciones' );
         } 
+        elseif ( !category_exists( 'Portada' ) ) {
+        	wp_create_category( 'Portada' );
+        }
     endif;
 }
 add_action( 'after_setup_theme', 'podemospress_crear_categorias' );
