@@ -1,5 +1,5 @@
 <?php /* Template Name: Portada */ ?>
-<?php require( trailingslashit( get_template_directory() ). '/includes/opciones/variables.php'); ?>
+<?php require( get_template_directory() . '/includes/opciones/variables.php'); ?>
 <?php get_header(); ?>
 
 	<!-- CARRUSEL DE NOTICIAS -->
@@ -10,11 +10,28 @@
   	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
       <div class="carrusel -carrusel-un-item--sin-controles">
         <?php 
-          $args=array(
+        $noticias_args = array(
+          'post_type' => 'post',
+          'category_name' => 'portada',
+          'posts_per_page'=> 3,
+        );
+        $carrusel_args = array(
           'post_type' => 'carrusel'
         );
-        $carrusel_item = new WP_Query($args);
-        if( $carrusel_item->have_posts() ) { ?>
+        $carrusel_item = new WP_Query($carrusel_args);
+        $instituciones_item = new WP_Query($noticias_args);
+        if( $instituciones_item->have_posts() ) { ?>
+          <?php  while ( $instituciones_item->have_posts() ) : $instituciones_item->the_post(); ?>
+            <a class="carrusel-envoltorio" href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
+              <div class="carrusel-item">
+                <?php the_post_thumbnail(); ?>
+                <div class="carrusel-seccion">
+                  <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
+                </div>
+              </div>
+            </a>
+          <?php endwhile; ?>
+        <?php } elseif( $carrusel_item->have_posts() ) { ?>
           <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
             <div>
               <?php the_post_thumbnail(); ?>
@@ -55,11 +72,19 @@
 		?>
 	  <div class="franja fondo-gris--claro">
 	    <div class="row sin-margen--abajo texto-centrado">
-	      <div class="small-12 large-6 columns">
-	        <h4><?php echo $portales_titulo_izq ?></h4>
-	        <p><?php echo $portales_texto_izq ?></p>
-	        <a href="<?php echo $portales_enlace_btn_izq ?>" class="small button"><?php echo $portales_texto_btn_izq ?></a>
-	      </div>
+        <?php if ( $portales_titulo_izq !='' && $portales_texto_izq !='' && $portales_enlace_btn_izq !='' && $portales_texto_btn_izq !='' ) { ?>
+          <div class="small-12 large-6 columns">
+            <h4><?php echo $portales_titulo_izq ?></h4>
+            <p><?php echo $portales_texto_izq ?></p>
+            <a href="<?php echo $portales_enlace_btn_izq ?>" class="small button"><?php echo $portales_texto_btn_izq ?></a>
+          </div>
+        <?php } else { ?>
+  	      <div class="small-12 large-6 columns">
+            <h4>Transparencia</h4>
+            <p><?php echo $portales_texto_der ?></p>
+            <a href="<?php echo $portales_enlace_btn_der ?>" class="small button"><?php echo $portales_texto_btn_der ?></a>
+          </div>
+        <?php } ?>
 	      <div class="small-12 large-6 columns">
 	        <h4><?php echo $portales_titulo_der ?></h4>
           <p><?php echo $portales_texto_der ?></p>
@@ -75,9 +100,12 @@
     <div class="small-12 large-8 columns contenido-principal">
       <h5 class="titulo">Actualidad</h5>
 
-      <?php $args=array(
+      <?php 
+      $excluir_portada = get_cat_ID('portada');
+      $args=array(
         'post_type' => 'post',
         'posts_per_page'=> 6,
+        'category__not_in'=> $excluir_portada,
       );
       $posts = new WP_Query($args);
       if( $posts->have_posts() ) { 
@@ -102,7 +130,7 @@
       <div class="row">
         <div class="small-12 columns">
           <hr>
-          <a href="index.php" class="tiny button flota-derecha">Ver toda la actualidad</a>
+          <a href="<?php bloginfo('url'); ?>/noticias" class="tiny button flota-derecha">Ver toda la actualidad</a>
         </div>
       </div>
     </div>
