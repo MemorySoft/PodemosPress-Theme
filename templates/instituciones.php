@@ -34,7 +34,7 @@
 	  <div class="large-12 columns">
 	    <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
         <?php 
-          $args=array(
+          $args = array(
           'post_type' => 'post',
           'category_name' => 'instituciones',
           'posts_per_page'=> 9,
@@ -61,7 +61,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $prensa_link ); ?>" title="ir a la página de las publicaciones de la categoría Instituciones">ver los artículos en Instituciones</a>
+        <a href="<?php echo esc_url( $instituciones_link ); ?>" title="ir a la página de las publicaciones de la categoría Instituciones">ver los artículos en Instituciones</a>
       </p>
 	  </div>
 	</div>
