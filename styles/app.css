@@ -6,7 +6,7 @@
 *   Autor: Hector Asencio @MemorySoft
 *   Copyright Memory Soft 2016
 *   Licencia: MIT
-*   Versión: 0.1
+*   Versión: 1.0
 * 
 */
 
@@ -291,6 +291,19 @@ ul.menu-horizontal {
   margin: 0 1rem
 }
 
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+  .callout h4,
+  .callout-enlinea-texto {
+    text-align: center;
+  }
+  .callout a,
+  .callout-enlinea a {
+    display: block;
+    float: none;
+    margin: .5rem auto;
+  }
+}
+
 /* PESTAÑAS */
 .tabs {
     background: #fff;
@@ -462,12 +475,13 @@ h4.logo-texto {
 .articulo-seccion--vertical {
   display: block;
   text-align: center;
-}
-.articulo-seccion.articulo-seccion--vertical {
   padding-right: 0;
 }
-.articulo-seccion .articulo-imagen {
-  max-width: 580px;
+.articulo-titulo {
+  margin-bottom: .5rem
+}
+.articulo-seccion .articulo-imagen img {
+  max-width: 280px;
 }
 .articulo-seccion--vertical .articulo-imagen {
   max-width: 100%;
@@ -740,6 +754,9 @@ a.leer-mas {
   padding: 0 .5rem;
   border: none;
 }
+.owl-item img.wp-post-image {
+  min-width: 100%;
+}
 .owl-theme {
   position: relative;
 }
@@ -774,6 +791,36 @@ a.leer-mas {
 .carrusel {
   padding-bottom: 1rem;
 }
+.carrusel-envoltorio {
+  /*display: block;*/
+}
+.carrusel-item {
+  height: 40rem;
+  width: 100%;
+  position: relative;
+}
+.carrusel-item .wp-post-image {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.carrusel-seccion {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.carrusel-item .carrusel-titulo {
+  color: #fff;
+  text-shadow: 0 0 10px #333;
+}
+.carrusel-item .carrusel-titulo,
+.carrusel-item .button {
+  position: relative;
+  top: 40%;
+  left: 0;
+}
 
 /* SIDEBARS */
 .sidebar {
@@ -807,7 +854,7 @@ a.leer-mas {
 ***********************************************************************/
 
 /* PORTADA */
-.home .owl-carousel .owl-item {
+.home .owl-item {
   padding: 0;
 }
 .home .carrusel {
