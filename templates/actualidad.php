@@ -3,15 +3,15 @@
 <?php get_header(); ?>
 <?php
   // Generamos los enlaces a las categorias
-  $prensa_id = get_cat_ID( 'sala-de-prensa' );
+  $prensa_id = get_cat_ID( 'Sala de prensa' );
   $prensa_link = get_category_link( $prensa_id );
-  $noticias_id = get_cat_ID( 'noticias' );
+  $noticias_id = get_cat_ID( 'Noticias' );
   $noticias_link = get_category_link( $noticias_id );
-  $opinion_id = get_cat_ID( 'opinion' );
+  $opinion_id = get_cat_ID( 'Opinion' );
   $opinion_link = get_category_link( $opinion_id );
 ?>
 
-<!-- CONTENIDO | WIDGETS -->
+<!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
@@ -63,11 +63,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -108,11 +108,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -153,11 +153,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><h4 class="articulo-titulo"><?php the_title(); ?></h4></a>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -199,6 +199,7 @@
                   <div class="articulo-imagen flex-video">
                     <?php the_content(); ?>
                   </div>
+                  <h5><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h5>
                 </div>
               </div>
             </div>
@@ -206,10 +207,20 @@
           <?php endwhile; ?>
         <?php } ?>
       </div>
-      <p class="texto-centrado"><a href="#">Ver todos los vídeos</a></p>
+      <p class="texto-centrado"><a href="<?php bloginfo('url'); ?>/videos">Ver todos los vídeos</a></p>
     </div>
   </div>
 <?php } ?>
+
+<!-- ENLACE AL BLOG -->
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="callout large fondo-morado">
+      <h4>No te pierdas ninguna noticia <a class="button invertido flota-derecha" href="<?php bloginfo('url'); ?>/noticias">Todas las noticias</a></h4>
+    </div>
+  </div>
+</div>
 
 <!-- WIDGETS -->
 
