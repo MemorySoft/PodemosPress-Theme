@@ -117,7 +117,7 @@ function PaginaInicio() {
       <?php settings_fields('opciones_home'); ?>
 
       <h2>Carrusel de portada</h2>
-      <p>Esta es la sección donde aparecen los post que tienen la categoria "Portada".</p>
+      <p>Esta es la sección donde aparecen los post del tipo de contenido "Carrusel".</p>
       <table class="form-table">
         <tr valign="top">
           <th scope="row">Mostrar carrusel</th>
@@ -130,7 +130,7 @@ function PaginaInicio() {
       <hr>
 
       <h2>Campaña destacada</h2>
-      <p>Esta es la sección donde aparece la campaña destacada de portada. Para añadir contenido debes crear un post en "Contenido destacado".</p>
+      <p>Esta es la sección donde aparece una campaña destacada de portada. Para añadir contenido debes crear un post con el tipo de contenido "Campaña".</p>
       <table class="form-table">
         <tr valign="top">
           <th scope="row">Mostrar campaña</th>
