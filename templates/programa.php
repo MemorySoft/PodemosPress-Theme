@@ -112,7 +112,7 @@
 
 <div class="row">
   <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Objetivos 
+    <h5 class="titulo texto-centrado">Objectius 
 			<?php 
     	if ($delegacion_nombre !== '') { ?>
     		de <?php echo $delegacion_nombre ?>

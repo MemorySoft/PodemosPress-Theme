@@ -17,7 +17,7 @@
 if ($intro_ver == 1) { ?>     
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Organización</h5>
+	    <h5 class="titulo texto-centrado">Organització</h5>
 	  </div>
 	  <div class="small-12 medium-6 columns">
 	    <div class="destacado-media flex-video">
@@ -34,10 +34,10 @@ if ($intro_ver == 1) { ?>
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h4 class="texto-centrado">Como se organiza Podemos
+    <h4 class="texto-centrado">Com s'organitza Podem
 			<?php 
     	if ($region !== '') { ?>
-    		en <?php echo $region ?>
+    		a <?php echo $region ?>
     	<?php } ?>
     </h4>
   </div>
@@ -46,7 +46,7 @@ if ($intro_ver == 1) { ?>
 <div class="franja fondo-gris--claro">
 	<div class="row sin-margen--abajo">
 	  <div class="small-12 columns texto-centrado">
-	    <h3>Asamblea Ciudadana
+	    <h3>Assemblea Ciutadana
 				<?php 
 	    	if ($region !== '') { ?>
 	    		<br>de <?php echo $region ?>
@@ -58,7 +58,7 @@ if ($intro_ver == 1) { ?>
 	    	<p><?php echo $ac_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>La Asamblea Ciudadana la conforma el conjunto de la ciudadanía inscrita en Podemos. Es el espacio donde se toman la grandes decisiones (elecciones primarias, elecciones a cargos internos, estrategia política, programa…) y donde todos los inscritos participan de forma directa e igual con voz y voto. Los únicos requisitos para participar son: ser mayor de dieciocho años, comprometerse en la construcción de Podemos y aceptar su Código Ético.</p>
+	  		<p>L'Assemblea Ciutadana la conforma el conjunt de la ciutadanía inscrita a Podem. Es l'espai on es prenen les grans decisions (eleccions primaries, eleccions a carrecs interns, estratègia polìtica, programa…) i on tots els inscrits participen de forma directa i igual amb veu i vot. Els ùnics requisits per a participar son: ser major de divuit anys, comprometres en la construcció de Podem i acceptar el seu Codi Ètic.</p>
 	    <?php } ?>
 
 	  	<?php 
@@ -87,13 +87,13 @@ if ($intro_ver == 1) { ?>
 	<!-- ÓRGANOS -->
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Secretaría General</h4>
+	    <h4>Secretaria General</h4>
 	    <?php 
 		  if ($sg_descripcion !== '') { ?>
 	  		<p><?php echo $sg_descripcion ?></p>
 	  	<?php } 
 	  	else { ?>
-	  		<p>Se nombra mediante elección directa en primarias abiertas a toda la ciudadanía inscrita en Podemos. Ejerce la representación política e institucional de Podemos y asegura la coordinación entre las áreas ejecutivas del Consejo Ciudadano, órgano que preside.</p>
+	  		<p>Es nomena mitjançant elecció directa en primàries obertes a tota la ciutadania inscrita en Podem. Exerceix la representació política i institucional de Podem i assegura la coordinació entre les àrees executives del Consell Ciutadà, òrgan que presideix.</p>
 	    <?php }
 
 	  	if ($sg_enlace_boton !== '' && $sg_texto_boton !== '') { ?> 
@@ -104,13 +104,13 @@ if ($intro_ver == 1) { ?>
 	  </div>
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Consejo Ciudadano</h4>
+	    <h4>Consell Ciutadà</h4>
 	    <?php
 		  if ($cc_descripcion !== '') { ?>
 	    	<p><?php echo $cc_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>Es un órgano ejecutivo colegiado elegido mediante primarias abiertas a la ciudadanía. Desarrolla las decisiones adoptadas por la Asamblea Ciudadana y mantiene una constante rendición de cuentas ante dicha Asamblea y ante los círculos con mecanismos de participación directa.</p>
+	  		<p>És un òrgan executiu col·legiat triat mitjançant primàries obertes a la ciutadania. Desenvolupa les decisions adoptades per l'Assemblea Ciutadana i manté una constant rendició de comptes davant aquesta Assemblea i davant els cercles amb mecanismes de participació directa.</p>
 	    <?php } 
 
 	    if ($cc_enlace_boton !== '' && $cc_texto_boton !== '') { ?> 
@@ -121,13 +121,13 @@ if ($intro_ver == 1) { ?>
 	  </div>
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Comisión de Garantías</h4>
+	    <h4>Comisió de Garanties</h4>
 	    <?php 
 		  if ($cg_descripcion !== '') { ?>
 	    	<p><?php echo $cg_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>Es el órgano encargado de velar por el respeto a los derechos de los inscritos en Podemos y por los principios fundamentales y las normas de funcionamiento de la organización. Está compuesta por miembros elegidos de forma directa e independiente en primarias abiertas.</p>
+	  		<p>És l'òrgan encarregat de vetllar pel respecte als drets dels inscrits en Podem i pels principis fonamentals i les normes de funcionament de l'organització. Està composta per membres triats de forma directa i independent en primàries obertes.</p>
 	    <?php } 
 
 	    if ($cg_enlace_boton !== '' && $cg_texto_boton !== '') { ?> 
@@ -145,7 +145,7 @@ if ($intro_ver == 1) { ?>
 if ($areas_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Áreas del Consejo Ciudadano <?php echo $ambito ?></h5>
+	    <h5 class="titulo texto-centrado">Secretaries del Consell Ciutadà <?php echo $ambito ?></h5>
 	  </div>
     <?php 
 	  $args = array(
@@ -171,9 +171,6 @@ if ($areas_ver == 1) { ?>
 			        </div>
 			        <div class="tarjeta-accion">
 			          <a class="small button invertido" href="<?php the_permalink(); ?>">+ Info</a>
-			          <?php if ( $enlace_contacto !='' ) { ?>
-			          	<a class="small button plano" href="<?php bloginfo('url'); ?>/contacto">Contacto</a>
-			          <?php } ?>
 			          <a href="javascript:void(0)" class="control-cerrar control-cerrar--derecha"></a>
 			        </div>
 			      </div>
@@ -199,10 +196,10 @@ if ($areas_ver == 1) { ?>
 if ($circulos_ver == 1) { ?> 
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Círculos
+	    <h5 class="titulo texto-centrado">Cercles
 				<?php 
 	    	if ($region !== '') { ?>
-	    		de Podemos en <?php echo $region ?>
+	    		de Podem a <?php echo $region ?>
 	    	<?php } ?>
 	    </h5>
 	  </div>

@@ -24,10 +24,9 @@
   ?>    
 	<div class="row instituciones-noticias">
 	  <div class="small-12 columns">
-	  	<h5 class="titulo texto-centrado">Actualidad 
+	  	<h5 class="titulo texto-centrado">Actualitat 
 				<?php 
-	    	if ($institucion !== '') { ?>
-	    		en el <?php echo $institucion ?>
+	    	if ($institucion !== '') { ?>: <?php echo $institucion ?>
 	    	<?php } ?>
 	    </h5>
 	  </div>
@@ -61,7 +60,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $instituciones_link ); ?>" title="ir a la página de las publicaciones de la categoría Instituciones">ver los artículos en Instituciones</a>
+        <a href="<?php echo esc_url( $instituciones_link ); ?>" title="anar a la pàgina de les publicacions de la categoria Institucions">veure els articles a Institucion</a>
       </p>
 	  </div>
 	</div>
@@ -74,7 +73,7 @@
   ?>
 	<div class="row instituciones-actividad">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Actividad de los cargos 
+	    <h5 class="titulo texto-centrado">Activitat dels carrecs 
 			<?php 
     	if ($institucion !== '') { ?>
     		en el <?php echo $institucion ?>
@@ -99,7 +98,7 @@
 	    <div class="medium-10 columns">
 	    <div class="tabs-content vertical" data-tabs-content="example-vert-tabs">
 	      <div class="tabs-panel is-active" id="presidencia">
-	        <h6>Presidencia y participación ciudadana</h6>
+	        <h6>Presidencia y participació ciutadana</h6>
 	        <table class="scroll stack">
 	          <thead>
 	            <tr>
@@ -287,10 +286,10 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
-		    		en el ayuntamiento
+		    		a l'ajuntament
 		    	<?php } ?>
 		    </h5>
 		  </div>
@@ -348,7 +347,7 @@
 		  	            	  <br>
 		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
-			  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
+			  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> a l'Ajuntament de <?php echo $region ?><?php } ?><br>
 			  	            	  </p>
 		  	            	  <?php } ?>
 		  	            	  <?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -383,7 +382,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el consell
@@ -472,7 +471,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el cabildo
@@ -527,7 +526,7 @@
 		  	            	  <br>
 		  	            	  <br>
 		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
+		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> a l'Ajuntament de <?php echo $region ?><?php } ?><br>
 		  	            	  </p>
 		  	            	  <p>
 		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
@@ -560,7 +559,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el gobierno autonomico
@@ -648,7 +647,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el parlamento autonomico
@@ -736,7 +735,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el Senado
@@ -824,7 +823,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el Congreso de los Diputados
@@ -912,7 +911,7 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relacion de cargos electos
+		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
 					<?php 
 		    	if ($institucion !== '') { ?>
 		    		en el Gobierno Central
