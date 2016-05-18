@@ -59,11 +59,28 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
+  <!-- CABECERA | IDIOMAS -->
+
+  <div class="franja--estrecha fondo-gris--claro sin-margen--abajo">
+    <div class="row sin-margen--abajo">
+      <div class="small-12 large-3 columns">
+        <div class="selector-idioma">
+          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('top-bar') ) : ?>
+  
+          <?php endif; ?>
+        </div>
+      </div>
+      <div class="small-12 large-9 columns">
+        <?php menu_superior(); ?> 
+      </div>
+    </div>
+  </div>
+
 	<!-- CABECERA | BANNER GLOBAL -->
   <?php 
     if ($banner_ver == 1) {
     ?>
-    <div class="franja--estrecha fondo-morado sin-margen--abajo">
+    <div class="franja--estrecha fondo-verde sin-margen--abajo">
       <div class="callout-enlinea texto-centrado">
         <span class="callout-enlinea-texto"><strong><?php echo $banner_texto ?></strong></span>
         <?php if ($banner_texto_boton !== '' && $banner_enlace_boton !== '') { ?>
@@ -77,28 +94,12 @@
     </div>
   <?php } ?>
   
-  <!-- CABECERA | IDIOMAS -->
-
-  <div class="franja--estrecha fondo-gris--claro sin-margen--abajo">
-    <div class="row sin-margen--abajo">
-      <div class="small-12 large-3 large-offset-9 columns">
-        <ul class="menu align-right selector-idioma">
-          <li><a href="">Castellano</a></li>
-          <li><a href="">Català</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  
   <!-- CABECERA | NAVEGACIÓN -->
 
   <div class="top-bar">
     <div class="row">
       <div class="small-12 columns">
         <div class="top-bar-title">
-          <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-            <span class="menu-icon dark" data-toggle></span>
-          </span>
           <?php if ( get_theme_mod( 'podemospress_logo' ) ) : ?>
 				    <div class='site-logo'>
 				      <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
@@ -112,10 +113,13 @@
 		    			</a>
 		    		</strong>
 					<?php endif; ?>
+          <span class="menu-icono" data-hide-for="large">
+            <i class="fa fa-ellipsis-h"></i>
+          </span>
         </div>
-          <div class="top-bar-right">
-            <?php menu_principal(); ?> 
-          </div>
+        <div class="top-bar-right">
+          <?php menu_principal(); ?> 
+        </div>
       </div>
     </div>
   </div>
