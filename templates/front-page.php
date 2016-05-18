@@ -8,7 +8,7 @@
     if ($carrusel_home_ver == 1) {
     ?>    
   	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-carrusel') ) : ?>
-      <div class="carrusel -carrusel-un-item--sin-controles">
+      <div class="carrusel portada-carrusel -carrusel-un-item">
         <?php 
         $noticias_args = array(
           'post_type' => 'post',
@@ -22,14 +22,15 @@
         $instituciones_item = new WP_Query($noticias_args);
         if( $instituciones_item->have_posts() ) { ?>
           <?php  while ( $instituciones_item->have_posts() ) : $instituciones_item->the_post(); ?>
-            <a class="carrusel-envoltorio" href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
-              <div class="carrusel-item">
-                <?php the_post_thumbnail(); ?>
-                <div class="carrusel-seccion">
-                  <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-                </div>
+            <div class="carrusel-item">
+              <?php the_post_thumbnail(); ?>
+              <div class="carrusel-seccion">
+                <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
+                <a class="carrusel-enlace button invertido" href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
+                    leer
+                  </a>
               </div>
-            </a>
+            </div>
           <?php endwhile; ?>
         <?php } elseif( $carrusel_item->have_posts() ) { ?>
           <?php  while ( $carrusel_item->have_posts() ) : $carrusel_item->the_post(); ?>
@@ -98,7 +99,7 @@
 
   <div class="row">
     <div class="small-12 large-8 columns contenido-principal">
-      <h5 class="titulo">Actualidad</h5>
+      <h5 class="titulo">Actualitat</h5>
 
       <?php 
       $excluir_portada = get_cat_ID('portada');
@@ -120,7 +121,7 @@
           <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
             <h4 class="articulo-titulo"><?php the_title(); ?></h4>
           </a>
-          <span class="articulo-extracto"><?php $customLength=40; the_excerpt(); ?></span>
+          <span class="articulo-extracto"><?php $customLength=50; the_excerpt(); ?></span>
           
           </div>
         </div>
@@ -130,73 +131,29 @@
       <div class="row">
         <div class="small-12 columns">
           <hr>
-          <a href="<?php bloginfo('url'); ?>/noticias" class="tiny button flota-derecha">Ver toda la actualidad</a>
+          <a href="<?php bloginfo('url'); ?>/noticias" class="button">Ver toda la actualidad</a>
         </div>
       </div>
     </div>
     
 
-    <!-- BARRA LATERAL | AGENDA -->
+    <!-- BARRA LATERAL -->
 
     <div class="small-12 large-4 columns barra-lateral">
+
+      <!-- AGENDA -->
       
       <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-uno') ) : ?>
-      	<div class="modulo modulo-agenda">
-        	<h5 class="titulo">Eventos</h5>
-          <div class="modulo-agenda-lista">
-            <article class="evento">
-              <div class="evento-fecha">
-                <p class="evento-mes">Sept</p>
-                <p class="evento-dia">18</p>
-              </div>
-              <div class="evento-descripcion">
-                <h6 class="evento-descripcion-cabecera">
-                  <a href="#" title="Day in the Life of Foundation for Apps">Day in the Life of Foundation for Apps</a>
-                </h6>
-                <p class="evento-descripcion-detalles"><span class="evento-descripcion-hora"></span>BDConf - Altlanta</p>
-              </div>
-            </article>
-            <hr>
-            <article class="evento">
-              <div class="evento-fecha">
-                <p class="evento-mes">Sept</p>
-                <p class="evento-dia">18</p>
-              </div>
-              <div class="evento-descripcion">
-                <h6 class="evento-descripcion-cabecera">
-                  <a href="#" title="Day in the Life of Foundation for Apps">Day in the Life of Foundation for Apps</a>
-                </h6>
-                <p class="evento-descripcion-detalles"><span class="evento-descripcion-hora"></span>BDConf - Altlanta</p>
-              </div>
-            </article>
-            <hr>
-            <article class="evento">
-              <div class="evento-fecha">
-                <p class="evento-mes">Sept</p>
-                <p class="evento-dia">18</p>
-              </div>
-              <div class="evento-descripcion">
-                <h6 class="evento-descripcion-cabecera">
-                  <a href="#" title="Day in the Life of Foundation for Apps">Day in the Life of Foundation for Apps</a>
-                </h6>
-                <p class="evento-descripcion-detalles"><span class="evento-descripcion-hora"></span>BDConf - Altlanta</p>
-              </div>
-            </article>
-            <hr>
-          </div>
-          <div class="modulo-controles">
-            <a href="#" class="tiny button">Ver agenda completa</a>
-          </div>
-      	</div>
+      	
       <?php endif; ?>
 
-      <!-- BARRA LATERAL | DESTACADO -->
+      <!-- DESTACADO -->
 
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-dos') ) : ?>
 
 			<?php endif; ?>
 
-      <!-- BARRA LATERAL | REDES -->
+      <!-- REDES -->
 
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-tres') ) : ?>
 				<?php
@@ -272,7 +229,7 @@
   	?>
 	  <div class="row" data-equalizer data-equalize-on="medium">
 	    <div class="small-12 columns">
-	      <h5 class="titulo texto-centrado">Colabora con Podemos</h5>
+	      <h5 class="titulo texto-centrado">Colabora amb <?php echo $delegacion_nombre ?></h5>
 	    </div>
 	    <div class="small-12 large-3 columns">
 
