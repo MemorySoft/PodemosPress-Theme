@@ -120,6 +120,7 @@
           <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
             <h4 class="articulo-titulo"><?php the_title(); ?></h4>
           </a>
+          <span class="articulo-extracto"><?php $customLength=40; the_excerpt(); ?></span>
           
           </div>
         </div>
