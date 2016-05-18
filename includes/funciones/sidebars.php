@@ -9,6 +9,16 @@
 */
 
 if ( function_exists( 'register_sidebar' ) ) {
+	// Global
+	register_sidebar( array(
+		'name' => 'Top bar',
+		'id' => 'top-bar',
+		'description'   => 'Inserta contenido en la barra superior de todo el sitio',
+		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 	// Inicio
 	register_sidebar( array(
 		'name' => 'Inicio Carrusel',
@@ -225,7 +235,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'before_title' => '<h5 class="titulo">',
 		'after_title' => '</h5>',
 	) );
-
+	// Blog
 	register_sidebar( array(
 		'name' => 'Sidebar Blog',
 		'id' => 'sidebar',
