@@ -15,7 +15,7 @@ function podemospress_setup() {
 			'theme_location' 		=> 'menu-principal',
 			'container'       	=> 'nav',
 			'container_class'		=> 'top-bar-menu',
-			'menu_class' 				=> 'menu',
+			'menu_class' 				=> 'menu menu-principal menu-responsive',
 			'menu_id'         	=> 'menu-primario',
 			'depth'							=> '0',
 			'fallback_cb' 			=> false
@@ -36,19 +36,19 @@ function podemospress_setup() {
 	function menu_superior() {
 		wp_nav_menu( array(
 			'theme_location' 		=> 'menu-superior',
-			'menu_class' 				=> 'menu-superior menu-horizontal'
+			'menu_class' 				=> 'menu menu-superior menu-horizontal menu-responsive'
 		));
 	}
 	function menu_subdelegaciones() {
 		wp_nav_menu( array(
 			'theme_location' 		=> 'menu-subdelegaciones',
-			'menu_class' 				=> 'menu menu-subdelegaciones'
+			'menu_class' 				=> 'menu menu-subdelegaciones menu-horizontal menu-responsive'
 		));
 	}
 	function menu_inferior() {
 		wp_nav_menu( array(
 			'theme_location' 		=> 'menu-inferior',
-			'menu_class' 				=> 'menu-inferior lista--simple menu-horizontal'
+			'menu_class' 				=> 'menu menu-inferior menu-horizontal menu-responsive'
 		));
 	}
 	
