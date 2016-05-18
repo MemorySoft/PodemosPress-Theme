@@ -4,22 +4,25 @@ $(document).ready(function() {
   $(document).foundation();
 
   // CARRUSELES
-  $(".-carrusel-un-item--sin-controles").owlCarousel({
+  $(".-carrusel-un-item").owlCarousel({
     autoPlay: true,
     slideSpeed : 300,
     paginationSpeed : 400,
+    pagination: true,
+    navigation: true,
+    navigationText: ["←","→"],
     singleItem:true,
     pagination : false
   });
 
-  $(".-carrusel-tres-items--paginacion").owlCarousel({
-    autoPlay: true,
-    navigation: false,
-    pagination: true,
-    items : 3,
-    itemsDesktop : [1200,3],
-    itemsDesktopSmall : [400,1]
-  });
+  // $(".-carrusel-tres-items--paginacion").owlCarousel({
+  //   autoPlay: true,
+  //   navigation: false,
+  //   pagination: true,
+  //   items : 3,
+  //   itemsDesktop : [1200,3],
+  //   itemsDesktopSmall : [400,1]
+  // });
 
   $(".-carrusel-tres-items--navegacion").owlCarousel({
     autoPlay: false,
