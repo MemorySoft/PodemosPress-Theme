@@ -66,6 +66,17 @@ p {
 .columns:last-child:not(:first-child) {
     float: left;
 }
+@media screen and (max-width: 69.313em) {   /* MOVILES + TABLETS + PC VIEJUNO */
+  .row {
+    margin-bottom: 0;
+  }
+  .column, .columns {
+    margin-bottom: 1em;
+  }
+  .media-object-section {
+      display: block;
+  }
+}
 
 /* TEXTO */
 .lead {
@@ -145,7 +156,6 @@ p {
   float: right;
   cursor: pointer;
 }
-
 ul.menu-horizontal {
   margin: 0;
 }
@@ -166,7 +176,10 @@ ul.menu-horizontal {
 }
 .menu-horizontal.menu-superior {
   float: right;
-}    
+}  
+.menu.align-right > li {
+  margin-top: .7rem;
+}  
 @media screen and (max-width: 39.9375em) {
 
 }
@@ -189,6 +202,9 @@ ul.menu-horizontal {
   .sub-menu {
     margin-top: 0;
     margin-left: 9rem;
+  }
+  .menu.align-right > li {
+    float: none;
   }
 }
 @media screen and (min-width: 69.313em) {
@@ -340,7 +356,7 @@ ul.menu-horizontal {
   }
   .callout a,
   .callout-enlinea a {
-    display: block;
+    display: inline-block;
     float: none;
     margin: .5rem auto;
   }
@@ -383,6 +399,14 @@ ul.menu-horizontal {
 }
 .footer .media-object-section h3 {
   line-height: .9;
+}
+@media screen and (max-width: 69.313em) {
+  footer {
+    text-align: center;
+  }
+  .footer {
+    padding-top: 1rem;
+  }
 }
 
 /*  WORDPRESS
@@ -466,6 +490,11 @@ h4.logo-texto {
 }
 .franja--estrecha .modulo {
   margin-bottom: 0;
+}
+@media screen and (max-width: 69.313em) {   /* MOVILES + TABLETS * PC VIEJUNO */
+  .franja {
+    padding: 2em 0;
+  }
 }
 
 /* MODULOS */
@@ -671,13 +700,13 @@ h4.logo-texto {
 }
 .tarjeta-titulo {
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
-  line-height: 1.7rem;
-  font-size: 1.1rem;
-  font-weight: 700;
+  line-height: 2.4rem;
+  font-size: 2rem;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .tarjeta-contenido {
-  padding: 1.3rem;
+  padding: 2.2rem;
   font-weight: 300;
   height: 16rem;
 }
@@ -813,11 +842,6 @@ a.leer-mas {
   top: 25%;
   overflow: hidden;
 }
-.instituciones-noticias .owl-theme .owl-controls,
-.actualidad-carrusel .owl-theme .owl-controls {
-  width: 120%;
-  margin-left: -10%;
-}
 .owl-theme .owl-controls .owl-buttons div {
   color: #333;
   display: inline-block;
@@ -834,12 +858,23 @@ a.leer-mas {
 .owl-theme .owl-controls .owl-buttons .owl-next {
   float: right;
 }
+.instituciones-noticias .owl-theme .owl-controls,
+.actualidad-carrusel .owl-theme .owl-controls {
+  width: 120%;
+  margin-left: -10%;
+}
+.portada-carrusel .owl-controls {
+  top: 40%;
+}
+.portada-carrusel .owl-controls .owl-buttons .owl-prev,
+.portada-carrusel .owl-controls .owl-buttons .owl-next {
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 0 10px #333;
+}
 
 .carrusel {
   padding-bottom: 1rem;
-}
-.carrusel-envoltorio {
-  /*display: block;*/
 }
 .carrusel-item {
   height: 40rem;
@@ -858,6 +893,12 @@ a.leer-mas {
   text-align: center;
   position: relative;
 }
+.carrusel-enlace {
+  margin-top: 1.5rem;
+}
+.carrusel-enlace.button {
+  background: rgba(255, 255, 255, 0.2);
+}
 .carrusel-item .carrusel-titulo {
   color: #fff;
   text-shadow: 0 0 10px #333;
@@ -868,6 +909,46 @@ a.leer-mas {
   top: 40%;
   left: 0;
 }
+@media screen and (max-width: 69.313em) {   /* MOVILES + TABLETS * PC VIEJUNO */
+  .carrusel-item {
+    height: 30rem;
+  }
+  .carrusel-seccion {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 6rem;
+  }
+  .carrusel-item .carrusel-titulo,
+  .carrusel-item .button {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .carrusel-enlace {
+    margin-top: .5rem;
+  }
+  .home .carrusel {
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 39.9375em) {   /* MOVILES */
+  .carrusel-item {
+    height: 20rem;
+  }
+  .carrusel-seccion {
+    padding: 5rem;
+  }
+}
+@media screen and (max-width: 20.000em) {   /* CHUNGUI MOVILES */
+  .carrusel-item {
+    height: 15em;
+  }
+  .carrusel-seccion {
+    padding: 2rem;
+  }
+}
+
 
 /* SIDEBARS */
 .sidebar {
@@ -909,6 +990,11 @@ a.leer-mas {
 }
 .home .top-bar {
   margin-bottom: 0;
+}
+@media screen and (max-width: 69.313em) {   /* CHUNGUI MOVILES */
+  .home .carrusel {
+    padding-bottom: 2rem;
+  }
 }
 
 /* MIEMBROS */
@@ -1012,6 +1098,11 @@ a.leer-mas {
 .lista--simple ul {
   list-style: none;  
   margin-left: 0;
+}
+@media screen and (max-width: 69.313em) {
+  .lista--entre-lineas li {
+    margin: 0 auto;
+  }
 }
 
 /* BORDES */
