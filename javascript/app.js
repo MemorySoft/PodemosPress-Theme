@@ -38,5 +38,10 @@ $(document).ready(function() {
   $('.control-cerrar').click(function() {
     $(this).parents('.tarjeta').find('.tarjeta-reverso').slideUp('fast');
   });
+
+  // MENU
+  $('.menu-icono').click(function() {
+    $('.top-bar-menu').toggle('fast');
+  });
   
 });

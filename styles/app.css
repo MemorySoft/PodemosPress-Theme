@@ -85,12 +85,17 @@ p {
 .top-bar .row {
   margin-bottom: 0;
 }
-
 .top-bar-title {
   color: #54075B;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
+}
+@media screen and (min-width: 0em) and (max-width: 69.313em) {
+  .top-bar-title {
+    font-size: 2rem;
+    width: 100%;
+  }
 }
 
 .menu {
@@ -106,6 +111,9 @@ p {
   font-size: .8rem;
   text-transform: uppercase;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+}
+.menu-superior .menu-item a {
+  padding: .9rem;
 }
 .sub-menu {
   display: none;
@@ -132,6 +140,11 @@ p {
 .top-bar .menu .current_page_item a {
   color: #fff;
 }
+.menu-icono {
+  width: auto;
+  float: right;
+  cursor: pointer;
+}
 
 ul.menu-horizontal {
   margin: 0;
@@ -145,17 +158,46 @@ ul.menu-horizontal {
   display: block;
   padding: .7rem 1rem;
 }
-
 .menu-actualidad li {
   border-right: 1px solid #fff; 
 }
 .menu-actualidad li:hover {
   background: #22bb5b;
 }
+.menu-horizontal.menu-superior {
+  float: right;
+}    
+@media screen and (max-width: 39.9375em) {
 
-.breadcrumbs a {
-    color: #54075B;
-    text-decoration: none
+}
+@media screen and (max-width: 69.313em) {
+  .top-bar-right {
+    width: 100%;
+  }
+  .top-bar-menu {
+    display: none;
+  }
+  .menu-horizontal.menu-superior {
+    float: left;
+    width: 100%;
+    margin-left: 1rem;
+  }
+  .menu-principal li {
+    display: block;
+    margin-right: 0;
+  }
+  .sub-menu {
+    margin-top: 0;
+    margin-left: 9rem;
+  }
+}
+@media screen and (min-width: 69.313em) {
+  .menu-icono {
+    display: none;
+  }
+  .top-bar-menu {
+    display: normal;
+  }
 }
 
 /* BOTONES */
@@ -422,6 +464,9 @@ h4.logo-texto {
   padding: .3em 0;
   margin-bottom: 4em;
 }
+.franja--estrecha .modulo {
+  margin-bottom: 0;
+}
 
 /* MODULOS */
 .modulo {
@@ -449,6 +494,7 @@ h4.logo-texto {
 }
 .articulo-extracto {
   color: #333;
+  overflow: hidden;
 }
 .articulo-contacto {
   margin-top: .5rem;
@@ -478,10 +524,11 @@ h4.logo-texto {
   padding-right: 0;
 }
 .articulo-titulo {
-  margin-bottom: .5rem
+  margin-bottom: .5rem;
+  line-height: 1.8rem;
 }
 .articulo-seccion .articulo-imagen img {
-  max-width: 280px;
+  max-width: 230px;
 }
 .articulo-seccion--vertical .articulo-imagen {
   max-width: 100%;
