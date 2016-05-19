@@ -15,16 +15,7 @@ $(document).ready(function() {
     pagination : false
   });
 
-  // $(".-carrusel-tres-items--paginacion").owlCarousel({
-  //   autoPlay: true,
-  //   navigation: false,
-  //   pagination: true,
-  //   items : 3,
-  //   itemsDesktop : [1200,3],
-  //   itemsDesktopSmall : [400,1]
-  // });
-
-  $(".-carrusel-tres-items--navegacion").owlCarousel({
+  $(".-carrusel-tres-items").owlCarousel({
     autoPlay: false,
     navigation: true,
     navigationText: ["←","→"],

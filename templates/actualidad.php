@@ -48,7 +48,7 @@
       <h5 class="titulo texto-centrado"><?php _e('Sala de premsa','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
-      <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
+      <div class="carrusel -carrusel-tres-items sin-margen--abajo">
         <?php 
           $args=array(
           'post_type' => 'post',
@@ -93,7 +93,7 @@
       <h5 class="titulo texto-centrado"><?php _e('Noticies','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
-      <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
+      <div class="carrusel -carrusel-tres-items sin-margen--abajo">
         <?php 
           $args=array(
           'post_type' => 'post',
@@ -138,7 +138,7 @@
       <h5 class="titulo texto-centrado"><?php _e('Opinió','podemospress' ); ?></h5>
     </div>
     <div class="large-12 columns">
-      <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
+      <div class="carrusel -carrusel-tres-items sin-margen--abajo">
         <?php 
           $args=array(
           'post_type' => 'post',
@@ -183,7 +183,7 @@
       <h5 class="titulo texto-centrado"><?php _e('Vídeos','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
-      <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
+      <div class="carrusel -carrusel-tres-items sin-margen--abajo">
         <?php 
           $args=array(
           'post_type' => 'video',
