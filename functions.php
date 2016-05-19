@@ -35,10 +35,10 @@ require_once('includes/opciones/delegacion.php');
 /**
 * ENTRADAS PERSONALIZADAS
 *********************************************************************************************************/
-require_once('includes/entradas/programa_post.php');
 require_once('includes/entradas/miembros_post.php');
+require_once('includes/entradas/secretaria_post.php');
+require_once('includes/entradas/programa_post.php');
 require_once('includes/entradas/contacto_post.php');
-require_once('includes/entradas/areas_post.php');
 require_once('includes/entradas/carrusel_post.php');
 require_once('includes/entradas/destacado_post.php');
 require_once('includes/entradas/videos_post.php');
