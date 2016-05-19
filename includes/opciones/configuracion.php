@@ -71,7 +71,7 @@ function ConfiguracionGlobal() {
 	          <th scope="row">Mostrar anuncio</th>
 	          <td>
 	          <?php $options = get_option( "global_banner_visibilidad" ); ?>
-	          <input type="checkbox" name="global_banner_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el anuncio</span>
+	          <input type="checkbox" name="global_banner_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el anuncio</span>
 	        </tr>
 	        <tr valign="top">
 	          <th scope="row">Texto del anuncio</th>
@@ -96,7 +96,7 @@ function ConfiguracionGlobal() {
 		        <th scope="row">Mostrar menú</th>
 		        <td>
 		        <?php $options = get_option( "global_menu_subdelegaciones_visibilidad" ); ?>
-		        <input type="checkbox" name="global_menu_subdelegaciones_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el menú de subdelegaciones </span>
+		        <input type="checkbox" name="global_menu_subdelegaciones_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el menú de subdelegaciones </span>
 		      </tr>
 	      </table>
 

@@ -52,7 +52,7 @@ function PaginaActualidad() {
           <th scope="row">Mostrar Sala de prensa</th>
           <td>
           <?php $options = get_option( "actualidad_carrusel_prensa_visibilidad" ); ?>
-          <input type="checkbox" name="actualidad_carrusel_prensa_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Sala de prensa</span>
+          <input type="checkbox" name="actualidad_carrusel_prensa_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Sala de prensa</span>
         </tr>
       </table>
 
@@ -65,7 +65,7 @@ function PaginaActualidad() {
           <th scope="row">Mostrar Noticias</th>
           <td>
           <?php $options = get_option( "actualidad_carrusel_noticias_visibilidad" ); ?>
-          <input type="checkbox" name="actualidad_carrusel_noticias_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Noticias</span>
+          <input type="checkbox" name="actualidad_carrusel_noticias_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Noticias</span>
         </tr>
       </table>
 
@@ -78,7 +78,7 @@ function PaginaActualidad() {
           <th scope="row">Mostrar Opinion</th>
           <td>
           <?php $options = get_option( "actualidad_carrusel_opinion_visibilidad" ); ?>
-          <input type="checkbox" name="actualidad_carrusel_opinion_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Opinion</span>
+          <input type="checkbox" name="actualidad_carrusel_opinion_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Opinion</span>
         </tr>
       </table>
 
@@ -91,7 +91,7 @@ function PaginaActualidad() {
           <th scope="row">Mostrar Videos</th>
           <td>
           <?php $options = get_option( "actualidad_carrusel_videos_visibilidad" ); ?>
-          <input type="checkbox" name="actualidad_carrusel_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Videos</span>
+          <input type="checkbox" name="actualidad_carrusel_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Videos</span>
         </tr>
       </table>
 

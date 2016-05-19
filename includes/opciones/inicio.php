@@ -123,7 +123,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar carrusel</th>
           <td>
           <?php $options = get_option( "home_carrusel_visibilidad" ); ?>
-          <input type="checkbox" name="home_carrusel_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el carrusel</span>
+          <input type="checkbox" name="home_carrusel_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el carrusel</span>
         </tr>
       </table>
 
@@ -136,7 +136,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar campaña</th>
           <td>
           <?php $options = get_option( "home_destacado_visibilidad" ); ?>
-          <input type="checkbox" name="home_destacado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la campaña</span>
+          <input type="checkbox" name="home_destacado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la campaña</span>
         </tr>
       </table>
 
@@ -149,7 +149,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar Portales</th>
           <td>
           <?php $options = get_option( "home_portales_visibilidad" ); ?>
-          <input type="checkbox" name="home_portales_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar los Portales</span>
+          <input type="checkbox" name="home_portales_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar los Portales</span>
         </tr>
       </table>
       <table class="form-table">
@@ -201,7 +201,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar Vídeos</th>
           <td>
           <?php $options = get_option( "home_videos_visibilidad" ); ?>
-          <input type="checkbox" name="home_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar los vídeos</span>
+          <input type="checkbox" name="home_videos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar los vídeos</span>
         </tr>
       </table>
 
@@ -214,7 +214,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar Colaboración</th>
           <td>
           <?php $options = get_option( "home_colaboracion_visibilidad" ); ?>
-          <input type="checkbox" name="home_colaboracion_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar Colaboraciones</span>
+          <input type="checkbox" name="home_colaboracion_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar Colaboraciones</span>
         </tr>
       </table>
       <table class="form-table">
@@ -299,7 +299,7 @@ function PaginaInicio() {
           <th scope="row">Mostrar callout</th>
           <td>
           <?php $options = get_option( "home_callout_visibilidad" ); ?>
-          <input type="checkbox" name="home_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+          <input type="checkbox" name="home_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
         </tr>
       </table>
       <table class="form-table">

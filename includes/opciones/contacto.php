@@ -54,7 +54,7 @@ function PaginaContacto() {
           <th scope="row">Mostrar Formulario</th>
           <td>
           <?php $options = get_option( "contacto_formulario_visibilidad" ); ?>
-          <input type="checkbox" name="contacto_formulario_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el Formulario</span>
+          <input type="checkbox" name="contacto_formulario_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el Formulario</span>
         </tr>
         <tr valign="top">
           <th scope="row">Descripción del formulario</th>
@@ -77,7 +77,7 @@ function PaginaContacto() {
           <th scope="row">Mostrar Directorio</th>
           <td>
           <?php $options = get_option( "contacto_directorio_visibilidad" ); ?>
-          <input type="checkbox" name="contacto_directorio_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el Directorio</span>
+          <input type="checkbox" name="contacto_directorio_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el Directorio</span>
         </tr>
       </table>
 

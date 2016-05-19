@@ -89,7 +89,7 @@ function PaginaParticipacion() {
               <th scope="row">Mostrar Destacado</th>
               <td>
               <?php $options = get_option( "participacion_destacado_visibilidad" ); ?>
-              <input type="checkbox" name="participacion_destacado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Destacados</span>
+              <input type="checkbox" name="participacion_destacado_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Destacados</span>
             </tr>
           </table>
           <table class="form-table">
@@ -143,7 +143,7 @@ function PaginaParticipacion() {
               <th scope="row">Mostrar Herramientas</th>
               <td>
               <?php $options = get_option( "participacion_herramientas_visibilidad" ); ?>
-              <input type="checkbox" name="participacion_herramientas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Herramientas</span>
+              <input type="checkbox" name="participacion_herramientas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección de Herramientas</span>
             </tr>
             <tr valign="top">
               <th scope="row">Columna izquierda</th>
@@ -183,7 +183,7 @@ function PaginaParticipacion() {
               <th scope="row">Mostrar callout</th>
               <td>
               <?php $options = get_option( "participacion_callout_visibilidad" ); ?>
-              <input type="checkbox" name="participacion_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+              <input type="checkbox" name="participacion_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
             </tr>
           </table>
           <table class="form-table">

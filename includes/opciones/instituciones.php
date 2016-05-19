@@ -97,7 +97,7 @@ function PaginaInstituciones() {
           <th scope="row">Mostrar carrusel</th>
           <td>
           <?php $options = get_option( "instituciones_carrusel_visibilidad" ); ?>
-          <input type="checkbox" name="instituciones_carrusel_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el carrusel</span>
+          <input type="checkbox" name="instituciones_carrusel_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el carrusel</span>
           </td>
         </tr>
       </table>
@@ -111,7 +111,7 @@ function PaginaInstituciones() {
           <th scope="row">Mostrar actividad</th>
           <td>
           <?php $options = get_option( "instituciones_actividad_visibilidad" ); ?>
-          <input type="checkbox" name="instituciones_actividad_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la Actividad</span>
+          <input type="checkbox" name="instituciones_actividad_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la Actividad</span>
           </td>
         </tr>
       </table>
@@ -159,7 +159,7 @@ function PaginaInstituciones() {
           <th scope="row">Mostrar callout</th>
           <td>
           <?php $options = get_option( "instituciones_callout_visibilidad" ); ?>
-          <input type="checkbox" name="instituciones_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+          <input type="checkbox" name="instituciones_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
           </td>
         </tr>
       </table>

@@ -99,7 +99,7 @@ function PaginaMiembros() {
               <th scope="row">Mostrar Secretaría General</th>
               <td>
               <?php $options = get_option( "miembros_secretaria_visibilidad" ); ?>
-              <input type="checkbox" name="miembros_secretaria_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Secretaría General</span>
+              <input type="checkbox" name="miembros_secretaria_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Secretaría General</span>
             </tr>
           </table>
           <table class="form-table">
@@ -125,7 +125,7 @@ function PaginaMiembros() {
               <th scope="row">Mostrar Consejo Ciudadano</th>
               <td>
               <?php $options = get_option( "miembros_consejo_visibilidad" ); ?>
-              <input type="checkbox" name="miembros_consejo_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Consejo Ciudadano</span>
+              <input type="checkbox" name="miembros_consejo_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Consejo Ciudadano</span>
             </tr>
           </table>
           <table class="form-table">
@@ -166,7 +166,7 @@ function PaginaMiembros() {
               <th scope="row">Mostrar Comisión de Garantias</th>
               <td>
               <?php $options = get_option( "miembros_comision_visibilidad" ); ?>
-              <input type="checkbox" name="miembros_comision_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar Comisión de Garantias</span>
+              <input type="checkbox" name="miembros_comision_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar Comisión de Garantias</span>
             </tr>
           </table>
           <table class="form-table">
@@ -207,7 +207,7 @@ function PaginaMiembros() {
             <th scope="row">Mostrar callout</th>
             <td>
             <?php $options = get_option( "miembros_callout_visibilidad" ); ?>
-            <input type="checkbox" name="miembros_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+            <input type="checkbox" name="miembros_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
           </tr>
         </table>
         <table class="form-table">

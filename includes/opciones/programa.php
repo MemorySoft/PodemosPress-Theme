@@ -130,7 +130,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar bloque A</th>
           <td>
           <?php $options = get_option( "programa_bloque_a_visibilidad" ); ?>
-          <input type="checkbox" name="programa_bloque_a_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bloque A</span>
+          <input type="checkbox" name="programa_bloque_a_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el bloque A</span>
         </tr>
       </table>
       <table class="form-table">
@@ -165,7 +165,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar bloque B</th>
           <td>
           <?php $options = get_option( "programa_bloque_b_visibilidad" ); ?>
-          <input type="checkbox" name="programa_bloque_b_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bloque B</span>
+          <input type="checkbox" name="programa_bloque_b_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el bloque B</span>
         </tr>
       </table>
       <table class="form-table">
@@ -200,7 +200,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar bloque C</th>
           <td>
           <?php $options = get_option( "programa_bloque_c_visibilidad" ); ?>
-          <input type="checkbox" name="programa_bloque_c_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bloque C</span>
+          <input type="checkbox" name="programa_bloque_c_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el bloque C</span>
         </tr>
       </table>
       <table class="form-table">
@@ -235,7 +235,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar bloque D</th>
           <td>
           <?php $options = get_option( "programa_bloque_d_visibilidad" ); ?>
-          <input type="checkbox" name="programa_bloque_d_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bloque D</span>
+          <input type="checkbox" name="programa_bloque_d_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el bloque D</span>
         </tr>
       </table>
       <table class="form-table">
@@ -270,7 +270,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar bloque E</th>
           <td>
           <?php $options = get_option( "programa_bloque_e_visibilidad" ); ?>
-          <input type="checkbox" name="programa_bloque_e_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el bloque E</span>
+          <input type="checkbox" name="programa_bloque_e_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el bloque E</span>
         </tr>
       </table>
       <table class="form-table">
@@ -307,7 +307,7 @@ function PaginaPrograma() {
           <th scope="row">Mostrar callout</th>
           <td>
           <?php $options = get_option( "programa_callout_visibilidad" ); ?>
-          <input type="checkbox" name="programa_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+          <input type="checkbox" name="programa_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
         </tr>
       </table>
       <table class="form-table">
