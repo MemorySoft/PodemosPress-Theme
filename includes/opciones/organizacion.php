@@ -46,10 +46,14 @@ function RegistraOpcionesOrganizacion() {
   add_option("organizacion_circulos_visibilidad","","","yes");
   add_option("organizacion_circulos_texto","","","yes");
   add_option("organizacion_circulos_media","","","yes");
-  add_option("organizacion_circulos_texto_boton_derecho","","","yes");
-  add_option("organizacion_circulos_enlace_boton_derecho","","","yes");
-  add_option("organizacion_circulos_texto_boton_izquierdo","","","yes");
-  add_option("organizacion_circulos_enlace_boton_izquierdo","","","yes");
+  add_option("organizacion_circulos_texto_boton_a","","","yes");
+  add_option("organizacion_circulos_enlace_boton_a","","","yes");
+  add_option("organizacion_circulos_texto_boton_b","","","yes");
+  add_option("organizacion_circulos_enlace_boton_b","","","yes");
+  add_option("organizacion_circulos_texto_boton_c","","","yes");
+  add_option("organizacion_circulos_enlace_boton_c","","","yes");
+  add_option("organizacion_circulos_texto_boton_d","","","yes");
+  add_option("organizacion_circulos_enlace_boton_d","","","yes");
 
   add_option("organizacion_callout_visibilidad","","","yes");
   add_option("organizacion_callout_titulo","","","yes");
@@ -85,10 +89,14 @@ function RegistraOpcionesOrganizacion() {
   register_setting("opciones_organizacion", "organizacion_circulos_visibilidad");
   register_setting("opciones_organizacion", "organizacion_circulos_texto");
   register_setting("opciones_organizacion", "organizacion_circulos_media");
-  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_derecho");
-  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_derecho");
-  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_izquierdo");
-  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_izquierdo");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_a");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_a");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_b");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_b");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_c");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_c");
+  register_setting("opciones_organizacion", "organizacion_circulos_texto_boton_d");
+  register_setting("opciones_organizacion", "organizacion_circulos_enlace_boton_d");
 
   register_setting("opciones_organizacion", "organizacion_callout_visibilidad");
   register_setting("opciones_organizacion", "organizacion_callout_titulo");
@@ -265,25 +273,45 @@ function PaginaOrganizacion() {
           <tr valign="top">
             <th scope="row">Mapa</th>
             <td><textarea name="organizacion_circulos_media" cols="37" rows="10"><?php echo get_option('organizacion_circulos_media'); ?></textarea>
-            <p class="description">Pega aquí el código de Google Maps o Open Street Map o una imagen.</p></td>
+            <p class="description">Pega aquí el código de Google Maps o Open Street Map.</p></td>
           </tr>
           <tr valign="top">
-            <th scope="row">Botón derecho</th>
+            <th scope="row">Botón A</th>
             <td>
-            <input type="text" name="organizacion_circulos_texto_boton_derecho" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_derecho'); ?>" />
+            <input type="text" name="organizacion_circulos_texto_boton_a" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_a'); ?>" />
             <span class="description">Texto del botón</span>
             <br>
-            <input type="text" name="organizacion_circulos_enlace_boton_derecho" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_derecho'); ?>" />
+            <input type="text" name="organizacion_circulos_enlace_boton_a" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_a'); ?>" />
             <span class="description">Enlace del botón</span>
             <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
           </tr>
           <tr valign="top">
-            <th scope="row">Botón izquierdo</th>
+            <th scope="row">Botón B</th>
             <td>
-            <input type="text" name="organizacion_circulos_texto_boton_izquierdo" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_izquierdo'); ?>" />
+            <input type="text" name="organizacion_circulos_texto_boton_b" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_b'); ?>" />
             <span class="description">Texto del botón</span>
             <br>
-            <input type="text" name="organizacion_circulos_enlace_boton_izquierdo" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_izquierdo'); ?>" />
+            <input type="text" name="organizacion_circulos_enlace_boton_b" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_b'); ?>" />
+            <span class="description">Enlace del botón</span>
+            <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Botón C</th>
+            <td>
+            <input type="text" name="organizacion_circulos_texto_boton_c" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_c'); ?>" />
+            <span class="description">Texto del botón</span>
+            <br>
+            <input type="text" name="organizacion_circulos_enlace_boton_c" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_c'); ?>" />
+            <span class="description">Enlace del botón</span>
+            <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+          </tr>
+          <tr valign="top">
+            <th scope="row">Botón D</th>
+            <td>
+            <input type="text" name="organizacion_circulos_texto_boton_d" size="40" value="<?php echo get_option('organizacion_circulos_texto_boton_d'); ?>" />
+            <span class="description">Texto del botón</span>
+            <br>
+            <input type="text" name="organizacion_circulos_enlace_boton_d" size="40" value="<?php echo get_option('organizacion_circulos_enlace_boton_d'); ?>" />
             <span class="description">Enlace del botón</span>
             <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
           </tr>

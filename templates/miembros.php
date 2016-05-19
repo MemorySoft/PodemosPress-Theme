@@ -61,25 +61,39 @@ if ($sg_ver == 1) { ?>
 	  	            	  </p>
 		            	  <?php } ?>
 		            	  <p><?php the_excerpt(); ?></p>
-		            	  <hr>
-				  	        <div class="articulo-contacto">
-				  	        <?php if ($sg_enlace_boton_doc !== '' && $sg_texto_boton_doc !== '') { ?> 
-			  	            <a href="<?php echo $sg_enlace_boton_doc ?>" class="tiny button success">
-			  	            	<i class="fa fa-download"></i> 
-			  	            	<?php echo $sg_texto_boton_doc ?>
-			  	            </a>
-			  	          <?php } ?>
-				  	        <?php if ( $datos_twitter !='' ) { ?>
-				  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_facebook !='' ) { ?>
-				  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_email !='' ) { ?>
-				  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-				  	        <?php } ?>
+		            	  <div class="articulo-contacto">
+					  	        <?php if ( $datos_twitter !='' ) { ?>
+					  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
+					  	        <?php } ?>
+					  	        <?php if ( $datos_facebook !='' ) { ?>
+					  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
+					  	        <?php } ?>
+					  	        <?php if ( $datos_email !='' ) { ?>
+					  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
+					  	        <?php } ?>
 				  	        </div>
-				  	        <!-- MODAL | MIEMBRO -->
+		            	  <hr>
+				  	        <div class="botonera sin-margen--abajo">
+					  	        <?php if ($sg_enlace_boton_doc_a !== '' && $sg_texto_boton_doc_a !== '') { ?> 
+				  	            <a href="<?php echo $sg_enlace_boton_doc_a ?>" class="small success button">
+				  	            	<i class="fa fa-download"></i> 
+				  	            	<?php echo $sg_texto_boton_doc_a ?>
+				  	            </a>
+				  	          <?php } ?>
+				  	          <?php if ($sg_enlace_boton_doc_b !== '' && $sg_texto_boton_doc_b !== '') { ?> 
+				  	            <a href="<?php echo $sg_enlace_boton_doc_b ?>" class="small success button">
+				  	            	<i class="fa fa-download"></i> 
+				  	            	<?php echo $sg_texto_boton_doc_b ?>
+				  	            </a>
+				  	          <?php } ?>
+				  	          <?php if ($sg_enlace_boton_doc_c !== '' && $sg_texto_boton_doc_c !== '') { ?> 
+				  	            <a href="<?php echo $sg_enlace_boton_doc_c ?>" class="small success button">
+				  	            	<i class="fa fa-download"></i> 
+				  	            	<?php echo $sg_texto_boton_doc_c ?>
+				  	            </a>
+				  	          <?php } ?>
+				  	        </div>
+				  	        <!-- MODAL | MIEMBRO SG -->
 				  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 				  	          <div class="row">
 				  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -128,7 +142,7 @@ if ($cc_ver == 1) { ?>
 	  </div>
 	  <div class="small-12 columns texto-centrado">
 	    <p><?php echo $cc_descripcion ?></p>
-	    <p>
+	    <div class="botonera">
 		    <?php 
 				if ($cc_enlace_boton_actas !== '' && $cc_texto_boton_actas !== '') { ?>
 		      <a href="<?php echo $cc_enlace_boton_actas ?>" class="small success button">
@@ -136,14 +150,19 @@ if ($cc_ver == 1) { ?>
 		      	<?php echo $cc_texto_boton_actas ?>
 		      </a>
 		    <?php } 
-
 				if ($cc_enlace_boton_reglamento !== '' && $cc_texto_boton_reglamento !== '') { ?>
 	      <a href="<?php echo $cc_enlace_boton_reglamento ?>" class="small success button">
 	      	<i class="fa fa-download"></i> 
 	      	<?php echo $cc_texto_boton_reglamento ?>
 	      </a>
-				<?php } ?>
-	    </p>
+				<?php } 
+				if ($cc_enlace_boton_organigrama !== '' && $cc_texto_boton_organigrama !== '') { ?>
+	      <a href="<?php echo $cc_enlace_boton_organigrama ?>" class="small success button">
+	      	<i class="fa fa-download"></i> 
+	      	<?php echo $cc_texto_boton_organigrama ?>
+	      </a>
+	      <?php } ?>
+	    </div>
 	  </div>
 
 	  <?php 
@@ -180,17 +199,17 @@ if ($cc_ver == 1) { ?>
 										$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 			  	        ?>
 			  	        <div class="articulo-contacto">
-			  	        <?php if ( $datos_twitter !='' ) { ?>
-			  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-			  	        <?php } ?>
-			  	        <?php if ( $datos_facebook !='' ) { ?>
-			  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-			  	        <?php } ?>
-			  	        <?php if ( $datos_email !='' ) { ?>
-			  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-			  	        <?php } ?>
+				  	        <?php if ( $datos_twitter !='' ) { ?>
+				  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
+				  	        <?php } ?>
+				  	        <?php if ( $datos_facebook !='' ) { ?>
+				  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
+				  	        <?php } ?>
+				  	        <?php if ( $datos_email !='' ) { ?>
+				  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
+				  	        <?php } ?>
 			  	        </div>
-			  	        <!-- MODAL | MIEMBRO -->
+			  	        <!-- MODAL | MIEMBROS CC -->
 			  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 			  	          <div class="row">
 			  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -239,7 +258,7 @@ if ($cg_ver == 1) { ?>
 	  </div>
 	  <div class="small-12 columns texto-centrado">
 	    <p><?php echo $cc_descripcion ?></p>
-	    <p>
+	    <div class="botonera">
 		    <?php 
 				if ($cg_enlace_boton_actas !== '' && $cg_texto_boton_actas !== '') { ?>
 		      <a href="<?php echo $cg_enlace_boton_actas ?>" class="small success button">
@@ -254,7 +273,7 @@ if ($cg_ver == 1) { ?>
 	      	<?php echo $cg_texto_boton_reglamento ?>
 	      </a>
 				<?php } ?>
-	    </p>
+	    </div>
 	  </div>
 
 	  <?php 
@@ -291,17 +310,17 @@ if ($cg_ver == 1) { ?>
 										$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 			  	        ?>
 			  	        <div class="articulo-contacto">
-			  	        <?php if ( $datos_twitter !='' ) { ?>
-			  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-			  	        <?php } ?>
-			  	        <?php if ( $datos_facebook !='' ) { ?>
-			  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-			  	        <?php } ?>
-			  	        <?php if ( $datos_email !='' ) { ?>
-			  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-			  	        <?php } ?>
+				  	        <?php if ( $datos_twitter !='' ) { ?>
+				  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
+				  	        <?php } ?>
+				  	        <?php if ( $datos_facebook !='' ) { ?>
+				  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
+				  	        <?php } ?>
+				  	        <?php if ( $datos_email !='' ) { ?>
+				  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
+				  	        <?php } ?>
 			  	        </div>
-			  	        <!-- MODAL | MIEMBRO -->
+			  	        <!-- MODAL | MIEMBROS CG -->
 			  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 			  	          <div class="row">
 			  	            <div class="small-12 medium-3 columns texto-derecha">

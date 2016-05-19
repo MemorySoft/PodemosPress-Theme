@@ -158,10 +158,14 @@ $cg_enlace_boton 											= get_option('organizacion_comision_enlace_boton');
 $circulos_ver 												= get_option('organizacion_circulos_visibilidad');
 $circulos_texto 											= get_option('organizacion_circulos_texto');
 $circulos_media 											= get_option('organizacion_circulos_media');
-$circulos_boton_derecho 							= get_option('organizacion_circulos_texto_boton_derecho');
-$circulos_enlace_boton_derecho 				= get_option('organizacion_circulos_enlace_boton_derecho');
-$circulos_boton_izquierdo 						= get_option('organizacion_circulos_texto_boton_izquierdo');
-$circulos_enlace_boton_izquierdo 			= get_option('organizacion_circulos_enlace_boton_izquierdo');
+$circulos_boton_a 										= get_option('organizacion_circulos_texto_boton_a');
+$circulos_enlace_boton_a 							= get_option('organizacion_circulos_enlace_boton_a');
+$circulos_boton_b 										= get_option('organizacion_circulos_texto_boton_b');
+$circulos_enlace_boton_b 							= get_option('organizacion_circulos_enlace_boton_b');
+$circulos_boton_c 										= get_option('organizacion_circulos_texto_boton_c');
+$circulos_enlace_boton_c 							= get_option('organizacion_circulos_enlace_boton_c');
+$circulos_boton_d 										= get_option('organizacion_circulos_texto_boton_d');
+$circulos_enlace_boton_d 							= get_option('organizacion_circulos_enlace_boton_d');
 // Areas
 $secretarias_ver 											= get_option('organizacion_secretarias_visibilidad');
 // Callout
@@ -177,8 +181,12 @@ $callout_organizacion_enlace 					= get_option('organizacion_callout_enlace_boto
  */
 // Secretaría General
 $sg_ver 															= get_option('miembros_secretaria_visibilidad');
-$sg_texto_boton_doc 									= get_option('miembros_secretaria_texto_boton');
-$sg_enlace_boton_doc 									= get_option('miembros_secretaria_enlace_boton');
+$sg_texto_boton_doc_a 								= get_option('miembros_secretaria_texto_boton_a');
+$sg_enlace_boton_doc_a 								= get_option('miembros_secretaria_enlace_boton_a');
+$sg_texto_boton_doc_b 								= get_option('miembros_secretaria_texto_boton_b');
+$sg_enlace_boton_doc_b 								= get_option('miembros_secretaria_enlace_boton_b');
+$sg_texto_boton_doc_c 								= get_option('miembros_secretaria_texto_boton_c');
+$sg_enlace_boton_doc_c 								= get_option('miembros_secretaria_enlace_boton_c');
 // Consejo Ciudadano
 $cc_ver 															= get_option('miembros_consejo_visibilidad');
 $cc_descripcion 											= get_option('miembros_consejo_descripcion');
@@ -186,6 +194,8 @@ $cc_texto_boton_actas 								= get_option('miembros_consejo_texto_boton_actas')
 $cc_enlace_boton_actas 								= get_option('miembros_consejo_enlace_boton_actas');
 $cc_texto_boton_reglamento 						= get_option('miembros_consejo_texto_boton_reglamento');
 $cc_enlace_boton_reglamento 					= get_option('miembros_consejo_enlace_boton_reglamento');
+$cc_texto_boton_organigrama 					= get_option('miembros_consejo_texto_boton_organigrama');
+$cc_enlace_boton_organigrama 					= get_option('miembros_consejo_enlace_boton_organigrama');
 // Comisión de Garantias
 $cg_ver 															= get_option('miembros_comision_visibilidad');
 $cg_descripcion 											= get_option('miembros_comision_descripcion');

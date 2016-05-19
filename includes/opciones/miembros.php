@@ -20,8 +20,12 @@ function CreaMenuMiembros() {
 function RegistraOpcionesMiembros() {
 
     add_option("miembros_secretaria_visibilidad","","","yes");
-    add_option("miembros_secretaria_texto_boton","","","yes");
-    add_option("miembros_secretaria_enlace_boton","","","yes");
+    add_option("miembros_secretaria_texto_boton_a","","","yes");
+    add_option("miembros_secretaria_enlace_boton_a","","","yes");
+    add_option("miembros_secretaria_texto_boton_b","","","yes");
+    add_option("miembros_secretaria_enlace_boton_b","","","yes");
+    add_option("miembros_secretaria_texto_boton_c","","","yes");
+    add_option("miembros_secretaria_enlace_boton_c","","","yes");
 
     add_option("miembros_consejo_visibilidad","","","yes");
     add_option("miembros_consejo_descripcion","","","yes");
@@ -29,6 +33,8 @@ function RegistraOpcionesMiembros() {
     add_option("miembros_consejo_enlace_boton_actas","","","yes");
     add_option("miembros_consejo_texto_boton_reglamento","","","yes");
     add_option("miembros_consejo_enlace_boton_reglamento","","","yes");
+    add_option("miembros_consejo_texto_boton_organigrama","","","yes");
+    add_option("miembros_consejo_enlace_boton_organigrama","","","yes");
     add_option("miembros_consejo_actas","","","yes");
     
     add_option("miembros_comision_visibilidad","","","yes");
@@ -49,8 +55,12 @@ function RegistraOpcionesMiembros() {
 
 	  
     register_setting("opciones_miembros", "miembros_secretaria_visibilidad");
-    register_setting("opciones_miembros", "miembros_secretaria_texto_boton");
-    register_setting("opciones_miembros", "miembros_secretaria_enlace_boton");
+    register_setting("opciones_miembros", "miembros_secretaria_texto_boton_a");
+    register_setting("opciones_miembros", "miembros_secretaria_enlace_boton_a");
+    register_setting("opciones_miembros", "miembros_secretaria_texto_boton_b");
+    register_setting("opciones_miembros", "miembros_secretaria_enlace_boton_b");
+    register_setting("opciones_miembros", "miembros_secretaria_texto_boton_c");
+    register_setting("opciones_miembros", "miembros_secretaria_enlace_boton_c");
     
     register_setting("opciones_miembros", "miembros_consejo_visibilidad");
     register_setting("opciones_miembros", "miembros_consejo_descripcion");
@@ -58,7 +68,8 @@ function RegistraOpcionesMiembros() {
     register_setting("opciones_miembros", "miembros_consejo_enlace_boton_actas");
     register_setting("opciones_miembros", "miembros_consejo_texto_boton_reglamento");
     register_setting("opciones_miembros", "miembros_consejo_enlace_boton_reglamento");
-    register_setting("opciones_miembros", "miembros_consejo_actas");
+    register_setting("opciones_miembros", "miembros_consejo_texto_boton_organigrama");
+    register_setting("opciones_miembros", "miembros_consejo_enlace_boton_organigrama");
     
     register_setting("opciones_miembros", "miembros_comision_visibilidad");
     register_setting("opciones_miembros", "miembros_comision_descripcion");
@@ -66,7 +77,6 @@ function RegistraOpcionesMiembros() {
     register_setting("opciones_miembros", "miembros_comision_enlace_boton_actas");
     register_setting("opciones_miembros", "miembros_comision_texto_boton_reglamento");
     register_setting("opciones_miembros", "miembros_comision_enlace_boton_reglamento");
-    register_setting("opciones_miembros", "miembros_comision_actas");
 
     register_setting("opciones_miembros", "miembros_callout_visibilidad");
     register_setting("opciones_miembros", "miembros_callout_titulo");
@@ -104,12 +114,38 @@ function PaginaMiembros() {
           </table>
           <table class="form-table">
             <tr valign="top">
-              <th scope="row">Documento <br>político-organizativo</th>
+              <th scope="row">Documento A</th>
               <td>
-              <input type="text" name="miembros_secretaria_texto_boton" size="40" value="<?php echo get_option('miembros_secretaria_texto_boton'); ?>" />
+              <input type="text" name="miembros_secretaria_texto_boton_a" size="40" value="<?php echo get_option('miembros_secretaria_texto_boton_a'); ?>" />
               <span class="description">Texto del botón</span>
               <br>
-              <input type="text" name="miembros_secretaria_enlace_boton" size="40" value="<?php echo get_option('miembros_secretaria_enlace_boton'); ?>" />
+              <input type="text" name="miembros_secretaria_enlace_boton_a" size="40" value="<?php echo get_option('miembros_secretaria_enlace_boton_a'); ?>" />
+              <span class="description">Enlace del botón</span>
+              <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+              </td>
+            </tr>
+          </table>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Documento B</th>
+              <td>
+              <input type="text" name="miembros_secretaria_texto_boton_b" size="40" value="<?php echo get_option('miembros_secretaria_texto_boton_b'); ?>" />
+              <span class="description">Texto del botón</span>
+              <br>
+              <input type="text" name="miembros_secretaria_enlace_boton_b" size="40" value="<?php echo get_option('miembros_secretaria_enlace_boton_b'); ?>" />
+              <span class="description">Enlace del botón</span>
+              <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+              </td>
+            </tr>
+          </table>
+          <table class="form-table">
+            <tr valign="top">
+              <th scope="row">Documento C</th>
+              <td>
+              <input type="text" name="miembros_secretaria_texto_boton_c" size="40" value="<?php echo get_option('miembros_secretaria_texto_boton_c'); ?>" />
+              <span class="description">Texto del botón</span>
+              <br>
+              <input type="text" name="miembros_secretaria_enlace_boton_c" size="40" value="<?php echo get_option('miembros_secretaria_enlace_boton_c'); ?>" />
               <span class="description">Enlace del botón</span>
               <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
               </td>
@@ -151,6 +187,17 @@ function PaginaMiembros() {
               <span class="description">Texto del botón</span>
               <br>
               <input type="text" name="miembros_consejo_enlace_boton_reglamento" size="40" value="<?php echo get_option('miembros_consejo_enlace_boton_reglamento'); ?>" />
+              <span class="description">Enlace del botón</span>
+              <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
+              </td>
+            </tr>
+            <tr valign="top">
+              <th scope="row">Organigrama</th>
+              <td>
+              <input type="text" name="miembros_consejo_texto_boton_organigrama" size="40" value="<?php echo get_option('miembros_consejo_texto_boton_organigrama'); ?>" />
+              <span class="description">Texto del botón</span>
+              <br>
+              <input type="text" name="miembros_consejo_enlace_boton_organigrama" size="40" value="<?php echo get_option('miembros_consejo_enlace_boton_organigrama'); ?>" />
               <span class="description">Enlace del botón</span>
               <p class="description">Debes rellenar los dos campos o el botón no se mostrará.</p></td>
               </td>

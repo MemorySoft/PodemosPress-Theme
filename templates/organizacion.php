@@ -201,15 +201,24 @@ if ($circulos_ver == 1) { ?>
 	    <p>
 
 	    <?php 
-			if ($circulos_boton_derecho !== '' && $circulos_enlace_boton_derecho !== '') { ?>
-	    	<a href="<?php echo $circulos_enlace_boton_derecho ?>" class="small button">
-	      	<?php echo $circulos_boton_derecho ?>
+			if ($circulos_boton_a !== '' && $circulos_enlace_boton_a !== '') { ?>
+	    	<a href="<?php echo $circulos_enlace_boton_a ?>" class="small button">
+	      	<?php echo $circulos_boton_a ?>
 	      </a>
       <?php } 
-
-      if ($circulos_boton_izquierdo !== '' && $circulos_enlace_boton_izquierdo !== '') { ?>
-	      <a href="<?php echo $circulos_enlace_boton_izquierdo ?>" class="small button">
-	      	<?php echo $circulos_boton_izquierdo ?>
+      if ($circulos_boton_b !== '' && $circulos_enlace_boton_b !== '') { ?>
+	      <a href="<?php echo $circulos_enlace_boton_b ?>" class="small button">
+	      	<?php echo $circulos_boton_b ?>
+	      </a>
+      <?php } 
+			if ($circulos_boton_c !== '' && $circulos_enlace_boton_c !== '') { ?>
+	    	<a href="<?php echo $circulos_enlace_boton_c ?>" class="small button">
+	      	<?php echo $circulos_boton_c ?>
+	      </a>
+      <?php } 
+      if ($circulos_boton_d !== '' && $circulos_enlace_boton_d !== '') { ?>
+	      <a href="<?php echo $circulos_enlace_boton_d ?>" class="small button">
+	      	<?php echo $circulos_boton_d ?>
 	      </a>
       <?php } ?>
 
