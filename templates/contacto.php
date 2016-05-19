@@ -53,7 +53,7 @@
 
 <div class="row formulario">
 	<div class="small-12 columns">
-		<?php include( trailingslashit( get_template_directory() ). '/partials/formulario.php'); ?>
+		<?php // include( trailingslashit( get_template_directory() ). '/partials/formulario.php'); ?>
 	</div>
 </div>
 
@@ -87,7 +87,7 @@
         	<div class="directorio-email"><a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></div>
         	<?php if ($telegram !== '') { ?> 
         		<div class="directorio-telegram">
-        			<a class="button tiny hollow" href="<?php echo $telegram ?>">
+        			<a class="button tiny hollow" href="<?php echo $telegram ?>" target="_blank">
         				<i class="fa fa-paper-plane"></i> TELEGRAM
         			</a>
         		</div>
