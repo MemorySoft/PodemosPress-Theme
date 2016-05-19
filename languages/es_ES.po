@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PodemosPress\n"
-"POT-Creation-Date: 2016-05-19 14:06+0200\n"
-"PO-Revision-Date: 2016-05-19 14:10+0200\n"
+"POT-Creation-Date: 2016-05-19 14:10+0200\n"
+"PO-Revision-Date: 2016-05-19 17:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -324,8 +324,8 @@ msgstr "Secretarías del Consejo Ciudadano de %s"
 
 #: organizacion.php:199
 #, php-format
-msgid "Círculos de %s"
-msgstr ""
+msgid "Cercles de %s"
+msgstr "Círculos de %s"
 
 #: participacion.php:36
 msgid "Entra al portal de participació"
