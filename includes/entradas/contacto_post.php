@@ -111,8 +111,6 @@ function podemospress_agrega_contacto_valores( $datos_id, $contacto ) {
     } else {
       delete_post_meta( $datos_id, 'contacto_telefono' );
     }
-  }
-  if ( $contacto->post_type == 'contacto' ) {
     if ( isset( $_POST['contacto_email'] ) && $_POST['contacto_email'] != '' ) {
       update_post_meta( 
         $datos_id, 
@@ -122,8 +120,6 @@ function podemospress_agrega_contacto_valores( $datos_id, $contacto ) {
     } else {
       delete_post_meta( $datos_id, 'contacto_email' );
     }
-  }
-  if ( $contacto->post_type == 'contacto-item' ) {
     if ( isset( $_POST['contacto_telegram'] ) && $_POST['contacto_telegram'] != '' ) {
       update_post_meta( 
         $datos_id, 
