@@ -19,11 +19,8 @@
 if ($sg_ver == 1) { ?>
 	<div class="row internos-cargos">
 	  <div class="small-12 medium-10 medium-centered columns">
-	  	<h5 class="titulo texto-centrado">Secretaría General 
-				<?php 
-	    	if ($region !== '') { ?>
-	    		de <?php echo $region ?>
-	    	<?php } ?>
+	  	<h5 class="titulo texto-centrado">
+	  		<?php printf( __('Secretaria General de %s','podemospress') , $region ); ?>
 	    </h5>
 	    <br>
 	    <?php 
@@ -90,10 +87,9 @@ if ($sg_ver == 1) { ?>
 				  	            	  <?php the_post_thumbnail(); ?>
 				  	            	  <br>
 				  	            	  <br>
-				  	            	  <?php if ( 	$datos_cargo_organico !='' ) { ?>
+				  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 					  	            	  <p class="lead">
-					  	            	  	<?php echo $datos_cargo_organico; ?><br>
-					  	            	  	<?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
+					  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
 					  	            	  </p>
 				  	            	  <?php } ?>
 				  	            	</div>
@@ -103,7 +99,9 @@ if ($sg_ver == 1) { ?>
 				  	              <?php the_content(); ?>
 				  	              <p>
 				  	                <hr>
-				  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+				  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">
+				  	                	<?php _e('Tancar','podemospress'); ?>
+             								</a>
 				  	              </p>
 				  	            </div>
 				  	          </div>
@@ -124,11 +122,8 @@ if ($sg_ver == 1) { ?>
 if ($cc_ver == 1) { ?>
 	<div id="cc" class="row internos-cargos" data-equalizer data-equalize-on="medium">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Consejo Ciudadano 
-				<?php 
-	    	if ($region !== '') { ?>
-	    		de <?php echo $region ?>
-	    	<?php } ?>
+	    <h5 class="titulo texto-centrado">
+	    	<?php printf( __('Consell Ciutadà de %s','podemospress') , $region ); ?>
 	    </h5>
 	  </div>
 	  <div class="small-12 columns texto-centrado">
@@ -165,7 +160,7 @@ if ($cc_ver == 1) { ?>
   	$cc_item = new WP_Query($args);
   	if( $cc_item->have_posts() ) { ?>
   		<div class="small-12 columns">
-	    	<div class="-carrusel-tres-items--navegacion">
+	    	<div class="-carrusel-cuatro-items">
 		  	  <?php  while ( $cc_item->have_posts() ) : $cc_item->the_post(); ?>
 		  	    <div class="item">
 			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -203,10 +198,9 @@ if ($cc_ver == 1) { ?>
 			  	            	  <?php the_post_thumbnail(); ?>
 			  	            	  <br>
 			  	            	  <br>
-			  	            	  <?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 				  	            	  <p class="lead">
-				  	            	  	<?php echo $datos_cargo_organico; ?><br>
-				  	            	  	<?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
+				  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
 				  	            	  </p>
 			  	            	  <?php } ?>
 			  	            	</div>
@@ -216,7 +210,9 @@ if ($cc_ver == 1) { ?>
 			  	              <?php the_content(); ?>
 			  	              <p>
 			  	                <hr>
-			  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+			  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">
+			  	                	<?php _e('Tancar','podemospress'); ?>
+           								</a>
 			  	              </p>
 			  	            </div>
 			  	          </div>
@@ -237,11 +233,8 @@ if ($cc_ver == 1) { ?>
 if ($cg_ver == 1) { ?>
 	<div id="cgd" class="row internos-cargos" data-equalizer data-equalize-on="medium">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Comisión de Garantias Democráticas 
-				<?php 
-	    	if ($region !== '') { ?>
-	    		de <?php echo $region ?>
-	    	<?php } ?>
+	    <h5 class="titulo texto-centrado"> 
+	    	<?php printf( __('Comisió de Garanties Democrátiques de %s','podemospress') , $region ); ?>
 	    </h5>
 	  </div>
 	  <div class="small-12 columns texto-centrado">
@@ -278,7 +271,7 @@ if ($cg_ver == 1) { ?>
   	$cg_item = new WP_Query($args);
   	if( $cg_item->have_posts() ) { ?>
   		<div class="small-12 columns">
-	    	<div class="-carrusel-tres-items--navegacion">
+	    	<div class="-carrusel-cuatro-items">
 		  	  <?php  while ( $cg_item->have_posts() ) : $cg_item->the_post(); ?>
 		  	    <div class="item">
 			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -316,10 +309,9 @@ if ($cg_ver == 1) { ?>
 			  	            	  <?php the_post_thumbnail(); ?>
 			  	            	  <br>
 			  	            	  <br>
-			  	            	  <?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 				  	            	  <p class="lead">
-				  	            	  	<?php echo $datos_cargo_organico; ?><br>
-				  	            	  	<?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
+				  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
 				  	            	  </p>
 			  	            	  <?php } ?>
 			  	            	</div>
@@ -329,7 +321,9 @@ if ($cg_ver == 1) { ?>
 			  	              <?php the_content(); ?>
 			  	              <p>
 			  	                <hr>
-			  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+			  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">
+			  	                	<?php _e('Tancar','podemospress'); ?>
+           								</a>
 			  	              </p>
 			  	            </div>
 			  	          </div>

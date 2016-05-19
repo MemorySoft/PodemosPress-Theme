@@ -23,7 +23,7 @@ if ($destacado_ver == 1) { ?>
         if ( $destacado_imagen !='' ) { ?>
 	       <img src="<?php echo $destacado_imagen ?>" alt="Participa en Podemos">
         <?php } else { ?>
-          <img src="<?php bloginfo('template_directory'); ?>/images/portal_participa_mock.png" alt="El portal de participación es accesible en todas las plataformas">
+          <img src="<?php bloginfo('template_directory'); ?>/images/portal_participa_mock.png" alt="El portal de participació es accesible en totes les plataformes">
         <?php } ?>
 	    </div>
 	  </div>
@@ -33,13 +33,13 @@ if ($destacado_ver == 1) { ?>
         if ( $destacado_titulo !='' ) { ?>
         <h4><?php echo $destacado_titulo ?></h4>
       <?php } else { ?>
-        <h4>Entra en el portal de participación</h4>
+        <h4><?php _e('Entra al portal de participació','podemospress'); ?></h4>
       <?php } ?>
       <?php 
         if ( $destacado_texto !='' ) { ?>
           <p><?php echo $destacado_texto ?></p>
       <?php } else { ?>
-        <p class="lead">El portal de participación de Podemos es una herramienta de participación ciudadana con la que formarás parte activa del proceso de construcción de este proyecto político. <a href="https://participa.podemos.info/users/sign_in">Inscríbete</a> y podrás participar en las votaciones, recibir avisos, gestionar tus apoyos económicos, presentar proyectos o unirte a los grupos de participación a través de la web o la aplicación para Android.</p>
+        <p class="lead"><?php _e('El portal de participació de Podem és una eina de participació ciutadana amb la qual formaràs part activa del procés de construcció d\'aquest projecte polític. Inscriu-te i podràs participar en les votacions, rebre avisos, gestionar els teus suports econòmics, presentar projectes o unir-te als grups de participació a través de la web o l\'aplicació per Android.','podemospress'); ?></p>
       <?php } ?>
 	    <p>
 		    <?php 
@@ -52,10 +52,10 @@ if ($destacado_ver == 1) { ?>
           </a>
 		    <?php } else { ?>
           <a href="https://participa.podemos.info" class="button">
-            Entra en el portal
+            <?php _e('Entra al portal','podemospress'); ?>
           </a>
           <a href="https://play.google.com/store/apps/details?id=info.podemos.participa" class="button success">
-            Instala la app
+            <?php _e('Instala la app','podemospress'); ?>
           </a>  
 				<?php } ?>
 	    </p>
@@ -69,7 +69,7 @@ if ($destacado_ver == 1) { ?>
 if ($herramientas_ver == 1) { ?>
 	<div class="row">
 		<div class="small-12 columns">
-		  <h5 class="titulo texto-centrado">Herramientas de participación</h5>
+		  <h5 class="titulo texto-centrado"><?php _e('Eines de participació','podemospress'); ?></h5>
 		</div>
 		<div class="small-12 medium-4 columns panel">
 			<a href="<?php echo $herramientas_col_enlace_izq ?>">
@@ -95,18 +95,18 @@ if ($herramientas_ver == 1) { ?>
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participacion-enmedio') ) : ?>
     <div class="small-12 medium-6 columns">
   	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
-  	    <h4>Iniciativas Ciudadanas</h4>
-  	    <p>La iniciativas ciudadanas son el mecanismo a través del cual las propuestas más apoyadas por los inscritos pueden llevarse a la organización y ser defendidas o aceptadas a través de votación. Entra en tu cuenta y vota los proyectos.</p>
+  	    <h4><?php _e('Iniciatives Ciutadanes','podemospress'); ?></h4>
+  	    <p><?php _e('Les iniciatives ciutadanes són el mecanisme a través del com les propostes més recolzades pels inscrits poden portar-se a l\'organització i ser defensades o acceptades a través de votació. Entra en el teu compte i vota els projectes.','podemospress'); ?></p>
   	    <p>
-  	    <a href="https://participa.podemos.info/es/propuestas" class="small button">Ver iniciativas</a>
+  	    <a href="https://participa.podemos.info/es/propuestas" class="small button"><?php _e('Veure iniciatives','podemospress'); ?></a>
   	    </p>
   	  </div>
   	</div>
   	<div class="small-12 medium-6 columns">
   	  <div class="large callout fondo-gris--claro" data-equalizer-watch>
-  	    <h4>Equipos de acción participativa</h4>
-  	    <p>Los Equipos de Acción Participativa (EAP) son grupos territoriales de gente con ganas de participar en cuestiones concretas y directas que requieren menor deliberación e implicación constante que la participación en los Círculos.</p>
-  	    <p><a href="https://participa.podemos.info/users/sign_in" class="small button">Inscríbete</a></p>
+  	    <h4><?php _e('Equips d\'acción participativa','podemospress'); ?></h4>
+  	    <p><?php _e('Els Equips d\'Acció Participativa (EAP) són grups territorials de gent amb ganes de participar en qüestions concretes i directes que requereixen menor deliberació i implicació constant que la participació en els Cercles.','podemospress'); ?></p>
+  	    <p><a href="https://participa.podemos.info/users/sign_in" class="small button"><?php _e('Inscriu-te','podemospress'); ?></a></p>
   	  </div>
   	</div>
   <?php endif; ?>
@@ -116,7 +116,7 @@ if ($herramientas_ver == 1) { ?>
 
 <div class="row" data-equalizer data-equalize-on="medium">
   <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Colabora con Podemos</h5>
+    <h5 class="titulo texto-centrado"><?php _e('Col·labora amb Podem','podemospress' ); ?></h5>
   </div>
   <div class="small-12 large-3 columns">
 

@@ -24,9 +24,9 @@
   ?>    
 	<div class="row instituciones-noticias">
 	  <div class="small-12 columns">
-	  	<h5 class="titulo texto-centrado">Actualitat 
+	  	<h5 class="titulo texto-centrado"><?php _e("Actualitat",'podemospress'); ?> 
 				<?php 
-	    	if ($institucion !== '') { ?>: <?php echo $institucion ?>
+	    	if ($institucion !== '') { ?>- <?php echo $institucion ?>
 	    	<?php } ?>
 	    </h5>
 	  </div>
@@ -46,7 +46,7 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a class="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a class="<?php the_permalink(); ?>" title="<?php _e("Llegir",'podemospress'); ?> <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
@@ -60,7 +60,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $instituciones_link ); ?>" title="anar a la pàgina de les publicacions de la categoria Institucions">veure els articles a Institucion</a>
+        <a href="<?php echo esc_url( $instituciones_link ); ?>" title="<?php _e("anar a la pàgina de les publicacions de la categoria Institucions",'podemospress'); ?>"><?php _e("veure els articles a Institucions",'podemospress'); ?></a>
       </p>
 	  </div>
 	</div>
@@ -73,16 +73,17 @@
   ?>
 	<div class="row instituciones-actividad">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Activitat dels carrecs 
+	    <h5 class="titulo texto-centrado"><?php _e("Activitat dels carrecs",'podemospress'); ?> 
 			<?php 
     	if ($institucion !== '') { ?>
-    		en el <?php echo $institucion ?>
+    		<?php _e("al",'podemospress'); ?> <?php echo $institucion ?>
     	<?php } ?>
     </h5>
 	  </div>
 	  <div class="medium-2 columns">
 	    <ul class="tabs vertical" id="example-vert-tabs" data-tabs>
-	      <li class="tabs-title is-active"><a href="#presidencia" aria-selected="true">Presidencia</a></li>
+	      <li class="tabs-title is-active"><a href="#presidencia" aria-selected="true"><?php _e("Presidencia",'podemospress'); ?></a></li>
+	      <!-- TODO: acabar i18n -->
 	      <li class="tabs-title"><a href="#hacienda">Hacienda</a></li>
 	      <li class="tabs-title"><a href="#empleo">Empleo</a></li>
 	      <li class="tabs-title"><a href="#educacion">Educación</a></li>
@@ -286,11 +287,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		a l'ajuntament
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e('Relació de carrecs el·lectes a l\'Ajuntament','podemospress'); ?> 
 		    </h5>
 		  </div>
 		  
@@ -347,12 +345,12 @@
 		  	            	  <br>
 		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
-			  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> a l'Ajuntament de <?php echo $region ?><?php } ?><br>
+			  	            	  	<?php printf( __('%1$s a l\'Ajuntament de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
 			  	            	  </p>
-		  	            	  <?php } ?>
-		  	            	  <?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
 			  	            	  <p>
-			  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
 		  	            	</div>
@@ -362,7 +360,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -382,14 +380,10 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el consell
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Consell Insular",'podemospress'); ?>
 		    </h5>
 		  </div>
-		  
 		  
 	  	<?php 
 	  	  $args = array(
@@ -437,12 +431,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Consell Insular de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -450,7 +448,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -471,11 +469,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el cabildo
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Cabildo",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -525,12 +520,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> a l'Ajuntament de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Cabildo de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -538,7 +537,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -559,11 +558,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el gobierno autonomico
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Govern Autonòmic",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -613,12 +609,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Govern Autonòmic de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -626,7 +626,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -647,11 +647,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el parlamento autonomico
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Parlament Autonòmic",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -701,12 +698,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Parlament Autonòmic de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -714,7 +715,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -735,11 +736,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el Senado
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Senat",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -789,12 +787,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Senat','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -802,7 +804,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -823,11 +825,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el Congreso de los Diputados
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Congrés dels Diputats",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -877,12 +876,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Congrés dels Diputats','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -890,7 +893,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
@@ -911,11 +914,8 @@
 	  ?>
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
-		    <h5 class="titulo texto-centrado">Relació de carrecs el·lectes
-					<?php 
-		    	if ($institucion !== '') { ?>
-		    		en el Gobierno Central
-		    	<?php } ?>
+		    <h5 class="titulo texto-centrado">
+		    	<?php _e("Relació de carrecs el·lectes al Govern Central",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -932,7 +932,7 @@
 	  	);
 	  	$gobierno_item = new WP_Query($args);
 	  	if( $gobierno_item->have_posts() ) { ?>
-	  	  <?php  while ( $gobierno_item->have_posts() ) : $gobierno_item->the_post(); ?>
+	  	  <?php while ( $gobierno_item->have_posts() ) : $gobierno_item->the_post(); ?>
 		  	  <div class="item small-12 medium-2 columns">
 		  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
@@ -965,12 +965,16 @@
 		  	            	  <?php the_post_thumbnail(); ?>
 		  	            	  <br>
 		  	            	  <br>
-		  	            	  <p class="lead">
-		  	            	  	<?php echo $datos_cargo_institucional; ?><?php if ($region !== '') { ?> en el Ayuntamiento de <?php echo $region ?><?php } ?><br>
-		  	            	  </p>
-		  	            	  <p>
-		  	            	  	<?php echo $datos_cargo_organico; ?><?php if ($delegacion_nombre !== '') { ?> de <?php echo $delegacion_nombre ?> <?php } ?> 
-		  	            	  </p>
+		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+			  	            	  <p class="lead">
+			  	            	  	<?php printf( __('%1$s al Govern Central de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  </p>
+			  	            	<?php } ?>
+			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	  <p>
+			  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+			  	            	  </p>
+		  	            	  <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -978,7 +982,7 @@
 		  	              <?php the_content(); ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>

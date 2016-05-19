@@ -44,7 +44,7 @@
   </div>
   <div class="small-12 medium-6 columns">
     <div class="destacado-media flex-video" data-equalizer-watch>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d664382.8355101913!2d2.582227726160659!3d39.32714256124922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1455710205840" width="850" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <?php echo $circulos_media ?>
     </div>
   </div>
 </div>
@@ -63,9 +63,9 @@
   if ($directorio_ver == 1) {
   ?>
 	<div class="row">
-	  <h5 class="titulo texto-centrado">Directorio</h5>
+	  <h5 class="titulo texto-centrado"><?php _e('Directori','podemospress' ); ?></h5>
 	  <div class="small-12 columns texto-centrado">
-	    <p>Directorio de contactos públicos de áreas y cargos de <?php if ($delegacion_nombre !== '') { ?><?php echo $delegacion_nombre ?><?php } else { ?> esta delegación<?php }?>.</p>
+	    <p><?php _e('Directori de contactes públics d\'àrees i càrrecs','podemospress' ); ?> <?php if ($delegacion_nombre !== '') { ?>- <?php echo $delegacion_nombre ?><?php }?></p>
 	  </div>
 	</div>
 	<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="medium">

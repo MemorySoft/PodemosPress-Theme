@@ -17,7 +17,7 @@
 if ($intro_ver == 1) { ?>     
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Organització</h5>
+	    <h5 class="titulo texto-centrado"><?php _e('Organització','podemospress'); ?></h5>
 	  </div>
 	  <div class="small-12 medium-6 columns">
 	    <div class="destacado-media flex-video">
@@ -34,10 +34,10 @@ if ($intro_ver == 1) { ?>
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h4 class="texto-centrado">Com s'organitza Podem
+    <h4 class="texto-centrado"><?php _e("Com s'organitza Podem",'podemospress'); ?>
 			<?php 
     	if ($region !== '') { ?>
-    		a <?php echo $region ?>
+    		<?php _e("a",'podemospress'); ?> <?php echo $region ?>
     	<?php } ?>
     </h4>
   </div>
@@ -46,7 +46,7 @@ if ($intro_ver == 1) { ?>
 <div class="franja fondo-gris--claro">
 	<div class="row sin-margen--abajo">
 	  <div class="small-12 columns texto-centrado">
-	    <h3>Assemblea Ciutadana
+	    <h3><?php _e("Assemblea Ciutadana",'podemospress'); ?>
 				<?php 
 	    	if ($region !== '') { ?>
 	    		<br>de <?php echo $region ?>
@@ -58,7 +58,7 @@ if ($intro_ver == 1) { ?>
 	    	<p><?php echo $ac_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>L'Assemblea Ciutadana la conforma el conjunt de la ciutadanía inscrita a Podem. Es l'espai on es prenen les grans decisions (eleccions primaries, eleccions a carrecs interns, estratègia polìtica, programa…) i on tots els inscrits participen de forma directa i igual amb veu i vot. Els ùnics requisits per a participar son: ser major de divuit anys, comprometres en la construcció de Podem i acceptar el seu Codi Ètic.</p>
+	  		<p><?php _e("L'Assemblea Ciutadana la conforma el conjunt de la ciutadanía inscrita a Podem. Es l'espai on es prenen les grans decisions (eleccions primaries, eleccions a carrecs interns, estratègia polìtica, programa…) i on tots els inscrits participen de forma directa i igual amb veu i vot. Els ùnics requisits per a participar son: ser major de divuit anys, comprometres en la construcció de Podem i acceptar el seu Codi Ètic.",'podemospress'); ?></p>
 	    <?php } ?>
 
 	  	<?php 
@@ -87,13 +87,13 @@ if ($intro_ver == 1) { ?>
 	<!-- ÓRGANOS -->
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Secretaria General</h4>
+	    <h4><?php _e("Secretaria General",'podemospress'); ?></h4>
 	    <?php 
 		  if ($sg_descripcion !== '') { ?>
 	  		<p><?php echo $sg_descripcion ?></p>
 	  	<?php } 
 	  	else { ?>
-	  		<p>Es nomena mitjançant elecció directa en primàries obertes a tota la ciutadania inscrita en Podem. Exerceix la representació política i institucional de Podem i assegura la coordinació entre les àrees executives del Consell Ciutadà, òrgan que presideix.</p>
+	  		<p><?php _e("Es nomena mitjançant elecció directa en primàries obertes a tota la ciutadania inscrita en Podem. Exerceix la representació política i institucional de Podem i assegura la coordinació entre les àrees executives del Consell Ciutadà, òrgan que presideix.",'podemospress'); ?></p>
 	    <?php }
 
 	  	if ($sg_enlace_boton !== '' && $sg_texto_boton !== '') { ?> 
@@ -104,13 +104,13 @@ if ($intro_ver == 1) { ?>
 	  </div>
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Consell Ciutadà</h4>
+	    <h4><?php _e("Consell Ciutadà",'podemospress'); ?></h4>
 	    <?php
 		  if ($cc_descripcion !== '') { ?>
 	    	<p><?php echo $cc_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>És un òrgan executiu col·legiat triat mitjançant primàries obertes a la ciutadania. Desenvolupa les decisions adoptades per l'Assemblea Ciutadana i manté una constant rendició de comptes davant aquesta Assemblea i davant els cercles amb mecanismes de participació directa.</p>
+	  		<p><?php _e("És un òrgan executiu col·legiat triat mitjançant primàries obertes a la ciutadania. Desenvolupa les decisions adoptades per l'Assemblea Ciutadana i manté una constant rendició de comptes davant aquesta Assemblea i davant els cercles amb mecanismes de participació directa.",'podemospress'); ?></p>
 	    <?php } 
 
 	    if ($cc_enlace_boton !== '' && $cc_texto_boton !== '') { ?> 
@@ -121,13 +121,13 @@ if ($intro_ver == 1) { ?>
 	  </div>
 
 	  <div class="small-12 medium-4 columns texto-centrado">
-	    <h4>Comisió de Garanties</h4>
+	    <h4><?php _e("Comisió de Garanties",'podemospress'); ?></h4>
 	    <?php 
 		  if ($cg_descripcion !== '') { ?>
 	    	<p><?php echo $cg_descripcion ?></p>
 	    <?php } 
 	  	else { ?>
-	  		<p>És l'òrgan encarregat de vetllar pel respecte als drets dels inscrits en Podem i pels principis fonamentals i les normes de funcionament de l'organització. Està composta per membres triats de forma directa i independent en primàries obertes.</p>
+	  		<p><?php _e("És l'òrgan encarregat de vetllar pel respecte als drets dels inscrits en Podem i pels principis fonamentals i les normes de funcionament de l'organització. Està composta per membres triats de forma directa i independent en primàries obertes.",'podemospress'); ?></p>
 	    <?php } 
 
 	    if ($cg_enlace_boton !== '' && $cg_texto_boton !== '') { ?> 
@@ -145,7 +145,7 @@ if ($intro_ver == 1) { ?>
 if ($areas_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Secretaries del Consell Ciutadà <?php echo $ambito ?></h5>
+	    <h5 class="titulo texto-centrado"><?php _e("Secretaries del Consell Ciutadà",'podemospress'); ?> - <?php echo $ambito ?></h5>
 	  </div>
     <?php 
 	  $args = array(
@@ -167,7 +167,7 @@ if ($areas_ver == 1) { ?>
 			      </div>
 			      <div id="tarjeta-1" class="tarjeta-reverso">
 			        <div class="tarjeta-contenido">
-			          <p class="tarjeta-texto"><?php $customLength=50; the_excerpt(); ?></p>
+			          <p class="tarjeta-texto"><?php $customLength=40; the_excerpt(); ?></p>
 			        </div>
 			        <div class="tarjeta-accion">
 			          <a class="small button invertido" href="<?php the_permalink(); ?>">+ Info</a>
@@ -196,10 +196,10 @@ if ($areas_ver == 1) { ?>
 if ($circulos_ver == 1) { ?> 
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado">Cercles
+	    <h5 class="titulo texto-centrado"><?php _e("Cercles",'podemospress'); ?>
 				<?php 
 	    	if ($region !== '') { ?>
-	    		de Podem a <?php echo $region ?>
+	    		de <?php _e("Podem",'podemospress'); ?> <?php _e("a",'podemospress'); ?> <?php echo $region ?>
 	    	<?php } ?>
 	    </h5>
 	  </div>

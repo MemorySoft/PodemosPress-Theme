@@ -26,8 +26,8 @@
               <?php the_post_thumbnail(); ?>
               <div class="carrusel-seccion">
                 <h1 class="carrusel-titulo"><?php the_title(); ?></h1>
-                <a class="carrusel-enlace button invertido" href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
-                    leer
+                <a class="carrusel-enlace button invertido" href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>">
+                    <?php _e('Llegir','podemospress'); ?>
                   </a>
               </div>
             </div>
@@ -81,16 +81,24 @@
           </div>
         <?php } else { ?>
   	      <div class="small-12 large-6 columns">
-            <h4>Transparencia</h4>
-            <p><?php echo $portales_texto_der ?></p>
-            <a href="<?php echo $portales_enlace_btn_der ?>" class="small button"><?php echo $portales_texto_btn_der ?></a>
+            <h4><?php _e('Transparencia','podemospress'); ?></h4>
+            <p><?php _e("Consulta tota la comptabilitat del partit al detall, així com els perfils dels nostres càrrecs interns i públics, les seves declaracions de béns i l'activitat parlamentària que realitzen.",'podemospress'); ?></p>
+            <a href="https://transparencia.podemos.info/" class="small button"><?php _e('Visita el portal','podemospress'); ?></a>
           </div>
         <?php } ?>
-	      <div class="small-12 large-6 columns">
-	        <h4><?php echo $portales_titulo_der ?></h4>
-          <p><?php echo $portales_texto_der ?></p>
-          <a href="<?php echo $portales_enlace_btn_der ?>" class="small button"><?php echo $portales_texto_btn_der ?></a>
-	      </div>
+        <?php if ( $portales_titulo_der !='' && $portales_texto_der !='' && $portales_enlace_btn_der !='' && $portales_texto_btn_der !='' ) { ?>
+  	      <div class="small-12 large-6 columns">
+  	        <h4><?php echo $portales_titulo_der ?></h4>
+            <p><?php echo $portales_texto_der ?></p>
+            <a href="<?php echo $portales_enlace_btn_der ?>" class="small button"><?php echo $portales_texto_btn_der ?></a>
+  	      </div>
+        <?php } else { ?>
+          <div class="small-12 large-6 columns">
+            <h4><?php _e('Participació','podemospress'); ?></h4>
+            <p><?php _e("Plaza Podem, el nostre canal de Appgree i l'aplicació Osoigo són algunes de les eines que des de Podem utilitzem per promoure la participació entre els ciutadans, fomentant el debat i possibilitant el contacte.",'podemospress'); ?></p>
+            <a href="https://transparencia.podemos.info/" class="small button"><?php _e('Participa!','podemospress'); ?></a>
+          </div>
+        <?php } ?>
 	    </div>
 	  </div>
   <?php	} ?>
@@ -99,7 +107,7 @@
 
   <div class="row">
     <div class="small-12 large-8 columns contenido-principal">
-      <h5 class="titulo">Actualitat</h5>
+      <h5 class="titulo"><?php _e('Actualitat','podemospress'); ?></h5>
 
       <?php 
       $excluir_portada = get_cat_ID('portada');
@@ -131,7 +139,7 @@
       <div class="row">
         <div class="small-12 columns">
           <hr>
-          <a href="<?php bloginfo('url'); ?>/noticias" class="button">Ver toda la actualidad</a>
+          <a href="<?php bloginfo('url'); ?>/noticias" class="button"><?php _e("Veure tota l'actualitat",'podemospress'); ?></a>
         </div>
       </div>
     </div>
@@ -188,7 +196,7 @@
   ?>    
     <div id="videos" class="row">
       <div class="small-12 columns">
-        <h5 class="titulo texto-centrado">Vídeos</h5>
+        <h5 class="titulo texto-centrado"><?php _e('Vídeos','podemospress'); ?></h5>
       </div>  
       <?php 
         $args=array(
@@ -229,7 +237,9 @@
   	?>
 	  <div class="row" data-equalizer data-equalize-on="medium">
 	    <div class="small-12 columns">
-	      <h5 class="titulo texto-centrado">Colabora amb <?php echo $delegacion_nombre ?></h5>
+	      <h5 class="titulo texto-centrado">
+          <?php printf( __("Col·labora amb %s",'podemospress') , $delegacion_nombre ); ?> 
+        </h5>
 	    </div>
 	    <div class="small-12 large-3 columns">
 

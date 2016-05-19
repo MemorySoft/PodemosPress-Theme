@@ -5,7 +5,7 @@
     
 <div id="videos" class="row actualidad-carrusel">
   <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Vídeos</h5>
+    <h5 class="titulo texto-centrado"><?php _e('Vídeos','podemospress'); ?></h5>
   </div>
   <div class="large-12 columns">
     <?php 
@@ -25,7 +25,7 @@
                 <div class="articulo-imagen flex-video">
                   <?php the_content(); ?>
                 </div>
-                <h5><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h5>
+                <h5><a href="<?php the_permalink(); ?>" title="<?php _e('Llegir','podemospress'); ?> <?php the_title(); ?>"> <?php the_title(); ?></a></h5>
               </div>
             </div>
           </div>
@@ -34,10 +34,10 @@
         <hr>
         <nav class="prev-next-posts">
           <div class="prev-posts-link">
-            <?php echo get_next_posts_link( 'Vídeos antiguos' ); ?>
+            <?php echo get_next_posts_link( __('Vídeos antics') ); ?>
           </div>
           <div class="next-posts-link">
-            <?php echo get_previous_posts_link( 'Vídeos más recientes' ); ?>
+            <?php echo get_previous_posts_link( __('Vídeos mes nous') ); ?>
           </div>
         </nav>
         <?php $wp_query = $temp_query; ?>

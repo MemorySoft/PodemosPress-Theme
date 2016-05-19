@@ -28,10 +28,10 @@
     <div data-sticky-container>
       <div data-sticky data-options="marginTop:0;" style="width:100%">
         <ul class="menu menu-actualidad expanded fondo-morado texto-centrado">
-          <li><a href="#prensa">Sala de prensa</a></li>
-          <li><a href="#noticias">Noticias</a></li>
-          <li><a href="#opinion">Opinión</a></li>
-          <li><a href="#videos">Videos</a></li>
+          <li><a href="#prensa"><?php _e('Sala de premsa','podemospress'); ?></a></li>
+          <li><a href="#noticias"><?php _e('Noticies','podemospress'); ?></a></li>
+          <li><a href="#opinion"><?php _e('Opinió','podemospress'); ?></a></li>
+          <li><a href="#videos"><?php _e('Vídeos','podemospress'); ?></a></li>
         </ul>
       </div>
     </div>
@@ -45,7 +45,7 @@
   ?>    
   <div id="prensa" class="row actualidad-carrusel">
     <div class="small-12 columns">
-      <h5 class="titulo texto-centrado">Sala de prensa</h5>
+      <h5 class="titulo texto-centrado"><?php _e('Sala de premsa','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
       <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
@@ -63,11 +63,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -77,7 +77,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $prensa_link ); ?>" title="ir a la página Sala de Prensa">todos los artículos de Sala de Prensa</a>
+        <a href="<?php echo esc_url( $prensa_link ); ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Sala de Premsa','podemospress'); ?>"><?php _e('tots els articles de Sala de Premsa','podemospress'); ?></a>
       </p>
     </div>
   </div>
@@ -90,7 +90,7 @@
   ?>    
   <div id="noticias" class="row actualidad-carrusel">
     <div class="small-12 columns">
-      <h5 class="titulo texto-centrado">Noticias</h5>
+      <h5 class="titulo texto-centrado"><?php _e('Noticies','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
       <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
@@ -108,11 +108,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -122,7 +122,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $noticias_link ); ?>" title="ir a la página de la categoría Noticias">todos los artículos de Noticias</a>
+        <a href="<?php echo esc_url( $noticias_link ); ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Noticies','podemospress'); ?>"><?php _e('tots els articles de Noticies','podemospress'); ?></a>
       </p>
     </div>
   </div>
@@ -135,7 +135,7 @@
   ?>    
   <div id="opinion" class="row actualidad-carrusel">
     <div class="small-12 columns">
-      <h5 class="titulo texto-centrado">Opinión</h5>
+      <h5 class="titulo texto-centrado"><?php _e('Opinió','podemospress' ); ?></h5>
     </div>
     <div class="large-12 columns">
       <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
@@ -153,11 +153,11 @@
               <div class="articulo stack-for-small">
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <div class="articulo-imagen">
-                    <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
+                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_post_thumbnail(); ?></a>
                   </div>
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
-                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h4>
+                  <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
                   <p class="articulo-extracto"><?php the_excerpt(); ?></p>
                 </div>
               </div>
@@ -167,7 +167,7 @@
         <?php } ?>
       </div>
       <p class="texto-centrado">
-        <a href="<?php echo esc_url( $opinion_link ); ?>" title="ir a la página de la categoría Opinión">todos los artículos de Opinión</a>
+        <a href="<?php echo esc_url( $opinion_link ); ?>" title="<?php esc_attr__('anar a la pàgina de la categoria Opinió','podemospress'); ?>"><?php _e('tots els articles de Opinió','podemospress'); ?></a>
       </p>
     </div>
   </div>
@@ -180,7 +180,7 @@
   ?>    
   <div id="videos" class="row actualidad-carrusel">
     <div class="small-12 columns">
-      <h5 class="titulo texto-centrado">Vídeos</h5>
+      <h5 class="titulo texto-centrado"><?php _e('Vídeos','podemospress'); ?></h5>
     </div>
     <div class="large-12 columns">
       <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
@@ -199,7 +199,11 @@
                   <div class="articulo-imagen flex-video">
                     <?php the_content(); ?>
                   </div>
-                  <h5><a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>"><?php the_title(); ?></a></h5>
+                  <h5>
+                    <a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>">
+                      <?php the_title(); ?>
+                    </a>
+                  </h5>
                 </div>
               </div>
             </div>
@@ -207,7 +211,9 @@
           <?php endwhile; ?>
         <?php } ?>
       </div>
-      <p class="texto-centrado"><a href="<?php bloginfo('url'); ?>/videos">Ver todos los vídeos</a></p>
+      <p class="texto-centrado">
+        <a href="<?php bloginfo('url'); ?>/videos"><?php _e('tots els vídeos','podemospress'); ?></a>
+      </p>
     </div>
   </div>
 <?php } ?>
@@ -217,7 +223,10 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="callout large fondo-morado">
-      <h4>No te pierdas ninguna noticia <a class="button invertido flota-derecha" href="<?php bloginfo('url'); ?>/noticias">Todas las noticias</a></h4>
+      <h4>
+        <?php _e('No et perdis cap noticia','podemospress'); ?> 
+        <a class="button invertido flota-derecha" href="<?php bloginfo('url'); ?>/noticias"><?php _e('totes les Noticies','podemospress'); ?></a>
+      </h4>
     </div>
   </div>
 </div>

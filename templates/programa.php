@@ -112,11 +112,8 @@
 
 <div class="row">
   <div class="small-12 columns">
-    <h5 class="titulo texto-centrado">Objectius 
-			<?php 
-    	if ($delegacion_nombre !== '') { ?>
-    		de <?php echo $delegacion_nombre ?>
-    	<?php } ?>
+    <h5 class="titulo texto-centrado">
+    	<?php printf( __('Objectius de %s','podemospress') , $delegacion_nombre ); ?> 
     </h5>
   </div>
   <?php
@@ -146,7 +143,9 @@
             <?php the_content(); ?>
             <p>
               <hr>
-              <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="Cerrar">CERRAR</a>
+              <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">
+              	<?php _e('Tancar','podemospress'); ?>
+             	</a>
             </p>
           </div>
         </div>

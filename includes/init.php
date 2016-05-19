@@ -53,11 +53,7 @@ function podemospress_setup() {
 	}
 	
 	// SOPORTE PARA TRADUCCIONES
-	load_theme_textdomain( 'podemospress', get_template_directory() . '/languages' );
-	$locale = get_locale();
-	$locale_file = get_template_directory() . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-	require_once( $locale_file );
+	load_theme_textdomain( 'podemospress', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 	// SOPORTE PARA IMÁGENES DESTACADAS
 	add_theme_support( 'post-thumbnails' );
