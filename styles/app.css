@@ -100,11 +100,16 @@ p {
   color: #54075B;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   font-size: 2.2rem;
+  line-height: 5.5rem;
   font-weight: bold;
 }
 @media screen and (min-width: 0em) and (max-width: 69.313em) {
+  .top-bar .columns {
+    margin-bottom: 0;
+  }
   .top-bar-title {
     font-size: 2rem;
+    line-height: 6rem;
     width: 100%;
   }
 }
@@ -117,11 +122,12 @@ p {
 }
 .menu .menu-item a {
   display: block;
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1rem;
   line-height: 1;
   font-size: .8rem;
   text-transform: uppercase;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
+  color: #333;
 }
 .menu-superior .menu-item a {
   padding: .9rem;
@@ -138,18 +144,19 @@ p {
   box-shadow: 0 0 1px #ccc;
 }
 .sub-menu .menu-item a {
-  background:  #54075B;
-  color: #fff;
+  background:  #fff;
+  color: #54075B;
 }
 .menu .menu-item:hover .sub-menu {
   display: inherit;
   z-index: 1;
 }
 .top-bar .menu .current_page_item {
-  background: #54075B;
+  border-top: 5px solid #54075B;
 }
 .top-bar .menu .current_page_item a {
-  color: #fff;
+  color: #54075B;
+  margin-top: -5px;
 }
 .menu-icono {
   width: auto;
@@ -170,9 +177,6 @@ ul.menu-horizontal {
 }
 .menu-actualidad li {
   border-right: 1px solid #fff; 
-}
-.menu-actualidad li:hover {
-  background: #22bb5b;
 }
 .menu-horizontal.menu-superior {
   float: right;
@@ -298,10 +302,14 @@ ul.menu-horizontal {
   border: 1px solid #333;
   color: #fff;
 }
-
 .button.plano {
   border: transparent;
   background: transparent;
+}
+
+.button-group li {
+  display: inline-block;
+  border: 1px solid #fff;
 }
 
 .close-button {
@@ -392,6 +400,16 @@ ul.menu-horizontal {
 .reveal.full {
   padding-top: 6rem;
 }
+@media screen and (max-width: 39.937em) {
+  .reveal.full {
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .reveal.full .texto-derecha {
+    /*float: none;*/
+    text-align: center;
+  }
+}
 
 /* FOOTER */
 .footer {
@@ -399,6 +417,10 @@ ul.menu-horizontal {
 }
 .footer .media-object-section h3 {
   line-height: .9;
+}
+footer .menu .menu-item a {
+  padding: 1.6rem 1rem;
+  color: #fff;
 }
 @media screen and (max-width: 69.313em) {
   footer {
@@ -442,12 +464,22 @@ ul.menu-horizontal {
 
 /*  Lo usamos para estilar los logotipos de Podemos 
     construidos con texto en el footer, la navegación 
-    y la información de contacto*/
+    y la información de contacto */
 h2.logo-texto {
   line-height: 2.5rem;
 }
 h4.logo-texto {
   line-height: 1.6rem;
+}
+
+/* BOTONERA */
+.botonera {
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 0em) and (max-width: 39.9375em) {
+  .botonera {
+    margin-bottom: 1rem;
+  }
 }
 
 /* BOTONES SOCIALES */
@@ -950,7 +982,6 @@ a.leer-mas {
   }
 }
 
-
 /* SIDEBARS */
 .sidebar {
   text-align: right;
@@ -1002,9 +1033,37 @@ a.leer-mas {
 .internos-cargos .articulo-titulo {
   margin-bottom: .5rem;
 }
-.page-template-miembros .internos-cargos .articulo-imagen img,
-.page-template-miembros .reveal .articulo-imagen img {
+.page-template-miembros .internos-cargos .articulo-imagen img {
   max-width: 230px;
+}
+@media screen and (max-width: 39.937em) { 
+  .page-template-miembros .reveal .articulo-imagen img {
+    max-width: 230px;
+  }
+}
+@media screen and (min-width: 39.937em) { 
+  .page-template-miembros .reveal .articulo-imagen img {
+    max-width: 130px;
+  }
+}
+@media screen and (min-width: 48.063em) { /* 769px */
+  .page-template-miembros .internos-cargos .articulo-imagen img {
+    max-width: 170px;
+  }
+  .internos-cargos .articulo-titulo {
+    font-size: .9rem;
+  }
+  .page-template-miembros .reveal .articulo-imagen img {
+    max-width: 170px;
+  }
+}
+@media screen and (min-width: 69.313em) { /* 769px */
+  .internos-cargos .articulo-titulo {
+    font-size: 1.2rem;
+  }
+  .page-template-miembros .reveal .articulo-imagen img {
+    max-width: 230px;
+  }
 }
 
 /* INSTITUCIONES */
