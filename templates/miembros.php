@@ -8,7 +8,7 @@
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('miembros-arriba') ) : ?>
-
+			
 		<?php endif; ?>
 	</div>
 </div>
