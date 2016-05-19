@@ -163,7 +163,7 @@ $circulos_enlace_boton_derecho 				= get_option('organizacion_circulos_enlace_bo
 $circulos_boton_izquierdo 						= get_option('organizacion_circulos_texto_boton_izquierdo');
 $circulos_enlace_boton_izquierdo 			= get_option('organizacion_circulos_enlace_boton_izquierdo');
 // Areas
-$areas_ver 														= get_option('organizacion_areas_visibilidad');
+$secretarias_ver 											= get_option('organizacion_secretarias_visibilidad');
 // Callout
 $callout_organizacion_ver 						= get_option('organizacion_callout_visibilidad');
 $callout_organizacion_titulo					= get_option('organizacion_callout_titulo');

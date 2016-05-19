@@ -136,10 +136,10 @@ if ($intro_ver == 1) { ?>
 	</div>
 </div>
 
-<!-- ÁREAS -->
+<!-- SECRETARÍAS -->
 
 <?php 
-if ($areas_ver == 1) { ?>
+if ($secretarias_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
 	    <h5 class="titulo texto-centrado">
@@ -148,15 +148,12 @@ if ($areas_ver == 1) { ?>
 	  </div>
     <?php 
 	  $args = array(
-	  	'post_type' => 'area',
+	  	'post_type' => 'secretaria',
   	);
   	$area_item = new WP_Query($args);
   	if( $area_item->have_posts() ) { ?>
   		<?php  while ( $area_item->have_posts() ) : $area_item->the_post(); ?>
 			  <div class="small-12 medium-4 columns" id="post-<?php the_ID(); ?>">
-			  	<?php 
-						$enlace_contacto = get_post_meta( get_the_id(), 'area_contacto_visibilidad', true );
-			  	?>
 			    <div class="tarjeta tarjeta-morada">
 			      <div class="tarjeta-contenido">
 			        <span class="tarjeta-titulo"><?php the_title(); ?></span>

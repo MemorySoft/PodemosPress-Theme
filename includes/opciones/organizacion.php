@@ -41,7 +41,7 @@ function RegistraOpcionesOrganizacion() {
   add_option("organizacion_comision_texto_boton","","","yes");
   add_option("organizacion_comision_enlace_boton","","","yes");
 
-  add_option("organizacion_areas_visibilidad","","","yes");
+  add_option("organizacion_secretarias_visibilidad","","","yes");
 
   add_option("organizacion_circulos_visibilidad","","","yes");
   add_option("organizacion_circulos_texto","","","yes");
@@ -80,7 +80,7 @@ function RegistraOpcionesOrganizacion() {
   register_setting("opciones_organizacion", "organizacion_comision_texto_boton");
   register_setting("opciones_organizacion", "organizacion_comision_enlace_boton");
 
-  register_setting("opciones_organizacion","organizacion_areas_visibilidad");
+  register_setting("opciones_organizacion","organizacion_secretarias_visibilidad");
 
   register_setting("opciones_organizacion", "organizacion_circulos_visibilidad");
   register_setting("opciones_organizacion", "organizacion_circulos_texto");
@@ -118,7 +118,7 @@ function PaginaOrganizacion() {
             <th scope="row">Mostrar Intro</th>
             <td>
             <?php $options = get_option( "organizacion_intro_visibilidad" ); ?>
-            <input type="checkbox" name="organizacion_intro_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección Intro</span>
+            <input type="checkbox" name="organizacion_intro_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección Intro</span>
           </tr>
         </table>
         <table class="form-table">
@@ -233,14 +233,14 @@ function PaginaOrganizacion() {
 
         <hr>
 
-        <h2>Áreas</h2>
-        <p>Esta es la sección donde aparecen las tarjetas de las distintas áreas de trabajo del Consejo Ciudadano de esta delegación.</p>
+        <h2>Secretarías</h2>
+        <p>Esta es la sección donde aparecen las tarjetas de las distintas secretarías del Consejo Ciudadano de esta delegación.</p>
         <table class="form-table">
           <tr valign="top">
-            <th scope="row">Mostrar Áreas</th>
+            <th scope="row">Mostrar Secretarías</th>
             <td>
-            <?php $options = get_option( "organizacion_areas_visibilidad" ); ?>
-            <input type="checkbox" name="organizacion_areas_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Áreas</span>
+            <?php $options = get_option( "organizacion_secretarias_visibilidad" ); ?>
+            <input type="checkbox" name="organizacion_secretarias_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección de Secretarías</span>
           </tr>
         </table>
 
@@ -253,7 +253,7 @@ function PaginaOrganizacion() {
             <th scope="row">Mostrar Círculos</th>
             <td>
             <?php $options = get_option( "organizacion_circulos_visibilidad" ); ?>
-            <input type="checkbox" name="organizacion_circulos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar la sección de Círculos</span>
+            <input type="checkbox" name="organizacion_circulos_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar la sección de Círculos</span>
           </tr>
         </table>
         <table class="form-table">
@@ -298,7 +298,7 @@ function PaginaOrganizacion() {
             <th scope="row">Mostrar callout</th>
             <td>
             <?php $options = get_option( "organizacion_callout_visibilidad" ); ?>
-            <input type="checkbox" name="organizacion_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Desmarcar para ocultar el callout completo</span>
+            <input type="checkbox" name="organizacion_callout_visibilidad" <?php checked( $options, 1 ); ?> value="1"> <span class="description">Marcar para activar el callout completo</span>
           </tr>
         </table>
         <table class="form-table">

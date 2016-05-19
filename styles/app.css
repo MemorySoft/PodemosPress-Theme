@@ -712,6 +712,7 @@ h4.logo-texto {
 }
 .tarjeta-reverso {
   background: #22bb5b;
+  width: 100%;
   display: none;
   position: absolute;
   top: 0;
@@ -1021,6 +1022,9 @@ a.leer-mas {
 /* POST */
 .single .articulo-imagen img {
   min-width: 100%;
+}
+.single-secretaria .articulo-info {
+  display: none;
 }
 
 /*  UTILIDADES Versión 0.1
