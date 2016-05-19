@@ -8,7 +8,7 @@
 <div class="row sin-margen--abajo">
 	<div class="small-12 columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('miembros-arriba') ) : ?>
-			
+
 		<?php endif; ?>
 	</div>
 </div>
@@ -20,7 +20,7 @@ if ($sg_ver == 1) { ?>
 	<div class="row internos-cargos">
 	  <div class="small-12 medium-10 medium-centered columns">
 	  	<h5 class="titulo texto-centrado">
-	  		<?php printf( __('Secretaria General de %s','podemospress') , $region ); ?>
+	  		<?php printf( __('Secretaria General de %s','podemospress') , $delegacion_nombre ); ?>
 	    </h5>
 	    <br>
 	    <?php 
@@ -123,7 +123,7 @@ if ($cc_ver == 1) { ?>
 	<div id="cc" class="row internos-cargos" data-equalizer data-equalize-on="medium">
 	  <div class="small-12 columns">
 	    <h5 class="titulo texto-centrado">
-	    	<?php printf( __('Consell Ciutadà de %s','podemospress') , $region ); ?>
+	    	<?php printf( __('Consell Ciutadà de %s','podemospress') , $delegacion_nombre ); ?>
 	    </h5>
 	  </div>
 	  <div class="small-12 columns texto-centrado">
@@ -234,7 +234,7 @@ if ($cg_ver == 1) { ?>
 	<div id="cgd" class="row internos-cargos" data-equalizer data-equalize-on="medium">
 	  <div class="small-12 columns">
 	    <h5 class="titulo texto-centrado"> 
-	    	<?php printf( __('Comisió de Garanties Democrátiques de %s','podemospress') , $region ); ?>
+	    	<?php printf( __('Comisió de Garanties Democrátiques de %s','podemospress') , $delegacion_nombre ); ?>
 	    </h5>
 	  </div>
 	  <div class="small-12 columns texto-centrado">

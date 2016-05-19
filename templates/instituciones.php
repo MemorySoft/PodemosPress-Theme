@@ -31,7 +31,7 @@
 	    </h5>
 	  </div>
 	  <div class="large-12 columns">
-	    <div class="carrusel -carrusel-tres-items--navegacion sin-margen--abajo">
+	    <div class="carrusel -carrusel-tres-items sin-margen--abajo">
         <?php 
           $args = array(
           'post_type' => 'post',
@@ -73,7 +73,7 @@
   ?>
 	<div class="row instituciones-actividad">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado"><?php _e("Activitat dels carrecs",'podemospress'); ?> 
+	    <h5 class="titulo texto-centrado"><?php _e("Activitat dels càrrecs",'podemospress'); ?> 
 			<?php 
     	if ($institucion !== '') { ?>
     		<?php _e("al",'podemospress'); ?> <?php echo $institucion ?>
@@ -288,7 +288,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e('Relació de carrecs el·lectes a l\'Ajuntament','podemospress'); ?> 
+		    	<?php _e('Relació de càrrecs electes a l\'Ajuntament','podemospress'); ?> 
 		    </h5>
 		  </div>
 		  
@@ -381,7 +381,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Consell Insular",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Consell Insular",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -470,7 +470,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Cabildo",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Cabildo",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -559,7 +559,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Govern Autonòmic",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Govern Autonòmic",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -648,7 +648,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Parlament Autonòmic",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Parlament Autonòmic",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -737,7 +737,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Senat",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Senat",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -789,7 +789,7 @@
 		  	            	  <br>
 		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%1$s al Senat','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  	<?php printf( __('%1$s al Senat','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -826,7 +826,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Congrés dels Diputats",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Congrés dels Diputats",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -878,7 +878,7 @@
 		  	            	  <br>
 		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%1$s al Congrés dels Diputats','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  	<?php printf( __('%1$s al Congrés dels Diputats','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -915,7 +915,7 @@
 		<div class="row sin-margen--abajo instituciones-cargos" data-equalizer data-equalize-on="medium">
 		  <div class="small-12 columns">
 		    <h5 class="titulo texto-centrado">
-		    	<?php _e("Relació de carrecs el·lectes al Govern Central",'podemospress'); ?>
+		    	<?php _e("Relació de càrrecs electes al Govern Central",'podemospress'); ?>
 		    </h5>
 		  </div>
 		  
@@ -967,7 +967,7 @@
 		  	            	  <br>
 		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%1$s al Govern Central de %2$s','podemospress') , $datos_cargo_institucional , $region ); ?>
+			  	            	  	<?php printf( __('%1$s al Govern Central','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>

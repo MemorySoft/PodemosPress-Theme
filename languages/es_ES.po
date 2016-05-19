@@ -1,0 +1,478 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PodemosPress\n"
+"POT-Creation-Date: 2016-05-19 14:06+0200\n"
+"PO-Revision-Date: 2016-05-19 14:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ../templates\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;_esc_attr__\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: actualidad.php:31 actualidad.php:48
+msgid "Sala de premsa"
+msgstr "Sala de prensa"
+
+#: actualidad.php:32 actualidad.php:93
+msgid "Noticies"
+msgstr "Noticias"
+
+#: actualidad.php:33 actualidad.php:138
+msgid "Opinió"
+msgstr "Opinión"
+
+#: actualidad.php:34 actualidad.php:183 front-page.php:199 videos.php:8
+msgid "Vídeos"
+msgstr "Vídeos"
+
+#: actualidad.php:80
+msgid "tots els articles de Sala de Premsa"
+msgstr "todos los artículos de Sala de Prensa"
+
+#: actualidad.php:125
+msgid "tots els articles de Noticies"
+msgstr "todos los artículos de Noticias"
+
+#: actualidad.php:170
+msgid "tots els articles de Opinió"
+msgstr "todos los artículos en Opinión"
+
+#: actualidad.php:215
+msgid "tots els vídeos"
+msgstr "todos los vídeos"
+
+#: actualidad.php:227
+msgid "No et perdis cap noticia"
+msgstr "No te pierdas ninguna noticia"
+
+#: actualidad.php:228
+msgid "totes les Noticies"
+msgstr "Todas las Noticias"
+
+#: contacto.php:66
+msgid "Directori"
+msgstr "Directorio"
+
+#: contacto.php:68
+msgid "Directori de contactes públics d'àrees i càrrecs"
+msgstr "Directorio de contactos públicos de áreas y cargos"
+
+#: front-page.php:30 instituciones.php:49 videos.php:28
+msgid "Llegir"
+msgstr "Leer"
+
+#: front-page.php:84
+msgid "Transparencia"
+msgstr "Transparencia"
+
+#: front-page.php:85
+msgid ""
+"Consulta tota la comptabilitat del partit al detall, així com els perfils "
+"dels nostres càrrecs interns i públics, les seves declaracions de béns i "
+"l'activitat parlamentària que realitzen."
+msgstr ""
+"Consulta toda la contabilidad del partido al por menor, así como los "
+"perfiles de nuestros cargos internos y públicos, sus declaraciones de bienes "
+"y la actividad parlamentaria que realizan."
+
+#: front-page.php:86
+msgid "Visita el portal"
+msgstr "Visita el portal"
+
+#: front-page.php:97
+msgid "Participació"
+msgstr "Participación"
+
+#: front-page.php:98
+msgid ""
+"Plaza Podem, el nostre canal de Appgree i l'aplicació Osoigo són algunes de "
+"les eines que des de Podem utilitzem per promoure la participació entre els "
+"ciutadans, fomentant el debat i possibilitant el contacte."
+msgstr ""
+"Plaza Podemos, nuestro canal de Appgree y la aplicación Osoigo son algunas "
+"de las herramientas que desde Podemos utilizamos para #promover la "
+"participación entre los ciudadanos, fomentando el debate y posibilitando el "
+"contacto."
+
+#: front-page.php:99
+msgid "Participa!"
+msgstr "¡Participa!"
+
+#: front-page.php:110 instituciones.php:27
+msgid "Actualitat"
+msgstr "Actualidad"
+
+#: front-page.php:142
+msgid "Veure tota l'actualitat"
+msgstr "Ver toda la actualidad"
+
+#: front-page.php:241
+#, php-format
+msgid "Col·labora amb %s"
+msgstr "Colabora con %s"
+
+#: instituciones.php:63
+msgid "anar a la pàgina de les publicacions de la categoria Institucions"
+msgstr "ir a la pàgina de las publicaciones de la categoría Instituciones"
+
+#: instituciones.php:63
+msgid "veure els articles a Institucions"
+msgstr "ver los artículos en Instituciones"
+
+#: instituciones.php:76
+msgid "Activitat dels càrrecs"
+msgstr "Actividad de los cargos"
+
+#: instituciones.php:79
+msgid "al"
+msgstr "en el"
+
+#: instituciones.php:85
+msgid "Presidencia"
+msgstr "Presidencia"
+
+#: instituciones.php:291
+msgid "Relació de càrrecs electes a l'Ajuntament"
+msgstr "Relación de cargos electos en el Ayuntamiento"
+
+#: instituciones.php:348
+#, php-format
+msgid "%1$s a l'Ajuntament de %2$s"
+msgstr "%1$s en el Ayuntamiento de %2$s"
+
+#: instituciones.php:353 instituciones.php:441 instituciones.php:530
+#: instituciones.php:619 instituciones.php:708 instituciones.php:797
+#: instituciones.php:886 instituciones.php:975 miembros.php:92 miembros.php:203
+#: miembros.php:314
+#, php-format
+msgid "%1$s a %2$s"
+msgstr "%1$s en %2$s"
+
+#: instituciones.php:363 instituciones.php:451 instituciones.php:540
+#: instituciones.php:629 instituciones.php:718 instituciones.php:807
+#: instituciones.php:896 instituciones.php:985 miembros.php:103
+#: miembros.php:214 miembros.php:325 programa.php:147
+msgid "Tancar"
+msgstr "Cerrar"
+
+#: instituciones.php:384
+msgid "Relació de càrrecs electes al Consell Insular"
+msgstr "Relación de cargos electos en el Consell Insular"
+
+#: instituciones.php:436
+#, php-format
+msgid "%1$s al Consell Insular de %2$s"
+msgstr "%1$s en el Consell Insular de %2$s"
+
+#: instituciones.php:473
+msgid "Relació de càrrecs electes al Cabildo"
+msgstr "Relación de cargos electos en el Cabildo"
+
+#: instituciones.php:525
+#, php-format
+msgid "%1$s al Cabildo de %2$s"
+msgstr "%1$s en el Cabildo de %2$s"
+
+#: instituciones.php:562
+msgid "Relació de càrrecs electes al Govern Autonòmic"
+msgstr "Relación de cargos electos en el Gobierno Autonómico"
+
+#: instituciones.php:614
+#, php-format
+msgid "%1$s al Govern Autonòmic de %2$s"
+msgstr "%1$s en el Gobierno Autonómico de %2$s"
+
+#: instituciones.php:651
+msgid "Relació de càrrecs electes al Parlament Autonòmic"
+msgstr "Relación de cargos electos en el Parlamento Autonómico"
+
+#: instituciones.php:703
+#, php-format
+msgid "%1$s al Parlament Autonòmic de %2$s"
+msgstr "%1$s en el Parlamento Autonómico de %2$s"
+
+#: instituciones.php:740
+msgid "Relació de càrrecs electes al Senat"
+msgstr "Relación de cargos electos en el Senado"
+
+#: instituciones.php:792
+#, php-format
+msgid "%1$s al Senat"
+msgstr "%1$s en el Senado"
+
+#: instituciones.php:829
+msgid "Relació de càrrecs electes al Congrés dels Diputats"
+msgstr "Relación de cargos electos en el Congreso de los Diputados"
+
+#: instituciones.php:881
+#, php-format
+msgid "%1$s al Congrés dels Diputats"
+msgstr "%1$s en el Congreso de los Diputados"
+
+#: instituciones.php:918
+msgid "Relació de càrrecs electes al Govern Central"
+msgstr "Relación de cargos electos en el Gobierno Central"
+
+#: instituciones.php:970
+#, php-format
+msgid "%1$s al Govern Central"
+msgstr "%1$s en el Gobierno Central"
+
+#: miembros.php:23
+#, php-format
+msgid "Secretaria General de %s"
+msgstr "Secretaría General de %s"
+
+#: miembros.php:126
+#, php-format
+msgid "Consell Ciutadà de %s"
+msgstr "Consejo Ciudadano de %s"
+
+#: miembros.php:237
+#, php-format
+msgid "Comisió de Garanties Democrátiques de %s"
+msgstr "Comisión de Garantías Democráticas de %s"
+
+#: organizacion.php:20
+msgid "Organització"
+msgstr "Organitzación"
+
+#: organizacion.php:38
+#, php-format
+msgid "Com s'organitza %s"
+msgstr "Como se organiza %s"
+
+#: organizacion.php:46
+msgid "Assemblea Ciutadana"
+msgstr "Asemblea Ciudadana"
+
+#: organizacion.php:58
+msgid ""
+"L'Assemblea Ciutadana la conforma el conjunt de la ciutadanía inscrita a "
+"Podem. Es l'espai on es prenen les grans decisions (eleccions primaries, "
+"eleccions a carrecs interns, estratègia polìtica, programa…) i on tots els "
+"inscrits participen de forma directa i igual amb veu i vot. Els ùnics "
+"requisits per a participar son: ser major de divuit anys, comprometres en la "
+"construcció de Podem i acceptar el seu Codi Ètic."
+msgstr ""
+"La Asamblea Ciudadana la conforma el conjunto de la ciutadanía inscrita a "
+"Podemos. Se el espacio donde se toman las grandes decisiones (elecciones "
+"primaries, elecciones a carrecs internos, estrategia polìtica, programa…) y "
+"donde todos los inscritos participan de forma directa e igual con voz y "
+"voto. Los ùnics requisitos para participar sueño: ser mayor de dieciocho "
+"años, comprometres en la construcción de Podemos y aceptar su Código Ético."
+
+#: organizacion.php:87
+msgid "Secretaria General"
+msgstr "Secretaría General"
+
+#: organizacion.php:93
+msgid ""
+"Es nomena mitjançant elecció directa en primàries obertes a tota la "
+"ciutadania inscrita en Podem. Exerceix la representació política i "
+"institucional de Podem i assegura la coordinació entre les àrees executives "
+"del Consell Ciutadà, òrgan que presideix."
+msgstr ""
+"Se nombra mediante elección directa en primarias abiertas a toda la "
+"ciudadanía inscrita Podemos. Ejerce la representación política e "
+"institucional de Podemos y asegura la coordinación entre las áreas "
+"ejecutivas del Consejo Ciudadano, órgano que preside."
+
+#: organizacion.php:104
+msgid "Consell Ciutadà"
+msgstr "Consejo Ciudadano"
+
+#: organizacion.php:110
+msgid ""
+"És un òrgan executiu col·legiat triat mitjançant primàries obertes a la "
+"ciutadania. Desenvolupa les decisions adoptades per l'Assemblea Ciutadana i "
+"manté una constant rendició de comptes davant aquesta Assemblea i davant els "
+"cercles amb mecanismes de participació directa."
+msgstr ""
+"És un òrgan executiu col·legiat triat mitjançant primàries obertes a la "
+"ciutadania. Desenvolupa les decisions adoptades per l'Assemblea Ciutadana i "
+"manté una constant rendició de comptes davant aquesta Assemblea i davant els "
+"cercles amb mecanismes de participació directa."
+
+#: organizacion.php:121
+msgid "Comisió de Garanties"
+msgstr "Comisión de Garantías"
+
+#: organizacion.php:127
+msgid ""
+"És l'òrgan encarregat de vetllar pel respecte als drets dels inscrits en "
+"Podem i pels principis fonamentals i les normes de funcionament de "
+"l'organització. Està composta per membres triats de forma directa i "
+"independent en primàries obertes."
+msgstr ""
+"Es el órgano encargado de velar por el respecto a los derechos de los "
+"inscritos Podemos y por los principios fundamentales y las normas de "
+"funcionamiento de la organización. Está compuesta por miembros elegidos de "
+"forma directa e independiente en primarias abiertas."
+
+#: organizacion.php:146
+#, php-format
+msgid "Secretaries del Consell Ciutadà de %s"
+msgstr "Secretarías del Consejo Ciudadano de %s"
+
+#: organizacion.php:199
+#, php-format
+msgid "Círculos de %s"
+msgstr ""
+
+#: participacion.php:36
+msgid "Entra al portal de participació"
+msgstr "Entra en el portal de participación"
+
+#: participacion.php:42
+msgid ""
+"El portal de participació de Podem és una eina de participació ciutadana amb "
+"la qual formaràs part activa del procés de construcció d'aquest projecte "
+"polític. Inscriu-te i podràs participar en les votacions, rebre avisos, "
+"gestionar els teus suports econòmics, presentar projectes o unir-te als "
+"grups de participació a través de la web o l'aplicació per Android."
+msgstr ""
+"El portal de participación de Podemos es una herramienta de participación "
+"ciudadana con la cual formarás parte activa del proceso de construcción de "
+"este proyecto político. Inscríbete y podrás participar en las votaciones, "
+"recibir avisos, gestionar tus apoyos económicos, presentar proyectos o "
+"unirte a los grupos de participación a través de la web o la aplicación por "
+"Android."
+
+#: participacion.php:55
+msgid "Entra al portal"
+msgstr "Entra en el portal"
+
+#: participacion.php:58
+msgid "Instala la app"
+msgstr "Instala la app"
+
+#: participacion.php:72
+msgid "Eines de participació"
+msgstr "Herramientas de participación"
+
+#: participacion.php:98
+msgid "Iniciatives Ciutadanes"
+msgstr "Iniciativas Ciudadanas"
+
+#: participacion.php:99
+msgid ""
+"Les iniciatives ciutadanes són el mecanisme a través del com les propostes "
+"més recolzades pels inscrits poden portar-se a l'organització i ser "
+"defensades o acceptades a través de votació. Entra en el teu compte i vota "
+"els projectes."
+msgstr ""
+"Las iniciativas ciudadanas son el mecanismo a través del como las propuestas "
+"más apoyadas por los inscritos pueden traerse a la organización y ser "
+"defendidas o aceptadas a través de votación. Entra en tu cuenta y vota los "
+"proyectos."
+
+#: participacion.php:101
+msgid "Veure iniciatives"
+msgstr "Ver iniciativas"
+
+#: participacion.php:107
+msgid "Equips d'acción participativa"
+msgstr "Equipos de acción participativa"
+
+#: participacion.php:108
+msgid ""
+"Els Equips d'Acció Participativa (EAP) són grups territorials de gent amb "
+"ganes de participar en qüestions concretes i directes que requereixen menor "
+"deliberació i implicació constant que la participació en els Cercles."
+msgstr ""
+"Los Equipos de Acción Participativa (EAP) son grupos territoriales de gente "
+"con ganas de participar en cuestiones concretas y directas que requieren "
+"menor deliberación e implicación constante que la participación en los "
+"Círculos."
+
+#: participacion.php:109
+msgid "Inscriu-te"
+msgstr "Inscríbete"
+
+#: participacion.php:119
+msgid "Col·labora amb Podem"
+msgstr "Colabora con Podemos"
+
+#: programa.php:116
+#, php-format
+msgid "Objectius de %s"
+msgstr "Objetivos de %s"
+
+#: videos.php:37
+msgid "Vídeos antics"
+msgstr "Vídeos antiguos"
+
+#: videos.php:40
+msgid "Vídeos mes nous"
+msgstr "Vídeos más recientes"
+
+#~ msgid "Activitat dels carrecs"
+#~ msgstr "Actividad de los cargos"
+
+#~ msgid "Relació de carrecs electes al Govern Autonòmic"
+#~ msgstr "Relación de cargos electos al Gobierno Autonómico"
+
+#~ msgid "Relació de carrecs electes al Parlament Autonòmic"
+#~ msgstr "Relación de cargos electos al Parlamento Atonómico"
+
+#~ msgid "Relació de carrecs electes al Senat"
+#~ msgstr "Relación de cargos electos al Senado"
+
+#~ msgid "Relació de carrecs electes al Congrés dels Diputats"
+#~ msgstr "Relación de cargos electos al Congreso de los Diputados"
+
+#~ msgid "Relació de carrecs electes al Govern Central"
+#~ msgstr "Relación de cargos electos al Gobierno Central"
+
+#~ msgid "Com s'organitza Podem"
+#~ msgstr "Como se organiza Podemos"
+
+#~ msgid "a"
+#~ msgstr "en"
+
+#~ msgid "Secretaries del Consell Ciutadà"
+#~ msgstr "Secretarías del Consejo Ciudadano"
+
+#~ msgid "Cercles"
+#~ msgstr "Círculos"
+
+#~ msgid "Podem"
+#~ msgstr "Podemos"
+
+#~ msgid "Relació de carrecs el·lectes a l'Ajuntament"
+#~ msgstr "Relación de cargos electos en el Ayuntamiento"
+
+#~ msgid "Relació de carrecs el·lectes al Consell Insular"
+#~ msgstr "Relación de cargos electos en el Consell Insular"
+
+#~ msgid "Relació de carrecs el·lectes al Cabildo"
+#~ msgstr "Relación de carrecs electos en el Cabildo"
+
+#~ msgid "Relació de carrecs el·lectes al Govern Autonòmic"
+#~ msgstr "Relación de cargos electos en el Gobierno Autonómico"
+
+#~ msgid "Relació de carrecs el·lectes al Parlament Autonòmic"
+#~ msgstr "Relación de cargos electos en el Parlamento Autonómico"
+
+#~ msgid "Relació de carrecs el·lectes al Senat"
+#~ msgstr "Relación de cargos electos en el Senado"
+
+#~ msgid "Relació de carrecs el·lectes al Congrés dels Diputats"
+#~ msgstr "Relación de cargos electos en el Congreso de los Diputados"
+
+#~ msgid "Relació de carrecs el·lectes al Govern Central"
+#~ msgstr "Relación de cargos electos en el Gobierno Central"
+
+#~ msgid "%1$s al Govern Central de %2$s"
+#~ msgstr "%1$s en el Gobierno Central"
+
+#~ msgid "Opinio"
+#~ msgstr "Opinión"

@@ -34,11 +34,8 @@ if ($intro_ver == 1) { ?>
 
 <div class="row sin-margen--abajo">
   <div class="small-12 columns">
-    <h4 class="texto-centrado"><?php _e("Com s'organitza Podem",'podemospress'); ?>
-			<?php 
-    	if ($region !== '') { ?>
-    		<?php _e("a",'podemospress'); ?> <?php echo $region ?>
-    	<?php } ?>
+    <h4 class="texto-centrado">
+    	<?php printf( __('Com s\'organitza %s','podemospress') , $delegacion_nombre ); ?>
     </h4>
   </div>
 </div>
@@ -145,7 +142,9 @@ if ($intro_ver == 1) { ?>
 if ($areas_ver == 1) { ?>
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado"><?php _e("Secretaries del Consell Ciutadà",'podemospress'); ?> - <?php echo $ambito ?></h5>
+	    <h5 class="titulo texto-centrado">
+	    	<?php printf( __('Secretaries del Consell Ciutadà de %s','podemospress') , $delegacion_nombre ); ?>
+	    </h5>
 	  </div>
     <?php 
 	  $args = array(
@@ -196,11 +195,8 @@ if ($areas_ver == 1) { ?>
 if ($circulos_ver == 1) { ?> 
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado"><?php _e("Cercles",'podemospress'); ?>
-				<?php 
-	    	if ($region !== '') { ?>
-	    		de <?php _e("Podem",'podemospress'); ?> <?php _e("a",'podemospress'); ?> <?php echo $region ?>
-	    	<?php } ?>
+	    <h5 class="titulo texto-centrado">
+	    	<?php printf( __('Cercles de %s','podemospress') , $delegacion_nombre ); ?>
 	    </h5>
 	  </div>
 	  <div class="small-12 medium-6 columns">
