@@ -59,7 +59,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <!-- CABECERA | IDIOMAS -->
+  <!-- CABECERA | IDIOMAS 
 
   <div class="franja--estrecha fondo-gris--claro sin-margen--abajo">
     <div class="row sin-margen--abajo">
@@ -75,6 +75,7 @@
       </div>
     </div>
   </div>
+  -->
 
 	<!-- CABECERA | BANNER GLOBAL -->
   <?php 
