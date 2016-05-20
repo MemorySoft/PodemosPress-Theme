@@ -126,11 +126,10 @@
             </div>
           </div>
           <div class="articulo-seccion">
-          <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
-            <h4 class="articulo-titulo"><?php the_title(); ?></h4>
-          </a>
-          <span class="articulo-extracto"><?php $customLength=50; the_excerpt(); ?></span>
-          
+            <a href="<?php the_permalink(); ?>" title="leer <?php the_title(); ?>">
+              <h4 class="articulo-titulo"><?php the_title(); ?></h4>
+            </a>
+            <span class="articulo-extracto"><?php $customLength=50; the_excerpt(); ?></span>
           </div>
         </div>
         <?php endwhile; ?>

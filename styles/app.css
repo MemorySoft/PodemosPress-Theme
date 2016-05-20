@@ -183,9 +183,19 @@ ul.menu-horizontal {
 }  
 .menu.align-right > li {
   margin-top: .7rem;
-}  
-@media screen and (max-width: 39.9375em) {
+}
 
+.navegacion-anterior-articulo {
+
+}
+.navegacion-proximo-articulo {
+  text-align: right;
+}
+@media screen and (max-width: 39.9375em) {
+  .navegacion-anterior-articulo,
+  .navegacion-proximo-articulo {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 69.313em) {
   .top-bar-right {
@@ -488,7 +498,7 @@ h4.logo-texto {
 
 /* BOTONES SOCIALES */
 .boton-social {
-  max-width: 200px;
+  /*max-width: 200px;*/
   display: inline;
   margin: .5rem .5rem .5rem 0;
   padding: .5rem 1rem;
@@ -513,6 +523,11 @@ h4.logo-texto {
 }
 .boton-instagram {
   background: #9e7056;
+}
+@media screen and (max-width: 39.9375em) {
+  .boton-social {
+    display: block;
+  }  
 }
 
 /* FRANJAS */
@@ -599,6 +614,12 @@ h4.logo-texto {
   max-width: 100%;
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
+  .articulo {
+    border-bottom: 1px solid #eee;
+  }
+  .articulo-seccion .articulo-imagen img {
+    max-width: 100%;
+  }
   .stack-for-small .articulo-seccion {
     display: block;
     padding: 0;
@@ -995,13 +1016,14 @@ a.leer-mas {
 }
 .sidebar > li {
   font-weight: bold;
-  font-size: 1.3rem;
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   text-transform: uppercase;
+  padding: .2rem 0;
 }
 .sidebar > li a {
   font-weight: normal;
   font-size: 1rem;
+  line-height: .2rem;
   font-family: "Istok Web", Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   text-transform: none;
 }
@@ -1090,6 +1112,30 @@ a.leer-mas {
 /* POST */
 .single .articulo-imagen img {
   min-width: 100%;
+}
+.single .articulo-titulo {
+  margin: 3rem 0 2rem 0;
+}
+.single .articulo-fecha {
+  font-weight: bold;
+  font-size: .9rem;
+  float: right;
+}
+.single .articulo-categoria {
+  margin: 0;
+  display: inline-block;
+}
+.single .articulo-categoria ul {
+  margin: 0;
+}
+.single .articulo-categoria li {
+  list-style: none;
+}
+.single .articulo-categoria li a {
+  background: #22BB5B;
+  color: #fff;
+  font-size: .7rem;
+  padding: .3rem .7rem;
 }
 .single-secretaria .articulo-info {
   display: none;
