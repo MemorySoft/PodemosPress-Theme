@@ -68,7 +68,7 @@
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
-                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                  <div class="articulo-extracto"><?php the_excerpt(); ?></div>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
-                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                  <div class="articulo-extracto"><?php the_excerpt(); ?></div>
                 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
                 </div>
                 <div class="articulo-seccion articulo-seccion--vertical">
                   <h4 class="articulo-titulo"><a href="<?php the_permalink(); ?>" title="<?php esc_attr__('Llegir','podemospress'); ?> <?php the_title(); ?>"><?php the_title(); ?></a></h4>
-                  <p class="articulo-extracto"><?php the_excerpt(); ?></p>
+                  <div class="articulo-extracto"><?php the_excerpt(); ?></div>
                 </div>
               </div>
             </div>
