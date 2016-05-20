@@ -122,7 +122,7 @@ p {
 }
 .menu .menu-item a {
   display: block;
-  padding: 2.5rem 1rem;
+  padding: 2.5rem .7rem;
   line-height: 1;
   font-size: .8rem;
   text-transform: uppercase;
@@ -399,6 +399,10 @@ ul.menu-horizontal {
 /* MODALES */
 .reveal.full {
   padding-top: 6rem;
+}
+.reveal.full .articulo-contacto {
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
 }
 @media screen and (max-width: 39.937em) {
   .reveal.full {
@@ -1030,7 +1034,7 @@ a.leer-mas {
 }
 
 /* MIEMBROS */
-.internos-cargos .articulo-titulo {
+.page-template-miembros .internos-cargos .articulo-titulo {
   margin-bottom: .5rem;
 }
 .page-template-miembros .internos-cargos .articulo-imagen img {
@@ -1050,7 +1054,7 @@ a.leer-mas {
   .page-template-miembros .internos-cargos .articulo-imagen img {
     max-width: 170px;
   }
-  .internos-cargos .articulo-titulo {
+  .page-template-miembros .internos-cargos .articulo-titulo {
     font-size: .9rem;
   }
   .page-template-miembros .reveal .articulo-imagen img {
@@ -1058,8 +1062,8 @@ a.leer-mas {
   }
 }
 @media screen and (min-width: 69.313em) { /* 769px */
-  .internos-cargos .articulo-titulo {
-    font-size: 1.2rem;
+  .page-template-miembros .internos-cargos h5.articulo-titulo {
+    font-size: 1rem;
   }
   .page-template-miembros .reveal .articulo-imagen img {
     max-width: 230px;
@@ -1067,15 +1071,20 @@ a.leer-mas {
 }
 
 /* INSTITUCIONES */
-.instituciones-actividad {
+.page-template-instituciones .instituciones-actividad {
   display: none; /* Temporalmente hasta que podamos implementar el componente */
 }
-.instituciones-cargos .articulo-titulo {
+.page-template-instituciones .instituciones-cargos .articulo-titulo {
   margin-bottom: .5rem;
 }
 .page-template-instituciones .instituciones-cargos .articulo-imagen img,
 .page-template-instituciones .reveal .articulo-imagen img {
   max-width: 130px;
+}
+@media screen and (min-width: 69.313em) { /* 769px */
+  .page-template-instituciones .instituciones-cargos .articulo-titulo {
+    font-size: 1rem;
+  }
 }
 
 /* POST */

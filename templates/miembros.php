@@ -39,7 +39,7 @@ if ($sg_ver == 1) { ?>
 	  		<div class="small-12 medium-10 medium-centered columns">
 			  	  <?php  while ( $cc_item->have_posts() ) : $cc_item->the_post(); ?>
 			  	    <div class="item">
-				  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>">
 				  	      <div class="articulo-seccion articulo-seccion">
 					  	      <a href="javascript:void(0)" data-open="modal-<?php the_ID(); ?>">
 					  	        <div class="articulo-imagen circular">
@@ -61,17 +61,6 @@ if ($sg_ver == 1) { ?>
 	  	            	  </p>
 		            	  <?php } ?>
 		            	  <p><?php the_excerpt(); ?></p>
-		            	  <div class="articulo-contacto">
-					  	        <?php if ( $datos_twitter !='' ) { ?>
-					  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-					  	        <?php } ?>
-					  	        <?php if ( $datos_facebook !='' ) { ?>
-					  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-					  	        <?php } ?>
-					  	        <?php if ( $datos_email !='' ) { ?>
-					  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-					  	        <?php } ?>
-				  	        </div>
 		            	  <hr>
 				  	        <div class="botonera sin-margen--abajo">
 					  	        <?php if ($sg_enlace_boton_doc_a !== '' && $sg_texto_boton_doc_a !== '') { ?> 
@@ -103,9 +92,32 @@ if ($sg_ver == 1) { ?>
 				  	            	  <br>
 				  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 					  	            	  <p class="lead">
-					  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+					  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+					  	            	  	<br>
+					  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
 					  	            	  </p>
 				  	            	  <?php } ?>
+				  	            	  <div class="articulo-contacto">
+								  	        	<?php 
+							  	        		  // Datos de la ficha de miembro
+							  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+							  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
+							  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
+							  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
+								  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
+								  	        	?>
+									  	        <?php if ( $datos_twitter !='' ) {  ?>
+									  	        	<a href="<?php echo $datos_twitter; ?>">Twitter <i class="fa fa-twitter"></i></a>
+									  	        	<br>
+									  	        <?php } ?>
+									  	        <?php if ( $datos_facebook !='' ) {  ?>
+									  	        	<a href="<?php echo $datos_facebook; ?>">Facebook <i class="fa fa-facebook"></i></a>
+									  	        	<br>
+									  	        <?php } ?>
+									  	        <?php if ( $datos_email !='' ) {  ?>
+									  	        	<a href="mailto:<?php echo $datos_email; ?>">Email <i class="fa fa-envelope"></i></a>
+									  	        <?php } ?>
+								  	        </div>
 				  	            	</div>
 				  	            </div>
 				  	            <div class="small-12 medium-7 columns">
@@ -182,7 +194,7 @@ if ($cc_ver == 1) { ?>
 	    	<div class="-carrusel-cuatro-items">
 		  	  <?php  while ( $cc_item->have_posts() ) : $cc_item->the_post(); ?>
 		  	    <div class="item">
-			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>">
 			  	      <div class="articulo-seccion articulo-seccion--vertical">
 				  	      <a href="javascript:void(0)" data-open="modal-<?php the_ID(); ?>">
 				  	        <div class="articulo-imagen circular">
@@ -192,23 +204,6 @@ if ($cc_ver == 1) { ?>
 			  	      </div>
 			  	      <div class="articulo-seccion articulo-seccion--vertical">
 			  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-			  	        <?php
-										$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
-										$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
-										$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
-										$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
-			  	        ?>
-			  	        <div class="articulo-contacto">
-				  	        <?php if ( $datos_twitter !='' ) { ?>
-				  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_facebook !='' ) { ?>
-				  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_email !='' ) { ?>
-				  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-				  	        <?php } ?>
-			  	        </div>
 			  	        <!-- MODAL | MIEMBROS CC -->
 			  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 			  	          <div class="row">
@@ -219,9 +214,32 @@ if ($cc_ver == 1) { ?>
 			  	            	  <br>
 			  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 				  	            	  <p class="lead">
-				  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+				  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+				  	            	  	<br>
+				  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
 				  	            	  </p>
 			  	            	  <?php } ?>
+			  	            	  <div class="articulo-contacto">
+							  	        	<?php 
+						  	        		  // Datos de la ficha de miembro
+						  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+						  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
+						  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
+						  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
+							  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
+							  	        	?>
+								  	        <?php if ( $datos_twitter !='' ) {  ?>
+								  	        	<a href="<?php echo $datos_twitter; ?>">Twitter <i class="fa fa-twitter"></i></a>
+								  	        	<br>
+								  	        <?php } ?>
+								  	        <?php if ( $datos_facebook !='' ) {  ?>
+								  	        	<a href="<?php echo $datos_facebook; ?>">Facebook <i class="fa fa-facebook"></i></a>
+								  	        	<br>
+								  	        <?php } ?>
+								  	        <?php if ( $datos_email !='' ) {  ?>
+								  	        	<a href="mailto:<?php echo $datos_email; ?>">Email <i class="fa fa-envelope"></i></a>
+								  	        <?php } ?>
+							  	        </div>
 			  	            	</div>
 			  	            </div>
 			  	            <div class="small-12 medium-7 columns">
@@ -238,7 +256,7 @@ if ($cc_ver == 1) { ?>
 			  	        </div>
 			  	      </div>
 			  	    </div>
-		  	    </div> 
+		  	    </div>  
 		  	  <?php endwhile; ?>
 		  	</div>
 		  </div>
@@ -293,7 +311,7 @@ if ($cg_ver == 1) { ?>
 	    	<div class="-carrusel-cuatro-items">
 		  	  <?php  while ( $cg_item->have_posts() ) : $cg_item->the_post(); ?>
 		  	    <div class="item">
-			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			  	    <div class="articulo stack-for-small" id="post-<?php the_ID(); ?>">
 			  	      <div class="articulo-seccion articulo-seccion--vertical">
 				  	      <a href="javascript:void(0)" data-open="modal-<?php the_ID(); ?>">
 				  	        <div class="articulo-imagen circular">
@@ -303,24 +321,7 @@ if ($cg_ver == 1) { ?>
 			  	      </div>
 			  	      <div class="articulo-seccion articulo-seccion--vertical">
 			  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-			  	        <?php
-										$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
-										$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
-										$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
-										$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
-			  	        ?>
-			  	        <div class="articulo-contacto">
-				  	        <?php if ( $datos_twitter !='' ) { ?>
-				  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_facebook !='' ) { ?>
-				  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-				  	        <?php } ?>
-				  	        <?php if ( $datos_email !='' ) { ?>
-				  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-				  	        <?php } ?>
-			  	        </div>
-			  	        <!-- MODAL | MIEMBROS CG -->
+			  	        <!-- MODAL | MIEMBROS CC -->
 			  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 			  	          <div class="row">
 			  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -330,9 +331,32 @@ if ($cg_ver == 1) { ?>
 			  	            	  <br>
 			  	            	  <?php if ( $datos_cargo_organico !='' ) { ?>
 				  	            	  <p class="lead">
-				  	            	  	<?php printf( __('%1$s a %2$s','podemospress') , $datos_cargo_organico , $delegacion_nombre ); ?>
+				  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+				  	            	  	<br>
+				  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
 				  	            	  </p>
 			  	            	  <?php } ?>
+			  	            	  <div class="articulo-contacto">
+							  	        	<?php 
+						  	        		  // Datos de la ficha de miembro
+						  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+						  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
+						  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
+						  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
+							  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
+							  	        	?>
+								  	        <?php if ( $datos_twitter !='' ) {  ?>
+								  	        	<a href="<?php echo $datos_twitter; ?>">Twitter <i class="fa fa-twitter"></i></a>
+								  	        	<br>
+								  	        <?php } ?>
+								  	        <?php if ( $datos_facebook !='' ) {  ?>
+								  	        	<a href="<?php echo $datos_facebook; ?>">Facebook <i class="fa fa-facebook"></i></a>
+								  	        	<br>
+								  	        <?php } ?>
+								  	        <?php if ( $datos_email !='' ) {  ?>
+								  	        	<a href="mailto:<?php echo $datos_email; ?>">Email <i class="fa fa-envelope"></i></a>
+								  	        <?php } ?>
+							  	        </div>
 			  	            	</div>
 			  	            </div>
 			  	            <div class="small-12 medium-7 columns">
