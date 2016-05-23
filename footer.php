@@ -6,7 +6,17 @@
     <div class="franja fondo-gris--claro sin-margen--abajo">
       <div class="row footer">
         <div class="small-12 large-6 columns">
-          <h2 class="logo-texto sin-margen"><?php echo $delegacion_nombre ?></h2>
+          <?php if ( get_theme_mod( 'podemospress_logo' ) ) : ?>
+            <div class='site-logo'>
+              <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+                <img src='<?php echo esc_url( get_theme_mod( 'podemospress_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+              </a>
+            </div>
+          <?php else : ?>
+            <h2>
+              <?php bloginfo( 'name' ); ?>
+            </h2>
+          <?php endif; ?>
           <h5><?php echo $delegacion_direccion ?></h5>
           <div class="media-object">
             <div class="media-object-section">
@@ -17,16 +27,11 @@
                 <strong>
                   <?php echo $delegacion_horario_am ?><br>
                   <?php echo $delegacion_horario_pm ?>
+                  <br>
+                  <br>
+                  <a href="<?php echo esc_url( home_url( '/contactar' ) ); ?>" class="button small invertido--oscuro"><?php _e('Contacte','podemospress' ); ?></a>
                 </strong>
               </p>
-            </div>
-          </div>
-          <div class="media-object">
-            <div class="media-object-section">
-              <i class="fa fa-phone fa-2x"></i>
-            </div>
-            <div class="media-object-section">
-              <h3 class="sin-margen"><?php echo $delegacion_telefono ?></h3>
             </div>
           </div>
         </div>
