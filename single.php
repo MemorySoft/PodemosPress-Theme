@@ -14,6 +14,9 @@
       <?php endif; ?>
       <?php wp_list_categories(); ?>
       <hr>
+      <li>Etiquetes</li>
+      <?php wp_tag_cloud( 'format=list' ); ?>
+      <hr>
       <li>Más recientes</li>
       <?php wp_get_archives('type=postbypost&limit=10'); ?>
       <hr>
@@ -43,25 +46,6 @@
               <div class="articulo-texto">
                 <?php the_content(); ?>
               </div>
-            </div>
-          </div>
-
-          <!-- BOTONES SOCIALES -->
-
-          <div class="row botones-sociales">
-            <div class="small-12 columns">
-              <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&title=<?php the_title(); ?>" class="boton-social boton-facebook">
-                <i class="fa fa-facebook"></i>
-                Facebook
-              </a>
-              <a href="http://twitter.com/home?status=<?php the_title(); ?>+<?php the_permalink(); ?>" class="boton-social boton-twitter">
-                <i class="fa fa-twitter"></i>
-                Twitter
-              </a>
-              <a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" class="boton-social boton-google">
-                <i class="fa fa-google-plus"></i>
-                Google Plus
-              </a>
             </div>
           </div>
         <?php endwhile; ?>

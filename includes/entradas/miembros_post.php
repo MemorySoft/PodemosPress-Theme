@@ -55,6 +55,7 @@ add_action( 'admin_init', 'podemospress_miembros_datos_meta_box' );
 
 function podemospress_muestra_miembros_datos_meta_box( $miembro_datos ) {
   $datos_cargo_institucional = esc_html( get_post_meta( $miembro_datos->ID, 'miembro_datos_cargo_institucional', true ) );
+  $datos_transparencia = esc_html( get_post_meta( $miembro_datos->ID, 'miembro_datos_transparencia', true ) );
   $datos_cargo_organico = esc_html( get_post_meta( $miembro_datos->ID, 'miembro_datos_cargo_organico', true ) );
   $datos_twitter = esc_html( get_post_meta( $miembro_datos->ID, 'miembro_datos_twitter', true ) );
   $datos_facebook = esc_html( get_post_meta( $miembro_datos->ID, 'miembro_datos_facebook', true ) );
@@ -68,6 +69,7 @@ function podemospress_muestra_miembros_datos_meta_box( $miembro_datos ) {
         <p>
           <ol>
             <li>El título de este item corresponde al nombre completo de la persona</li>
+            <li>Para los cargo publicos hay que poner el enlace al portal de transparencia.</li>
             <li>La biografia será el texto que escribas en el editor.</li>
             <li>La fotografia en el campo 'Imagen Destacada' y <strong>debe ser cuadrada</strong></li>
             <li>Para que aparezca en la página de Miembros debes asignarle al menos uno de los items en <i>Órgano Interno</i></li>
@@ -88,6 +90,18 @@ function podemospress_muestra_miembros_datos_meta_box( $miembro_datos ) {
         <span class="description">Ej: 'Parlamentaria' o 'Senadora'</span>
       </td>
     </tr>
+    <tr valign="top">
+      <th scope="row">Portal de transparencia</th>
+      <td>
+        <input 
+        type="text" 
+        size="40" 
+        name="miembro_datos_transparencia" 
+        value="<?php echo $datos_transparencia; ?>" /><br>
+        <span class="description">Enlace al portal de tranparencia (solo cargos públicos )</span>
+      </td>
+    </tr>
+    <hr>
     <tr valign="top">
       <th scope="row">Cargo orgánico</th>
       <td>
@@ -145,6 +159,15 @@ function podemospress_agrega_miembro_datos_valores( $datos_id, $miembro_datos ) 
         );
     } else {
       delete_post_meta( $datos_id, 'miembro_datos_cargo_institucional' );
+    }
+    if ( isset( $_POST['miembro_datos_transparencia'] ) && $_POST['miembro_datos_transparencia'] != '' ) {
+      update_post_meta( 
+        $datos_id, 
+        'miembro_datos_transparencia', 
+        $_POST['miembro_datos_transparencia'] 
+        );
+    } else {
+      delete_post_meta( $datos_id, 'miembro_datos_transparencia' );
     }
     if ( isset( $_POST['miembro_datos_cargo_organico'] ) && $_POST['miembro_datos_cargo_organico'] != '' ) {
       update_post_meta( 

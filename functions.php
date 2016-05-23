@@ -47,11 +47,5 @@ require_once('includes/entradas/videos_post.php');
 * WIDGETS
 *********************************************************************************************************/
 require_once('includes/widgets/bloque_largo.php');
-require_once('includes/widgets/bloque_corto.php');
-
-/**
-* PLUGINS INTEGRADOS
-*********************************************************************************************************/
-require_once('includes/plugins/image-widget/plugin.php');
-// require_once('includes/plugins/calendarios/plugin.php');
+require_once('includes/widgets/image/wid_img.php');
 ?>

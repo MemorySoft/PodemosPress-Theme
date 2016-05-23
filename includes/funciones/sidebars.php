@@ -13,7 +13,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar( array(
 		'name' => 'Top bar',
 		'id' => 'top-bar',
-		'description'   => 'Inserta contenido en la barra superior de todo el sitio',
+		'description'   => 'DESACTIVADO - Inserta contenido en la barra superior de todo el sitio',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
@@ -142,9 +142,18 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_title' => '</h5>',
 	) );
 	register_sidebar( array(
-		'name' => 'Instituciones Bajo Cargos',
+		'name' => 'Instituciones Calendario',
+		'id' => 'instituciones-calendario',
+		'description'   => 'Ajustado para mostrar el calendario de eventos',
+		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+	register_sidebar( array(
+		'name' => 'Instituciones Abajo',
 		'id' => 'instituciones-abajo',
-		'description'   => 'Inserta contenido debajo de la sección Relación de Cargos de la página de Instituciones',
+		'description'   => 'Inserta contenido junto al calendario',
 		'before_widget' => '<div id="%1$s" class="modulo %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h5 class="titulo">',

@@ -134,13 +134,6 @@
         </div>
         <?php endwhile; ?>
       <?php } ?>      
-
-      <div class="row">
-        <div class="small-12 columns">
-          <hr>
-          <a href="<?php bloginfo('url'); ?>/noticias" class="button"><?php _e("Veure tota l'actualitat",'podemospress'); ?></a>
-        </div>
-      </div>
     </div>
     
 

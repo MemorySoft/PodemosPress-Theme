@@ -47,6 +47,9 @@
       <?php endif; ?>
       <?php wp_list_categories(); ?>
       <hr>
+      <li>Etiquetes</li>
+      <?php wp_tag_cloud(); ?>
+      <hr>
       <li>Más recientes</li>
       <?php wp_get_archives('type=postbypost&limit=10'); ?>
       <hr>

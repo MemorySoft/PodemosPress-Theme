@@ -34,6 +34,15 @@ $(document).ready(function() {
     itemsDesktop : [1200,4],
     itemsDesktopSmall : [400,1]
   });
+  $(".-carrusel-seis-items").owlCarousel({
+    autoPlay: false,
+    navigation: true,
+    navigationText: ["←","→"],
+    pagination: false,
+    items : 6,
+    itemsDesktop : [1200,6],
+    itemsDesktopSmall : [400,1]
+  });
 
   // TARJETAS
   $('.control-abrir').click(function() {

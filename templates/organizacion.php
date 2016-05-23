@@ -17,7 +17,7 @@
 if ($intro_ver == 1) { ?>     
 	<div class="row">
 	  <div class="small-12 columns">
-	    <h5 class="titulo texto-centrado"><?php _e('Organització','podemospress'); ?></h5>
+	    <h5 class="titulo texto-centrado"><?php _e('Presentació','podemospress'); ?></h5>
 	  </div>
 	  <div class="small-12 medium-6 columns">
 	    <div class="destacado-media flex-video">
@@ -60,13 +60,13 @@ if ($intro_ver == 1) { ?>
 
 	  	<?php 
 	  	if ($boton_politico_enlace !== '' && $boton_politico_texto !== '') { ?> 
-	      <a href="<?php $boton_politico_enlace ?>" class="small success button">
+	      <a href="<?php echo $boton_politico_enlace ?>" class="small success button">
 	      	<i class="fa fa-download"></i> <?php echo $boton_politico_texto ?>
 	      </a>
 
 	    <?php } 
 	    if ($boton_organizativo_enlace !== '' && $boton_organizativo_texto !== '') { ?> 
-	      <a href="<?php $boton_organizativo_enlace ?>" class="small success button">
+	      <a href="<?php echo $boton_organizativo_enlace ?>" class="small success button">
 	      	<i class="fa fa-download"></i> <?php echo $boton_organizativo_texto ?>
 	      </a>
 

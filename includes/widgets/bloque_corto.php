@@ -73,26 +73,22 @@ class bloque_destacado_corto extends WP_Widget {
     	$boton = empty($instance['boton']) ? '' : $instance['boton'];
     	$link = empty($instance['link']) ? '' : $instance['link'];
 
-	    echo $before_widget;
-
 	    if ( !empty($titulo) ) {
-	    echo $before_title; 
-	    echo '<div class="large callout fondo-gris--claro" data-equalizer-watch>';
-	    echo '<h4>';
-	    echo $titulo;
-	    echo '</h4>';
-	    echo '<p>';
-	    echo $texto;
-	    echo '</p>'; 
-	    echo '<a class="small button" href="';
-	    echo $link . '">';
-	    echo $boton;
-	    echo '</a>';
-	    echo '</div>';
-	    echo $after_title;
-	    }
-
-	    echo $after_widget;
+        echo '<div class="bloque-corto">';
+  	    echo '<div class="large callout fondo-gris--claro" data-equalizer-watch>';
+  	    echo '<h4>';
+  	    echo $titulo;
+  	    echo '</h4>';
+  	    echo '<p>';
+  	    echo $texto;
+  	    echo '</p>'; 
+  	    echo '<a class="small button" href="';
+  	    echo $link . '">';
+  	    echo $boton;
+  	    echo '</a>';
+  	    echo '</div>';
+        echo '</div>';
+  	    }
 	}
 }
 add_action('widgets_init', create_function('', 'return register_widget("bloque_destacado_corto");'));

@@ -317,7 +317,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | AYUNTAMIENTO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -328,19 +329,20 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' ) { ?>
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
 			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
+			  	            	<?php if ( $datos_cargo_organico !='' ) { ?>
 			  	            	  <p>
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
 			  	            	  	<br>
@@ -363,13 +365,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+		  	        
 		  	      </div>
 		  	    </div>
 	  	    </div>  
@@ -415,7 +421,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | CONSELL INSULAR -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -426,6 +433,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -435,7 +443,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php printf( __('al Consell Insular de %s','podemospress') , $region ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -461,13 +469,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div> 
@@ -513,7 +525,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | CABILDO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -524,6 +537,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -533,7 +547,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php printf( __('al Cabildo de %s','podemospress') , $region ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -559,13 +573,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>   
@@ -611,7 +629,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | GOBIERNO AUTONÓMICO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -622,6 +641,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -631,7 +651,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php printf( __('al Gover Autonòmic de %s','podemospress') , $region ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -657,13 +677,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>
@@ -709,7 +733,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | PARLAMENTO AUTONÓMICO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -720,6 +745,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -729,7 +755,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php printf( __('al Parlament Autonómic de %s','podemospress') , $region ); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -755,13 +781,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>   
@@ -807,7 +837,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | SENADO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -818,6 +849,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -827,7 +859,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php _e('al Senat','podemospress'); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -853,13 +885,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>  
@@ -905,7 +941,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | CONGRESO -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -916,6 +953,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -925,7 +963,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php _e('al Congres','podemospress'); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -951,13 +989,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>
@@ -1003,7 +1045,8 @@
 		  	      </div>
 		  	      <div class="articulo-seccion articulo-seccion--vertical">
 		  	        <h5 class="articulo-titulo" data-equalizer-watch><?php the_title(); ?></h5>
-		  	        <!-- MODAL | MIEMBRO -->
+		  	        
+		  	        <!-- MODAL | GOBIERNO CENTRAL -->
 		  	        <div class="full reveal" id="modal-<?php the_ID(); ?>" data-reveal>
 		  	          <div class="row">
 		  	            <div class="small-12 medium-3 columns texto-derecha">
@@ -1014,6 +1057,7 @@
 		  	            	  <?php 
 				  	        		  // Datos de la ficha de miembro
 				  	        		  $datos_cargo_institucional = get_post_meta( get_the_id(), 'miembro_datos_cargo_institucional', true );
+				  	        		  $datos_transparencia = get_post_meta( get_the_id(), 'miembro_datos_transparencia', true );
 				  	        			$datos_cargo_organico = get_post_meta( get_the_id(), 'miembro_datos_cargo_organico', true );
 				  	        			$datos_twitter = get_post_meta( get_the_id(), 'miembro_datos_twitter', true );
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
@@ -1023,7 +1067,7 @@
 			  	            	  <p class="lead">
 			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
+			  	            	  	<?php _e('al Govern Central','podemospress'); ?>
 			  	            	  </p>
 			  	            	<?php } ?>
 			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
@@ -1049,13 +1093,17 @@
 		  	            <div class="small-12 medium-7 columns">
 		  	              <h2><?php the_title(); ?></h2>
 		  	              <?php the_content(); ?>
+		  	              <?php if ( $datos_transparencia !='' ) { ?>
+		  	              	<a href="<?php echo $datos_transparencia ?>" class="small button success">Portal de transparencia</a>
+		  	              <?php } ?>
 		  	              <p>
 		  	                <hr>
-		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>"><?php _e("Tancar",'podemospress'); ?></a>
+		  	                <a href="javascript:void(0)" class="button invertido--oscuro close-button" data-close aria-label="<?php esc_attr__('Tancar','podemospress'); ?>">&times; <?php _e("Tancar",'podemospress'); ?></a>
 		  	              </p>
 		  	            </div>
 		  	          </div>
 		  	        </div>
+
 		  	      </div>
 		  	    </div>
 	  	    </div>  
@@ -1068,7 +1116,12 @@
 <!-- WIDGETS -->
 
 <div class="row sin-margen--abajo">
-	<div class="small-12 columns">
+	<div class="small-12 medium-4 columns">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('instituciones-calendario') ) : ?>
+
+		<?php endif; ?>
+	</div>
+	<div class="small-12 medium-8 columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('instituciones-abajo') ) : ?>
 
 		<?php endif; ?>

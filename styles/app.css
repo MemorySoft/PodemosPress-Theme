@@ -87,8 +87,8 @@ p {
 /* TOPBAR */
 .top-bar {
   margin-bottom: 2em;
-  padding: 0;articulo
-  box-shadow: 0 0 5px #efefef;
+  padding: 0;
+  box-shadow: 2px 0 4px #ccc;
 }
 .top-bar, 
 .top-bar ul {
@@ -126,6 +126,7 @@ p {
 .menu-item {
   position: relative;
 }
+
 .menu .menu-item a {
   display: block;
   padding: 2.5rem .7rem;
@@ -135,6 +136,7 @@ p {
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   color: #333;
 }
+
 .menu-superior .menu-item a {
   padding: .9rem;
 }
@@ -143,15 +145,15 @@ p {
   list-style: none;
   width: 200px;
   position: absolute;
-  margin-top: 3.8rem;
+  margin-top: 5.8rem;
   margin-left: 0;
   top: 0;
   left: 0;
-  box-shadow: 0 0 1px #ccc;
 }
 .sub-menu .menu-item a {
   background:  #fff;
   color: #54075B;
+  padding: 1.5rem .7rem;
 }
 .menu .menu-item:hover .sub-menu {
   display: inherit;
@@ -220,9 +222,23 @@ ul.menu-horizontal {
     display: block;
     margin-right: 0;
   }
+  .top-bar .menu .current_page_item {
+    border-top: none;
+    border-left: 10px solid #54075B;
+  }
+  .menu .menu-item a {
+    padding: 1.5rem .7rem;
+    border-bottom: 1px solid #ccc;
+  }
+  .top-bar .menu .current_page_item a {
+    margin-top: 0;
+  }
   .sub-menu {
+    display: block;
     margin-top: 0;
     margin-left: 9rem;
+    border-left: 1px solid #ccc;
+    border-bottom: none;
   }
   .menu.align-right > li {
     float: none;
@@ -457,6 +473,9 @@ footer .menu .menu-item a {
     nativos de WordPress
 ***********************************************************************/
 
+.site-logo {
+  display: inline;
+}
 /* GALERIAS */
 #gallery-1 .gallery-item {
   padding: .5rem;
@@ -765,12 +784,12 @@ h4.logo-texto {
 .tarjeta-titulo {
   font-family: Montserrat, Ubuntu, "Helvetica Neue", Helvetica, Roboto, "Segoe UI", Arial, sans-serif;
   line-height: 2.4rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   text-transform: uppercase;
 }
 .tarjeta-contenido {
-  padding: 2.2rem;
+  padding: 2rem;
   font-weight: 300;
   height: 16rem;
 }
@@ -806,6 +825,15 @@ h4.logo-texto {
 }
 .tarjeta-imagen img {
   border-radius: 2px 2px 0 0;
+}
+@media screen and (max-width: 69.313em) {
+  .tarjeta-titulo {
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .tarjeta-contenido {
+    padding: 1.5rem;
+  }
 }
 
 .tarjeta-morada {
@@ -869,22 +897,18 @@ a.leer-mas {
 }
 
 /* BLOQUES */
-[id^="bloque_destacado_corto-"] {
+.bloque-corto {
   display: inline-block;
   float: left;
   width: 50%;
-  padding-right: .9375rem;
-  padding-left: .9375rem;
+  padding-right: 2rem;
   margin-bottom: 0;
 }
-[id^="bloque_destacado_corto-"]:first-child {
-  padding-left: 0;
-}
-[id^="bloque_destacado_corto-"]:last-child {
+.bloque-corto:nth-child(even) {
   padding-right: 0;
 }
 @media screen and (min-width: 0em) and (max-width: 39.9375em) {
-  [id^="bloque_destacado_corto-"] {
+  .bloque-corto {
     width: 100%;
     padding: 0;
   }
@@ -1065,6 +1089,7 @@ a.leer-mas {
 /* MIEMBROS */
 .page-template-miembros .internos-cargos .articulo-titulo {
   margin-bottom: .5rem;
+  line-height: 1.2rem;
 }
 .page-template-miembros .internos-cargos .articulo-imagen img {
   max-width: 230px;
@@ -1105,10 +1130,11 @@ a.leer-mas {
 }
 .page-template-instituciones .instituciones-cargos .articulo-titulo {
   margin-bottom: .5rem;
+  line-height: 1.2rem;
 }
 .page-template-instituciones .instituciones-cargos .articulo-imagen img,
 .page-template-instituciones .reveal .articulo-imagen img {
-  max-width: 130px;
+  max-width: 170px;
 }
 @media screen and (min-width: 69.313em) { /* 769px */
   .page-template-instituciones .instituciones-cargos .articulo-titulo {
@@ -1122,6 +1148,7 @@ a.leer-mas {
 }
 .single .articulo-titulo {
   margin: 3rem 0 2rem 0;
+  line-height: 2.2rem;
 }
 .single .articulo-fecha {
   font-weight: bold;
@@ -1148,7 +1175,7 @@ a.leer-mas {
   display: none;
 }
 
-/*  UTILIDADES Versión 0.1
+/*  UTILIDADES 
     Clases intercambiables 
     que ayudan a la maquetación
 ***********************************************************************/
@@ -1179,7 +1206,7 @@ a.leer-mas {
 }
 
 .texto-mini {
-  font-size: 60%;
+  font-size: 80%;
 }
 
 /* COLORES */
@@ -1268,4 +1295,12 @@ a.leer-mas {
 }
 .sin-relleno--derecho {
   padding-right: 0;
+}
+
+/*  VERGUENZA Y OPROBIO
+    Hacks, ñapas, pereza y otras hierbas...
+***********************************************************************/
+/* Escondemos los dias de las semana abreviados del Calendario porque en català solo saca 'd' xD */
+.simcal-week-day {
+  display: none;
 }

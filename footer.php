@@ -38,7 +38,7 @@
 
         <div class="small-12 large-3 columns">
           <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-uno') ) : ?>
-            <h5><?php echo get_option('delegacion_nombre'); ?></h5>
+            <h5>Podemos</h5>
             <?php menu_secundario(); ?> 
           <?php endif; ?>
         </div>
