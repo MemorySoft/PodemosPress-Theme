@@ -44,7 +44,7 @@ $(document).ready(function() {
   });
 
   // MENU
-  $('.menu-icono').click(function() {
+  $('.menu--responsive').click(function() {
     $('.top-bar-menu').toggle('fast');
   });
   
