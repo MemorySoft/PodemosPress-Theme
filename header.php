@@ -114,8 +114,8 @@
 		    			</a>
 		    		</strong>
 					<?php endif; ?>
-          <span class="menu--responsive" data-hide-for="large">
-            MENU
+          <span class="menu-icono" data-hide-for="large">
+            <i class="fa fa-ellipsis-h"></i>
           </span>
         </div>
         <div class="top-bar-right">
