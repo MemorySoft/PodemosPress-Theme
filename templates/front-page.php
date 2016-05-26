@@ -19,9 +19,9 @@
           'post_type' => 'carrusel'
         );
         $carrusel_item = new WP_Query($carrusel_args);
-        $instituciones_item = new WP_Query($noticias_args);
-        if( $instituciones_item->have_posts() ) { ?>
-          <?php  while ( $instituciones_item->have_posts() ) : $instituciones_item->the_post(); ?>
+        $noticias_item = new WP_Query($noticias_args);
+        if( $noticias_item->have_posts() ) { ?>
+          <?php  while ( $noticias_item->have_posts() ) : $noticias_item->the_post(); ?>
             <div class="carrusel-item">
               <?php the_post_thumbnail(); ?>
               <div class="carrusel-seccion">
