@@ -24,10 +24,10 @@
 	      <h4><?php echo $bloqueA_titulo ?></h4>
 	      <p>
 	      	<?php if ($bloqueA_enlace_boton_1 !== '' && $bloqueA_texto_boton_1 !== '') { ?>
-	      		<a href="$bloqueA_enlace_boton_1" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueA_texto_boton_1 ?></a>
+	      		<a href="<?php echo $bloqueA_enlace_boton_1 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueA_texto_boton_1 ?></a>
 	      	<?php } 
 	      	if ($bloqueA_enlace_boton_2 !== '' && $bloqueA_texto_boton_2 !== '') { ?>
-	      		<a href="$bloqueA_enlace_boton_2" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueA_texto_boton_2 ?></a>
+	      		<a href="<?php echo $bloqueA_enlace_boton_2 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueA_texto_boton_2 ?></a>
 	      	<?php } ?>
 	      </p>	
 
@@ -42,10 +42,10 @@
 	      <h4><?php echo $bloqueB_titulo ?></h4>
 	      <p>
 	      	<?php if ($bloqueB_enlace_boton_1 !== '' && $bloqueB_texto_boton_1 !== '') { ?>
-	      		<a href="$bloqueB_enlace_boton_1" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueB_texto_boton_1 ?></a>
+	      		<a href="<?php echo $bloqueB_enlace_boton_1 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueB_texto_boton_1 ?></a>
 	      	<?php } 
 	      	if ($bloqueB_enlace_boton_2 !== '' && $bloqueB_texto_boton_2 !== '') { ?>
-	      		<a href="$bloqueB_enlace_boton_2" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueB_texto_boton_2 ?></a>
+	      		<a href="<?php echo $bloqueB_enlace_boton_2 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueB_texto_boton_2 ?></a>
 	      	<?php } ?>
 	      </p>
 		    
@@ -60,10 +60,10 @@
 	      <h4><?php echo $bloqueC_titulo ?></h4>
 	      <p>
 	      	<?php if ($bloqueC_enlace_boton_1 !== '' && $bloqueC_texto_boton_1 !== '') { ?>
-	      		<a href="$bloqueC_enlace_boton_1" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueC_texto_boton_1 ?></a>
+	      		<a href="<?php echo $bloqueC_enlace_boton_1 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueC_texto_boton_1 ?></a>
 	      	<?php } 
 	      	if ($bloqueC_enlace_boton_2 !== '' && $bloqueC_texto_boton_2 !== '') { ?>
-	      		<a href="$bloqueC_enlace_boton_2" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueC_texto_boton_2 ?></a>
+	      		<a href="<?php echo $bloqueC_enlace_boton_2 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueC_texto_boton_2 ?></a>
 	      	<?php } ?>
 	      </p>
 		    
@@ -78,10 +78,10 @@
 	      <h4><?php echo $bloqueD_titulo ?></h4>
 	      <p>
 	      	<?php if ($bloqueD_enlace_boton_1 !== '' && $bloqueD_texto_boton_1 !== '') { ?>
-	      		<a href="$bloqueD_enlace_boton_1" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueD_texto_boton_1 ?></a>
+	      		<a href="<?php echo $bloqueD_enlace_boton_1 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueD_texto_boton_1 ?></a>
 	      	<?php } 
 	      	if ($bloqueD_enlace_boton_2 !== '' && $bloqueD_texto_boton_2 !== '') { ?>
-	      		<a href="$bloqueD_enlace_boton_2" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueD_texto_boton_2 ?></a>
+	      		<a href="<?php echo $bloqueD_enlace_boton_2 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueD_texto_boton_2 ?></a>
 	      	<?php } ?>
 	      </p>
 		    
@@ -96,10 +96,10 @@
 	      <h4><?php echo $bloqueE_titulo ?></h4>
 	      <p>
 	      	<?php if ($bloqueE_enlace_boton_1 !== '' && $bloqueE_texto_boton_1 !== '') { ?>
-	      		<a href="$bloqueE_enlace_boton_1" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueE_texto_boton_1 ?></a>
+	      		<a href="<?php echo $bloqueE_enlace_boton_1 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueE_texto_boton_1 ?></a>
 	      	<?php } 
 	      	if ($bloqueE_enlace_boton_2 !== '' && $bloqueE_texto_boton_2 !== '') { ?>
-	      		<a href="$bloqueE_enlace_boton_2" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueE_texto_boton_2 ?></a>
+	      		<a href="<?php echo $bloqueE_enlace_boton_2 ?>" class="small success button"><i class="fa fa-download"></i> <?php echo $bloqueE_texto_boton_2 ?></a>
 	      	<?php } ?>
 	      </p>
 		    
