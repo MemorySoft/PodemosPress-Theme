@@ -65,7 +65,10 @@
 	<div class="row">
 	  <h5 class="titulo texto-centrado"><?php _e('Directori','podemospress' ); ?></h5>
 	  <div class="small-12 columns texto-centrado">
-	    <p><?php _e('Directori de contactes públics d\'àrees i càrrecs','podemospress' ); ?> <?php if ($delegacion_nombre !== '') { ?>- <?php echo $delegacion_nombre ?><?php }?></p>
+	    <p>
+        <?php _e('Directori de contactes públics d\'àrees i càrrecs','podemospress' ); ?> 
+        <?php if ($delegacion_nombre !== '') { ?>- <?php echo $delegacion_nombre ?><?php }?>
+      </p>
 	  </div>
 	</div>
 	<div class="row small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-on="medium">

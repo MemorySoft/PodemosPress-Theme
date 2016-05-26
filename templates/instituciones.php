@@ -293,15 +293,15 @@
 		  </div>
 		  
 	  	<?php 
-	  	  $args = array(
-	  	  	'tax_query' => array(
-		        array(
-	            'taxonomy' => 'institucion',
-	            'field' => 'slug',
-	            'terms' => array( 'ayuntamiento' )
-		        ),
-	  	    ),
-	  	  	'post_type' => 'miembro',
+  	  $args = array(
+  	  	'tax_query' => array(
+	        array(
+            'taxonomy' => 'institucion',
+            'field' => 'slug',
+            'terms' => array( 'ayuntamiento' )
+	        ),
+  	    ),
+  	  	'post_type' => 'miembro',
 	  	);
 	  	$ayuntamiento_item = new WP_Query($args);
 	  	if( $ayuntamiento_item->have_posts() ) { ?>
@@ -335,31 +335,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( $datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
 			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( $datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -375,7 +371,7 @@
 		  	            </div>
 		  	          </div>
 		  	        </div>
-		  	        
+
 		  	      </div>
 		  	    </div>
 	  	    </div>  
@@ -439,31 +435,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('al Consell Insular de %s','podemospress') , $region ); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+			  	            	  	<?php printf( __('a Consell Insular de %s','podemospress') , $region ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+							  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+							  	        	<br>
+							  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+							  	        	<br>
+							  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -543,31 +535,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
 			  	            	  	<?php printf( __('al Cabildo de %s','podemospress') , $region ); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -647,31 +635,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('al Gover Autonòmic de %s','podemospress') , $region ); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+			  	            	  	<?php printf( __('al Govern Autonómic de %s','podemospress') , $region ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -751,31 +735,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('al Parlament Autonómic de %s','podemospress') , $region ); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+			  	            	  	<?php printf( __('al Parlament Autonòmic de %s','podemospress') , $region ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -855,31 +835,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
 			  	            	  	<?php _e('al Senat','podemospress'); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -959,31 +935,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
-			  	            	  	<?php _e('al Congres','podemospress'); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+			  	            	  	<?php _e('al Congrés','podemospress'); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
@@ -1063,31 +1035,27 @@
 				  	        			$datos_facebook = get_post_meta( get_the_id(), 'miembro_datos_facebook', true );
 					  	        		$datos_email = get_post_meta( get_the_id(), 'miembro_datos_email', true );
 					  	        	?>
-		  	            	  <?php if ( 	$datos_cargo_institucional !='' ) { ?>
-			  	            	  <p class="lead">
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_institucional ); ?>
+		  	            	  <?php if ( $datos_cargo_institucional !='' || $datos_cargo_organico !='') { ?>
+			  	            	  <p class="texto-mini">
+			  	            	  	<?php echo $datos_cargo_institucional; ?>
 			  	            	  	<br>
-			  	            	  	<?php _e('al Govern Central','podemospress'); ?>
-			  	            	  </p>
-			  	            	<?php } ?>
-			  	            	<?php if ( 	$datos_cargo_organico !='' ) { ?>
-			  	            	  <p>
-			  	            	  	<?php printf( __('%s','podemospress') , $datos_cargo_organico); ?>
+			  	            	  	<?php printf( __('a l\'Ajuntament de %s','podemospress') , $region ); ?>
 			  	            	  	<br>
-			  	            	  	<?php printf( __('%s','podemospress') , $delegacion_nombre ); ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $datos_cargo_organico; ?>
+			  	            	  	<br>
+			  	            	  	<?php echo $delegacion_nombre; ?>
 			  	            	  </p>
 		  	            	  <?php } ?>
-		  	            	  <div class="articulo-contacto">
-							  	        <?php if ( $datos_twitter !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_twitter; ?>"><i class="fa fa-twitter"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_facebook !='' ) {  ?>
-							  	        	<a href="<?php echo $datos_facebook; ?>"><i class="fa fa-facebook"></i></a>
-							  	        <?php } ?>
-							  	        <?php if ( $datos_email !='' ) {  ?>
-							  	        	<a href="mailto:<?php echo $datos_email; ?>"><i class="fa fa-envelope"></i></a>
-							  	        <?php } ?>
-						  	        </div>
+						  	        <?php if ( $datos_twitter !='' || $datos_facebook !='' || $datos_email !='' ) {  ?>
+						  	        	<div class="articulo-contacto">
+						  	        	<a href="<?php echo $datos_twitter; ?>">Segueix-me al Twitter <i class="fa fa-twitter"></i></a>
+						  	        	<br>
+						  	        	<a href="<?php echo $datos_facebook; ?>">Troba'm al Facebook <i class="fa fa-facebook"></i></a>
+						  	        	<br>
+						  	        	<a href="mailto:<?php echo $datos_email; ?>">Envia'm un email <i class="fa fa-envelope"></i></a>
+						  	        	</div>
+						  	        <?php } ?>
 		  	            	</div>
 		  	            </div>
 		  	            <div class="small-12 medium-7 columns">
