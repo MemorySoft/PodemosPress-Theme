@@ -13,7 +13,7 @@ require_once('includes/init.php'); // Cargamos el soporte básico
 *********************************************************************************************************/
 require_once('includes/funciones/dashboard.php'); 
 require_once('includes/funciones/sidebars.php'); 	
-require_once('includes/funciones/opengraph.php');	
+// require_once('includes/funciones/opengraph.php'); // Comentado porque peta; saca el excerpt en el top de los posts!
 require_once('includes/funciones/categorias.php');
 require_once('includes/funciones/extractos.php');		
 require_once('includes/funciones/clonador.php');
