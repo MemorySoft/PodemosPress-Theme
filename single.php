@@ -55,10 +55,10 @@
         <div class="row navegacion-articulos">
         	<hr>
           <div class="small-12 medium-6 medium columns navegacion-anterior-articulo"> 
-            <?php previous_post_link( '<p>ARTÍCULO PREVIO</p> %link', '%title' ); ?>
+            <?php previous_post_link( '<p>ANTERIOR</p> %link', '%title' ); ?>
           </div>
           <div class="small-12 medium-6 medium columns navegacion-proximo-articulo">
-            <?php next_post_link( '<p>PRÓXIMO ARTÍCULO</p> %link', '%title' ); ?>
+            <?php next_post_link( '<p>PRÓXIM</p> %link', '%title' ); ?>
           </div>
         </div>
         <?php endif; ?>

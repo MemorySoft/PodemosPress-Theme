@@ -18,11 +18,7 @@
             </h2>
           <?php endif; ?>
           <h5><?php echo $delegacion_direccion ?></h5>
-          <div class="media-object">
-            <div class="media-object-section">
-              <i class="fa fa-clock-o fa-2x"></i>
-            </div>
-            <div class="media-object-section">
+          <div> 
               <p>
                 <strong>
                   <?php echo $delegacion_horario_am ?><br>
@@ -32,20 +28,19 @@
                   <a href="<?php echo esc_url( home_url( '/contactar' ) ); ?>" class="button small invertido--oscuro"><?php _e('Contacte','podemospress' ); ?></a>
                 </strong>
               </p>
-            </div>
           </div>
         </div>
 
         <div class="small-12 large-3 columns">
           <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-uno') ) : ?>
-            <h5>Podemos</h5>
+            <h5>Podem</h5>
             <?php menu_secundario(); ?> 
           <?php endif; ?>
         </div>
 
         <div class="small-12 large-3 columns">
           <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-dos') ) : ?>
-            <h5>Noticias</h5>
+            <h5>Noticies</h5>
             <?php menu_noticias(); ?> 
           <?php endif; ?>
         </div>

@@ -50,10 +50,10 @@
       <li>Etiquetes</li>
       <?php wp_tag_cloud( 'format=flat' ); ?>
       <hr>
-      <li>Más recientes</li>
+      <li>Darreres publicacions</li>
       <?php wp_get_archives('type=postbypost&limit=10'); ?>
       <hr>
-      <li>Archivo</li>
+      <li>Arxiu</li>
       <?php wp_get_archives('type=yearly'); ?>
     </div>
 
@@ -91,8 +91,8 @@
       <div id="articulos-navegacion" class="row">
         <hr>
         <div class="large-12 medium-12 columns">
-          <span class="articulos-recientes"><?php previous_posts_link( 'Recientes' ); ?></span>
-          <span class="articulos-antiguos flota-derecha"><?php next_posts_link( 'Antiguos' ); ?></span>
+          <span class="articulos-recientes"><?php previous_posts_link( 'Recents' ); ?></span>
+          <span class="articulos-antiguos flota-derecha"><?php next_posts_link( 'Antics' ); ?></span>
         </div>
       </div>
     </div>
