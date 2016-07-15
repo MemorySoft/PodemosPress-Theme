@@ -6,8 +6,8 @@ $(document).ready(function() {
   // CARRUSELES
   $(".-carrusel-un-item").owlCarousel({
     autoPlay: true,
-    slideSpeed : 300,
-    paginationSpeed : 400,
+    slideSpeed : 600,
+    paginationSpeed : 600,
     pagination: true,
     navigation: true,
     navigationText: ["←","→"],
