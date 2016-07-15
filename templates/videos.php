@@ -12,14 +12,14 @@
       $temp_query = $wp_query; // El truco del almendruco http://darrinb.com/how-to-paginate-a-custom-wordpress-query-loop/
       $args = array(
       'post_type' => 'video',
-      'posts_per_page'=> 15,
+      'posts_per_page'=> 12,
       'paged' => $paged
     );
     $wp_query = new WP_Query($args);
     if( $wp_query->have_posts() ) { ?>
-      <div class="row">
+      <div class="row" data-equalizer data-equalize-on="medium">
         <?php  while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-          <div class="item small-12 medium-6 columns">
+          <div class="item small-12 medium-4 columns" data-equalizer-watch>
             <div class="articulo stack-for-small">
               <div class="articulo-seccion articulo-seccion--vertical">
                 <div class="articulo-imagen flex-video">
