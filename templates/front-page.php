@@ -106,7 +106,45 @@
   <!-- ACTUALIDAD -->
 
   <div class="row">
-    <div class="small-12 large-8 columns contenido-principal">
+
+    <!-- BARRA LATERAL -->
+
+    <div class="small-12 large-4 large-push-8 columns barra-lateral">
+
+      <!-- AGENDA -->
+      
+      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-uno') ) : ?>
+        
+      <?php endif; ?>
+
+      <!-- DESTACADO -->
+      <div class="show-for-medium">
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-dos') ) : ?>
+
+        <?php endif; ?>
+      </div>
+
+      <!-- REDES -->
+      <div class="show-for-medium">
+        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-tres') ) : ?>
+          <?php
+          if ($timeline_twitter !== '') { ?>
+            <div class="modulo modulo-twitter">
+              <?php echo $timeline_twitter ?>
+            </div>
+          <?php }
+          if ($timeline_facebook !== '') { ?>
+            <div class="modulo modulo-facebook">
+              <?php echo $timeline_facebook ?>
+            </div>
+          <?php } ?>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <!-- NOTICIAS -->
+
+    <div class="small-12 large-8 large-pull-4 columns contenido-principal">
       <h5 class="titulo"><?php _e('Actualitat','podemospress'); ?></h5>
 
       <?php 
@@ -134,40 +172,6 @@
         </div>
         <?php endwhile; ?>
       <?php } ?>      
-    </div>
-    
-
-    <!-- BARRA LATERAL -->
-
-    <div class="small-12 large-4 columns barra-lateral">
-
-      <!-- AGENDA -->
-      
-      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-uno') ) : ?>
-      	
-      <?php endif; ?>
-
-      <!-- DESTACADO -->
-
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-dos') ) : ?>
-
-			<?php endif; ?>
-
-      <!-- REDES -->
-
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('home-lateral-tres') ) : ?>
-				<?php
-        if ($timeline_twitter !== '') { ?>
-		      <div class="modulo modulo-twitter">
-		        <?php echo $timeline_twitter ?>
-		      </div>
-		    <?php }
-		    if ($timeline_facebook !== '') { ?>
-		      <div class="modulo modulo-facebook">
-		        <?php echo $timeline_facebook ?>
-		      </div>
-		    <?php } ?>
-	    <?php endif; ?>
     </div>
   </div>
 

@@ -293,15 +293,15 @@
 		  </div>
 		  
 	  	<?php 
-  	  $args = array(
-  	  	'tax_query' => array(
-	        array(
-            'taxonomy' => 'institucion',
-            'field' => 'slug',
-            'terms' => array( 'ayuntamiento' )
-	        ),
-  	    ),
-  	  	'post_type' => 'miembro',
+	  	  $args = array(
+	  	  	'tax_query' => array(
+		        array(
+	            'taxonomy' => 'institucion',
+	            'field' => 'slug',
+	            'terms' => array( 'ayuntamiento' )
+		        ),
+	  	    ),
+	  	  	'post_type' => 'miembro',
 	  	);
 	  	$ayuntamiento_item = new WP_Query($args);
 	  	if( $ayuntamiento_item->have_posts() ) { ?>
